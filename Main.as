@@ -43,6 +43,11 @@ void CreateScene(){
   // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
   light.shadowCascade = CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
 
+  _cameraNode = _scene.CreateChild("Camera");
+  //_cameraNode.SetName("Camera");
+  Camera@ camera = _cameraNode.CreateComponent("Camera");
+  camera.farClip = 300.0f;
+
   //this is going to be my graph node
   //I should make the graph node make both the custom geo and make the script object,
   //inside of the child that it creates also
@@ -51,11 +56,12 @@ void CreateScene(){
   Node@ graphNode = _scene.CreateChild("Graph");
   //CustomGeometry@ graphGeo = graphNode.CreateComponent("CustomGeometry");
   Graph@ graph = cast<Graph>(graphNode.CreateScriptObject(scriptFile, "Graph"));
-  graph.SetParameters();
+  graph.SetParameters(_cameraNode.id);
 
-  _cameraNode = _scene.CreateChild("Camera");
+  /*_cameraNode = _scene.CreateChild("Camera");
+  //_cameraNode.SetName("Camera");
   Camera@ camera = _cameraNode.CreateComponent("Camera");
-  camera.farClip = 300.0f;
+  camera.farClip = 300.0f;*/
 
   // Set an initial position for the camera scene node above the plane
   _cameraNode.position = Vector3(0.0f, 5.0f, -5.0f);

@@ -18,10 +18,11 @@ class Graph : ScriptObject{
 
 	//uint _geo_id;//the id of the geo component, that we are associated with
 	CustomGeometry@ _geo;
+	uint _camera_id;
 
-	void SetParameters( uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
+	void SetParameters( uint camera_id, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
 	//void SetParameters(uint xdiv,uint ydiv,float width,float height ){
-		//_geo_id = geo_id;
+		_camera_id = camera_id;
 
 		_xdiv = xdiv;
 		_ydiv = ydiv;
@@ -201,10 +202,18 @@ class Graph : ScriptObject{
 
 	void Update(float timeStep){
 
-		DebugRenderer@ debug = node.scene.debugRenderer;
-		Vector3 bias(0.0f, 0.05f, 0.0f);
+	DebugRenderer@ debug = node.scene.debugRenderer;
 
-		Vector3 hit_pos;//where the mouse hits the geo
+	//for raycasting
+	Node@ cameraNode = node.scene.GetNode(_camera_id);
+	Camera@ camera = cameraNode.GetComponent("Camera");
+	//Camera@ camera = node.scene.GetComponent("Camera");
+	IntVector2 pos = ui.cursorPosition;
+
+	Vector3 bias(0.0f, 0.05f, 0.0f);
+
+	//which cell we are in
+	int cell = -1;
 
 		//-----------------------------------------
 
@@ -216,22 +225,23 @@ class Graph : ScriptObject{
 		}*/
 
 		//draw corners as boundinboxes
-		for(uint i =0; i < _points.length; ++i){
-			debug.AddBoundingBox(bbpoint(_points[i]),Color(1.0f, 1.0f, 1.0f));
-		}
+	for(uint i =0; i < _points.length; ++i){
+		debug.AddBoundingBox(bbpoint(_points[i]),Color(1.0f, 1.0f, 1.0f));
+	}
 
-		int cell = -1;
-		if(raycast( 250.0f, hit_pos)){
-			debug.AddBoundingBox( bbpoint(hit_pos) ,Color(1.0f, 0.0f, 0.0f));
-
-			//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
-		}
+	//raycast
+	Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height );
+	RayQueryResult result = node.scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
+	if (result.drawable !is null){
+		debug.AddBoundingBox( bbpoint(result.position) ,Color(1.0f, 0.0f, 0.0f));
+		//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
+	}
 
 
 
 
 		//-----------------------------------------
-		_geo.DrawDebugGeometry(debug,true);//draws the custom geo
+	_geo.DrawDebugGeometry(debug,true);//draws the custom geo
 
 
 	}
@@ -239,30 +249,6 @@ class Graph : ScriptObject{
 	BoundingBox bbpoint(const Vector3 p,const float size = 0.1f){
 		return BoundingBox(p - Vector3(size,size,size), p + Vector3(size,size,size));
 	}
-}
-
-//-------raycasting function
-bool raycast(float max_distance, Vector3& hit_pos){
-		IntVector2 pos = ui.cursorPosition;
-		//hit_pos = Vector3(float(pos.x)*0.05,0.0f,float(pos.y)*0.05);
-		//return true;
-		// Check the cursor is visible and there is no UI element in front of the cursor
-		//if (!ui.cursor.visible || ui.GetElementAt(pos, true) !is null)
-		//    return false;
-
-		//Scene@ scene = node.scene;
-		//Camera@ camera = scene.GetComponent("Camera");
-		//Camera@ camera = node.GetComponent("Camera");
-	//	Ray cameraRay = cam.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height);
-		return false;
-		/*
-		RayQueryResult result = node.scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, max_distance, DRAWABLE_GEOMETRY);
-		if (result.drawable !is null){
-				hit_pos = result.position;
-				return true;
-		}
-
-		return false;*/
 }
 
 //--------------------------------------
