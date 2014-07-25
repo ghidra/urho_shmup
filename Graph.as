@@ -18,11 +18,11 @@ class Graph : ScriptObject{
 
 	//uint _geo_id;//the id of the geo component, that we are associated with
 	CustomGeometry@ _geo;
-	uint _camera_id;
+	Node@ _camera_node;
 
-	void SetParameters( uint camera_id, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
+	void set_parameters( Node@ camera_node, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
 	//void SetParameters(uint xdiv,uint ydiv,float width,float height ){
-		_camera_id = camera_id;
+		_camera_node = camera_node;
 
 		_xdiv = xdiv;
 		_ydiv = ydiv;
@@ -202,18 +202,18 @@ class Graph : ScriptObject{
 
 	void Update(float timeStep){
 
-	DebugRenderer@ debug = node.scene.debugRenderer;
+		DebugRenderer@ debug = node.scene.debugRenderer;
 
-	//for raycasting
-	Node@ cameraNode = node.scene.GetNode(_camera_id);
-	Camera@ camera = cameraNode.GetComponent("Camera");
-	//Camera@ camera = node.scene.GetComponent("Camera");
-	IntVector2 pos = ui.cursorPosition;
+		//for raycasting
+		//Node@ cameraNode = node.scene.GetNode(_camera_id);
+		Camera@ camera = _camera_node.GetComponent("Camera");
+		//Camera@ camera = node.scene.GetComponent("Camera");
+		IntVector2 pos = ui.cursorPosition;
 
-	Vector3 bias(0.0f, 0.05f, 0.0f);
+		Vector3 bias(0.0f, 0.05f, 0.0f);
 
-	//which cell we are in
-	int cell = -1;
+		//which cell we are in
+		int cell = -1;
 
 		//-----------------------------------------
 
@@ -225,23 +225,23 @@ class Graph : ScriptObject{
 		}*/
 
 		//draw corners as boundinboxes
-	for(uint i =0; i < _points.length; ++i){
-		debug.AddBoundingBox(bbpoint(_points[i]),Color(1.0f, 1.0f, 1.0f));
-	}
+		for(uint i =0; i < _points.length; ++i){
+			debug.AddBoundingBox(bbpoint(_points[i]),Color(1.0f, 1.0f, 1.0f));
+		}
 
-	//raycast
-	Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height );
-	RayQueryResult result = node.scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
-	if (result.drawable !is null){
-		debug.AddBoundingBox( bbpoint(result.position) ,Color(1.0f, 0.0f, 0.0f));
-		//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
-	}
+		//raycast
+		Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height );
+		RayQueryResult result = node.scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
+		if (result.drawable !is null){
+			debug.AddBoundingBox( bbpoint(result.position) ,Color(1.0f, 0.0f, 0.0f));
+			//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
+		}
 
 
 
 
 		//-----------------------------------------
-	_geo.DrawDebugGeometry(debug,true);//draws the custom geo
+		//_geo.DrawDebugGeometry(debug,true);//draws the custom geo, draws a green line around geo
 
 
 	}

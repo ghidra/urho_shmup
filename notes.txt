@@ -1,0 +1,28 @@
+CameraLogic:
+---------------------
+
+How to rotate a vector?
+set the camera node the distance and rotation vector from the target
+should be able to lock the rotation, or inherit (side scroller vs third person)
+
+Main_2:
+---------------------
+
+Lets get the cube physics controls down
+Lets get the cube able to shoot things
+
+Graph:
+---------------------
+
+Check the relationships, visualze them. They are there in the latest form from ethanon
+Hide the customgeo, but still raytrace it?
+
+Future:
+---------------------
+
+Consider a rigged character, with a basic ground to control and collide with
+
+Question:
+---------------------
+
+Can you have a single rig used with multiple meshes, with proper weights, for example, clothes for characters?

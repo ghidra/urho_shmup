@@ -56,7 +56,7 @@ void CreateScene(){
   Node@ graphNode = _scene.CreateChild("Graph");
   //CustomGeometry@ graphGeo = graphNode.CreateComponent("CustomGeometry");
   Graph@ graph = cast<Graph>(graphNode.CreateScriptObject(scriptFile, "Graph"));
-  graph.SetParameters(_cameraNode.id);
+  graph.set_parameters(_cameraNode);
 
   /*_cameraNode = _scene.CreateChild("Camera");
   //_cameraNode.SetName("Camera");
@@ -149,46 +149,8 @@ void MoveCamera(float timeStep){
         _cameraNode.Translate(Vector3(-1.0f, 0.0f, 0.0f) * MOVE_SPEED * timeStep);
     if (input.keyDown['D'])
         _cameraNode.Translate(Vector3(1.0f, 0.0f, 0.0f) * MOVE_SPEED * timeStep);
-
-    //if (input.mouseButtonPress[MOUSEB_LEFT])
-      //  SetPathPoint();
 }
 
-void SetPathPoint(){
-    Vector3 hitPos;
-    Drawable@ hitDrawable;
-
-    if (Raycast(250.0f, hitPos, hitDrawable)){
-      _hitpos = hitPos;
-    }else{
-      _hitpos = Vector3(3.0f,0.0f,3.0f);
-    }
-}
-
-bool Raycast(float maxDistance, Vector3& hitPos, Drawable@& hitDrawable){
-    hitDrawable = null;
-
-    IntVector2 pos = ui.cursorPosition;
-    // Check the cursor is visible and there is no UI element in front of the cursor
-    //if (!ui.cursor.visible || ui.GetElementAt(pos, true) !is null)
-    //    return false;
-
-    Camera@ camera = _cameraNode.GetComponent("Camera");
-    Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height);
-    // Pick only geometry objects, not eg. zones or lights, only get the first (closest) hit
-    // Note the convenience accessor to scene's Octree component
-    RayQueryResult result = _scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, maxDistance, DRAWABLE_GEOMETRY);
-    if (result.drawable !is null){
-        hitPos = result.position;
-        hitDrawable = result.drawable;
-        return true;
-    }
-
-    return false;
-    /*hitPos = Vector3( float(pos.x)*0.1, 0.0f, float(pos.y)*0.1 );
-    hitDrawable = result.drawable;
-    return true;*/
-}
 
 void SubscribeToEvents(){
   SubscribeToEvent("Update", "HandleUpdate");// Subscribe HandleUpdate() function for processing update events

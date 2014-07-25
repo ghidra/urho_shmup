@@ -1,7 +1,11 @@
 #include "Scripts/Utilities/Sample.as"
+#include "Scripts/outlyer/CameraLogic.as"
+#include "Scripts/outlyer/Graph.as"
 
 Scene@ _scene;
 Node@ _cameraNode;
+
+RigidBody@ _body;
 
 float yaw = 0.0f;
 float pitch = 0.0f;
@@ -12,7 +16,7 @@ void Start(){
   SampleStart();
   CreateScene();
   CreateUI();
-  CreateText();// Create "Hello World" Text
+  //CreateText();// Create "Hello World" Text
 
   SetupViewport();
   SubscribeToEvents();// Finally, hook-up this HelloWorld instance to handle update events
@@ -23,13 +27,22 @@ void CreateScene(){
 
   _scene.CreateComponent("Octree");// Create octree, use default volume (-1000, -1000, -1000) to (1000, 1000, 1000)
   _scene.CreateComponent("DebugRenderer");// Also create a DebugRenderer component so that we can draw debug geometry
-
+  _scene.CreateComponent("PhysicsWorld");
   // Create scene node & StaticModel component for showing a static plane
-  /*Node@ planeNode = _scene.CreateChild("Plane");
-  planeNode.scale = Vector3(100.0f, 1.0f, 100.0f);
-  StaticModel@ planeObject = planeNode.CreateComponent("StaticModel");
-  planeObject.model = cache.GetResource("Model", "Models/Plane.mdl");
-  planeObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");*/
+
+
+  Node@ coneNode = _scene.CreateChild("Cone");
+  //coneNode.scale = Vector3(100.0f, 1.0f, 100.0f);
+  StaticModel@ coneObject = coneNode.CreateComponent("StaticModel");
+  coneObject.model = cache.GetResource("Model", "Models/Cone.mdl");
+  coneObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
+  _body = coneNode.CreateComponent("RigidBody");
+  _body.mass = 0.25f;
+  _body.friction = 0.75f;
+  _body.linearDamping = 0.6f;
+  CollisionShape@ shape = coneNode.CreateComponent("CollisionShape");
+  shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
+
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = _scene.CreateChild("DirectionalLight");
@@ -41,22 +54,22 @@ void CreateScene(){
   // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
   light.shadowCascade = CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
 
-  //this is going to be my graph node
-  //I should make the graph node make both the custom geo and make the script object,
-  //inside of the child that it creates also
-  //maybe, maybe that isnt such a good idea
-  //then i need to find a way to get access to the custom geo, because they are going to be on the same level
-  Node@ graphNode = _scene.CreateChild("Graph");
-  //CustomGeometry@ graphGeo = graphNode.CreateComponent("CustomGeometry");
-  Graph@ graph = cast<Graph>(graphNode.CreateScriptObject(scriptFile, "Graph"));
-  graph.SetParameters();
 
   _cameraNode = _scene.CreateChild("Camera");
   Camera@ camera = _cameraNode.CreateComponent("Camera");
   camera.farClip = 300.0f;
+  CameraLogic@ camera_logic = cast<CameraLogic>(_cameraNode.CreateScriptObject(scriptFile,"CameraLogic"));
+  camera_logic.set_parameters(coneNode);
 
   // Set an initial position for the camera scene node above the plane
   _cameraNode.position = Vector3(0.0f, 5.0f, -5.0f);
+
+  Node@ graphNode = _scene.CreateChild("Graph");
+  Graph@ graph = cast<Graph>(graphNode.CreateScriptObject(scriptFile, "Graph"));
+  graph.set_parameters(_cameraNode,32,32,100.0f,100.0f);
+
+  PhysicsWorld@ physics = _scene.physicsWorld;
+  physics.gravity = Vector3(0.0f,0.0f,0.0f);
 }
 
 void CreateUI()
@@ -71,7 +84,7 @@ void CreateUI()
     cursor.SetPosition(graphics.width / 2, graphics.height / 2);
 
     // Construct new Text object, set string to display and font to use
-    Text@ instructionText = ui.root.CreateChild("Text");
+    /*Text@ instructionText = ui.root.CreateChild("Text");
     instructionText.text =
         "Use WASD keys to move, RMB to rotate view\n"
         "LMB to set destination, SHIFT+LMB to teleport\n"
@@ -84,7 +97,7 @@ void CreateUI()
     // Position the text relative to the screen center
     instructionText.horizontalAlignment = HA_CENTER;
     instructionText.verticalAlignment = VA_CENTER;
-    instructionText.SetPosition(0, ui.root.height / 4);
+    instructionText.SetPosition(0, ui.root.height / 4);*/
 }
 
 void SetupViewport(){
@@ -142,8 +155,16 @@ void MoveCamera(float timeStep){
     if (input.keyDown['D'])
         _cameraNode.Translate(Vector3(1.0f, 0.0f, 0.0f) * MOVE_SPEED * timeStep);
 
-    //if (input.mouseButtonPress[MOUSEB_LEFT])
-      //  SetPathPoint();
+
+    //push the object
+    if (input.mouseButtonPress[MOUSEB_LEFT])
+        pushObject();
+}
+
+void pushObject(){
+  const float OBJECT_VELOCITY = 10.0f;
+  //_body.linearVelocity = _cameraNode.rotation * Vector3(0.0f, 0.25f, 1.0f) * OBJECT_VELOCITY;
+  _body.linearVelocity = Vector3(0.0f, 0.0f, 1.0f) * OBJECT_VELOCITY;
 }
 
 
