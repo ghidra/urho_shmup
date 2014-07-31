@@ -1,9 +1,4 @@
-CameraLogic:
----------------------
-
-How to rotate a vector?
-set the camera node the distance and rotation vector from the target
-should be able to lock the rotation, or inherit (side scroller vs third person)
+character/pawn class
 
 Main_2:
 ---------------------

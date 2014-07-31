@@ -1,5 +1,5 @@
-class Graph : ScriptObject{
-
+class Graph{
+//class Graph{
 	//basic dimensions
 	private uint _xdiv;//we need this valus, cause in update we are looking for it to have something
 	private uint _ydiv;
@@ -17,11 +17,16 @@ class Graph : ScriptObject{
   Array<graph_edge@> _edges;
 
 	//uint _geo_id;//the id of the geo component, that we are associated with
+	Scene@ _scene;
+	Node@ _node;
 	CustomGeometry@ _geo;
 	Node@ _camera_node;
 
-	void set_parameters( Node@ camera_node, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
+	Vector3 _hit;
+
+	Graph( Scene@ scene, Node@ camera_node, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
 	//void SetParameters(uint xdiv,uint ydiv,float width,float height ){
+		_scene = scene;
 		_camera_node = camera_node;
 
 		_xdiv = xdiv;
@@ -32,9 +37,14 @@ class Graph : ScriptObject{
 		_xstep = width/(xdiv-1.0f);
 		_ystep = height/(ydiv-1.0f);
 
+		_node = _scene.CreateChild("Graph");//make the node at the scene level
+		//Graph_ScriptObject@ graph_scriptobject = cast<Graph>(_node.CreateScriptObject(scriptFile, "Graph_ScriptObject"));//make the scriptobject
+		//graph_scriptobject.set_parameters(_camera_node);
+
 		construct_grid();//build the grid
 		construct_graph();//build the graph
 		construct_geo();//make the custom geo component, and save the link to it
+		SubscribeToEvent("Update", "update");
 	}
 
 	void construct_grid(){
@@ -166,7 +176,7 @@ class Graph : ScriptObject{
 	}
 	//-----------------
 	void construct_geo(){
-		_geo = node.CreateComponent("CustomGeometry");
+		_geo = _node.CreateComponent("CustomGeometry");
 		//now build the actual geo for ray casting against later
 		_geo.BeginGeometry(0,TRIANGLE_LIST);
 		for(uint i = 0; i < _centers.length; i++ ){
@@ -195,14 +205,16 @@ class Graph : ScriptObject{
 			_geo.DefineVertex( _points[corners[1]] );
 		}
 		_geo.Commit();
+		_geo.material = cache.GetResource("Material", "Materials/Transparent.xml");
+
 
 	}
 
 	//------------------
 
-	void Update(float timeStep){
-
-		DebugRenderer@ debug = node.scene.debugRenderer;
+	void update(StringHash eventType, VariantMap& eventData){
+		float timeStep = eventData["TimeStep"].GetFloat();
+		DebugRenderer@ debug = _scene.debugRenderer;
 
 		//for raycasting
 		//Node@ cameraNode = node.scene.GetNode(_camera_id);
@@ -231,9 +243,10 @@ class Graph : ScriptObject{
 
 		//raycast
 		Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height );
-		RayQueryResult result = node.scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
+		RayQueryResult result = _scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
 		if (result.drawable !is null){
-			debug.AddBoundingBox( bbpoint(result.position) ,Color(1.0f, 0.0f, 0.0f));
+			_hit = result.position;
+			debug.AddBoundingBox( bbpoint(_hit) ,Color(1.0f, 0.0f, 0.0f));
 			//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
 		}
 
@@ -337,3 +350,14 @@ class graph_edge : graph_point_data{
     _is_border=bo;
   }
 }
+
+//----------------------
+// The Script object for updating
+//----------------------
+
+/*class Graph_ScriptObject : ScriptObject{
+	private Node@ = _camera_node;
+	void set_parameters(Node@ camera_node){
+		_camera_node = camera_node;
+	}
+}*/
