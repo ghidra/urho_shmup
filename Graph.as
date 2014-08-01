@@ -238,7 +238,7 @@ class Graph{
 
 		//draw corners as boundinboxes
 		for(uint i =0; i < _points.length; ++i){
-			debug.AddBoundingBox(bbpoint(_points[i]),Color(1.0f, 1.0f, 1.0f));
+			debug.AddBoundingBox(bbpoint(_node.transform*_points[i]),Color(1.0f, 1.0f, 1.0f));
 		}
 
 		//raycast

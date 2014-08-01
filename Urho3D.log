@@ -1,11 +1,11 @@
-[Wed Jul 30 21:52:44 2014] INFO: Opened log file Urho3D.log
-[Wed Jul 30 21:52:44 2014] INFO: Created 3 worker threads
-[Wed Jul 30 21:52:44 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/CoreData/
-[Wed Jul 30 21:52:44 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/Data/
-[Wed Jul 30 21:52:44 2014] WARNING: Skipped autoload folder Extra as it does not exist
-[Wed Jul 30 21:52:44 2014] INFO: Set screen mode 1366x768 fullscreen
-[Wed Jul 30 21:52:44 2014] INFO: Initialized input
-[Wed Jul 30 21:52:44 2014] INFO: Initialized user interface
-[Wed Jul 30 21:52:44 2014] INFO: Initialized renderer
-[Wed Jul 30 21:52:44 2014] INFO: Set audio mode 44100 Hz stereo interpolated
-[Wed Jul 30 21:52:44 2014] INFO: Compiled script module /Scripts/outlyer/Main.as
+[Fri Aug  1 00:39:42 2014] INFO: Opened log file Urho3D.log
+[Fri Aug  1 00:39:42 2014] INFO: Created 3 worker threads
+[Fri Aug  1 00:39:42 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/CoreData/
+[Fri Aug  1 00:39:42 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/Data/
+[Fri Aug  1 00:39:42 2014] WARNING: Skipped autoload folder Extra as it does not exist
+[Fri Aug  1 00:39:42 2014] INFO: Set screen mode 1366x768 fullscreen
+[Fri Aug  1 00:39:42 2014] INFO: Initialized input
+[Fri Aug  1 00:39:42 2014] INFO: Initialized user interface
+[Fri Aug  1 00:39:43 2014] INFO: Initialized renderer
+[Fri Aug  1 00:39:43 2014] INFO: Set audio mode 44100 Hz stereo interpolated
+[Fri Aug  1 00:39:43 2014] INFO: Compiled script module /Scripts/outlyer/Main.as

@@ -2,9 +2,11 @@ character/pawn class
 
 Main_2:
 ---------------------
-
-Lets get the cube physics controls down
-Lets get the cube able to shoot things
+shooting cause the player to be moved by the physics of the collision to the bullet
+lets build an enemy
+build a projectile class
+create an explosion class
+getting into some collision handling to start actually making a game
 
 Graph:
 ---------------------

@@ -15,6 +15,8 @@ class CameraLogic : ScriptObject{
   float yaw = 0.0f;
   float pitch = 0.0f;
 
+  Quaternion _rotation_offset;
+
   Node@ _target;
 
   void set_parameters( bool fixed = true,float fdistance = 24.0f, Vector3 frotation = Vector3(30.0f,0.0f,0.0f) ){
@@ -44,15 +46,24 @@ class CameraLogic : ScriptObject{
     if(_target is null)
       return;
 
-    _pos = _target.rotation*_boom_pos;
+    //_pos = _target.rotation*_boom_pos;
+    _pos = _boom_pos;
     _pos += _target.position;
 
     node.position = _pos;
-    node.rotation = _boom_rotation;
+    node.rotation = _rotation_offset*_boom_rotation;
   }
 
   void Update(float timeStep){
     set_position();
+  }
+
+  //---------------
+  void move_mouse(IntVector2 mousemove, float sensitivity){
+    yaw += sensitivity * mousemove.x;
+    pitch += sensitivity * mousemove.y;
+    pitch = Clamp(pitch, -90.0f, 90.0f);
+    _rotation_offset = Quaternion(pitch, yaw, 0.0f);
   }
 
 }

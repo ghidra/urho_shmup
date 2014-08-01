@@ -28,7 +28,7 @@ class Character{
     shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
     //push_object();
 
-    _controller = ControllerPlayer(_node);
+    _controller = ControllerPlayer(_scene,_node);
     //_controller = cast<Controller>(_node.CreateScriptObject(scriptFile, "Controller"));
     //_controller = controller;
   }

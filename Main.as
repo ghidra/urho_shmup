@@ -8,9 +8,9 @@ Scene@ _scene;
 Node@ _camera_node;
 InputPlayer@ _input_player;
 
-Character@ _character;
+//Character@ _character;
 
-Graph@ _graph;
+//Graph@ _graph;
 
 void Start(){
   SceneManager@ _scene_manager = SceneManager();
@@ -23,9 +23,11 @@ void Start(){
 }
 
 void CreateScene(){
-  _graph = Graph(_scene,_camera_node,32,32,100.0f,100.0f);//make the graph
+  //Graph@ _graph = Graph(_scene,_camera_node,32,32,100.0f,100.0f);//make the graph
+  Graph@ _graph = Graph(_scene,_camera_node,10,3,100.0f,25.0f);//make the graph
+  _graph._node.Rotate(Quaternion(-90.0f,0.0f,0.0f));
 
-  _character = Character(_scene);//create the character at the scene level
+  Character@ _character = Character(_scene);//create the character at the scene level
   _character._controller.set_graph(_graph);//give the graph to the controllerplayer
   _character._controller.set_cameranode(_camera_node);
 

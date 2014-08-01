@@ -6,12 +6,6 @@ class InputPlayer : InputBasics{
 
   Controller@ _controller;
 
-  //float MOVE_SPEED = 20.0f;
-  float MOUSE_SENSITIVITY = 0.1f;
-
-  float yaw = 0.0f;
-  float pitch = 0.0f;
-
   InputPlayer(uint i){
     super(i);
     SubscribeToEvent("Update", "update");
@@ -28,16 +22,12 @@ class InputPlayer : InputBasics{
 
     // Use this frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between -90 and 90 degrees
     // Only move the camera when the cursor is hidden
-    if (!ui.cursor.visible){
+    if (!ui.cursor.visible){//this makes it update only on right mouse down
       move_mouse(input.mouseMove);
-      /*  IntVector2 mouseMove = input.mouseMove;
-        yaw += MOUSE_SENSITIVITY * mouseMove.x;
-        pitch += MOUSE_SENSITIVITY * mouseMove.y;
-        pitch = Clamp(pitch, -90.0f, 90.0f);*/
-
-        // Construct new orientation for the camera scene node from yaw and pitch. Roll is fixed to zero
-        //_cameraNode.rotation = Quaternion(pitch, yaw, 0.0f);
     }
+
+    if (input.mouseButtonPress[MOUSEB_LEFT])
+        left_mouse();
 
     // Read WASD keys and move the camera scene node to the corresponding direction if they are pressed
     if (input.keyDown['W'])
@@ -66,5 +56,10 @@ class InputPlayer : InputBasics{
     if(_controller is null)
       return;
     _controller.move_mouse(mousemove);
+  }
+  void left_mouse(){
+    if(_controller is null)
+      return;
+    _controller.left_mouse();
   }
 }
