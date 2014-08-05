@@ -1,5 +1,6 @@
 #include "Scripts/outlyer/Controller.as"
 #include "Scripts/outlyer/CameraLogic.as"
+#include "Scripts/outlyer/Projectile.as"
 
 class ControllerPlayer : Controller{
 
@@ -39,26 +40,7 @@ class ControllerPlayer : Controller{
 
   //------spawn a projectile
   void spawn_projectile(Vector3 pos, Vector3 dir){
-    Node@ boxNode = _scene.CreateChild("SmallBox");
-    boxNode.position = pos+(dir.Normalized()*1.0f);
-    //boxNode.rotation = cameraNode.rotation;
-    boxNode.SetScale(0.25f);
-    StaticModel@ boxObject = boxNode.CreateComponent("StaticModel");
-    boxObject.model = cache.GetResource("Model", "Models/Box.mdl");
-    boxObject.material = cache.GetResource("Material", "Materials/StoneEnvMapSmall.xml");
-    boxObject.castShadows = true;
-
-    // Create physics components, use a smaller mass also
-    RigidBody@ body = boxNode.CreateComponent("RigidBody");
-    body.mass = 0.25f;
-    body.friction = 0.75f;
-    CollisionShape@ shape = boxNode.CreateComponent("CollisionShape");
-    shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
-
     const float OBJECT_VELOCITY = 4.5f;
-
-    // Set initial velocity for the RigidBody based on camera forward vector. Add also a slight up component
-    // to overcome gravity better
-    body.linearVelocity = dir+Vector3(0.0f,1.0f,0.0f) * OBJECT_VELOCITY;
+    Projectile@ _projectile = Projectile(_scene,pos,dir,OBJECT_VELOCITY);
   }
 }
