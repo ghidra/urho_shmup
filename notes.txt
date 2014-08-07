@@ -2,7 +2,6 @@ character/pawn class
 
 Main_2:
 ---------------------
-progress bar so that .....
 make ememy fire on character
 create an explosion class
 getting into some collision handling to start actually making a game

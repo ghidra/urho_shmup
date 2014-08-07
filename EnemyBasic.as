@@ -1,7 +1,6 @@
 #include "Scripts/outlyer/Pawn.as"
 #include "Scripts/outlyer/ControllerEnemyBasic.as"
 
-//class Character : InputPlayer{
 class EnemyBasic:Pawn{
 
   RigidBody@ _body;

@@ -1,11 +1,13 @@
 class Pawn{
     Node@ _node;
     Scene@ _scene;
+    //String _node_name;
     //Controller@ _controller;
     Pawn(Scene@ scene,String node_name ){
       _scene = scene;
 
       _node = _scene.CreateChild(node_name);
+      //_node_name = node_name;
 
       StaticModel@ coneObject = _node.CreateComponent("StaticModel");
       coneObject.model = cache.GetResource("Model", "Models/Cone.mdl");

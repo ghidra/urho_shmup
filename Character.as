@@ -13,7 +13,7 @@ class Character:Pawn{
   Character(Scene@ scene){
 
     super(scene,"Character");
-    
+
     _body = _node.CreateComponent("RigidBody");
     _body.mass = 0.25f;
     _body.friction = 0.75f;
@@ -27,9 +27,5 @@ class Character:Pawn{
     //_controller = cast<Controller>(_node.CreateScriptObject(scriptFile, "Controller"));
     //_controller = controller;
   }
-
-  /*void translate_player( Vector3 d, float s, float t){
-    _body.linearVelocity = _body.linearVelocity+(d*s*t);
-  }*/
 
 }
