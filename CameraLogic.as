@@ -1,57 +1,57 @@
 class CameraLogic : ScriptObject{
 
-  float _follow_distance;
-  Vector3 _follow_rotation;
-  bool _fixed;
+  float follow_distance_;
+  Vector3 follow_rotation_;
+  bool fixed_;
 
-  Vector3 _out = Vector3(0.0f,0.0f,-1.0f);
+  Vector3 out_ = Vector3(0.0f,0.0f,-1.0f);
   //Quaternion _rotation;
-  Quaternion _boom_rotation;
+  Quaternion boom_rotation_;
 
-  Vector3 _boom_pos;//where the camera wants to be, after getting _out and _rotation and _follow_distance
-  Vector3 _pos;//the calculated position based on the target
+  Vector3 boom_pos_;//where the camera wants to be, after getting _out and _rotation and _follow_distance
+  Vector3 pos_;//the calculated position based on the target
 
   //offset rotations
   float yaw = 0.0f;
   float pitch = 0.0f;
 
-  Quaternion _rotation_offset;
+  Quaternion rotation_offset_;
 
-  Node@ _target;
+  Node@ target_;
 
   void set_parameters( bool fixed = true,float fdistance = 24.0f, Vector3 frotation = Vector3(30.0f,0.0f,0.0f) ){
 
     //_target = target;
 
-    _fixed = fixed;
-    _follow_distance = fdistance;
-    _follow_rotation = frotation;
+    fixed_ = fixed;
+    follow_distance_ = fdistance;
+    follow_rotation_ = frotation;
 
     //I could create a camera here, but i think i'll keep that out of here
     //Camera@ camera = node.CreateComponent("Camera");
     //camera.farClip = 300.0f;
 
-    _boom_rotation.FromEulerAngles(frotation.x,frotation.y,frotation.z);
+    boom_rotation_.FromEulerAngles(frotation.x,frotation.y,frotation.z);
     //_rotation = _boom_rotation.Inverse();
 
-    _boom_pos = _boom_rotation*_out*fdistance;
+    boom_pos_ = boom_rotation_*out_*fdistance;
 
   }
 
   void set_target( Node@ target ){
-    _target = target;
+    target_ = target;
   }
 
   void set_position(){
-    if(_target is null)
+    if(target_ is null)
       return;
 
     //_pos = _target.rotation*_boom_pos;
-    _pos = _boom_pos;
-    _pos += _target.position;
+    pos_ = boom_pos_;
+    pos_ += target_.position;
 
-    node.position = _pos;
-    node.rotation = _rotation_offset*_boom_rotation;
+    node.position = pos_;
+    node.rotation = rotation_offset_*boom_rotation_;
   }
 
   void Update(float timeStep){
@@ -63,7 +63,7 @@ class CameraLogic : ScriptObject{
     yaw += sensitivity * mousemove.x;
     pitch += sensitivity * mousemove.y;
     pitch = Clamp(pitch, -90.0f, 90.0f);
-    _rotation_offset = Quaternion(pitch, yaw, 0.0f);
+    rotation_offset_ = Quaternion(pitch, yaw, 0.0f);
   }
 
 }

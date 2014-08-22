@@ -6,19 +6,19 @@
 
 #include "Scripts/outlyer/EnemyBasic.as"
 
-Scene@ _scene;
-Node@ _camera_node;
-InputPlayer@ _input_player;
+Scene@ scene_;
+Node@ camera_node_;
+InputPlayer@ input_player_;
 
 //Character@ _character;
 
 //Graph@ _graph;
 
 void Start(){
-  SceneManager@ _scene_manager = SceneManager();
-  _scene = _scene_manager._scene;
-  _camera_node = _scene_manager._camera_node;
-  _input_player = InputPlayer(1);//need some kind of value in here to make it real, no idea why
+  SceneManager@ scene_manager_ = SceneManager();
+  scene_ = scene_manager_.scene_;
+  camera_node_ = scene_manager_.camera_node_;
+  input_player_ = InputPlayer(1);//need some kind of value in here to make it real, no idea why
 
   CreateScene();
 
@@ -26,27 +26,28 @@ void Start(){
 
 void CreateScene(){
   //Graph@ _graph_ground = Graph(_scene,_camera_node,32,32,100.0f,100.0f);//make the graph
-  Graph@ _graph = Graph(_scene,_camera_node,10,3,100.0f,25.0f);//make the graph
-  _graph._node.Rotate(Quaternion(-90.0f,0.0f,0.0f));
-  _graph._node.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
+  Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
+  graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
+  graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
-  Character@ _character = Character(_scene);//create the character at the scene level
-  _character._controller.set_graph(_graph);//give the graph to the controllerplayer
-  _character._controller.set_cameranode(_camera_node);
+  Character@ character_ = Character(scene_);//create the character at the scene level
+  character_.controller_.set_graph(graph_);//give the graph to the controllerplayer
+  character_.controller_.set_cameranode(camera_node_);
   //_character.set_position(Vector3(0.0f,3.0f,0.0f));
 
   //my first enemy
-  EnemyBasic@ _enemy = EnemyBasic(_scene);
-  _enemy.set_position(Vector3(5.0f,0.0f,0.0f));
+  EnemyBasic@ enemy_ = EnemyBasic(scene_);
+  enemy_.set_position(Vector3(-10.0f,0.0f,0.0f));
+  enemy_.set_enemytarget(character_.node_);
 
-  CameraLogic@ _camera_logic = cast<CameraLogic>(_camera_node.GetScriptObject("CameraLogic"));
-  _camera_logic.set_target(_character._node);
-  _input_player.set_controller(_character._controller);//the input_player needs to know what controller to send commands to
+  CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
+  camera_logic_.set_target(character_.node_);
+  input_player_.set_controller(character_.controller_);//the input_player needs to know what controller to send commands to
 
 
 
   // Create a directional light to the world. Enable cascaded shadows on it
-  Node@ lightNode = _scene.CreateChild("DirectionalLight");
+  Node@ lightNode = scene_.CreateChild("DirectionalLight");
   lightNode.direction = Vector3(0.6f, -1.0f, 0.8f);
   Light@ light = lightNode.CreateComponent("Light");
   light.lightType = LIGHT_DIRECTIONAL;
@@ -59,7 +60,7 @@ void CreateScene(){
   Graph@ graph = cast<Graph>(graphNode.CreateScriptObject(scriptFile, "Graph"));
   graph.set_parameters(_cameraNode,32,32,100.0f,100.0f);*/
 
-  PhysicsWorld@ physics = _scene.physicsWorld;
+  PhysicsWorld@ physics = scene_.physicsWorld;
   //physics.gravity = Vector3(0.0f,0.0f,0.0f);
 }
 

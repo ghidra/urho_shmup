@@ -1,18 +1,18 @@
 class ProgressBar{
 
-  String _label;
-  float _value;
-  float _min;
-  float _max;
-  Vector2 _bounds;
-  Vector3 _offset;
-  Vector3 _size;
-  float _size_scale = 1.0f;
-  int _decimal;
+  String label_;
+  float value_;
+  float min_;
+  float max_;
+  Vector2 bounds_;
+  Vector3 offset_;
+  Vector3 size_;
+  float size_scale_ = 1.0f;
+  int decimal_;
 
-  Scene@ _scene;
-  Node@ _node;
-  Node@ _fill_node;
+  Scene@ scene_;
+  Node@ node_;
+  Node@ fill_node_;
 
   ProgressBar(
     Scene@ scene,
@@ -26,46 +26,48 @@ class ProgressBar{
 		int dec=1
 		)
 	{
-    _scene = scene;
-		_label = label;
-    _offset = offset;
-		_size = size;//ComputeTextBoxSize(m_font, m_label) + m_margin;//GetSpriteFrameSize(m_spriteName);
+    scene_ = scene;
+		label_ = label;
+    offset_ = offset;
+		size_ = size;//ComputeTextBoxSize(m_font, m_label) + m_margin;//GetSpriteFrameSize(m_spriteName);
 		//_pos = pos;
 
-    _min = min;
-    _max = max;
+    min_ = min;
+    max_ = max;
 		set_bounds(min,max);
-		_value = value;
+		value_ = value;
 
-		_decimal = dec;
+		decimal_ = dec;
 
     //build the bar out
-    _node = node.CreateChild("bar");//"maybe call it _node.name"
-    StaticModel@ barObject = _node.CreateComponent("StaticModel");
+    node_ = node.CreateChild("bar");//"maybe call it _node.name"
+
+    fill_node_ = node_.CreateChild("barfill");
+    StaticModel@ barObject = fill_node_.CreateComponent("StaticModel");
     barObject.model = cache.GetResource("Model", "Models/Box.mdl");
     barObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
-    _node.position = _offset;
-    _node.scale = _size;
+    node_.position = offset_;
+    node_.scale = size_;
 
-    ProgressBar_Script@ _node_script = cast<ProgressBar_Script>(_node.CreateScriptObject(scriptFile, "ProgressBar_Script"));
-	  _node_script.set_parameters(this);
+    ProgressBar_Script@ node_script_ = cast<ProgressBar_Script>(node_.CreateScriptObject(scriptFile, "ProgressBar_Script"));
+	  node_script_.set_parameters(this);
   }
 
   float clamp(float v) {
-  		return Min(Max(v, 1.0f), _size.x);
+  		return Min(Max(v, 1.0f), size_.x);
 	}
 	void set_bounds(const float min, const float max){
-		_bounds = Vector2(min,max);
+		bounds_ = Vector2(min,max);
 	}
 	float rescale(const float v, const float l1, const float h1, const float l2, const float h2){
 		return l2 + (v - l1) * (h2 - l2) / (h1 - l1);
 	}
   void set_value(float v = 0.0f){
-		_value = Min(Max(v,0.0f),_bounds.y);
+		value_ = Min(Max(v,0.0f),bounds_.y);
 	}
 
   void temp(){
-    _node.scale = _node.scale*1.001f;
+    node_.scale = node_.scale*1.001f;
   }
 
   //-------------
@@ -79,23 +81,25 @@ class ProgressBar{
 
 class ProgressBar_Script:ScriptObject{
 
-  ProgressBar@ _parent;
+  ProgressBar@ parent_;
 
   void Update(float timeStep){
     DebugRenderer@ debug = node.scene.debugRenderer;
-    debug.AddBoundingBox( _parent.bbpoint(node.parent.position+_parent._offset,_parent._size) ,Color(1.0f, 1.0f, 0.0f) );
+    debug.AddBoundingBox( parent_.bbpoint(node.parent.position+parent_.offset_,parent_.size_) ,Color(1.0f, 1.0f, 0.0f) );
 
     //correct the position of the bar because of the parents rotation
     node.rotation = Quaternion(node.parent.rotation.Inverse());
-    node.position = node.rotation*_parent._offset;
+    node.position = node.rotation*parent_.offset_;
 
     //now update the bars size based on the value
-    _parent._node.scale = _parent._size*Vector3(_parent.rescale(_parent._value,_parent._min,_parent._max,0.0f,1.0f),1.0f,1.0f);
+    parent_.fill_node_.scale = Vector3(parent_.rescale(parent_.value_,parent_.min_,parent_.max_,0.0f,1.0f),1.0f,1.0f);
+    //parent_.node_.scale = parent_.size_*Vector3(parent_.rescale(parent_.value_,parent_.min_,parent_.max_,0.0f,1.0f),1.0f,1.0f);
     //use that scale to set the fill to the front of the bar
-    node.position = node.position+Vector3( (_parent._node.scale.x/2.0f)-(_parent._size.x/2.0f),0.0f,0.0f);
+    //node.position = node.position+Vector3( (parent_.node_.scale.x/2.0f)-(parent_.size_.x/2.0f),0.0f,0.0f);
+    parent_.fill_node_.position = Vector3( (parent_.fill_node_.scale.x-1)*(parent_.size_.x/2.0f),0.0f,0.0f);
   }
 
   void set_parameters(ProgressBar@ parent){
-    _parent = parent;
+    parent_ = parent;
   }
 }

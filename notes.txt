@@ -2,8 +2,9 @@ character/pawn class
 
 Main_2:
 ---------------------
-make ememy fire on character
+
 create an explosion class
+fix the bar scaling messing up the position----almost
 getting into some collision handling to start actually making a game
 
 Graph:
@@ -23,4 +24,7 @@ Consider a rigged character, with a basic ground to control and collide with
 Question:
 ---------------------
 
+time manipulation
+slow down time, this includes gravity i simulation
+need to figure out a way to disclude certain object from effecting some objects in sim
 Can you have a single rig used with multiple meshes, with proper weights, for example, clothes for characters?

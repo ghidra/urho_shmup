@@ -2,9 +2,9 @@
 
 class SceneManager{
 
-  Scene@ _scene;
-  Node@ _camera_node;
-  Viewport@ _viewport;
+  Scene@ scene_;
+  Node@ camera_node_;
+  Viewport@ viewport_;
 
   SceneManager(){
     Image@ icon = cache.GetResource("Image", "Textures/UrhoIcon.png");
@@ -33,21 +33,21 @@ class SceneManager{
     cursor.SetPosition(graphics.width / 2, graphics.height / 2);
 
     //create scene
-    _scene = Scene();
-    _scene.CreateComponent("Octree");// Create octree, use default volume (-1000, -1000, -1000) to (1000, 1000, 1000)
-    _scene.CreateComponent("DebugRenderer");// Also create a DebugRenderer component so that we can draw debug geometry
-    _scene.CreateComponent("PhysicsWorld");
+    scene_ = Scene();
+    scene_.CreateComponent("Octree");// Create octree, use default volume (-1000, -1000, -1000) to (1000, 1000, 1000)
+    scene_.CreateComponent("DebugRenderer");// Also create a DebugRenderer component so that we can draw debug geometry
+    scene_.CreateComponent("PhysicsWorld");
 
     //create camera
-    _camera_node = _scene.CreateChild("Camera");
-    Camera@ camera = _camera_node.CreateComponent("Camera");
+    camera_node_ = scene_.CreateChild("Camera");
+    Camera@ camera = camera_node_.CreateComponent("Camera");
     camera.farClip = 300.0f;
-    CameraLogic@ camera_logic = cast<CameraLogic>(_camera_node.CreateScriptObject(scriptFile,"CameraLogic"));
+    CameraLogic@ camera_logic = cast<CameraLogic>(camera_node_.CreateScriptObject(scriptFile,"CameraLogic"));
     camera_logic.set_parameters();
 
     //create viewport
-    _viewport = Viewport(_scene, _camera_node.GetComponent("Camera"));
-    renderer.viewports[0] = _viewport;
+    viewport_ = Viewport(scene_, camera_node_.GetComponent("Camera"));
+    renderer.viewports[0] = viewport_;
 
   }
 

@@ -3,24 +3,30 @@
 
 class EnemyBasic:Pawn{
 
-  RigidBody@ _body;
+  RigidBody@ body_;
 
-  ControllerEnemyBasic@ _controller;
+  ControllerEnemyBasic@ controller_;
 
   EnemyBasic(Scene@ scene){
 
     super(scene,"EnemyBasic");
 
-    _body = _node.CreateComponent("RigidBody");
-    _body.mass = 0.25f;
-    _body.friction = 0.75f;
-    _body.linearDamping = 0.6f;
-    _body.useGravity = false;
-    CollisionShape@ shape = _node.CreateComponent("CollisionShape");
+    body_ = node_.CreateComponent("RigidBody");
+    body_.mass = 0.25f;
+    body_.friction = 0.75f;
+    body_.linearDamping = 0.6f;
+    body_.useGravity = false;
+    CollisionShape@ shape = node_.CreateComponent("CollisionShape");
     shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
     //push_object();
 
-    _controller = ControllerEnemyBasic(_scene,_node);
+    controller_ = ControllerEnemyBasic(scene_,node_);
+  }
+
+  //override
+  void set_enemytarget(Node@ target){
+    enemytarget_ = target;
+    controller_.set_enemytarget(target);
   }
 
 }

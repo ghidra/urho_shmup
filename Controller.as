@@ -1,31 +1,31 @@
 class Controller{
 
-  Node@ _node;//the node we are controlling
-  Scene@ _scene;//the scene
-  Node@ _camera_node;//the camera node
+  Node@ node_;//the node we are controlling
+  Scene@ scene_;//the scene
+  Node@ camera_node_;//the camera node
 
-  float _speed = 20.0f;
-  float _sensitivity = 0.1f;
+  float speed_ = 20.0f;
+  float sensitivity_ = 0.1f;
 
   Controller(Scene@ scene, Node@ node){
-    _scene = scene;
-    _node = node;
+    scene_ = scene;
+    node_ = node;
   }
   void move(Vector3 direction, float timeStep){
-    if(_node is null)
+    if(node_ is null)
       return;
-    _node.Translate(direction*_speed*timeStep);
+    node_.Translate(direction*speed_*timeStep);
   }
   void move_mouse(IntVector2 mousemove){
-    if(_camera_node is null)
+    if(camera_node_ is null)
       return;
   }
   void left_mouse(){
-    if(_node is null)
+    if(node_ is null)
       return;
   }
   //----
   void set_cameranode(Node@ cameranode){
-    _camera_node = cameranode;
+    camera_node_ = cameranode;
   }
 }

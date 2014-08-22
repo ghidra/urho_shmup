@@ -1,46 +1,46 @@
 #include "Scripts/outlyer/Controller.as"
 #include "Scripts/outlyer/CameraLogic.as"
-#include "Scripts/outlyer/Projectile.as"
+#include "Scripts/outlyer/ProjectileExploder.as"
 
 class ControllerPlayer : Controller{
 
-  Graph@ _graph;
+  Graph@ graph_;
 
   ControllerPlayer(Scene@ scene, Node@ node){
     super(scene, node);
   }
   void move(Vector3 direction, float timeStep){
-    if(_node is null)
+    if(node_ is null)
       return;
-    RigidBody@ _body = _node.GetComponent("RigidBody");
-    _body.linearVelocity = _body.linearVelocity+(direction*_speed*timeStep);
+    RigidBody@ body_ = node_.GetComponent("RigidBody");
+    body_.linearVelocity = body_.linearVelocity+(direction*speed_*timeStep);
   }
   void move_mouse(IntVector2 mousemove){
-    if(_camera_node is null)
+    if(camera_node_ is null)
       return;
-    CameraLogic@ _camera_logic = cast<CameraLogic>(_camera_node.GetScriptObject("CameraLogic"));
-    if(_camera_logic is null)
+    CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
+    if(camera_logic_ is null)
       return;
-    _camera_logic.move_mouse(mousemove,_sensitivity);
+    camera_logic_.move_mouse(mousemove,sensitivity_);
   }
   void left_mouse(){
-    if(_node is null)
+    if(node_ is null)
       return;
     //here i get to use the location on the grid to determine where to fire my projectile
-    Vector3 direction = _graph._hit-_node.position;
+    Vector3 direction = graph_.hit_-node_.position;
     //direction.Normalize();
 
-    spawn_projectile(_node.position, direction);
+    spawn_projectile(node_.position, direction,graph_.hit_);
   }
 
   //------specific method
   void set_graph(Graph@ graph){
-    _graph = graph;
+    graph_ = graph;
   }
 
   //------spawn a projectile
-  void spawn_projectile(Vector3 pos, Vector3 dir){
+  void spawn_projectile(Vector3 pos, Vector3 dir, Vector3 hit){
     const float OBJECT_VELOCITY = 4.5f;
-    Projectile@ _projectile = Projectile(_scene,pos,dir,OBJECT_VELOCITY);
+    ProjectileExploder@ projectile_ = ProjectileExploder(scene_,pos,dir,hit,OBJECT_VELOCITY);
   }
 }

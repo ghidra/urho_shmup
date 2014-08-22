@@ -1,43 +1,43 @@
 class Graph{
 //class Graph{
 	//basic dimensions
-	private uint _xdiv;//we need this valus, cause in update we are looking for it to have something
-	private uint _ydiv;
-	private float _width;
-	private float _height;
-	private Vector3 _offset;
-	private float _xstep;//the distance between x divisions
-	private float _ystep;
+	private uint xdiv_;//we need this valus, cause in update we are looking for it to have something
+	private uint ydiv_;
+	private float width_;
+	private float height_;
+	private Vector3 offset_;
+	private float xstep_;//the distance between x divisions
+	private float ystep_;
 
-	Array<Vector3> _points;//points that make up the grid
-	Array<Array<uint>> _lines;//linear lines that make up the division, very basic outline
+	Array<Vector3> points_;//points that make up the grid
+	Array<Array<uint>> lines_;//linear lines that make up the division, very basic outline
 
-	Array<graph_center@> _centers;
-  Array<graph_corner@> _corners;
-  Array<graph_edge@> _edges;
+	Array<graph_center@> centers_;
+  Array<graph_corner@> corners_;
+  Array<graph_edge@> edges_;
 
 	//uint _geo_id;//the id of the geo component, that we are associated with
-	Scene@ _scene;
-	Node@ _node;
-	CustomGeometry@ _geo;
-	Node@ _camera_node;
+	Scene@ scene_;
+	Node@ node_;
+	CustomGeometry@ geo_;
+	Node@ camera_node_;
 
-	Vector3 _hit;
+	Vector3 hit_;
 
 	Graph( Scene@ scene, Node@ camera_node, uint xdiv=10,uint ydiv=10,float width=100.0f,float height=100.0f ){
 	//void SetParameters(uint xdiv,uint ydiv,float width,float height ){
-		_scene = scene;
-		_camera_node = camera_node;
+		scene_ = scene;
+		camera_node_ = camera_node;
 
-		_xdiv = xdiv;
-		_ydiv = ydiv;
-		_width = width;
-		_height = height;
-		_offset = Vector3(width/2.0f,0.0f,height/2.0f);
-		_xstep = width/(xdiv-1.0f);
-		_ystep = height/(ydiv-1.0f);
+		xdiv_ = xdiv;
+		ydiv_ = ydiv;
+		width_ = width;
+		height_ = height;
+		offset_ = Vector3(width/2.0f,0.0f,height/2.0f);
+		xstep_ = width/(xdiv-1.0f);
+		ystep_ = height/(ydiv-1.0f);
 
-		_node = _scene.CreateChild("Graph");//make the node at the scene level
+		node_ = scene_.CreateChild("Graph");//make the node at the scene level
 		//Graph_ScriptObject@ graph_scriptobject = cast<Graph>(_node.CreateScriptObject(scriptFile, "Graph_ScriptObject"));//make the scriptobject
 		//graph_scriptobject.set_parameters(_camera_node);
 
@@ -51,37 +51,37 @@ class Graph{
 		//build out the points
 		//0,1,2,3,4
 		//5,6,7,8,9
-		for (uint i = 0; i < _xdiv*_ydiv; i++){
-				float px = (i%((_xdiv)*1.0f)) * (_width/(_xdiv-1.0f));//x = modulo count by xdiv * width / xdiv-1
-				float py = Floor(i/(_xdiv*1.0f)) * (_height/(_ydiv-1.0f));//floor((y*1.0f)/(m_ydiv*1.0f)) * (m_height/(m_ydiv*1.0f));//y = floor(y/ ydiv) * (ydiv/height)
+		for (uint i = 0; i < xdiv_*ydiv_; i++){
+				float px = (i%((xdiv_)*1.0f)) * (width_/(xdiv_-1.0f));//x = modulo count by xdiv * width / xdiv-1
+				float py = Floor(i/(xdiv_*1.0f)) * (height_/(ydiv_-1.0f));//floor((y*1.0f)/(m_ydiv*1.0f)) * (m_height/(m_ydiv*1.0f));//y = floor(y/ ydiv) * (ydiv/height)
 				Vector3 p(px,0.0f,py);
-				_points.Push( p-_offset );
+				points_.Push( p-offset_ );
 				//_points.Push( multiply(p,m_isomatrix) );//go ahead and multiply into iso style here as well
 		}
 		//now i need to get the horizontal lines
-		for(uint i = 0; i < _ydiv; i++){
-			Array<uint> p = {(i*_xdiv),((i+1)*_xdiv)-1};
-			_lines.Push(p);
+		for(uint i = 0; i < ydiv_; i++){
+			Array<uint> p = {(i*xdiv_),((i+1)*xdiv_)-1};
+			lines_.Push(p);
 		}
 		//now i need to get the vertical lines to draw
-		for (uint i = 0; i < _xdiv; i++){
-			Array<uint> p = {i,((_xdiv*_ydiv)*1)-((_xdiv-i)*1)};
-			_lines.Push(p);
+		for (uint i = 0; i < xdiv_; i++){
+			Array<uint> p = {i,((xdiv_*ydiv_)*1)-((xdiv_-i)*1)};
+			lines_.Push(p);
 		}
 	}
 
 	void construct_graph(){
-		int nx = _xdiv-1;
-    int ny = _ydiv-1;
+		int nx = xdiv_-1;
+    int ny = ydiv_-1;
 
     int off = 0;
     int offb = 0;
 
-		int x = int(_xdiv);
-		int y = int(_ydiv);
+		int x = int(xdiv_);
+		int y = int(ydiv_);
 
     //each grid point is actually a corner
-    for( int i = 0; i < int(_points.length); i++ ){
+    for( int i = 0; i < int(points_.length); i++ ){
     	//determine which polys it touches
     	//determine which edges come off this corner
     	//determine which points are adjacent -- allow diagonals?
@@ -109,7 +109,7 @@ class Graph{
 
       bool border_test = ( i<x || i%x == x-1 || i%x == 0 || i>(x*y)-x );
 
-      _corners.Push( graph_corner( i,touches_ids,protrudes_ids,adjacent_ids,border_test ) );//add basic center
+      corners_.Push( graph_corner( i,touches_ids,protrudes_ids,adjacent_ids,border_test ) );//add basic center
     }
 
 		//centers
@@ -156,31 +156,31 @@ class Graph{
 
 
 			//get my center points for each square
-			Vector3 add = _points[p0] + _points[p1] + _points[p2] + _points[p3];//center
+			Vector3 add = points_[p0] + points_[p1] + points_[p2] + points_[p3];//center
       //determine if its a border
       bool border_test = ( i<nx || i%nx == nx-1 || i%nx == 0 || i>(nx*ny)-nx );
 
 			//centers.insertLast( graph_center( centers.length(),add/4.0f, corn ) );//add basic center
-			_centers.Push( graph_center( _centers.length,add/4.0f, corner_ids, neighbor_ids, border_ids,border_test ) );//add basic center
+			centers_.Push( graph_center( centers_.length,add/4.0f, corner_ids, neighbor_ids, border_ids,border_test ) );//add basic center
 
 			//edges
       //test if they are an edge
       bool vtop_border_test = ( p0<x );
       bool vleft_border_test = ( p0%x == 0 );
 			//i need to send more data to the edgs, centers and edges next and before
-			_edges.Push( graph_edge(_edges.length,v0,d0,vtop_border_test) );
-			_edges.Push( graph_edge(_edges.length,v1,d1,vleft_border_test) );
+			edges_.Push( graph_edge(edges_.length,v0,d0,vtop_border_test) );
+			edges_.Push( graph_edge(edges_.length,v1,d1,vleft_border_test) );
 			//this does not get the edges on the far right
 			//and very bottom
 		}
 	}
 	//-----------------
 	void construct_geo(){
-		_geo = _node.CreateComponent("CustomGeometry");
+		geo_ = node_.CreateComponent("CustomGeometry");
 		//now build the actual geo for ray casting against later
-		_geo.BeginGeometry(0,TRIANGLE_LIST);
-		for(uint i = 0; i < _centers.length; i++ ){
-			Array<int> corners = _centers[i]._corner_ids;
+		geo_.BeginGeometry(0,TRIANGLE_LIST);
+		for(uint i = 0; i < centers_.length; i++ ){
+			Array<int> corners = centers_[i].corner_ids_;
 			//first triangle
 			/*_geo.DefineVertex( _points[corners[0]] );
 			//_geo.DefineTexCoord();
@@ -196,16 +196,16 @@ class Graph{
 			_geo.DefineVertex( _points[corners[3]] );*/
 			//_geo.DefineTexCoord();
 
-			_geo.DefineVertex( _points[corners[3]] );
-			_geo.DefineVertex( _points[corners[1]] );
-			_geo.DefineVertex( _points[corners[0]] );
+			geo_.DefineVertex( points_[corners[3]] );
+			geo_.DefineVertex( points_[corners[1]] );
+			geo_.DefineVertex( points_[corners[0]] );
 			//second triangle
-			_geo.DefineVertex( _points[corners[3]] );
-			_geo.DefineVertex( _points[corners[2]] );
-			_geo.DefineVertex( _points[corners[1]] );
+			geo_.DefineVertex( points_[corners[3]] );
+			geo_.DefineVertex( points_[corners[2]] );
+			geo_.DefineVertex( points_[corners[1]] );
 		}
-		_geo.Commit();
-		_geo.material = cache.GetResource("Material", "Materials/Transparent.xml");
+		geo_.Commit();
+		geo_.material = cache.GetResource("Material", "Materials/Transparent.xml");
 
 
 	}
@@ -214,11 +214,11 @@ class Graph{
 
 	void update(StringHash eventType, VariantMap& eventData){
 		float timeStep = eventData["TimeStep"].GetFloat();
-		DebugRenderer@ debug = _scene.debugRenderer;
+		DebugRenderer@ debug = scene_.debugRenderer;
 
 		//for raycasting
 		//Node@ cameraNode = node.scene.GetNode(_camera_id);
-		Camera@ camera = _camera_node.GetComponent("Camera");
+		Camera@ camera = camera_node_.GetComponent("Camera");
 		//Camera@ camera = node.scene.GetComponent("Camera");
 		IntVector2 pos = ui.cursorPosition;
 
@@ -237,16 +237,16 @@ class Graph{
 		}*/
 
 		//draw corners as boundinboxes
-		for(uint i =0; i < _points.length; ++i){
-			debug.AddBoundingBox(bbpoint(_node.transform*_points[i]),Color(1.0f, 1.0f, 1.0f));
+		for(uint i =0; i < points_.length; ++i){
+			debug.AddBoundingBox(bbpoint(node_.transform*points_[i]),Color(1.0f, 1.0f, 1.0f));
 		}
 
 		//raycast
 		Ray cameraRay = camera.GetScreenRay(float(pos.x) / graphics.width, float(pos.y) / graphics.height );
-		RayQueryResult result = _scene.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
+		RayQueryResult result = scene_.octree.RaycastSingle(cameraRay, RAY_TRIANGLE, 255.0f, DRAWABLE_GEOMETRY);
 		if (result.drawable !is null){
-			_hit = result.position;
-			debug.AddBoundingBox( bbpoint(_hit) ,Color(1.0f, 0.0f, 0.0f));
+			hit_ = result.position;
+			debug.AddBoundingBox( bbpoint(hit_) ,Color(1.0f, 0.0f, 0.0f));
 			//cell = ((floor(max(m_isomousepos.x,0.0f)/m_xstep)+1)+( floor(max(m_isomousepos.y,0.0f)/m_ystep)*(m_xdiv-1) ) )-1;
 		}
 
@@ -270,8 +270,8 @@ class Graph{
 
 
 class graph_point_data{
-	int _index;
-	bool _is_border; // at the edge of the map
+	int index_;
+	bool is_border_; // at the edge of the map
 	/*bool water; // lake or ocean
   bool ocean; // ocean
   bool coast; // land polygon touching an ocean
@@ -281,33 +281,33 @@ class graph_point_data{
 
 class graph_center : graph_point_data{
    // string biome; // biome type (see article)
-  Vector3 _position;
+  Vector3 position_;
 
-  Array<int> _corner_ids;//i need to just get the ids first, before connecting it to the objects of these objects
-  Array<int> _neighbor_ids;
-  Array<int> _border_ids;
+  Array<int> corner_ids_;//i need to just get the ids first, before connecting it to the objects of these objects
+  Array<int> neighbor_ids_;
+  Array<int> border_ids_;
 
   //Array<graph_corner@> corners;
   //Array<graph_center@> neighbors;
   //Array<graph_edge@> borders;
 
   graph_center(const int id, const Vector3 p, const Array<int> c, const Array<int> n, const Array<int> b, const bool bo = false){
-  	_index = id;
-    _position = p;
+  	index_ = id;
+    position_ = p;
 
-    _corner_ids = c;
-    _neighbor_ids = n;
-    _border_ids = b;
+    corner_ids_ = c;
+    neighbor_ids_ = n;
+    border_ids_ = b;
 
-    _is_border=bo;
+    is_border_=bo;
   }
     //void couple(){}
 }
 
 class graph_corner : graph_point_data{
-	Array<int> _touches_ids;//i need to just get the ids first, before connecting it to the objects of these objects
-  Array<int> _protrudes_ids;
-  Array<int> _adjacent_ids;
+	Array<int> touches_ids_;//i need to just get the ids first, before connecting it to the objects of these objects
+  Array<int> protrudes_ids_;
+  Array<int> adjacent_ids_;
 
   //Array<graph_center@> touches;
   //Array<graph_edge@> protrudes;
@@ -317,25 +317,25 @@ class graph_corner : graph_point_data{
     //graph_corner@ downslope; // pointer to adjacent corner most downhill
 
   graph_corner(const int id, const Array<int> t, const Array<int> p, const Array<int> a, const bool bo=false){
-    	_index = id;
+    	index_ = id;
 
-      _touches_ids = t;
-      _protrudes_ids = p;
-      _adjacent_ids = a;
+      touches_ids_ = t;
+      protrudes_ids_ = p;
+      adjacent_ids_ = a;
 
-      _is_border=bo;
+      is_border_=bo;
   }
 }
 
 class graph_edge : graph_point_data{
-	Array<int> _voronoi_ids;
-	Array<int> _delaunay_ids;
+	Array<int> voronoi_ids_;
+	Array<int> delaunay_ids_;
 
-	graph_corner@ _v0; // Voronoi edge
-  graph_corner@ _v1;
-  graph_center@ _d0; // Delaunay edge
-  graph_center@ _d1;
-  Vector3 midpoint; // halfway between v0,v1
+	graph_corner@ v0_; // Voronoi edge
+  graph_corner@ v1_;
+  graph_center@ d0_; // Delaunay edge
+  graph_center@ d1_;
+  //Vector3 midpoint_; // halfway between v0,v1
 
   //Array<graph_center@> joins;//polys on either side of the voroni edge
   //Array<graph_edge@> continues;//edges to either side // allow perpendicular?  // also know as loop
@@ -343,11 +343,11 @@ class graph_edge : graph_point_data{
   //int river; // volume of water, or 0
 
   graph_edge(const int id, const Array<int> v, const Array<int> d, const bool bo=false){
-  	_index = id;
-    _voronoi_ids = v;
-    _delaunay_ids = d;
+  	index_ = id;
+    voronoi_ids_ = v;
+    delaunay_ids_ = d;
 
-    _is_border=bo;
+    is_border_=bo;
   }
 }
 

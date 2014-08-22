@@ -4,7 +4,7 @@
 class InputPlayer : InputBasics{
 //class InputPlayer{
 
-  Controller@ _controller;
+  Controller@ controller_;
 
   InputPlayer(uint i){
     super(i);
@@ -44,22 +44,22 @@ class InputPlayer : InputBasics{
 
   }
   void set_controller(Controller@ controller){
-    _controller = controller;
+    controller_ = controller;
   }
   //---------what to do with inputs, send to the controller
   void move( Vector3 direction, float timeStep){
-    if(_controller is null)
+    if(controller_ is null)
       return;
-    _controller.move( direction, timeStep);
+    controller_.move( direction, timeStep);
   }
   void move_mouse(IntVector2 mousemove){
-    if(_controller is null)
+    if(controller_ is null)
       return;
-    _controller.move_mouse(mousemove);
+    controller_.move_mouse(mousemove);
   }
   void left_mouse(){
-    if(_controller is null)
+    if(controller_ is null)
       return;
-    _controller.left_mouse();
+    controller_.left_mouse();
   }
 }
