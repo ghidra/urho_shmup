@@ -9,8 +9,7 @@
 Scene@ scene_;
 Node@ camera_node_;
 InputPlayer@ input_player_;
-
-//Character@ _character;
+Character@ character_;//not even sure i need any of these, but there are here for now
 
 //Graph@ _graph;
 
@@ -30,10 +29,7 @@ void CreateScene(){
   graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
-  Character@ character_ = Character(scene_);//create the character at the scene level
-  character_.controller_.set_graph(graph_);//give the graph to the controllerplayer
-  character_.controller_.set_cameranode(camera_node_);
-  //_character.set_position(Vector3(0.0f,3.0f,0.0f));
+  character_ = Character(scene_);//create the character at the scene level
 
   //my first enemy
   EnemyBasic@ enemy_ = EnemyBasic(scene_);
@@ -42,9 +38,11 @@ void CreateScene(){
 
   CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
   camera_logic_.set_target(character_.node_);
-  input_player_.set_controller(character_.controller_);//the input_player needs to know what controller to send commands to
+  //input_player_.set_controller(character_.controller_);//the input_player needs to know what controller to send commands to
 
-
+  input_player_.set_controlnode(character_.node_);
+  input_player_.set_graph(graph_);
+  input_player_.set_cameranode(camera_node_);
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");

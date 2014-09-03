@@ -1,10 +1,14 @@
 #include "Scripts/outlyer/InputBasics.as"
-#include "Scripts/outlyer/Controller.as"
+#include "Scripts/outlyer/Pawn.as"
+#include "Scripts/outlyer/Graph.as"
 
 class InputPlayer : InputBasics{
-//class InputPlayer{
 
-  Controller@ controller_;
+  Node@ node_;
+  Graph@ graph_;
+  Node@ camera_node_;
+
+  float mouse_sensitivity_ = 0.1f;
 
   InputPlayer(uint i){
     super(i);
@@ -43,23 +47,44 @@ class InputPlayer : InputBasics{
       move(direction.Normalized(),timeStep);
 
   }
-  void set_controller(Controller@ controller){
-    controller_ = controller;
+  //------------------------
+  void set_controlnode(Node@ control_node){
+    Pawn@ pawn = cast<Pawn>(control_node.scriptObject);
+    if (pawn !is null)
+      node_ = control_node;
+  }
+  void set_graph(Graph@ graph){
+    graph_ = graph;
+  }
+  void set_cameranode(Node@ cameranode){
+    camera_node_ = cameranode;
   }
   //---------what to do with inputs, send to the controller
   void move( Vector3 direction, float timeStep){
-    if(controller_ is null)
-      return;
-    controller_.move( direction, timeStep);
+    if(node_ !is null){
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
+      pawn.move( direction, timeStep);
+    }
   }
   void move_mouse(IntVector2 mousemove){
-    if(controller_ is null)
+    if(camera_node_ is null)
       return;
-    controller_.move_mouse(mousemove);
+    CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
+    if(camera_logic_ is null)
+      return;
+    camera_logic_.move_mouse(mousemove,mouse_sensitivity_);
   }
   void left_mouse(){
-    if(controller_ is null)
-      return;
-    controller_.left_mouse();
+    if(node_ !is null){
+
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
+
+      Vector3 target_position = Vector3(0.0f,1.0f,0.0f);
+
+      if(graph_ !is null)
+        target_position = graph_.hit_;
+
+      pawn.fire_projectile(target_position);
+    }
   }
 }

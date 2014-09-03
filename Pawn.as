@@ -1,26 +1,38 @@
-class Pawn{
-    Node@ node_;
-    Scene@ scene_;
-    Node@ enemytarget_;//this is a target that we might want to aim at
-    //String _node_name;
-    //Controller@ _controller;
-    Pawn(Scene@ scene,String node_name ){
-      scene_ = scene;
+//this is the new pawn, that extends actor that extends the script object. meant to be used by the character and enemy classes
+//and anything that needs to be moved i guess, maybe even projectiles later
+//this class should house the mean to move an actor, and remove the code from the controler classes
+#include "Scripts/outlyer/Actor.as"
+class Pawn:Actor{
 
-      node_ = scene_.CreateChild(node_name);
-      //_node_name = node_name;
+  //String _node_name;
+  //Controller@ _controller;
+  Node@ camera_node_;//the camera node
 
-      StaticModel@ coneObject = node_.CreateComponent("StaticModel");
-      coneObject.model = cache.GetResource("Model", "Models/Cone.mdl");
-      coneObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
-    }
+  //setters
+  /*void set_position(Vector3 pos){
+    node_.position = pos;
+  }
 
-    //setters
-    void set_position(Vector3 pos){
-      node_.position = pos;
-    }
+  void set_enemytarget(Node@ target){
+    enemytarget_ = target;
+  }*/
 
-    void set_enemytarget(Node@ target){
-      enemytarget_ = target;
-    }
+  //-----
+
+  void move(Vector3 direction, float timeStep){
+    RigidBody@ body_ = node.GetComponent("RigidBody");
+    body_.linearVelocity = body_.linearVelocity+(direction*speed_*timeStep);
+  }
+  void fire_projectile(Vector3 target_position){
+    //here i get to use the location on the grid to determine where to fire my projectile
+    Vector3 direction = target_position-node.position;
+    //direction.Normalize();
+    spawn_projectile(direction,target_position);
+  }
+
+  void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
+    return;
+    //const float OBJECT_VELOCITY = 4.5f;
+    //Projectile@ projectile_ = Projectile(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+  }
 }

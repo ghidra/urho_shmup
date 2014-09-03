@@ -1,3 +1,6 @@
+//OBSOLETE DELETE THIS CLASS
+
+
 #include "Scripts/outlyer/Controller.as"
 #include "Scripts/outlyer/CameraLogic.as"
 #include "Scripts/outlyer/ProjectileExploder.as"
@@ -41,6 +44,6 @@ class ControllerPlayer : Controller{
   //------spawn a projectile
   void spawn_projectile(Vector3 pos, Vector3 dir, Vector3 hit){
     const float OBJECT_VELOCITY = 4.5f;
-    ProjectileExploder@ projectile_ = ProjectileExploder(scene_,pos,dir,hit,OBJECT_VELOCITY);
+    ProjectileExploder@ projectile_ = ProjectileExploder(scene_,pos,dir,OBJECT_VELOCITY,hit);
   }
 }

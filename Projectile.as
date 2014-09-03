@@ -1,11 +1,14 @@
-class Projectile{
-  Scene@ scene_;
-  Node@ node_;
-  RigidBody@ body_;
+#include "Scripts/outlyer/Actor.as"
+#include "Scripts/outlyer/Explosion.as"
 
-  Projectile(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 4.5f){
-    scene_ = scene;
-    node_ = scene_.CreateChild("Projectile");
+class Projectile{
+
+  //Vector3 hit_;//this is if we want this projectile to aim at a specific position
+
+  Projectile(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 4.5f, Vector3 hit = Vector3(0.0f,0.0f,0.0f) ){
+    //super(scene,"Projectile");
+    //scene_ = scene;
+    Node@ node_ = scene.CreateChild("Projectile");
     node_.position = pos+(dir.Normalized()*1.0f);
     //_projectile_node.rotation = cameraNode.rotation;
     node_.SetScale(0.25f);
@@ -15,56 +18,80 @@ class Projectile{
     object_.castShadows = true;
 
     // Create physics components, use a smaller mass also
-    body_ = node_.CreateComponent("RigidBody");
+    RigidBody@ body_ = node_.CreateComponent("RigidBody");
     body_.mass = 0.25f;
     body_.friction = 0.75f;
     CollisionShape@ shape_ = node_.CreateComponent("CollisionShape");
     shape_.SetBox(Vector3(1.0f, 1.0f, 1.0f));
-
-
 
     // Set initial velocity for the RigidBody based on camera forward vector. Add also a slight up component
     // to overcome gravity better
     body_.linearVelocity = dir+Vector3(0.0f,1.0f,0.0f) * speed;
 
     //attach scriptObject
-    attach_script();
+    attach_script(node_,hit);//send it the node and a hit position
   }
 
-  void remove(){
-    node_.RemoveAllComponents();
-    node_.RemoveAllChildren();
-    node_.Remove();
+  void attach_script(Node@ node, Vector3 hit = Vector3(0.0f,0.f,0.0f)){
+    Projectile_Script@ node_script_ = cast<Projectile_Script>(node.CreateScriptObject(scriptFile, "Projectile_Script"));
+    node_script_.set_hit(hit);
   }
-
-  void attach_script(){
-    Projectile_Script@ node_script_ = cast<Projectile_Script>(node_.CreateScriptObject(scriptFile, "Projectile_Script"));
-    node_script_.set_parameters(this);
-  }
-  /*BoundingBox bbpoint(const Vector3 p,const Vector3 size = Vector3(0.1f,0.1f,0.1f)){
-    Vector3 size_pos = size/2.0f;
-    return BoundingBox(p - size_pos, p + size_pos);
-  }*/
 
 }
 
-class Projectile_Script:ScriptObject{
+class Projectile_Script:Actor{
 
-  Projectile@ parent_;
+  Vector3 hit_;//this is if we want this projectile to aim at a specific position
+
+  void Start(){
+      SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
+  }
 
   void Update(float timeStep){
-    //DebugRenderer@ debug = node.scene.debugRenderer;
-    //debug.AddBoundingBox( parent_.bbpoint(Vector3(1.0f,1.0f,1.0f),Vector3(1.0f,1.0f,1.0f)) ,Color(0.0f, 0.0f, 1.0f) );
-
     if(node.position.y <= -1)
-      parent_.remove();
-      //node.Remove();
-    //}
-    //node.position = node.position+Vector3(3.0f,3.0f,3.0f);//.position = Vector3(0.0f,0.0f,0.0f);
-    //_parent._body.useGravity = false;
-    //node.parent.position=node.parent.position+Vector3(2.0f,0.0f,0.0f);
+      node.Remove();
+      //remove_all();//i have to delete all the other components for it to remove properly
+
   }
-  void set_parameters(Projectile@ parent){
-    parent_ = parent;
+  //collision
+  void ObjectCollision(Actor@ otherObject, VariantMap& eventData){
+    RigidBody@ body_ = node.GetComponent("RigidBody");
+    /*if (hitDamage > 0){
+      RigidBody@ body = node.GetComponent("RigidBody");
+      if ((body.linearVelocity.length >= snowballMinHitSpeed))
+      {
+          if (side != otherObject.side)
+          {
+              otherObject.Damage(this, hitDamage);
+              // Create a temporary node for the hit sound
+              SpawnSound(node.position, "Sounds/PlayerFistHit.wav", 0.2);
+          }
+
+          hitDamage = 0;
+      }
+    }
+    if (duration > snowballObjectHitDuration)
+        duration = snowballObjectHitDuration;*/
+    spawn_explosion(node.position,body_.linearVelocity);
+    node.Remove();
+    //remove_all();
   }
+
+
+  /*void remove_all(){
+    node.RemoveAllComponents();
+    node.RemoveAllChildren();
+    node.Remove();
+  }*/
+
+  void set_hit(Vector3 hit){//this is a specific location that we are aiming for
+    hit_ = hit;
+  }
+
+  void spawn_explosion(Vector3 pos, Vector3 mag){//position and magnitude, which we can derive direction and speed from
+    float speed = mag.length;
+    Vector3 dir = mag.Normalized();
+    Explosion@ explosion_ = Explosion(node.scene,pos,dir,speed);
+  }
+
 }

@@ -1,11 +1,9 @@
 class Explosion{
 
-  Scene@ scene_;
   Node@ node_;
 
-	Explosion(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 4.5f){
-    scene_ = scene;
-    node_ = scene_.CreateChild("Explosion");
+	Explosion(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 0.0f){
+    node_ = scene.CreateChild("Explosion");
     node_.position = pos;
 
     StaticModel@ object_ = node_.CreateComponent("StaticModel");
