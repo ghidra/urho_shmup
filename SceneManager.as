@@ -6,7 +6,7 @@ class SceneManager{
   Node@ camera_node_;
   Viewport@ viewport_;
 
-  SceneManager(){
+  SceneManager(uint i){
     Image@ icon = cache.GetResource("Image", "Textures/UrhoIcon.png");
     graphics.windowIcon = icon;
     graphics.windowTitle = "outlyer";
@@ -49,6 +49,11 @@ class SceneManager{
     viewport_ = Viewport(scene_, camera_node_.GetComponent("Camera"));
     renderer.viewports[0] = viewport_;
 
+  }
+
+  void set_camera_target(Node@ node){
+    CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
+    camera_logic_.set_target(node);
   }
 
 }

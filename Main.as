@@ -3,9 +3,11 @@
 #include "Scripts/outlyer/Graph.as"
 #include "Scripts/outlyer/Character.as"
 #include "Scripts/outlyer/CameraLogic.as"
+#include "Scripts/outlyer/Perlin.as"
 
 #include "Scripts/outlyer/EnemyBasic.as"
 
+SceneManager@ scene_manager_;
 Scene@ scene_;
 Node@ camera_node_;
 InputPlayer@ input_player_;
@@ -14,7 +16,7 @@ Character@ character_;//not even sure i need any of these, but there are here fo
 //Graph@ _graph;
 
 void Start(){
-  SceneManager@ scene_manager_ = SceneManager();
+  scene_manager_ = SceneManager(1);
   scene_ = scene_manager_.scene_;
   camera_node_ = scene_manager_.camera_node_;
   input_player_ = InputPlayer(1);//need some kind of value in here to make it real, no idea why
@@ -30,19 +32,15 @@ void CreateScene(){
   graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
   character_ = Character(scene_);//create the character at the scene level
+  scene_manager_.set_camera_target(character_.node_);
+  input_player_.set_controlnode(character_.node_);
+  input_player_.set_graph(graph_);
+  input_player_.set_cameranode(camera_node_);
 
   //my first enemy
   EnemyBasic@ enemy_ = EnemyBasic(scene_);
   enemy_.set_position(Vector3(-10.0f,0.0f,0.0f));
   enemy_.set_enemytarget(character_.node_);
-
-  CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
-  camera_logic_.set_target(character_.node_);
-  //input_player_.set_controller(character_.controller_);//the input_player needs to know what controller to send commands to
-
-  input_player_.set_controlnode(character_.node_);
-  input_player_.set_graph(graph_);
-  input_player_.set_cameranode(camera_node_);
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");

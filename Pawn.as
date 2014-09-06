@@ -4,18 +4,16 @@
 #include "Scripts/outlyer/Actor.as"
 class Pawn:Actor{
 
-  //String _node_name;
-  //Controller@ _controller;
-  Node@ camera_node_;//the camera node
+  Node@ enemytarget_;
 
   //setters
-  /*void set_position(Vector3 pos){
-    node_.position = pos;
+  void set_position(Vector3 pos){
+    node.position = pos;
   }
 
   void set_enemytarget(Node@ target){
     enemytarget_ = target;
-  }*/
+  }
 
   //-----
 
@@ -31,8 +29,8 @@ class Pawn:Actor{
   }
 
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
-    return;
-    //const float OBJECT_VELOCITY = 4.5f;
-    //Projectile@ projectile_ = Projectile(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+    const float OBJECT_VELOCITY = 4.5f;
+    Projectile@ projectile_ = Projectile(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
   }
+
 }

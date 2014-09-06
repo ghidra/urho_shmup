@@ -1,7 +1,7 @@
 //class Character : ScriptObject{
 //#include "Scripts/outlyer/InputPlayer.as"
 #include "Scripts/outlyer/Pawn.as"
-#include "Scripts/outlyer/ControllerPlayer.as"
+//#include "Scripts/outlyer/ControllerPlayer.as"
 #include "Scripts/outlyer/Actor.as"
 #include "Scripts/outlyer/ProjectileExploder.as"
 
