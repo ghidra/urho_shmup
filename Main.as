@@ -19,7 +19,7 @@ void Start(){
   scene_manager_ = SceneManager(1);
   scene_ = scene_manager_.scene_;
   camera_node_ = scene_manager_.camera_node_;
-  input_player_ = InputPlayer(1);//need some kind of value in here to make it real, no idea why
+  input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
 
   CreateScene();
 

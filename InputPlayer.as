@@ -10,7 +10,7 @@ class InputPlayer : InputBasics{
 
   float mouse_sensitivity_ = 0.1f;
 
-  InputPlayer(uint i){
+  InputPlayer(uint i = 0){
     super(i);
     SubscribeToEvent("Update", "update");
   }

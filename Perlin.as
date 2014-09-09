@@ -27,18 +27,21 @@ class PerlinBase{
 	float _F3 = 1.0f / 3.0f;
 	float _G3 = 1.0f / 6.0f;
 
-	PerlinBase(){}
-
-	void init(){
-		double_permutation();
-		randomize();
+	PerlinBase(uint i = 0){
+		//double_permutation();
+		randomize(i);
 	}
+
+	/*void init(){
+
+	}*/
 
 	void double_permutation(){
 		int iter = permutation.length;
 		for(int t=0; t<iter;t++){
 			permutation.Push(permutation[t]);
 		}
+		//period = permutation.length-1;
 	}
 
 	void randomize(const int p = 0){
@@ -63,7 +66,7 @@ class PerlinBase{
 
 class Perlin: PerlinBase{
 
-	Perlin(){}
+	Perlin(uint i = 0){super(i);}
 
 	float noise2(const float x, const float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f){
 		/*2D Perlin simplex noise.
@@ -97,8 +100,9 @@ class Perlin: PerlinBase{
 
 		//# Determine hashed gradient indices of the three simplex corners
 		Array<int> perm = permutation;
-		int ii = int(i) % period;//int(Abs(i) % period);
-		int jj = int(j) % period;//int(Abs(j) % period);
+		int ii = ((int(i) % period)+period)% period;//int(Abs(i) % period);
+		int jj = ((int(j) % period)+period)% period;//int(Abs(j) % period);
+		//Print( "str"+(ii) );
 		int gi0 = perm[ii + perm[jj]] % 12;
 		int gi1 = perm[ii + int(i1) + perm[jj + int(j1)]] % 12;
 		int gi2 = perm[ii + 1 + perm[jj + 1]] % 12;

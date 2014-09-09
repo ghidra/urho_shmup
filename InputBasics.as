@@ -1,6 +1,6 @@
 class InputBasics{
 
-  InputBasics(uint i){
+  InputBasics(uint i = 0){
     SubscribeToEvent("KeyDown", "HandleKeyDown");
   }
 
