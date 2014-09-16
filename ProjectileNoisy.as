@@ -34,13 +34,15 @@ class ProjectileNoisy_Script:Projectile_Script{
 
     if(node !is null){//if we havent removed the node
 
-      float no = noise_.noise2(node.position.x,node.position.y,10.0f,10.0f);
-      Vector3 d2 = Vector3(no,no,0.0f);
+      float nx = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f);
+      float ny = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f,10.0f,33.0f);
+      Vector3 d2 = Vector3(nx,ny,0.0f);
       Vector3 d1 = body_.linearVelocity;
       float ds = d1.length;
 
-      Vector3 newd = d1.Normalized()+d2.Normalized();
-      newd = newd.Normalized()*ds;
+      //Vector3 newd = d1.Normalized()+d2.Normalized();
+      Vector3 newd = d1+d2;
+      //newd = newd.Normalized()*ds;
 
       body_.linearVelocity = newd;
 

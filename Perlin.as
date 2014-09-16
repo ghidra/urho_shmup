@@ -27,9 +27,9 @@ class PerlinBase{
 	float _F3 = 1.0f / 3.0f;
 	float _G3 = 1.0f / 6.0f;
 
-	PerlinBase(uint i = 0){
-		//double_permutation();
-		randomize(i);
+	PerlinBase(uint i = 1){
+		double_permutation();
+		//randomize(i);
 	}
 
 	/*void init(){
@@ -66,7 +66,7 @@ class PerlinBase{
 
 class Perlin: PerlinBase{
 
-	Perlin(uint i = 0){super(i);}
+	Perlin(uint i = 1){super(i);}
 
 	float noise2(const float x, const float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f){
 		/*2D Perlin simplex noise.
@@ -102,25 +102,26 @@ class Perlin: PerlinBase{
 		Array<int> perm = permutation;
 		int ii = ((int(i) % period)+period)% period;//int(Abs(i) % period);
 		int jj = ((int(j) % period)+period)% period;//int(Abs(j) % period);
-		//Print( "str"+(ii) );
-		int gi0 = perm[ii + perm[jj]] % 12;
-		int gi1 = perm[ii + int(i1) + perm[jj + int(j1)]] % 12;
-		int gi2 = perm[ii + 1 + perm[jj + 1]] % 12;
+		//Print( "str ii less than 0:"+(ii) );
+		//Print( "str jj less than 0:"+(jj) );
+		int gi0 = ((perm[ii + perm[jj]] % 12)+12)%12;
+		int gi1 = ((perm[ii + int(i1) + perm[jj + int(j1)]] % 12)+12)%12;
+		int gi2 = ((perm[ii + 1 + perm[jj + 1]] % 12)+12)%12;
 
 		// Calculate the contribution from the three corners
-		float tt = 0.5f - x0*x0 - y0*y0;
+		float tt = 0.5f - Pow(x0,2) - Pow(y0,2);
 		float noise = 0.0f;
 		Vector3 g = _GRAD3[0];
 		if (tt > 0){
 			g = _GRAD3[gi0];
 			noise = Pow(tt,4) * (g.x * x0 + g.y * y0);
 		}
-		tt = 0.5f - x1*x1 - y1*y1;
+		tt = 0.5f - Pow(x1,2) - Pow(y1,2);
 		if (tt > 0){
 			g = _GRAD3[gi1];
 			noise += Pow(tt,4) * (g.x * x1 + g.y * y1);
 		}
-		tt = 0.5f - x2*x2 - y2*y2;
+		tt = 0.5f - Pow(x2,2) - Pow(y2,2);
 		if (tt > 0){
 			g = _GRAD3[gi2];
 			noise += Pow(tt,4) * (g.x * x2 + g.y * y2);
@@ -195,13 +196,13 @@ class Perlin: PerlinBase{
 
 		//# Calculate the hashed gradient indices of the four simplex corners
 		Array<int> perm = permutation;
-		int ii = int(i) % period;
-		int jj = int(j) % period;
-		int kk = int(k) % period;
-		int gi0 = perm[ii + perm[jj + perm[kk]]] % 12;
-		int gi1 = perm[ii + int(i1) + perm[jj + int(j1) + perm[kk + int(k1)]]] % 12;
-		int gi2 = perm[ii + int(i2) + perm[jj + int(j2) + perm[kk + int(k2)]]] % 12;
-		int gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12;
+		int ii = ((int(i) % period)+period)% period;
+		int jj = ((int(j) % period)+period)% period;
+		int kk = ((int(k) % period)+period)% period;
+		int gi0 = ((perm[ii + perm[jj + perm[kk]]] % 12)+12)%12;
+		int gi1 = ((perm[ii + int(i1) + perm[jj + int(j1) + perm[kk + int(k1)]]] % 12)+12)%12;
+		int gi2 = ((perm[ii + int(i2) + perm[jj + int(j2) + perm[kk + int(k2)]]] % 12)+12)%12;
+		int gi3 = ((perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12)+12)%12;
 
 		//# Calculate the contribution from the four corners
 		float noise = 0.0f;
