@@ -23,7 +23,7 @@ class Explosion{
 }
 
 class Explosion_Script:Actor{
-  float radius;
+  float radius_;
   void Update(float timeStep){
     radius_ = 1.0f;
   }

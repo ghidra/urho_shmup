@@ -15,16 +15,11 @@ class ProjectileExploder:Projectile{
 
 class ProjectileExploder_Script:Projectile_Script{
 
-  void Update(float timeStep){
-    RigidBody@ body_ = node.GetComponent("RigidBody");
-
-    if(node.position.y <= -3)
-      node.Remove();
-      //return;//trying to do error correction
-      //remove_all();
+  void FixedUpdate(float timeStep){
+    Projectile_Script::FixedUpdate(timeStep);
 
     if(node !is null){//if we havent removed the node
-
+      RigidBody@ body_ = node.GetComponent("RigidBody");
       Vector3 distance = node.position-hit_;
       if(distance.length<0.2f){
         spawn_explosion(node.position,body_.linearVelocity);

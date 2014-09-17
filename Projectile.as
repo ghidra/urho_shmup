@@ -47,20 +47,22 @@ class Projectile_Script:Actor{
       SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
   }
 
-  void Update(float timeStep){
-    //Actor.FixedUpdate(timeStep);
-    if(node.position.y <= -1)
+  void FixedUpdate(float timeStep){
+  //  Actor::FixedUpdate(timeStep);
+    if(node !is null and node.position.y <= -1)
       node.Remove();
       //remove_all();//i have to delete all the other components for it to remove properly
     ///here now we are trying to get some of the explosion objects to collide against
-    RigidBody@ body_ = node.GetComponent("RigidBody");
-    Array<Node@> nodes = node.scene.GetChildrenWithScript("Explosion_Script", true);
-    for (uint i = 0; i < nodes.length; ++i){
-      Vector3 distance_vector = node.position-nodes[i].position;
-      Explosion_Script@ explosion_script_ = cast<Explosion_Script>(nodes[i].scriptObject);
-      if(distance_vector.length < explosion_script_.radius_){
-        spawn_explosion(node.position,body_.linearVelocity);
-        node.Remove();
+    if(node !is null){
+      RigidBody@ body_ = node.GetComponent("RigidBody");
+      Array<Node@> nodes = node.scene.GetChildrenWithScript("Explosion_Script", true);
+      for (uint i = 0; i < nodes.length; ++i){
+        Vector3 distance_vector = node.position-nodes[i].position;
+        Explosion_Script@ explosion_script_ = cast<Explosion_Script>(nodes[i].scriptObject);
+        if(distance_vector.length < explosion_script_.radius_){
+          spawn_explosion(node.position,body_.linearVelocity);
+          node.Remove();
+        }
       }
     }
 

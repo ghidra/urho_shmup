@@ -64,5 +64,12 @@ class EnemyBasic_Script:Pawn{
       spawn_projectile(dir);
     }
   }
+  void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
+    Vector3 pos = node.position+(dir.Normalized()*1.4f);
+    const float OBJECT_VELOCITY = 1.5f;
+    //Projectile@ projectile_ = Projectile(node.scene,pos,dir,OBJECT_VELOCITY,hit);
+    //ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+    ProjectileNoisy@ projectile_ = ProjectileNoisy(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+  }
 
 }

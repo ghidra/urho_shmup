@@ -24,15 +24,11 @@ class ProjectileNoisy_Script:Projectile_Script{
     SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
   }
 
-  void Update(float timeStep){
-    RigidBody@ body_ = node.GetComponent("RigidBody");
-
-    if(node.position.y <= -3)
-      node.Remove();
-      //return;//trying to do error correction
-      //remove_all();
+  void FixedUpdate(float timeStep){
+    Projectile_Script::FixedUpdate(timeStep);
 
     if(node !is null){//if we havent removed the node
+      RigidBody@ body_ = node.GetComponent("RigidBody");
 
       float nx = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f);
       float ny = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f,10.0f,33.0f);
