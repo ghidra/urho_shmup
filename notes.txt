@@ -19,6 +19,7 @@ Hide the customgeo, but still raytrace it?
 
 Perlin Noise:
 ---------------------
+look at that open source version
 
 Future:
 ---------------------

@@ -4,6 +4,7 @@
 #include "Scripts/outlyer/Character.as"
 #include "Scripts/outlyer/CameraLogic.as"
 #include "Scripts/outlyer/Perlin.as"
+#include "Scripts/outlyer/Stage.as"
 
 #include "Scripts/outlyer/EnemyBasic.as"
 
@@ -30,6 +31,8 @@ void CreateScene(){
   Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
   graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
+
+  Stage@ stage = Stage(scene_);
 
   character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(character_.node_);
