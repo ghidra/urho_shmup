@@ -32,7 +32,7 @@ void CreateScene(){
   graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
-  Stage@ stage = Stage(scene_);
+  Stage@ stage = Stage(scene_,50,50);
 
   character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(character_.node_);
