@@ -1,3 +1,5 @@
+THIS IS THE NEW BRANCH FOR SHMUPS
+
 character/pawn class
 
 Main_2:
