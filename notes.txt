@@ -1,0 +1,36 @@
+character/pawn class
+
+Main_2:
+---------------------
+
+fix the bar scaling messing up the position----almost
+
+-reduce health at collision
+-block enemy missles with explosion caused by own missle
+-destroy enemy vehicle
+-particles
+
+
+Graph:
+---------------------
+
+Check the relationships, visualze them. They are there in the latest form from ethanon
+Hide the customgeo, but still raytrace it?
+
+Perlin Noise:
+---------------------
+look at that open source version
+
+Future:
+---------------------
+
+Consider a rigged character, with a basic ground to control and collide with
+
+Question:
+---------------------
+
+-time manipulation
+-slow down time, this includes gravity in simulation
+-need to figure out a way to disclude certain object from effecting some objects in sim
+  -there appears to be a mask that can be used
+-Can you have a single rig used with multiple meshes, with proper weights, for example, clothes for characters?
