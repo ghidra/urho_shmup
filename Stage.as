@@ -58,6 +58,10 @@ class Stage{
         float ny = noise_.simplex3(n.x,n.y,n.z,scl,scl,scl);
         float nz = noise_.simplex3(n.x,n.y,n.z,scl,scl,scl);
 
+        //float nx = noise_.perlin3(n.x,n.y,n.z,scl,scl,scl);
+        //float ny = noise_.perlin3(n.x,n.y,n.z,scl,scl,scl);
+        //float nz = noise_.perlin3(n.x,n.y,n.z,scl,scl,scl);
+
         boxnode.position = Vector3(n.x,ny,n.z);
     }
 

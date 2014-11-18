@@ -6,10 +6,10 @@ class PerlinBase{
 		Vector3(0,1,1),Vector3(0,-1,1),Vector3(0,1,-1),Vector3(0,-1,-1),
 		Vector3(1,1,0),Vector3(0,-1,1),Vector3(-1,1,0),Vector3(0,-1,-1)};
 
-	Array<Vector3> _GRAD2 = {Vector3(1,1,0),Vector3(-1,1,0),Vector3(1,-1,0),Vector3(-1,-1,0),
-		Vector3(1,0,0),Vector3(-1,0,0),Vector3(1,0,0),Vector3(-1,0,0),
-		Vector3(0,1,0),Vector3(0,-1,0),Vector3(0,1,0),Vector3(0,-1,0),
-		Vector3(1,1,0),Vector3(0,-1,0),Vector3(-1,1,0),Vector3(0,-1,0)};//just to hold this for 2D noise
+	Array<Vector2> _GRAD2 = {Vector2(1,1),Vector2(-1,1),Vector2(1,-1),Vector2(-1,-1),
+		Vector2(1,0),Vector2(-1,0),Vector2(1,0),Vector2(-1,0),
+		Vector2(0,1),Vector2(0,-1),Vector2(0,1),Vector2(0,-1),
+		Vector2(1,1),Vector2(0,-1),Vector2(-1,1),Vector2(0,-1)};//just to hold this for 2D noise
 
 	Array<int> permutation = {151,160,137,91,90,15,
 		131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
@@ -107,14 +107,13 @@ class Perlin: PerlinBase{
 		float y2 = y0 - 1.0f + 2.0f * _G2;
 
 		//# Determine hashed gradient indices of the three simplex corners
-		Array<int> perm = permutation;
 		int ii = ((int(i) % period)+period)% period;//int(Abs(i) % period);
 		int jj = ((int(j) % period)+period)% period;//int(Abs(j) % period);
 		//Print( "str ii less than 0:"+(ii) );
 		//Print( "str jj less than 0:"+(jj) );
-		int gi0 = ((perm[ii + perm[jj]] % 12)+12)%12;
-		int gi1 = ((perm[ii + int(i1) + perm[jj + int(j1)]] % 12)+12)%12;
-		int gi2 = ((perm[ii + 1 + perm[jj + 1]] % 12)+12)%12;
+		int gi0 = ((permutation[ii + permutation[jj]] % 12)+12)%12;
+		int gi1 = ((permutation[ii + int(i1) + permutation[jj + int(j1)]] % 12)+12)%12;
+		int gi2 = ((permutation[ii + 1 + permutation[jj + 1]] % 12)+12)%12;
 
 		// Calculate the contribution from the three corners
 		float tt = 0.5f - Pow(x0,2) - Pow(y0,2);
@@ -138,21 +137,21 @@ class Perlin: PerlinBase{
 			n0 = 0.0f;
 		} else {
 			tt *= tt;
-			n0 = tt * tt * _GRAD2[gi0].DotProduct(Vector3(x0, y0, 0.0f)); // (x,y) of grad3 used for 2D gradient
+			n0 = tt * tt * _GRAD2[gi0].DotProduct(Vector2(x0, y0)); // (x,y) of grad3 used for 2D gradient
 		}
 		float t1 = 0.5f - x1*x1-y1*y1;
 		if(t1<0) {
 			n1 = 0;
 		} else {
 			t1 *= t1;
-		n1 = t1 * t1 * _GRAD2[gi1].DotProduct(Vector3(x1, y1, 0.0f));
+		n1 = t1 * t1 * _GRAD2[gi1].DotProduct(Vector2(x1, y1));
 		}
 		float t2 = 0.5 - x2*x2-y2*y2;
 		if(t2<0) {
 			n2 = 0;
 		} else {
 			t2 *= t2;
-			n2 = t2 * t2 * _GRAD2[gi2].DotProduct(Vector3(x2, y2, 0.0f));
+			n2 = t2 * t2 * _GRAD2[gi2].DotProduct(Vector2(x2, y2));
 		}
 
 		//return (ii)*1.0f;
@@ -225,14 +224,13 @@ class Perlin: PerlinBase{
 		float z3 = z0 - 1.0f + 3.0f * _G3;
 
 		//# Calculate the hashed gradient indices of the four simplex corners
-		Array<int> perm = permutation;
 		int ii = ((int(i) % period)+period)% period;
 		int jj = ((int(j) % period)+period)% period;
 		int kk = ((int(k) % period)+period)% period;
-		int gi0 = ((perm[ii + perm[jj + perm[kk]]] % 12)+12)%12;
-		int gi1 = ((perm[ii + int(i1) + perm[jj + int(j1) + perm[kk + int(k1)]]] % 12)+12)%12;
-		int gi2 = ((perm[ii + int(i2) + perm[jj + int(j2) + perm[kk + int(k2)]]] % 12)+12)%12;
-		int gi3 = ((perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12)+12)%12;
+		int gi0 = ((permutation[ii + permutation[jj + permutation[kk]]] % 12)+12)%12;
+		int gi1 = ((permutation[ii + int(i1) + permutation[jj + int(j1) + permutation[kk + int(k1)]]] % 12)+12)%12;
+		int gi2 = ((permutation[ii + int(i2) + permutation[jj + int(j2) + permutation[kk + int(k2)]]] % 12)+12)%12;
+		int gi3 = ((permutation[ii + 1 + permutation[jj + 1 + permutation[kk + 1]]] % 12)+12)%12;
 
 		//# Calculate the contribution from the four corners
 		/*float noise = 0.0f;
@@ -302,54 +300,67 @@ class Perlin: PerlinBase{
 	}
 
 	float perlin2 (float x, float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f) {
+		float ax=(x*sx)+ox;//abs(x);
+		float ay=(y*sy)+oy;//abs(y);
 		// Find unit grid cell containing point
-		int _x = int(Floor(x));
-		int _y = int(Floor(y));
+		int _x = int(Floor(ax));
+		int _y = int(Floor(ay));
 		// Get relative xy coordinates of point within that cell
-		x = x - _x;
-		y = y - _y;
+		x = ax - _x;
+		y = ay - _y;
 		// Wrap the integer cells at 255 (smaller integer period can be introduced here)
 		_y = _x % 255;
 		_y = _y % 255;
 		// Calculate noise contributions from each of the four corners
-		float n00 = _GRAD2[_x+permutation[_y]].DotProduct(Vector3(x, y,0.0f));
-		float n01 = _GRAD2[_x+permutation[_y+1]].DotProduct(Vector3(x, y-1,0.0f));
-		float n10 = _GRAD2[_x+1+permutation[_y]].DotProduct(Vector3(x-1, y,0.0f));
-		float n11 = _GRAD2[_x+1+permutation[_y+1]].DotProduct(Vector3(x-1, y-1,0.0f));
+		float n00 = _GRAD2[_x+permutation[_y]].DotProduct(Vector2(x, y));
+		float n01 = _GRAD2[_x+permutation[_y+1]].DotProduct(Vector2(x, y-1));
+		float n10 = _GRAD2[_x+1+permutation[_y]].DotProduct(Vector2(x-1, y));
+		float n11 = _GRAD2[_x+1+permutation[_y+1]].DotProduct(Vector2(x-1, y-1));
 		// Compute the fade curve value for x
 		float u = fade(x);
 		// Interpolate the four results
 		return lerp(lerp(n00, n10, u),lerp(n01, n11, u),fade(y));
 	}
 
-	/*float perlin3(float x, float y, const float z, const float sx=1.0f, const float sy=1.0f, const float sz=1.0f, const float ox=0.0f, const float oy=0.0f, const float oz=0.0f){
+	float perlin3(float x, float y, const float z, const float sx=1.0f, const float sy=1.0f, const float sz=1.0f, const float ox=0.0f, const float oy=0.0f, const float oz=0.0f){
+		float ax=(x*sx)+ox;//abs(x);
+		float ay=(y*sy)+oy;//abs(y);
+		float az=(z*sz)+oz;//abs(x);
 		// Find unit grid cell containing point
-		int X = int(Floor(x));
-		int Y = int(Floor(y));
-		int Z = int(Floor(z));
+		int _x = int(Floor(ax));
+		int _y = int(Floor(ay));
+		int _z = int(Floor(az));
 		// Get relative xyz coordinates of point within that cell
-		x = x - X;
-		y = y - Y;
-		z = z - Z;
+		ax = ax - float(_x);
+		ay = ay - float(_y);
+		az = az - float(_z);
 		// Wrap the integer cells at 255 (smaller integer period can be introduced here)
-		X = X % 255;
-		Y = Y % 255;
-		Z = Z % 255;
+		_x = ((int(_x) % period)+period)% period;
+		_y = ((int(_y) % period)+period)% period;
+		_z = ((int(_z) % period)+period)% period;
+		int na = (((_x+ permutation[_y+ permutation[_z ]])%16)+16)%16 ;
+		int nb = (((_x+ permutation[_y+ permutation[_z+1]])%16)+16)%16;
+		int nc = (((_x+ permutation[_y+1+permutation[_z ]])%16)+16)%16;
+		int nd = (((_x+ permutation[_y+1+permutation[_z+1]])%16)+16)%16;
+		int ne = (((_x+1+permutation[_y+ permutation[_z ]])%16)+16)%16;
+		int nf = (((_x+1+permutation[_y+ permutation[_z+1]])%16)+16)%16;
+		int ng = (((_x+1+permutation[_y+1+permutation[_z ]])%16)+16)%16;
+		int nh = (((_x+1+permutation[_y+1+permutation[_z+1]])%16)+16)%16;
 		// Calculate noise contributions from each of the eight corners
-		float n000 = gradP[X+ perm[Y+ perm[Z ]]].dot3(x, y, z);
-		float n001 = gradP[X+ perm[Y+ perm[Z+1]]].dot3(x, y, z-1);
-		float n010 = gradP[X+ perm[Y+1+perm[Z ]]].dot3(x, y-1, z);
-		float n011 = gradP[X+ perm[Y+1+perm[Z+1]]].dot3(x, y-1, z-1);
-		float n100 = gradP[X+1+perm[Y+ perm[Z ]]].dot3(x-1, y, z);
-		float n101 = gradP[X+1+perm[Y+ perm[Z+1]]].dot3(x-1, y, z-1);
-		float n110 = gradP[X+1+perm[Y+1+perm[Z ]]].dot3(x-1, y-1, z);
-		float n111 = gradP[X+1+perm[Y+1+perm[Z+1]]].dot3(x-1, y-1, z-1);
+		float n000 = _GRAD3[na].DotProduct(Vector3(ax, ay, az));
+		float n001 = _GRAD3[nb].DotProduct(Vector3(ax, ay, az-1));
+		float n010 = _GRAD3[nc].DotProduct(Vector3(ax, ay-1, az));
+		float n011 = _GRAD3[nd].DotProduct(Vector3(ax, ay-1, az-1));
+		float n100 = _GRAD3[ne].DotProduct(Vector3(ax-1, ay, az));
+		float n101 = _GRAD3[nf].DotProduct(Vector3(ax-1, ay, az-1));
+		float n110 = _GRAD3[ng].DotProduct(Vector3(ax-1, ay-1, az));
+		float n111 = _GRAD3[nh].DotProduct(Vector3(ax-1, ay-1, az-1));
 		// Compute the fade curve value for x, y, z
 		float u = fade(x);
 		float v = fade(y);
 		float w = fade(z);
 		// Interpolate
 		return lerp(lerp(lerp(n000, n100, u),lerp(n001, n101, u), w),lerp(lerp(n010, n110, u),lerp(n011, n111, u), w),v);
-	}*/
+	}
 
 }
