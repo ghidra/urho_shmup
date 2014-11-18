@@ -6,6 +6,11 @@ class PerlinBase{
 		Vector3(0,1,1),Vector3(0,-1,1),Vector3(0,1,-1),Vector3(0,-1,-1),
 		Vector3(1,1,0),Vector3(0,-1,1),Vector3(-1,1,0),Vector3(0,-1,-1)};
 
+	Array<Vector3> _GRAD2 = {Vector3(1,1,0),Vector3(-1,1,0),Vector3(1,-1,0),Vector3(-1,-1,0),
+		Vector3(1,0,0),Vector3(-1,0,0),Vector3(1,0,0),Vector3(-1,0,0),
+		Vector3(0,1,0),Vector3(0,-1,0),Vector3(0,1,0),Vector3(0,-1,0),
+		Vector3(1,1,0),Vector3(0,-1,0),Vector3(-1,1,0),Vector3(0,-1,0)};//just to hold this for 2D noise
+
 	Array<int> permutation = {151,160,137,91,90,15,
 		131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
 		190,6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,
@@ -45,6 +50,7 @@ class PerlinBase{
 	}
 
 	void randomize(const int p = 0){
+		//this function is BROKEN
 		/*Randomize the permutation table used by the noise functions. This
 		makes them generate a different noise pattern for the same inputs.
 		*/
@@ -68,7 +74,7 @@ class Perlin: PerlinBase{
 
 	Perlin(uint i = 1){super(i);}
 
-	float noise2(const float x, const float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f){
+	float simplex2(const float x, const float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f){
 		/*2D Perlin simplex noise.
 		Return a floating point value from -1 to 1 for the given x, y coordinate.
 		The same value is always returned for a given x, y pair unless the
@@ -79,12 +85,14 @@ class Perlin: PerlinBase{
 		float ax=(x*sx)+ox;//abs(x);
 		float ay=(y*sy)+oy;//abs(y);
 
+		float n0, n1, n2; // Noise contributions from the three corners
+
 		float s = (ax + ay) * _F2;
 		int i = int(Floor(ax + s));
 		int j = int(Floor(ay + s));
 		float t = (i + j) * _G2;
-		float x0 = ax - (i - t); // "Unskewed" distances from cell origin
-		float y0 = ay - (j - t);
+		float x0 = ax - i + t; // "Unskewed" distances from cell origin
+		float y0 = ay - j + t;
 
 		float i1 = 0;
 		float j1 = 1; // Upper triangle, YX order: (0,0)->(0,1)->(1,1)
@@ -95,8 +103,8 @@ class Perlin: PerlinBase{
 
 		float x1 = x0 - i1 + _G2; // Offsets for middle corner in (x,y) unskewed coords
 		float y1 = y0 - j1 + _G2;
-		float x2 = x0 + _G2 * 2.0f - 1.0f; // Offsets for last corner in (x,y) unskewed coords
-		float y2 = y0 + _G2 * 2.0f - 1.0f;
+		float x2 = x0 - 1.0f + 2.0f * _G2; // Offsets for last corner in (x,y) unskewed coords
+		float y2 = y0 - 1.0f + 2.0f * _G2;
 
 		//# Determine hashed gradient indices of the three simplex corners
 		Array<int> perm = permutation;
@@ -110,7 +118,7 @@ class Perlin: PerlinBase{
 
 		// Calculate the contribution from the three corners
 		float tt = 0.5f - Pow(x0,2) - Pow(y0,2);
-		float noise = 0.0f;
+		/*float noise = 0.0f;
 		Vector3 g = _GRAD3[0];
 		if (tt > 0){
 			g = _GRAD3[gi0];
@@ -125,14 +133,34 @@ class Perlin: PerlinBase{
 		if (tt > 0){
 			g = _GRAD3[gi2];
 			noise += Pow(tt,4) * (g.x * x2 + g.y * y2);
+		}*/
+		if(tt<0.0f) {
+			n0 = 0.0f;
+		} else {
+			tt *= tt;
+			n0 = tt * tt * _GRAD2[gi0].DotProduct(Vector3(x0, y0, 0.0f)); // (x,y) of grad3 used for 2D gradient
+		}
+		float t1 = 0.5f - x1*x1-y1*y1;
+		if(t1<0) {
+			n1 = 0;
+		} else {
+			t1 *= t1;
+		n1 = t1 * t1 * _GRAD2[gi1].DotProduct(Vector3(x1, y1, 0.0f));
+		}
+		float t2 = 0.5 - x2*x2-y2*y2;
+		if(t2<0) {
+			n2 = 0;
+		} else {
+			t2 *= t2;
+			n2 = t2 * t2 * _GRAD2[gi2].DotProduct(Vector3(x2, y2, 0.0f));
 		}
 
 		//return (ii)*1.0f;
 		//float noise = 0.01f;
-		return noise * 70.0f; // scale noise to [-1, 1]
+		return 70 * (n0 + n1 + n2); // scale noise to [-1, 1]
 	}
 
-	float noise3(const float x, const float y, const float z, const float sx=1.0f, const float sy=1.0f, const float sz=1.0f, const float ox=0.0f, const float oy=0.0f, const float oz=0.0f){
+	float simplex3(const float x, const float y, const float z, const float sx=1.0f, const float sy=1.0f, const float sz=1.0f, const float ox=0.0f, const float oy=0.0f, const float oz=0.0f){
 		float ax=(x*sx)+ox;//abs(x);
 		float ay=(y*sy)+oy;//abs(y);
 		float az=(z*sz)+oz;//abs(x);
@@ -141,6 +169,8 @@ class Perlin: PerlinBase{
 		Return a floating point value from -1 to 1 for the given x, y, z coordinate.
 		The same value is always returned for a given x, y, z pair unless the
 		permutation table changes (see randomize above).*/
+
+		float n0, n1, n2, n3;
 
 		// Skew the input space to determine which simplex cell we're in
 		float s = (ax + ay + az) * _F3;
@@ -205,7 +235,7 @@ class Perlin: PerlinBase{
 		int gi3 = ((perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12)+12)%12;
 
 		//# Calculate the contribution from the four corners
-		float noise = 0.0f;
+		/*float noise = 0.0f;
 		float tt = 0.6f - Pow(x0,2) - Pow(y0,2) - Pow(z0,2);
 		Vector3 g = _GRAD3[0];
 		if (tt > 0){
@@ -229,7 +259,97 @@ class Perlin: PerlinBase{
 			g = _GRAD3[gi3];
 			noise += tt**4 * (g.x * x3 + g.y * y3 + g.z * z3);
 		}
-		return noise * 32.0f;
+		return noise * 32.0f;*/
+		float t0 = 0.6 - x0*x0 - y0*y0 - z0*z0;
+		if(t0<0) {
+			n0 = 0;
+		} else {
+			t0 *= t0;
+			n0 = t0 * t0 * _GRAD3[gi0].DotProduct(Vector3(x0, y0, z0)); // (x,y) of grad3 used for 2D gradient
+		}
+		float t1 = 0.6 - x1*x1 - y1*y1 - z1*z1;
+		if(t1<0) {
+			n1 = 0;
+		} else {
+			t1 *= t1;
+			n1 = t1 * t1 * _GRAD3[gi1].DotProduct(Vector3(x1, y1, z1));
+		}
+		float t2 = 0.6 - x2*x2 - y2*y2 - z2*z2;
+		if(t2<0) {
+			n2 = 0;
+		} else {
+			t2 *= t2;
+			n2 = t2 * t2 * _GRAD3[gi2].DotProduct(Vector3(x2, y2, z2));
+		}
+		float t3 = 0.6 - x3*x3 - y3*y3 - z3*z3;
+		if(t3<0) {
+			n3 = 0;
+		} else {
+			t3 *= t3;
+			n3 = t3 * t3 * _GRAD3[gi3].DotProduct(Vector3(x3, y3, z3));
+		}
+		return 32 * (n0 + n1 + n2 + n3);;
+
 	}
+
+
+	//------perlin functions
+	float fade(const float t){
+		return t*t*t*(t*(t*6.0f-15.0f)+10.0f);
+	}
+	float lerp(const float a, const float b, const float t) {
+		return (1.0f-t)*a + t*b;
+	}
+
+	float perlin2 (float x, float y,const float sx=1.0f, const float sy=1.0f, const float ox=0.0f, const float oy=0.0f) {
+		// Find unit grid cell containing point
+		int _x = int(Floor(x));
+		int _y = int(Floor(y));
+		// Get relative xy coordinates of point within that cell
+		x = x - _x;
+		y = y - _y;
+		// Wrap the integer cells at 255 (smaller integer period can be introduced here)
+		_y = _x % 255;
+		_y = _y % 255;
+		// Calculate noise contributions from each of the four corners
+		float n00 = _GRAD2[_x+permutation[_y]].DotProduct(Vector3(x, y,0.0f));
+		float n01 = _GRAD2[_x+permutation[_y+1]].DotProduct(Vector3(x, y-1,0.0f));
+		float n10 = _GRAD2[_x+1+permutation[_y]].DotProduct(Vector3(x-1, y,0.0f));
+		float n11 = _GRAD2[_x+1+permutation[_y+1]].DotProduct(Vector3(x-1, y-1,0.0f));
+		// Compute the fade curve value for x
+		float u = fade(x);
+		// Interpolate the four results
+		return lerp(lerp(n00, n10, u),lerp(n01, n11, u),fade(y));
+	}
+
+	/*float perlin3(float x, float y, const float z, const float sx=1.0f, const float sy=1.0f, const float sz=1.0f, const float ox=0.0f, const float oy=0.0f, const float oz=0.0f){
+		// Find unit grid cell containing point
+		int X = int(Floor(x));
+		int Y = int(Floor(y));
+		int Z = int(Floor(z));
+		// Get relative xyz coordinates of point within that cell
+		x = x - X;
+		y = y - Y;
+		z = z - Z;
+		// Wrap the integer cells at 255 (smaller integer period can be introduced here)
+		X = X % 255;
+		Y = Y % 255;
+		Z = Z % 255;
+		// Calculate noise contributions from each of the eight corners
+		float n000 = gradP[X+ perm[Y+ perm[Z ]]].dot3(x, y, z);
+		float n001 = gradP[X+ perm[Y+ perm[Z+1]]].dot3(x, y, z-1);
+		float n010 = gradP[X+ perm[Y+1+perm[Z ]]].dot3(x, y-1, z);
+		float n011 = gradP[X+ perm[Y+1+perm[Z+1]]].dot3(x, y-1, z-1);
+		float n100 = gradP[X+1+perm[Y+ perm[Z ]]].dot3(x-1, y, z);
+		float n101 = gradP[X+1+perm[Y+ perm[Z+1]]].dot3(x-1, y, z-1);
+		float n110 = gradP[X+1+perm[Y+1+perm[Z ]]].dot3(x-1, y-1, z);
+		float n111 = gradP[X+1+perm[Y+1+perm[Z+1]]].dot3(x-1, y-1, z-1);
+		// Compute the fade curve value for x, y, z
+		float u = fade(x);
+		float v = fade(y);
+		float w = fade(z);
+		// Interpolate
+		return lerp(lerp(lerp(n000, n100, u),lerp(n001, n101, u), w),lerp(lerp(n010, n110, u),lerp(n011, n111, u), w),v);
+	}*/
 
 }

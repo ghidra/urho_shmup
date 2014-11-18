@@ -52,13 +52,13 @@ class Stage{
         boxObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
 
         Vector3 n = p-offset_;
-        float scl = 1000.0f;
+        float scl = 0.08f;
 
-        float nx = noise_.noise3(n.x,n.y,n.z,scl,scl,scl);
-        float ny = noise_.noise3(n.x,n.y,n.z,scl,scl,scl);
-        float nz = noise_.noise3(n.x,n.y,n.z,scl,scl,scl);
+        float nx = noise_.simplex3(n.x,n.y,n.z,scl,scl,scl);
+        float ny = noise_.simplex3(n.x,n.y,n.z,scl,scl,scl);
+        float nz = noise_.simplex3(n.x,n.y,n.z,scl,scl,scl);
 
-        boxnode.position = Vector3(n.x,ny*0.4,n.z);
+        boxnode.position = Vector3(n.x,ny,n.z);
     }
 
 

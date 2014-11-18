@@ -30,8 +30,8 @@ class ProjectileNoisy_Script:Projectile_Script{
     if(node !is null){//if we havent removed the node
       RigidBody@ body_ = node.GetComponent("RigidBody");
 
-      float nx = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f);
-      float ny = noise_.noise2(node.position.x,node.position.y,100.0f,100.0f,10.0f,33.0f);
+      float nx = noise_.simplex2(node.position.x,node.position.y,100.0f,100.0f);
+      float ny = noise_.simplex2(node.position.x,node.position.y,100.0f,100.0f,10.0f,33.0f);
       Vector3 d2 = Vector3(nx,ny,0.0f);
       Vector3 d1 = body_.linearVelocity;
       float ds = d1.length;
