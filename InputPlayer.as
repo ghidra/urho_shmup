@@ -1,6 +1,6 @@
-#include "Scripts/outlyer/InputBasics.as"
-#include "Scripts/outlyer/Pawn.as"
-#include "Scripts/outlyer/Graph.as"
+#include "Scripts/shmup/InputBasics.as"
+#include "Scripts/shmup/Pawn.as"
+#include "Scripts/shmup/Graph.as"
 
 class InputPlayer : InputBasics{
 
@@ -42,6 +42,9 @@ class InputPlayer : InputBasics{
       direction+=Vector3(-1.0f, 0.0f, 0.0f);
     if (input.keyDown['D'])
       direction+=Vector3(1.0f, 0.0f, 0.0f);
+
+    if (input.keyDown[KEY_SPACE])
+      left_mouse();
 
     if(direction.length>0.5)
       move(direction.Normalized(),timeStep);

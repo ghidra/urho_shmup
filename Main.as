@@ -1,12 +1,12 @@
-#include "Scripts/outlyer/SceneManager.as"
-#include "Scripts/outlyer/InputPlayer.as"
-#include "Scripts/outlyer/Graph.as"
-#include "Scripts/outlyer/Character.as"
-#include "Scripts/outlyer/CameraLogic.as"
-#include "Scripts/outlyer/Perlin.as"
-#include "Scripts/outlyer/Stage.as"
+#include "Scripts/shmup/SceneManager.as"
+#include "Scripts/shmup/InputPlayer.as"
+#include "Scripts/shmup/Graph.as"
+#include "Scripts/shmup/Character.as"
+#include "Scripts/shmup/CameraLogic.as"
+#include "Scripts/shmup/Perlin.as"
+#include "Scripts/shmup/Stage.as"
 
-#include "Scripts/outlyer/EnemyBasic.as"
+#include "Scripts/shmup/EnemyBasic.as"
 
 SceneManager@ scene_manager_;
 Scene@ scene_;
@@ -32,7 +32,7 @@ void CreateScene(){
   graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
-  Stage@ stage = Stage(scene_,50,50);
+  //Stage@ stage = Stage(scene_,50,50);
 
   character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(character_.node_);

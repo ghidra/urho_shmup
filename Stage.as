@@ -1,6 +1,6 @@
 //right now this is just to visualize the noise, on an array
 //of boxes in the scene
-#include "Scripts/outlyer/Perlin.as"
+#include "Scripts/shmup/Perlin.as"
 
 class Stage{
   private uint xdiv_;//we need this valus, cause in update we are looking for it to have something

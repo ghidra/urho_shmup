@@ -1,11 +1,2686 @@
-[Mon Nov 17 21:07:16 2014] INFO: Opened log file Urho3D.log
-[Mon Nov 17 21:07:16 2014] INFO: Created 3 worker threads
-[Mon Nov 17 21:07:16 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/CoreData/
-[Mon Nov 17 21:07:16 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/Data/
-[Mon Nov 17 21:07:16 2014] WARNING: Skipped autoload folder Extra as it does not exist
-[Mon Nov 17 21:07:16 2014] INFO: Set screen mode 1366x768 fullscreen
-[Mon Nov 17 21:07:16 2014] INFO: Initialized input
-[Mon Nov 17 21:07:16 2014] INFO: Initialized user interface
-[Mon Nov 17 21:07:16 2014] INFO: Initialized renderer
-[Mon Nov 17 21:07:16 2014] INFO: Set audio mode 44100 Hz stereo interpolated
-[Mon Nov 17 21:07:16 2014] INFO: Compiled script module /Scripts/outlyer/Main.as
+[Wed Nov 19 18:30:19 2014] INFO: Opened log file Urho3D.log
+[Wed Nov 19 18:30:19 2014] INFO: Created 3 worker threads
+[Wed Nov 19 18:30:19 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/CoreData/
+[Wed Nov 19 18:30:19 2014] INFO: Added resource path /home/jimmy/Documents/projects/urho/Urho3D/Bin/Data/
+[Wed Nov 19 18:30:19 2014] WARNING: Skipped autoload folder Extra as it does not exist
+[Wed Nov 19 18:30:19 2014] INFO: Set screen mode 1366x768 fullscreen
+[Wed Nov 19 18:30:19 2014] INFO: Initialized input
+[Wed Nov 19 18:30:19 2014] INFO: Initialized user interface
+[Wed Nov 19 18:30:19 2014] INFO: Initialized renderer
+[Wed Nov 19 18:30:19 2014] INFO: Set audio mode 44100 Hz stereo interpolated
+[Wed Nov 19 18:30:19 2014] INFO: Compiled script module /Scripts/shmup/Main.as
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:23 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:24 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileNoisy.as:void ProjectileNoisy_Script::FixedUpdate(float):28,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:25 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:27 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:28 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:33 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileNoisy.as:void ProjectileNoisy_Script::FixedUpdate(float):28,5
+
+[Wed Nov 19 18:30:33 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:45 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:46 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileNoisy.as:void ProjectileNoisy_Script::FixedUpdate(float):28,5
+
+[Wed Nov 19 18:30:46 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:46 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:47 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:30:47 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:29 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:30 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:31 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:32 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:33 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:34 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:35 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:36 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:37 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+
+[Wed Nov 19 18:31:39 2014] ERROR: Scripts/shmup/Projectile.as:60,9 - Exception 'Null pointer access' in 'void Projectile_Script::FixedUpdate(float)'
+AngelScript callstack:
+	Scripts/shmup/Projectile.as:void Projectile_Script::FixedUpdate(float):60,9
+	Scripts/shmup/ProjectileExploder.as:void ProjectileExploder_Script::FixedUpdate(float):19,5
+

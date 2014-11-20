@@ -1,5 +1,5 @@
-#include "Scripts/outlyer/Actor.as"
-#include "Scripts/outlyer/Explosion.as"
+#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/Explosion.as"
 
 class Projectile{
 

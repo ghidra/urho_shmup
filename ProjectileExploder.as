@@ -1,4 +1,4 @@
-#include "Scripts/outlyer/Projectile.as"
+#include "Scripts/shmup/Projectile.as"
 
 class ProjectileExploder:Projectile{
 

@@ -1,5 +1,5 @@
-#include "Scripts/outlyer/Pawn.as"
-#include "Scripts/outlyer/ProgressBar.as"
+#include "Scripts/shmup/Pawn.as"
+#include "Scripts/shmup/ProgressBar.as"
 
 class EnemyBasic{
 

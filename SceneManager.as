@@ -1,4 +1,4 @@
-#include "Scripts/outlyer/CameraLogic.as"
+#include "Scripts/shmup/CameraLogic.as"
 
 class SceneManager{
 

@@ -1,10 +1,10 @@
 //class Character : ScriptObject{
-//#include "Scripts/outlyer/InputPlayer.as"
-#include "Scripts/outlyer/Pawn.as"
-//#include "Scripts/outlyer/ControllerPlayer.as"
-#include "Scripts/outlyer/Actor.as"
-#include "Scripts/outlyer/ProjectileExploder.as"
-#include "Scripts/outlyer/ProjectileNoisy.as"
+//#include "Scripts/shmup/InputPlayer.as"
+#include "Scripts/shmup/Pawn.as"
+//#include "Scripts/shmup/ControllerPlayer.as"
+#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/ProjectileExploder.as"
+#include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
 class Character{

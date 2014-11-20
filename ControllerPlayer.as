@@ -1,9 +1,9 @@
 //OBSOLETE DELETE THIS CLASS
 
 
-#include "Scripts/outlyer/Controller.as"
-#include "Scripts/outlyer/CameraLogic.as"
-#include "Scripts/outlyer/ProjectileExploder.as"
+#include "Scripts/shmup/Controller.as"
+#include "Scripts/shmup/CameraLogic.as"
+#include "Scripts/shmup/ProjectileExploder.as"
 
 class ControllerPlayer : Controller{
 

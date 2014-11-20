@@ -1,8 +1,8 @@
 
 //OBSOLETE
-#include "Scripts/outlyer/Controller.as"
-#include "Scripts/outlyer/ProgressBar.as"
-#include "Scripts/outlyer/Projectile.as"
+#include "Scripts/shmup/Controller.as"
+#include "Scripts/shmup/ProgressBar.as"
+#include "Scripts/shmup/Projectile.as"
 
 class ControllerEnemyBasic:Controller{
 

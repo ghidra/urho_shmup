@@ -1,4 +1,4 @@
-#include "Scripts/outlyer/Actor.as"
+#include "Scripts/shmup/Actor.as"
 
 class Explosion{
 
