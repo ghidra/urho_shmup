@@ -55,5 +55,9 @@ class SceneManager{
     CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
     camera_logic_.set_target(node);
   }
+  void set_camera_parameters(bool fixed = true,float fdistance = 24.0f, Vector3 frotation = Vector3(30.0f,0.0f,0.0f)){
+    CameraLogic@ camera_logic_ = cast<CameraLogic>(camera_node_.GetScriptObject("CameraLogic"));
+    camera_logic_.set_parameters(fixed,fdistance,frotation);
+  }
 
 }
