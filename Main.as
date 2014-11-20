@@ -29,16 +29,16 @@ void Start(){
 
 void CreateScene(){
   //Graph@ _graph_ground = Graph(_scene,_camera_node,32,32,100.0f,100.0f);//make the graph
-  Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
-  graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
-  graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
+  //Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
+  //graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
+  //graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
   //Stage@ stage = Stage(scene_,50,50);
 
   character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(character_.node_);
   input_player_.set_controlnode(character_.node_);
-  input_player_.set_graph(graph_);
+  //input_player_.set_graph(graph_);
   input_player_.set_cameranode(camera_node_);
 
   //my first enemy
@@ -61,7 +61,7 @@ void CreateScene(){
   graph.set_parameters(_cameraNode,32,32,100.0f,100.0f);*/
 
   PhysicsWorld@ physics = scene_.physicsWorld;
-  //physics.gravity = Vector3(0.0f,0.0f,0.0f);
+  physics.gravity = Vector3(0.0f,0.0f,0.0f);
 }
 
 //--------------------
