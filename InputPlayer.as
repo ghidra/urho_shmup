@@ -16,7 +16,7 @@ class InputPlayer : InputBasics{
   }
 
   void update(StringHash eventType, VariantMap& eventData){
-    float timeStep = eventData["TimeStep"].GetFloat();
+    float timestep = eventData["TimeStep"].GetFloat();
     ui.cursor.visible = !input.mouseButtonDown[MOUSEB_RIGHT];
     Vector3 direction = Vector3(0.0f,0.0f,0.0f);
 
@@ -44,10 +44,12 @@ class InputPlayer : InputBasics{
       direction+=Vector3(1.0f, 0.0f, 0.0f);
 
     if (input.keyDown[KEY_SPACE])
-      left_mouse();
+      fire(timestep);
+    //if (input.keyUp[KEYSPACE])
+      //left_mouse(timestep);
 
     if(direction.length>0.5)
-      move(direction.Normalized(),timeStep);
+      move(direction.Normalized(),timestep);
 
   }
   //------------------------
@@ -78,7 +80,7 @@ class InputPlayer : InputBasics{
     camera_logic_.move_mouse(mousemove,mouse_sensitivity_);
   }
   void left_mouse(){
-    if(node_ !is null){
+    /*if(node_ !is null){
 
       Pawn@ pawn = cast<Pawn>(node_.scriptObject);
 
@@ -88,6 +90,19 @@ class InputPlayer : InputBasics{
         target_position = graph_.hit_;
 
       pawn.fire_projectile(target_position);
+    }*/
+  }
+  void fire(float timestep){
+    if(node_ !is null){
+
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
+
+      Vector3 target_position = Vector3(0.0f,1.0f,0.0f);
+
+      if(graph_ !is null)
+        target_position = graph_.hit_;
+
+      pawn.fire_projectile(target_position,timestep);
     }
   }
 }
