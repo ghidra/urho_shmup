@@ -42,6 +42,10 @@ class Pawn:Actor{
     }
     //i need to toggle all this off on button release some how, otherwise i have to hit the button twise to start again
   }
+  void release_fire(){
+    firing_=0;
+    //firing_timer_=0.0f;
+  }
 
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     const float OBJECT_VELOCITY = 4.5f;

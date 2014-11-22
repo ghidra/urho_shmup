@@ -8,6 +8,8 @@ class InputPlayer : InputBasics{
   Graph@ graph_;
   Node@ camera_node_;
 
+  int fire_pressed_ = 0;
+
   float mouse_sensitivity_ = 0.1f;
 
   InputPlayer(uint i = 0){
@@ -43,8 +45,17 @@ class InputPlayer : InputBasics{
     if (input.keyDown['D'])
       direction+=Vector3(1.0f, 0.0f, 0.0f);
 
-    if (input.keyDown[KEY_SPACE])
+    if (input.keyDown[KEY_SPACE]){
+      if(fire_pressed_<1){
+        fire_pressed_=1;
+      }
       fire(timestep);
+    }
+
+    if(input.keyPress[KEY_SPACE] && fire_pressed_>0){
+      fire_pressed_ = 0;//we can set this back to false
+      release_fire();
+    }
     //if (input.keyUp[KEYSPACE])
       //left_mouse(timestep);
 
@@ -103,6 +114,12 @@ class InputPlayer : InputBasics{
         target_position = graph_.hit_;
 
       pawn.fire_projectile(target_position,timestep);
+    }
+  }
+  void release_fire(){
+    if(node_ !is null){
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
+      pawn.release_fire();
     }
   }
 }

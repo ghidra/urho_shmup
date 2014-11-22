@@ -26,7 +26,8 @@ class Projectile{
 
     // Set initial velocity for the RigidBody based on camera forward vector. Add also a slight up component
     // to overcome gravity better
-    body_.linearVelocity = dir+Vector3(0.0f,1.0f,0.0f) * speed;
+    //body_.linearVelocity = dir+Vector3(0.0f,1.0f,0.0f) * speed;
+    body_.linearVelocity = dir * speed;
 
     //attach scriptObject
     attach_script(node_,hit);//send it the node and a hit position

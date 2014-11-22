@@ -5,8 +5,9 @@ character/pawn class
 Main_2:
 ---------------------
 
-fire interaval needs to be reset when button is released
-remove upward trajectpry from projectiles, its there hardcoded
+I should make a focus node, that the camera actually follows.
+  This can trail behind the main character, but also allows me to avaerage what is on screen at one time
+  or something along those lines
 maybe we need a weapon class that fires off the projectile class
 put some of these classes in folder for organization
 
