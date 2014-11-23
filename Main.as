@@ -1,18 +1,21 @@
 #include "Scripts/shmup/SceneManager.as"
-#include "Scripts/shmup/InputPlayer.as"
+//#include "Scripts/shmup/InputPlayer.as"
+#include "Scripts/shmup/InputBasics.as"
 #include "Scripts/shmup/Graph.as"
 #include "Scripts/shmup/Character.as"
 #include "Scripts/shmup/CameraLogic.as"
-#include "Scripts/shmup/Perlin.as"
-#include "Scripts/shmup/Stage.as"
+//#include "Scripts/shmup/Perlin.as"
+//#include "Scripts/shmup/Stage.as"
 
-#include "Scripts/shmup/EnemyBasic.as"
+//#include "Scripts/shmup/EnemyBasic.as"
 
 SceneManager@ scene_manager_;
 Scene@ scene_;
 Node@ camera_node_;
-InputPlayer@ input_player_;
-Character@ character_;//not even sure i need any of these, but there are here for now
+//InputPlayer@ input_player_;
+InputBasics@ input_basics_;
+
+//Character@ character_;//not even sure i need any of these, but there are here for now
 
 //Graph@ _graph;
 
@@ -21,31 +24,36 @@ void Start(){
   scene_ = scene_manager_.scene_;
   camera_node_ = scene_manager_.camera_node_;
   scene_manager_.set_camera_parameters(true,42.0f, Vector3(75.0f,0.0f,0.0f));
-  input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
+  //input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
+  input_basics_ = InputBasics();
 
   CreateScene();
 
 }
 
 void CreateScene(){
-  //Graph@ _graph_ground = Graph(_scene,_camera_node,32,32,100.0f,100.0f);//make the graph
+  Graph@ _graph_ground = Graph(scene_,camera_node_,32,32,100.0f,100.0f);//make the graph
   //Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
   //graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   //graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
 
   //Stage@ stage = Stage(scene_,50,50);
 
-  character_ = Character(scene_);//create the character at the scene level
-  scene_manager_.set_camera_target(character_.node_);
-  input_player_.set_controlnode(character_.node_);
+  Node@ camera_target = scene_.CreateChild("camera_target");
+
+  Node@ player_ = spawn_player();
+
+  //character_ = Character(scene_);//create the character at the scene level
+  scene_manager_.set_camera_target(camera_target);
+  //input_player_.set_controlnode(player_);
   //input_player_.set_graph(graph_);
-  input_player_.set_cameranode(camera_node_);
+  //input_player_.set_cameranode(camera_node_);
 
   //my first enemy
-  EnemyBasic@ enemy_ = EnemyBasic(scene_);
+  /*EnemyBasic@ enemy_ = EnemyBasic(scene_);
   enemy_.set_position(Vector3(-10.0f,0.0f,0.0f));
   enemy_.set_enemytarget(character_.node_);
-
+  */
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");
   lightNode.direction = Vector3(0.6f, -1.0f, 0.8f);
@@ -62,6 +70,11 @@ void CreateScene(){
 
   PhysicsWorld@ physics = scene_.physicsWorld;
   physics.gravity = Vector3(0.0f,0.0f,0.0f);
+}
+
+Node@ spawn_player(){
+  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/character.xml");
+  return scene_.InstantiateXML(xml, Vector3(0.0f,0.0f,0.0f), Quaternion());
 }
 
 //--------------------

@@ -1,16 +1,14 @@
 //class Character : ScriptObject{
 //#include "Scripts/shmup/InputPlayer.as"
 #include "Scripts/shmup/Pawn.as"
-//#include "Scripts/shmup/ControllerPlayer.as"
-#include "Scripts/shmup/Actor.as"
-#include "Scripts/shmup/weapons/Weapon.as"
-#include "Scripts/shmup/ProjectileExploder.as"
-#include "Scripts/shmup/ProjectileNoisy.as"
+//#include "Scripts/shmup/weapons/Weapon.as"
+//#include "Scripts/shmup/ProjectileExploder.as"
+//#include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
 class Character:Pawn{
 
-  Character(Scene@ scene){
+  /*Character(Scene@ scene){
     super(scene,"Character");
 
     StaticModel@ coneObject = node_.CreateComponent("StaticModel");
@@ -35,12 +33,7 @@ class Character:Pawn{
     Character_Script@ character_script_ = cast<Character_Script>(node_.CreateScriptObject(scriptFile, "Character_Script"));
     //Weapon@ weapon = Weapon(scene);
     //character_script_.set_weapon(weapon);
-  }
-
-}
-
-
-class Character_Script:Pawn_Script{
+  }*/
 
   void Update(float timeStep){
     float my_y = node.position.y;
@@ -54,8 +47,8 @@ class Character_Script:Pawn_Script{
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     Vector3 pos = node.position+(dir.Normalized()*1.4f);
     const float OBJECT_VELOCITY = 50.0f;
-    //Projectile@ projectile_ = Projectile(node.scene,pos,dir,OBJECT_VELOCITY,hit);
-    ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
-    //ProjectileNoisy@ projectile_ = ProjectileNoisy(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+    ////Projectile@ projectile_ = Projectile(node.scene,pos,dir,OBJECT_VELOCITY,hit);
+    //ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+    ////ProjectileNoisy@ projectile_ = ProjectileNoisy(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
   }
 }

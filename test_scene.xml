@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="1" />
+	<attribute name="Next Replicated Component ID" value="4" />
+	<attribute name="Next Local Node ID" value="16777219" />
+	<attribute name="Next Local Component ID" value="16777222" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="Octree" id="1" />
+	<component type="DebugRenderer" id="2" />
+	<component type="PhysicsWorld" id="3" />
+	<node id="16777216">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="" />
+		<attribute name="Position" value="0 0 0" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="StaticModel" id="16777216">
+			<attribute name="Model" value="Model;Models/Cone.mdl" />
+			<attribute name="Material" value="Material;Materials/Stone.xml" />
+		</component>
+		<component type="ScriptInstance" id="16777217">
+			<attribute name="Delayed Method Calls" value="0" />
+			<attribute name="Script File" value="ScriptFile;Scripts/shmup/Character.as" />
+			<attribute name="Class Name" value="Character" />
+			<attribute name="onGround_" value="false" />
+			<attribute name="isSliding_" value="false" />
+			<attribute name="duration_" value="-1" />
+			<attribute name="health_" value="0" />
+			<attribute name="maxHealth_" value="0" />
+			<attribute name="side_" value="0" />
+			<attribute name="lastDamageSide_" value="0" />
+			<attribute name="lastDamageCreatorID_" value="0" />
+			<attribute name="creatorID_" value="0" />
+			<attribute name="speed_" value="20" />
+			<attribute name="sensitivity_" value="0.1" />
+			<attribute name="firing_" value="0" />
+			<attribute name="firing_timer_" value="0" />
+			<attribute name="firing_interval_" value="0.2" />
+		</component>
+		<component type="RigidBody" id="16777220">
+			<attribute name="Mass" value="10" />
+			<attribute name="Friction" value="0.75" />
+			<attribute name="Angular Factor" value="0 0 0" />
+			<attribute name="Linear Damping" value="0.6" />
+			<attribute name="Collision Event Mode" value="Always" />
+			<attribute name="Use Gravity" value="false" />
+		</component>
+		<component type="CollisionShape" id="16777221" />
+	</node>
+</scene>
