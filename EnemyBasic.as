@@ -27,7 +27,7 @@ class EnemyBasic{
 
   //-------from old pawn
   void set_enemytarget(Node@ target){
-    Pawn@ pawn_ = cast<Pawn>(node_.scriptObject);
+    Pawn_Script@ pawn_ = cast<Pawn_Script>(node_.scriptObject);
     pawn_.set_enemytarget(target);
   }
 
@@ -38,7 +38,7 @@ class EnemyBasic{
 
 }
 
-class EnemyBasic_Script:Pawn{
+class EnemyBasic_Script:Pawn_Script{
   ProgressBar@ bar_;
   float bar_regen_ = 0.001f;
 
@@ -49,12 +49,12 @@ class EnemyBasic_Script:Pawn{
   void Update(float timeStep){
     if(bar_.value_ >= 1.0f){//we can fire a shots, then set it to zero
         bar_.set_value();
-        fire_projectile();
+        fire();
     }
     bar_.set_value(bar_.value_+bar_regen_);
   }
 
-  void fire_projectile(){
+  void fire(){
     if(enemytarget_ !is null){
       //figure out how to shoot toward the dude
       Vector3 fire_from = node.position+Vector3(0.0f,0.5f,0.0f);

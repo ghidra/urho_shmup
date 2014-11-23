@@ -3,16 +3,15 @@
 #include "Scripts/shmup/Pawn.as"
 //#include "Scripts/shmup/ControllerPlayer.as"
 #include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/weapons/Weapon.as"
 #include "Scripts/shmup/ProjectileExploder.as"
 #include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
-class Character{
-  Node@ node_;
+class Character:Pawn{
 
   Character(Scene@ scene){
-
-    node_ = scene.CreateChild("Character");
+    super(scene,"Character");
 
     StaticModel@ coneObject = node_.CreateComponent("StaticModel");
     coneObject.model = cache.GetResource("Model", "Models/Cone.mdl");
@@ -34,21 +33,14 @@ class Character{
     shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
 
     Character_Script@ character_script_ = cast<Character_Script>(node_.CreateScriptObject(scriptFile, "Character_Script"));
+    //Weapon@ weapon = Weapon(scene);
+    //character_script_.set_weapon(weapon);
   }
-
-  //-------from old pawn
-  /*void set_position(Vector3 pos){
-    node_.position = pos;
-  }
-
-  void set_enemytarget(Node@ target){
-    enemytarget_ = target;
-  }*/
 
 }
 
 
-class Character_Script:Pawn{
+class Character_Script:Pawn_Script{
 
   void Update(float timeStep){
     float my_y = node.position.y;

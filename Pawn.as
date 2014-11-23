@@ -2,9 +2,20 @@
 //and anything that needs to be moved i guess, maybe even projectiles later
 //this class should house the mean to move an actor, and remove the code from the controler classes
 #include "Scripts/shmup/Actor.as"
-class Pawn:Actor{
+class Pawn{
+  //pawns have a node, and they carry a weapon
+  Node@ node_;
+  //Weapon@ weapon_;
+  Pawn(Scene@ scene, String name){
+    node_ = scene.CreateChild(name);
+    //weapon_ = Weapon(scene);
+  }
+}
+
+class Pawn_Script:Actor{
 
   Node@ enemytarget_;
+  Weapon@ weapon_;
   int firing_ = 0;
   float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
   float firing_interval_ = 0.2f;//how often we can fire
@@ -17,6 +28,9 @@ class Pawn:Actor{
   void set_enemytarget(Node@ target){
     enemytarget_ = target;
   }
+  void set_weapon(Weapon@ weapon){
+    weapon_ = weapon;
+  }
 
   //-----
 
@@ -24,7 +38,10 @@ class Pawn:Actor{
     RigidBody@ body_ = node.GetComponent("RigidBody");
     body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
   }
-  void fire_projectile(Vector3 target_position,float timestep = 0.0f){
+  void fire(Vector3 target_position,float timestep = 0.0f){
+    //Weapon_Script@ weapon = cast<Weapon_Script>(weapon_.weapon_script_.scriptObject);
+    //weapon.fire();
+
     if(firing_<1){//start firing
       firing_=1;
       firing_timer_ = timestep;
