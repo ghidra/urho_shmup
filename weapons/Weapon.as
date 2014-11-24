@@ -26,7 +26,7 @@ class Weapon:Actor{
   }
 
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
-    const float OBJECT_VELOCITY = 4.5f;
+    const float OBJECT_VELOCITY = 50.0f;
     Projectile@ projectile_ = Projectile(node.scene,node.worldPosition,dir,OBJECT_VELOCITY,hit);
   }
 

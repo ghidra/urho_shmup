@@ -1,16 +1,11 @@
-THIS IS THE NEW BRANCH FOR SHMUPS
-
-character/pawn class
-
-Main_2:
+Notes:
 ---------------------
 
-I should make a focus node, that the camera actually follows.
-  This can trail behind the main character, but also allows me to avaerage what is on screen at one time
-  or something along those lines
-maybe we need a weapon class that fires off the projectile class
+I should make a focus node, that the camera actually follows. (camera target)
+  This can trail behind the main character, or lock in place etc
 put some of these classes in folder for organization
 
+new enemy class
 
 fix the bar scaling messing up the position----almost
 -reduce health at collision

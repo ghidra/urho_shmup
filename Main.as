@@ -52,6 +52,7 @@ void CreateScene(){
 
   //character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(camera_target);
+  scene_manager_.set_camera_target(player_);
   input_player_.set_controlnode(player_);
   //input_player_.set_graph(graph_);
   input_player_.set_cameranode(camera_node_);
