@@ -1,8 +1,9 @@
 #include "Scripts/shmup/SceneManager.as"
-//#include "Scripts/shmup/InputPlayer.as"
-#include "Scripts/shmup/InputBasics.as"
+#include "Scripts/shmup/InputPlayer.as"
+//#include "Scripts/shmup/InputBasics.as"
 #include "Scripts/shmup/Graph.as"
 #include "Scripts/shmup/Character.as"
+#include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/CameraLogic.as"
 //#include "Scripts/shmup/Perlin.as"
 //#include "Scripts/shmup/Stage.as"
@@ -12,8 +13,11 @@
 SceneManager@ scene_manager_;
 Scene@ scene_;
 Node@ camera_node_;
-//InputPlayer@ input_player_;
-InputBasics@ input_basics_;
+InputPlayer@ input_player_;
+//InputBasics@ input_basics_;
+
+Controls playerControls_;
+Controls prevPlayerControls_;
 
 //Character@ character_;//not even sure i need any of these, but there are here for now
 
@@ -24,8 +28,8 @@ void Start(){
   scene_ = scene_manager_.scene_;
   camera_node_ = scene_manager_.camera_node_;
   scene_manager_.set_camera_parameters(true,42.0f, Vector3(75.0f,0.0f,0.0f));
-  //input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
-  input_basics_ = InputBasics();
+  input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
+  //input_basics_ = InputBasics();
 
   CreateScene();
 
@@ -42,12 +46,15 @@ void CreateScene(){
   Node@ camera_target = scene_.CreateChild("camera_target");
 
   Node@ player_ = spawn_player();
+  //Print(player_.GetComponent("ScriptObject").category);
+  //Character@ c_ = cast<Character>(player_.GetScriptObject("Character"));
+  //Character@ c_ = cast<Character>(player_.scriptObject);
 
   //character_ = Character(scene_);//create the character at the scene level
   scene_manager_.set_camera_target(camera_target);
-  //input_player_.set_controlnode(player_);
+  input_player_.set_controlnode(player_);
   //input_player_.set_graph(graph_);
-  //input_player_.set_cameranode(camera_node_);
+  input_player_.set_cameranode(camera_node_);
 
   //my first enemy
   /*EnemyBasic@ enemy_ = EnemyBasic(scene_);

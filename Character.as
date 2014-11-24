@@ -1,12 +1,44 @@
 //class Character : ScriptObject{
 //#include "Scripts/shmup/InputPlayer.as"
 #include "Scripts/shmup/Pawn.as"
-//#include "Scripts/shmup/weapons/Weapon.as"
-//#include "Scripts/shmup/ProjectileExploder.as"
+#include "Scripts/shmup/weapons/Weapon.as"
+#include "Scripts/shmup/ProjectileExploder.as"
 //#include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
 class Character:Pawn{
+  int temp;
+  Character(){
+    temp=1;
+  }
+  //Controls controls;
+  //Controls prevControls;
+  //AIController@ controller;
+  /*void FixedUpdate(float timeStep){
+    RigidBody@ body = node.GetComponent("RigidBody");
+    if (controls.IsDown(CTRL_UP|CTRL_DOWN|CTRL_LEFT|CTRL_RIGHT)){
+      float animDir = 1.0f;
+      Vector3 force(0, 0, 0);
+      if (controls.IsDown(CTRL_UP))
+          force +=  Vector3(0, 0, 1);
+      if (controls.IsDown(CTRL_DOWN)){
+          animDir = -1.0f;
+          force += Vector3(0, 0, -1);
+      }
+      if (controls.IsDown(CTRL_LEFT)){
+          //sideMove = true;
+          force += Vector3(-1, 0, 0);
+      }
+      if (controls.IsDown(CTRL_RIGHT)){
+          //sideMove = true;
+          force += Vector3(1, 0, 0);
+      }
+      // Normalize so that diagonal strafing isn't faster
+      force.Normalize();
+      //force *= ninjaMoveForce;
+      body.ApplyImpulse(force);
+    }
+  }*/
 
   /*Character(Scene@ scene){
     super(scene,"Character");
@@ -43,12 +75,13 @@ class Character:Pawn{
       node.position=Vector3(node.position.x,0.0f,node.position.z);
     }
   }
+  //----
   //projetiles are so far specifically exploder variety
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     Vector3 pos = node.position+(dir.Normalized()*1.4f);
     const float OBJECT_VELOCITY = 50.0f;
     ////Projectile@ projectile_ = Projectile(node.scene,pos,dir,OBJECT_VELOCITY,hit);
-    //ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
+    ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
     ////ProjectileNoisy@ projectile_ = ProjectileNoisy(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
   }
 }

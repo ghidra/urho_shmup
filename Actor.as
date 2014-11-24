@@ -2,6 +2,14 @@ const int SIDE_NEUTRAL = 0;
 const int SIDE_PLAYER = 1;
 const int SIDE_ENEMY = 2;
 
+const int CTRL_UP = 1;
+const int CTRL_DOWN = 2;
+const int CTRL_LEFT = 4;
+const int CTRL_RIGHT = 8;
+const int CTRL_FIRE = 16;
+const int CTRL_JUMP = 32;
+const int CTRL_ALL = 63;
+
 class Actor : ScriptObject{
   bool onGround_;
   bool isSliding_;

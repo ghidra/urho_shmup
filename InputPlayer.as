@@ -69,7 +69,7 @@ class InputPlayer : InputBasics{
     //Character@ pawn = cast<Character>(control_node.scriptObject);
     //Pawn@ pawn = cast<Pawn>(control_node.GetScriptObject("Character"));
     if (pawn !is null){
-      Print("we have something to control");
+      //Print("we have something to control");
       node_ = control_node;
     }
   }
@@ -83,7 +83,7 @@ class InputPlayer : InputBasics{
   void move( Vector3 direction, float timeStep){
     //Print("I want to move");
     if(node_ !is null){
-      Print("try from input");
+      //Print("try from input");
       Pawn@ pawn = cast<Pawn>(node_.scriptObject);
       pawn.move( direction, timeStep);
     }
@@ -112,20 +112,20 @@ class InputPlayer : InputBasics{
   void fire(float timestep){
     if(node_ !is null){
 
-      /*Pawn_Script@ pawn = cast<Pawn_Script>(node_.scriptObject);
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
 
       Vector3 target_position = Vector3(0.0f,1.0f,0.0f);
 
       if(graph_ !is null)
         target_position = graph_.hit_;
 
-      pawn.fire(target_position,timestep);*/
+      pawn.fire(target_position,timestep);
     }
   }
   void release_fire(){
-    /*if(node_ !is null){
-      Pawn_Script@ pawn = cast<Pawn_Script>(node_.scriptObject);
+    if(node_ !is null){
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
       pawn.release_fire();
-    }*/
+    }
   }
 }

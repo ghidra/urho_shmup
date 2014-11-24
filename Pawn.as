@@ -2,6 +2,8 @@
 //and anything that needs to be moved i guess, maybe even projectiles later
 //this class should house the mean to move an actor, and remove the code from the controler classes
 #include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/weapons/Weapon.as"
+#include "Scripts/shmup/Projectile.as"
 class Pawn:Actor{
 
   //Node@ enemytarget_;
@@ -27,12 +29,11 @@ class Pawn:Actor{
   void move(Vector3 direction, float timestep){
     RigidBody@ body_ = node.GetComponent("RigidBody");
     body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
-    Print("try from pawn");
+    //Print("try from pawn");
   }
   /*void fire(Vector3 target_position,float timestep = 0.0f){
     //Weapon_Script@ weapon = cast<Weapon_Script>(weapon_.weapon_script_.scriptObject);
     //weapon.fire();
-
     if(firing_<1){//start firing
       firing_=1;
       firing_timer_ = timestep;
@@ -53,11 +54,25 @@ class Pawn:Actor{
   void release_fire(){
     firing_=0;
     //firing_timer_=0.0f;
+  }*/
+  //this is called from the inputPLayer class
+  void fire(Vector3 target_position,float timestep = 0.0f){
+    //lets check that we have a weapon class
+    Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject("Weapon"));
+    if(weapon !is null){//if we have a weapon, we can fire that bitch
+      weapon.fire(target_position,timestep);
+    }
+  }
+  void release_fire(){
+    Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject("Weapon"));
+    if(weapon !is null){//if we have a weapon, we can fire that bitch
+      weapon.release_fire();
+    }
   }
 
   void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     const float OBJECT_VELOCITY = 4.5f;
     Projectile@ projectile_ = Projectile(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
-  }*/
+  }
 
 }
