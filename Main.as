@@ -36,7 +36,7 @@ void Start(){
 }
 
 void CreateScene(){
-  Graph@ _graph_ground = Graph(scene_,camera_node_,32,32,100.0f,100.0f);//make the graph
+  //Graph@ _graph_ground = Graph(scene_,camera_node_,10,10,100.0f,100.0f);//make the graph
   //Graph@ graph_ = Graph(scene_,camera_node_,10,3,100.0f,25.0f);//make the graph
   //graph_.node_.Rotate(Quaternion(-90.0f,0.0f,0.0f));
   //graph_.node_.Translate(Vector3(0.0f,0.0f,25.0f/2.0f));//move it up equal with the ground
@@ -81,7 +81,7 @@ void CreateScene(){
 }
 
 Node@ spawn_player(){
-  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/character.xml");
+  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/character.xml");
   return scene_.InstantiateXML(xml, Vector3(0.0f,0.0f,0.0f), Quaternion());
 }
 
