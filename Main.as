@@ -1,10 +1,10 @@
-#include "Scripts/shmup/SceneManager.as"
-#include "Scripts/shmup/InputPlayer.as"
+#include "Scripts/shmup/core/SceneManager.as"
+#include "Scripts/shmup/core/InputPlayer.as"
 //#include "Scripts/shmup/InputBasics.as"
 #include "Scripts/shmup/math/Graph.as"
-#include "Scripts/shmup/Character.as"
+#include "Scripts/shmup/core/Character.as"
 #include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
-#include "Scripts/shmup/CameraLogic.as"
+#include "Scripts/shmup/core/CameraLogic.as"
 //#include "Scripts/shmup/Perlin.as"
 //#include "Scripts/shmup/Stage.as"
 

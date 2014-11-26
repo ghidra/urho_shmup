@@ -1,4 +1,4 @@
-#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/core/Actor.as"
 #include "Scripts/shmup/projectiles/Explosion.as"
 
 /*shared class Projectile{

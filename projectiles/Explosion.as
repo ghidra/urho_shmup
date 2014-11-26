@@ -1,4 +1,4 @@
-#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/core/Actor.as"
 
 shared class Explosion{
 

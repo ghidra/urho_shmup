@@ -1,7 +1,7 @@
 //this is the new pawn, that extends actor that extends the script object. meant to be used by the character and enemy classes
 //and anything that needs to be moved i guess, maybe even projectiles later
 //this class should house the mean to move an actor, and remove the code from the controler classes
-#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/core/Actor.as"
 #include "Scripts/shmup/weapons/Weapon.as"
 //#include "Scripts/shmup/Projectile.as"
 shared class Pawn:Actor{

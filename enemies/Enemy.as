@@ -1,4 +1,4 @@
-#include "Scripts/shmup/Pawn.as"
+#include "Scripts/shmup/core/Pawn.as"
 #include "Scripts/shmup/gui/ProgressBar.as"
 
 class EnemyBasic{

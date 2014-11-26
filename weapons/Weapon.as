@@ -1,4 +1,4 @@
-#include "Scripts/shmup/Actor.as"
+#include "Scripts/shmup/core/Actor.as"
 #include "Scripts/shmup/projectiles/Projectile.as"
 #include "Scripts/shmup/projectiles/ProjectileNoisy.as"
 #include "Scripts/shmup/projectiles/ProjectileExploder.as"

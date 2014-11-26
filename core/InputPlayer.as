@@ -1,5 +1,5 @@
-#include "Scripts/shmup/InputBasics.as"
-#include "Scripts/shmup/Pawn.as"
+#include "Scripts/shmup/core/InputBasics.as"
+#include "Scripts/shmup/core/Pawn.as"
 #include "Scripts/shmup/math/Graph.as"
 
 class InputPlayer : InputBasics{

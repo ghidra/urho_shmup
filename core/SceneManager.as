@@ -1,4 +1,4 @@
-#include "Scripts/shmup/CameraLogic.as"
+#include "Scripts/shmup/core/CameraLogic.as"
 
 class SceneManager{
 
