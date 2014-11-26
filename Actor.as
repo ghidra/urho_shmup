@@ -10,7 +10,7 @@ const int CTRL_FIRE = 16;
 const int CTRL_JUMP = 32;
 const int CTRL_ALL = 63;
 
-class Actor : ScriptObject{
+shared class Actor : ScriptObject{
   bool onGround_;
   bool isSliding_;
   float duration_;

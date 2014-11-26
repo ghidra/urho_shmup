@@ -1,7 +1,7 @@
 #include "Scripts/shmup/Actor.as"
 #include "Scripts/shmup/Explosion.as"
 
-class Projectile{
+shared class Projectile{
 
   //Vector3 hit_;//this is if we want this projectile to aim at a specific position
 
@@ -40,7 +40,7 @@ class Projectile{
 
 }
 
-class Projectile_Script:Actor{
+shared class Projectile_Script:Actor{
 
   Vector3 hit_;//this is if we want this projectile to aim at a specific position
 

@@ -1,7 +1,7 @@
 #include "Scripts/shmup/Projectile.as"
 #include "Scripts/shmup/Perlin.as"
 
-class ProjectileNoisy:Projectile{
+shared class ProjectileNoisy:Projectile{
 
   ProjectileNoisy(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 4.5f, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     super(scene,pos,dir,speed,hit);
@@ -14,7 +14,7 @@ class ProjectileNoisy:Projectile{
 
 }
 
-class ProjectileNoisy_Script:Projectile_Script{
+shared class ProjectileNoisy_Script:Projectile_Script{
 
   Perlin@ noise_;
 

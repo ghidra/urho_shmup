@@ -4,7 +4,7 @@
 #include "Scripts/shmup/Actor.as"
 #include "Scripts/shmup/weapons/Weapon.as"
 #include "Scripts/shmup/Projectile.as"
-class Pawn:Actor{
+shared class Pawn:Actor{
 
   //Node@ enemytarget_;
   //Weapon@ weapon_;

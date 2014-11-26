@@ -1,6 +1,6 @@
 #include "Scripts/shmup/Actor.as"
 
-class Explosion{
+shared class Explosion{
 
   Node@ node_;
 
@@ -22,7 +22,7 @@ class Explosion{
 
 }
 
-class Explosion_Script:Actor{
+shared class Explosion_Script:Actor{
   float radius_;
   void Update(float timeStep){
     radius_ = 1.0f;

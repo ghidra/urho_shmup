@@ -6,7 +6,7 @@
 //#include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
-class Character:Pawn{
+shared class Character:Pawn{
   int temp;
   Character(){
     temp=1;
