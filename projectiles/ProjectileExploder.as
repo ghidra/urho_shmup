@@ -1,4 +1,4 @@
-#include "Scripts/shmup/Projectile.as"
+#include "Scripts/shmup/projectiles/Projectile.as"
 
 shared class ProjectileExploder:Projectile{
 

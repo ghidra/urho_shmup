@@ -1,5 +1,5 @@
 #include "Scripts/shmup/Pawn.as"
-#include "Scripts/shmup/ProgressBar.as"
+#include "Scripts/shmup/gui/ProgressBar.as"
 
 class EnemyBasic{
 

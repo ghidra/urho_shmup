@@ -1,7 +1,7 @@
 #include "Scripts/shmup/SceneManager.as"
 #include "Scripts/shmup/InputPlayer.as"
 //#include "Scripts/shmup/InputBasics.as"
-#include "Scripts/shmup/Graph.as"
+#include "Scripts/shmup/math/Graph.as"
 #include "Scripts/shmup/Character.as"
 #include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/CameraLogic.as"
@@ -16,8 +16,7 @@ Node@ camera_node_;
 InputPlayer@ input_player_;
 //InputBasics@ input_basics_;
 
-Controls playerControls_;
-Controls prevPlayerControls_;
+
 
 //Character@ character_;//not even sure i need any of these, but there are here for now
 

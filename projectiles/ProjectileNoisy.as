@@ -1,5 +1,5 @@
-#include "Scripts/shmup/Projectile.as"
-#include "Scripts/shmup/Perlin.as"
+#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/shmup/math/Perlin.as"
 
 shared class ProjectileNoisy:Projectile{
 

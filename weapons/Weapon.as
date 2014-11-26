@@ -1,7 +1,7 @@
 #include "Scripts/shmup/Actor.as"
-#include "Scripts/shmup/Projectile.as"
-#include "Scripts/shmup/ProjectileNoisy.as"
-#include "Scripts/shmup/ProjectileExploder.as"
+#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/shmup/projectiles/ProjectileNoisy.as"
+#include "Scripts/shmup/projectiles/ProjectileExploder.as"
 
 shared class Weapon:Actor{
   int firing_ = 0;

@@ -1,5 +1,5 @@
 #include "Scripts/shmup/Actor.as"
-#include "Scripts/shmup/Explosion.as"
+#include "Scripts/shmup/projectiles/Explosion.as"
 
 /*shared class Projectile{
 
