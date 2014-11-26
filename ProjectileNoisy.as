@@ -3,19 +3,6 @@
 
 shared class ProjectileNoisy:Projectile{
 
-  ProjectileNoisy(Scene@ scene, Vector3 pos, Vector3 dir, float speed = 4.5f, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
-    super(scene,pos,dir,speed,hit);
-  }
-
-  void attach_script(Node@ node, Vector3 hit = Vector3(0.0f,0.0f,0.0f) ){
-    ProjectileNoisy_Script@ node_script_ = cast<ProjectileNoisy_Script>(node.CreateScriptObject(scriptFile, "ProjectileNoisy_Script"));
-    node_script_.set_hit(hit);
-  }
-
-}
-
-shared class ProjectileNoisy_Script:Projectile_Script{
-
   Perlin@ noise_;
 
   void Start(){
@@ -25,7 +12,7 @@ shared class ProjectileNoisy_Script:Projectile_Script{
   }
 
   void FixedUpdate(float timeStep){
-    Projectile_Script::FixedUpdate(timeStep);
+    Projectile::FixedUpdate(timeStep);
 
     if(node !is null){//if we havent removed the node
       RigidBody@ body_ = node.GetComponent("RigidBody");

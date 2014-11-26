@@ -1,7 +1,7 @@
 #include "Scripts/shmup/Actor.as"
 #include "Scripts/shmup/Explosion.as"
 
-shared class Projectile{
+/*shared class Projectile{
 
   //Vector3 hit_;//this is if we want this projectile to aim at a specific position
 
@@ -38,9 +38,9 @@ shared class Projectile{
     node_script_.set_hit(hit);
   }
 
-}
+}*/
 
-shared class Projectile_Script:Actor{
+shared class Projectile:Actor{
 
   Vector3 hit_;//this is if we want this projectile to aim at a specific position
 
@@ -99,7 +99,12 @@ shared class Projectile_Script:Actor{
     node.Remove();
   }*/
 
-  void set_hit(Vector3 hit){//this is a specific location that we are aiming for
+  /*void set_hit(Vector3 hit){//this is a specific location that we are aiming for
+    hit_ = hit;
+  }*/
+  void set_parms(const Vector3 dir,const float speed,const Vector3 hit=Vector3(0.0f,0.0f,.0.0f)){
+    RigidBody@ body_ = node.GetComponent("RigidBody");
+    body_.linearVelocity = dir * speed;
     hit_ = hit;
   }
 

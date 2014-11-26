@@ -1,5 +1,5 @@
 //https://github.com/caseman/noise/blob/master/perlin.py
-class PerlinBase{
+shared class PerlinBase{
 
 	Array<Vector3> _GRAD3 = {Vector3(1,1,0),Vector3(-1,1,0),Vector3(1,-1,0),Vector3(-1,-1,0),
 		Vector3(1,0,1),Vector3(-1,0,1),Vector3(1,0,-1),Vector3(-1,0,-1),
@@ -70,7 +70,7 @@ class PerlinBase{
 }
 
 
-class Perlin: PerlinBase{
+shared class Perlin: PerlinBase{
 
 	Perlin(uint i = 1){super(i);}
 

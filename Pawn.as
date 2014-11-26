@@ -70,9 +70,9 @@ shared class Pawn:Actor{
     }
   }
 
-  void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
+  /*void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
     const float OBJECT_VELOCITY = 4.5f;
     Projectile@ projectile_ = Projectile(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
-  }
+  }*/
 
 }

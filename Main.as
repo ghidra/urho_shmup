@@ -81,7 +81,7 @@ void CreateScene(){
 }
 
 Node@ spawn_player(){
-  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/character.xml");
+  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/Character.xml");
   return scene_.InstantiateXML(xml, Vector3(0.0f,0.0f,0.0f), Quaternion());
 }
 

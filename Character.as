@@ -2,7 +2,7 @@
 //#include "Scripts/shmup/InputPlayer.as"
 #include "Scripts/shmup/Pawn.as"
 #include "Scripts/shmup/weapons/Weapon.as"
-#include "Scripts/shmup/ProjectileExploder.as"
+//#include "Scripts/shmup/ProjectileExploder.as"
 //#include "Scripts/shmup/ProjectileNoisy.as"
 
 //class Character : InputPlayer{
