@@ -2,10 +2,13 @@ Notes:
 ---------------------
 
 I should make a focus node, that the camera actually follows. (camera target)
-  This can trail behind the main character, or lock in place etc
-put some of these classes in folder for organization
+as well as a bounding box that player is allowed to be in.
+maybe this ox is attached to the follow node, and it all moves forward at a set pace. as well as the character.
+-or I can just translate thing out, to fake the motion
 
-new enemy class
+look at setting up pick ups that will change the weapon that the character has.
+
+enemy class
 
 fix the bar scaling messing up the position----almost
 -reduce health at collision

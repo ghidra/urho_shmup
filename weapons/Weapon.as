@@ -38,9 +38,6 @@ shared class Weapon:Actor{
     node_script_.set_parms(dir,OBJECT_VELOCITY,hit);
 
     return projectile_;
-
-
-    //Projectile@ projectile_ = Projectile(node.scene,node.worldPosition,dir,OBJECT_VELOCITY,hit);
   }
 
 }
