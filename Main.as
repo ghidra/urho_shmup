@@ -4,6 +4,7 @@
 #include "Scripts/shmup/core/Character.as"
 #include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/core/CameraLogic.as"
+#include "Scripts/shmup/core/Pickup.as"
 //#include "Scripts/shmup/Enemy.as"
 //#include "Scripts/shmup/Perlin.as"
 
@@ -25,7 +26,7 @@ void Start(){
 
 void CreateScene(){
 
-  Node@ player_ = spawn_player();
+  Node@ player_ = spawn_object("Character");
 
   Node@ camera_target = scene_.CreateChild("camera_target");
   scene_manager_.set_camera_target(camera_target);
@@ -33,6 +34,29 @@ void CreateScene(){
 
   input_player_.set_controlnode(player_);
   input_player_.set_cameranode(camera_node_);
+
+  //pickups
+  Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
+  Node@ pu2 = spawn_object("Pickup",Vector3(-5.0f,0.0f,-5.0f) );
+  Node@ pu3 = spawn_object("Pickup",Vector3(5.0f,0.0f,-5.0f) );
+  Node@ pu4 = spawn_object("Pickup",Vector3(15.0f,0.0f,-5.0f) );
+
+  StaticModel@ sm1 = pu1.GetComponent("StaticModel");
+  sm1.model = cache.GetResource("Model", "Scripts/shmup/models/1.mdl");
+  sm1.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+  Pickup@ pu1_script_ = cast<Pickup>(pu1.CreateScriptObject(scriptFile, "Pickup"));
+
+  StaticModel@ sm2 = pu2.GetComponent("StaticModel");
+  sm2.model = cache.GetResource("Model", "Scripts/shmup/models/2.mdl");
+  sm2.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+
+  StaticModel@ sm3 = pu3.GetComponent("StaticModel");
+  sm3.model = cache.GetResource("Model", "Scripts/shmup/models/3.mdl");
+  sm3.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+
+  StaticModel@ sm4 = pu4.GetComponent("StaticModel");
+  sm4.model = cache.GetResource("Model", "Scripts/shmup/models/4.mdl");
+  sm4.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
 
   //my first enemy
   /*Enemy@ enemy_ = Enemy();
@@ -54,9 +78,9 @@ void CreateScene(){
   physics.gravity = Vector3(0.0f,0.0f,0.0f);
 }
 
-Node@ spawn_player(){
-  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/Character.xml");
-  return scene_.InstantiateXML(xml, Vector3(0.0f,0.0f,0.0f), Quaternion());
+Node@ spawn_object(const String&in otype, const Vector3&in pos= Vector3(), const Quaternion&in ori = Quaternion() ){
+  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + otype + ".xml");
+  return scene_.InstantiateXML(xml, pos, ori);
 }
 
 //--------------------
