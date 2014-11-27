@@ -1,5 +1,7 @@
 Notes:
 ---------------------
+test change
+
 
 I should make a focus node, that the camera actually follows. (camera target)
 as well as a bounding box that player is allowed to be in.
