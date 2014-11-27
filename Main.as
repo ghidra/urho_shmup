@@ -20,6 +20,7 @@ void Start(){
   scene_manager_.set_camera_parameters(true,42.0f, Vector3(75.0f,0.0f,0.0f));
   input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
 
+  //OpenConsoleWindow();
   CreateScene();
 
 }
