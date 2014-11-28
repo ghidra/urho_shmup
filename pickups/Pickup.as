@@ -11,7 +11,12 @@ class Pickup:Actor{
 
     //RigidBody@ body = node.GetComponent("RigidBody");
     //spawn_explosion(node.position,body.linearVelocity);
-    //node.Remove();
+    effect(otherObject,eventData);
+    node.Remove();
+  }
+
+  void effect(Actor@ otherObject, VariantMap& eventData){
+    uint temp = 1;
   }
 
 

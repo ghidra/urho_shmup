@@ -135,6 +135,6 @@ shared class Actor : ScriptObject{
   }
   //------------------------
   //possible helper function
-  Node@ Node() { return node; }//this guy lets me call get at this from other scripts
+  Node@ get_node() { return node; }//this guy lets me call get at this from other scripts
 
 }

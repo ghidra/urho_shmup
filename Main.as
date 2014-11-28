@@ -4,7 +4,7 @@
 #include "Scripts/shmup/core/Character.as"
 #include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/core/CameraLogic.as"
-#include "Scripts/shmup/core/Pickup.as"
+#include "Scripts/shmup/pickups/Pickup_weapon1.as"
 //#include "Scripts/shmup/Enemy.as"
 //#include "Scripts/shmup/Perlin.as"
 
@@ -45,7 +45,7 @@ void CreateScene(){
   StaticModel@ sm1 = pu1.GetComponent("StaticModel");
   sm1.model = cache.GetResource("Model", "Scripts/shmup/models/1.mdl");
   sm1.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
-  Pickup@ pu1_script_ = cast<Pickup>(pu1.CreateScriptObject(scriptFile, "Pickup"));
+  Pickup_weapon1@ pu1_script_ = cast<Pickup_weapon1>(pu1.CreateScriptObject(scriptFile, "Pickup_weapon1"));
 
   StaticModel@ sm2 = pu2.GetComponent("StaticModel");
   sm2.model = cache.GetResource("Model", "Scripts/shmup/models/2.mdl");
