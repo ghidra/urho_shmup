@@ -2,7 +2,7 @@
 #include "Scripts/shmup/core/InputPlayer.as"
 #include "Scripts/shmup/math/Graph.as"
 #include "Scripts/shmup/core/Character.as"
-#include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
+//#include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/core/CameraLogic.as"
 #include "Scripts/shmup/pickups/Pickup_weapon1.as"
 //#include "Scripts/shmup/Enemy.as"

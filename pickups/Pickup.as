@@ -1,5 +1,5 @@
 #include "Scripts/shmup/core/Actor.as"
-class Pickup:Actor{
+shared class Pickup:Actor{
 
   void Start(){
       SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");

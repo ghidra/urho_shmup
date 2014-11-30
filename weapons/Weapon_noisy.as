@@ -1,10 +1,14 @@
-#include "Scripts/shmup/core/Actor.as"
-#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/shmup/Weapons/Weapon.as"
+#include "Scripts/shmup/projectiles/ProjectileNoisy.as"
 
-shared class Weapon:Actor{
-  int firing_ = 0;
-  float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
-  float firing_interval_ = 0.2f;//how often we can fire
+shared class Weapon_noisy:Weapon{
+  //int firing_ = 0;
+  //float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
+  //float firing_interval_ = 0.2f;//how often we can fire
+
+  Weapon_noisy(){
+    firing_interval_ = 0.2f;
+  }
 
   void fire(Vector3 target_position,float timestep = 0.0f){
     if(firing_<1){//start firing
@@ -27,7 +31,7 @@ shared class Weapon:Actor{
   }
 
   Node@ spawn_projectile(const String&in ptype, const Vector3&in dir, const Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
-    const float OBJECT_VELOCITY = 50.0f;
+    const float OBJECT_VELOCITY = 5.0f;
 
     XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ptype + ".xml");
     Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition, Quaternion());
