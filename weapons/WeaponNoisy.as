@@ -1,13 +1,13 @@
-#include "Scripts/shmup/Weapons/Weapon.as"
+#include "Scripts/shmup/weapons/Weapon.as"
 #include "Scripts/shmup/projectiles/ProjectileNoisy.as"
 
-shared class Weapon_noisy:Weapon{
+shared class WeaponNoisy:Weapon{
   //int firing_ = 0;
   //float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
   //float firing_interval_ = 0.2f;//how often we can fire
 
-  Weapon_noisy(){
-    firing_interval_ = 0.2f;
+  WeaponNoisy(){
+    firing_interval_ = 0.4f;
   }
 
   void fire(Vector3 target_position,float timestep = 0.0f){
@@ -36,7 +36,7 @@ shared class Weapon_noisy:Weapon{
     XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ptype + ".xml");
     Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition, Quaternion());
 
-    Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, "Projectile", LOCAL));
+    Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, "ProjectileNoisy", LOCAL));
     node_script_.set_parms(dir,OBJECT_VELOCITY,hit);
 
     return projectile_;
