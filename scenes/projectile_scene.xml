@@ -7,27 +7,28 @@
 	<attribute name="Elapsed Time" value="0" />
 	<attribute name="Next Replicated Node ID" value="1" />
 	<attribute name="Next Replicated Component ID" value="4" />
-	<attribute name="Next Local Node ID" value="16777217" />
-	<attribute name="Next Local Component ID" value="16777219" />
+	<attribute name="Next Local Node ID" value="16777218" />
+	<attribute name="Next Local Component ID" value="16777223" />
 	<attribute name="Variables" />
 	<attribute name="Variable Names" value="" />
 	<component type="Octree" id="1" />
 	<component type="DebugRenderer" id="2" />
 	<component type="PhysicsWorld" id="3" />
-	<node id="16777216">
+	<node id="16777217">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="" />
 		<attribute name="Position" value="0 -3.94427 7.88854" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="0.25 0.25 0.25" />
 		<attribute name="Variables" />
-		<component type="StaticModel" id="16777216">
+		<component type="StaticModel" id="16777219">
 			<attribute name="Model" value="Model;Models/Sphere.mdl" />
 			<attribute name="Material" value="Material;Materials/Stone.xml" />
 		</component>
-		<component type="RigidBody" id="16777217">
+		<component type="RigidBody" id="16777222">
 			<attribute name="Physics Position" value="0 -3.94427 7.88854" />
 			<attribute name="Mass" value="0.25" />
+			<attribute name="Collision Mask" value="2" />
 		</component>
 		<component type="CollisionShape" id="16777218" />
 	</node>
