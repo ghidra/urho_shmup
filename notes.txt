@@ -1,16 +1,5 @@
 Notes:
 ---------------------
-test change
-another test change
-
-
-I should make a focus node, that the camera actually follows. (camera target)
-as well as a bounding box that player is allowed to be in.
-maybe this ox is attached to the follow node, and it all moves forward at a set pace. as well as the character.
--or I can just translate thing out, to fake the motion
-
-look at setting up pick ups that will change the weapon that the character has.
-
 enemy class
 
 fix the bar scaling messing up the position----almost
