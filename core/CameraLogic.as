@@ -54,7 +54,7 @@ class CameraLogic : ScriptObject{
     node.rotation = rotation_offset_*boom_rotation_;
   }
 
-  void Update(float timeStep){
+  void FixedUpdate(float timeStep){
     set_position();
   }
 

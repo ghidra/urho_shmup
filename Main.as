@@ -29,8 +29,16 @@ void CreateScene(){
 
   Node@ player_ = spawn_object("Character");
 
-  Node@ camera_target = scene_.CreateChild("camera_target");
-  scene_manager_.set_camera_target(camera_target);
+  Node@ container_ = scene_.CreateChild("camera_target");
+  container_.CreateScriptObject(scriptFile, "Container");//make the container
+  container_.AddChild(player_);//put the player under the container
+
+  Container@ cso = cast<Container>(container_.scriptObject);
+  Character@ chso = cast<Character>(player_.scriptObject);
+  //Print(cso.bounds_.x);
+  chso.set_bounds(cso.bounds_);
+
+  scene_manager_.set_camera_target(container_);
   //scene_manager_.set_camera_target(player_);
 
   input_player_.set_controlnode(player_);
@@ -85,3 +93,11 @@ Node@ spawn_object(const String&in otype, const Vector3&in pos= Vector3(), const
 }
 
 //--------------------
+
+//the container to move the whol scene
+class Container:ScriptObject{
+  Vector2 bounds_ = Vector2(24.0f,16.0f);
+  void FixedUpdate(float timeStep){
+    node.position = node.position+Vector3(0.0f,0.0f,0.75f*timeStep);
+  }
+}
