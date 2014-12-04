@@ -1,7 +1,7 @@
-#include "Scripts/shmup/core/Pawn.as"
+#include "Scripts/shmup/core/Character.as"
 #include "Scripts/shmup/gui/ProgressBar.as"
 
-class EnemyBasic{
+/*class EnemyBasic{
 
   Node@ node_;
 
@@ -36,26 +36,29 @@ class EnemyBasic{
   }
   //----------------------
 
-}
+}*/
 
-class EnemyBasic_Script:Pawn_Script{
-  ProgressBar@ bar_;
-  float bar_regen_ = 0.001f;
+class Enemy:Character{
+  //ProgressBar@ bar_;
+  Node@ target_;//this will likely be the main character that I am firing at
+  //float bar_regen_ = 0.001f;
 
   void Start(){
-    bar_ = ProgressBar(node.scene,node,"cooldown",Vector3(0.0f,1.2f,0.0f));//use defaults
+    //bar_ = ProgressBar(node.scene,node,"cooldown",Vector3(0.0f,1.2f,0.0f));//use defaults
   }
 
-  void Update(float timeStep){
-    if(bar_.value_ >= 1.0f){//we can fire a shots, then set it to zero
+  void FixedUpdate(float timeStep){
+    //RigidBody@ rb_ = node.GetComponent("RigidBody");
+    //Print(rb_.collisionMask);
+    /*if(bar_.value_ >= 1.0f){//we can fire a shots, then set it to zero
         bar_.set_value();
         fire();
     }
-    bar_.set_value(bar_.value_+bar_regen_);
+    bar_.set_value(bar_.value_+bar_regen_);*/
   }
 
-  void fire(){
-    if(enemytarget_ !is null){
+  /*void fire(){
+    if(target_ !is null){
       //figure out how to shoot toward the dude
       Vector3 fire_from = node.position+Vector3(0.0f,0.5f,0.0f);
       Vector3 fire_on = enemytarget_.position;
@@ -63,13 +66,6 @@ class EnemyBasic_Script:Pawn_Script{
 
       spawn_projectile(dir);
     }
-  }
-  void spawn_projectile(Vector3 dir, Vector3 hit = Vector3(0.0f,0.0f,0.0f)){
-    Vector3 pos = node.position+(dir.Normalized()*1.4f);
-    const float OBJECT_VELOCITY = 1.5f;
-    //Projectile@ projectile_ = Projectile(node.scene,pos,dir,OBJECT_VELOCITY,hit);
-    //ProjectileExploder@ projectile_ = ProjectileExploder(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
-    ProjectileNoisy@ projectile_ = ProjectileNoisy(node.scene,node.position,dir,OBJECT_VELOCITY,hit);
-  }
+  }*/
 
 }

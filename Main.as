@@ -7,6 +7,8 @@
 #include "Scripts/shmup/pickups/PickupWeapon1.as"
 #include "Scripts/shmup/pickups/PickupWeapon2.as"
 
+#include "Scripts/shmup/enemies/EnemyFactory.as"
+
 //#include "Scripts/shmup/Enemy.as"
 //#include "Scripts/shmup/Perlin.as"
 
@@ -37,7 +39,6 @@ void CreateScene(){
 
   Container@ cso = cast<Container>(container_.scriptObject);
   Character@ chso = cast<Character>(player_.scriptObject);
-  //Print(cso.bounds_.x);
   chso.set_bounds(cso.bounds_);
 
   scene_manager_.set_camera_target(container_);
@@ -45,6 +46,11 @@ void CreateScene(){
 
   input_player_.set_controlnode(player_);
   input_player_.set_cameranode(camera_node_);
+
+  //enemy
+  Node@ en = container_.CreateChild("enemy_factory");
+  EnemyFactory@ ef = cast<EnemyFactory>(en.CreateScriptObject(scriptFile, "EnemyFactory"));
+  Node@ enemy = ef.spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
