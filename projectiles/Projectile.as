@@ -3,32 +3,40 @@
 
 shared class Projectile:Actor{
 
+  Vector3 pos_born_;//the position this projectile was born
   Vector3 hit_;//this is if we want this projectile to aim at a specific position
+  float range_=40.0f;//how far this projectile can travel
 
   void Start(){
-      SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
+    pos_born_ = node.position;
+    SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
   }
 
   void FixedUpdate(float timeStep){
     //Actor::FixedUpdate(timeStep);
     if(node !is null){
       RigidBody@ body = node.GetComponent("RigidBody");
-      Array<Node@> nodes = node.scene.GetChildrenWithScript("Explosion_Script", true);
+      Vector3 v_dist = node.position-pos_born_;
+      float dist = v_dist.length;
+      if(dist>range_){
+        node.Remove();
+      }
+      /*Array<Node@> nodes = node.scene.GetChildrenWithScript("Explosion_Script", true);
       for (uint i = 0; i < nodes.length; ++i){
         Vector3 distance_vector = node.position-nodes[i].position;
         Explosion_Script@ explosion_script = cast<Explosion_Script>(nodes[i].scriptObject);
         if(distance_vector.length < explosion_script.radius_){
-          spawn_explosion(node.position,body.linearVelocity);
+          //spawn_explosion(node.position,body.linearVelocity);
           node.Remove();
         }
-      }
+      }*/
     }
 
   }
   //collision
   void ObjectCollision(Actor@ otherObject, VariantMap& eventData){
     RigidBody@ body = node.GetComponent("RigidBody");
-    spawn_explosion(node.position,body.linearVelocity);
+    //spawn_explosion(node.position,body.linearVelocity);
     node.Remove();
   }
 
