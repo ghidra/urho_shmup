@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<node id="16777217">
+<node id="16777216">
 	<attribute name="Is Enabled" value="true" />
 	<attribute name="Name" value="" />
-	<attribute name="Position" value="0 -3.94427 7.88854" />
+	<attribute name="Position" value="0 -3.86399 7.97799" />
 	<attribute name="Rotation" value="1 0 0 0" />
 	<attribute name="Scale" value="0.25 0.25 0.25" />
 	<attribute name="Variables" />
-	<component type="StaticModel" id="16777219">
+	<component type="StaticModel" id="16777216">
 		<attribute name="Model" value="Model;Models/Sphere.mdl" />
 		<attribute name="Material" value="Material;Materials/Stone.xml" />
 	</component>
-	<component type="RigidBody" id="16777222">
-		<attribute name="Physics Position" value="0 -3.94427 7.88854" />
+	<component type="RigidBody" id="16777217">
+		<attribute name="Physics Position" value="0 -3.86399 7.97799" />
 		<attribute name="Mass" value="0.25" />
-		<attribute name="Collision Mask" value="2" />
+		<attribute name="Collision Mask" value="3" />
 	</component>
 	<component type="CollisionShape" id="16777218" />
 </node>

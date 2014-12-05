@@ -1,6 +1,13 @@
 Notes:
 ---------------------
-enemy class
+-enemy class
+i have a factory now
+i need to give the guy some movement
+-need to also look at the damn collisino masks, they seem wanky
+
+-weapon/projectile damage
+weapon effects projectile damage
+projectile has its own damage variable
 
 fix the bar scaling messing up the position----almost
 -reduce health at collision

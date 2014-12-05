@@ -6,6 +6,7 @@ shared class Projectile:Actor{
   Vector3 pos_born_;//the position this projectile was born
   Vector3 hit_;//this is if we want this projectile to aim at a specific position
   float range_=40.0f;//how far this projectile can travel
+  float damage_=1.0f;//how much damage this projectile can do
 
   void Start(){
     pos_born_ = node.position;
