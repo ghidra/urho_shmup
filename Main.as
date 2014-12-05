@@ -50,7 +50,7 @@ void CreateScene(){
   //enemy
   Node@ en = container_.CreateChild("enemy_factory");
   EnemyFactory@ ef = cast<EnemyFactory>(en.CreateScriptObject(scriptFile, "EnemyFactory"));
-  Node@ enemy = ef.spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
+  //Node@ enemy = ef.spawn_enemy("Enemy","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );

@@ -10,6 +10,8 @@ class SceneManager{
     Image@ icon = cache.GetResource("Image", "Textures/UrhoIcon.png");
     graphics.windowIcon = icon;
     graphics.windowTitle = "outlyer";
+    graphics.SetMode(960,540,false,false,true,false,true,1);
+    graphics.SetWindowPosition(20,20);
     //---
     // Get default style
     XMLFile@ xmlFile = cache.GetResource("XMLFile", "UI/DefaultStyle.xml");
