@@ -15,13 +15,13 @@ shared class WeaponTripleSin:Weapon{
   }
 
   void fire(Vector3 target_position,float timestep = 0.0f){
-    Vector3 fire_direction = Vector3(0.0f,0.0f,1.0f);
+    Array<Vector3> fire_direction = {Vector3(0.0f,0.0f,1.0f)};
     timer_total_ += timestep;
 
     Quaternion dir_rot = Quaternion();
     fire_angle_=(Cos(timer_total_*4500.0f)*fire_angle_spread_);
     dir_rot.FromAngleAxis(fire_angle_,Vector3(0.0f,1.0f,0.0f));
-    fire_direction = dir_rot * fire_direction;
+    fire_direction[0] = dir_rot * fire_direction[0];
 
     fire_logic(timestep,fire_direction);
 
