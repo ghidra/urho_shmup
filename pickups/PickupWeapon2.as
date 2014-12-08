@@ -1,10 +1,10 @@
 #include "Scripts/shmup/pickups/Pickup.as"
-#include "Scripts/shmup/weapons/WeaponTripleSin.as"
+#include "Scripts/shmup/weapons/WeaponTripleSide.as"
 
 class PickupWeapon2:Pickup{
 
   PickupWeapon2(){
-    pname="WeaponTripleSin";
+    pname="WeaponTripleSide";
   }
 
   void effect(Actor@ otherObject, VariantMap& eventData){
