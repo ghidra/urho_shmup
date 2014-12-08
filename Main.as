@@ -48,8 +48,8 @@ void CreateScene(){
   input_player_.set_cameranode(camera_node_);
 
   //enemy
-  Node@ en = container_.CreateChild("enemy_factory");
-  EnemyFactory@ ef = cast<EnemyFactory>(en.CreateScriptObject(scriptFile, "EnemyFactory"));
+  //Node@ en = container_.CreateChild("enemy_factory");
+  //EnemyFactory@ ef = cast<EnemyFactory>(en.CreateScriptObject(scriptFile, "EnemyFactory"));
   //Node@ enemy = ef.spawn_enemy("Enemy","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups
