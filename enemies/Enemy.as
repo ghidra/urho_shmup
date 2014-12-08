@@ -48,6 +48,9 @@ class Enemy:Character{
   }
 
   void FixedUpdate(float timeStep){
+    if(target_!=null){
+      fire(target_.position,timeStep);
+    }
     //RigidBody@ rb_ = node.GetComponent("RigidBody");
     //Print(rb_.collisionMask);
     /*if(bar_.value_ >= 1.0f){//we can fire a shots, then set it to zero
@@ -55,6 +58,9 @@ class Enemy:Character{
         fire();
     }
     bar_.set_value(bar_.value_+bar_regen_);*/
+  }
+  void set_target(Node@ t){
+    target_=t;
   }
 
   /*void fire(){

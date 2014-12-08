@@ -4,6 +4,8 @@ class EnemyFactory:ScriptObject{
   //float timer_total_;
   float spawn_timer_;
   float spawn_interval_ = 1.0f;
+  int spawn_amount_=5;
+  int spawn_increment_=0;
 
   void Start(){
     //spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
@@ -15,8 +17,11 @@ class EnemyFactory:ScriptObject{
     //Print();
     spawn_timer_+=timeStep;
     if(spawn_timer_>=spawn_interval_){
-      spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
-      spawn_timer_=0;
+      if(spawn_increment_< spawn_amount_){
+        spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
+        spawn_timer_=0;
+        spawn_increment_+=1;
+      }
     }
   }
 
