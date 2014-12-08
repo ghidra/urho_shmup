@@ -12,6 +12,10 @@ shared class WeaponDoubleSide:Weapon{
     fire_velocity_ = 0.7f*30.0f;
     firing_interval_ = 0.025f;
     projectile_damage_mult = 0.1;
+    //aprojectile_offset_ = Array<Vector3>{Vector3(0.5f,0.0f,0.5f), Vector3(-0.5f,0.0f,0.5f), Vector3(0.0f,0.0f,0.5f)};
+    aprojectile_offset_[0] = Vector3(0.5f,0.0f,0.5f);
+    aprojectile_offset_[1] = Vector3(-0.5f,0.0f,0.5f);
+    aprojectile_offset_[2] = Vector3(0.0f,0.0f,0.5f);
   }
 
   void fire(Vector3 target_position,float timestep = 0.0f){
@@ -28,39 +32,10 @@ shared class WeaponDoubleSide:Weapon{
     fire_directionA = dir_rotA * fire_directionA;
     fire_directionB = dir_rotB * fire_directionB;
 
-    fire_logicB(timestep,fire_directionA,fire_directionB);
+    Array<Vector3>dirs = {fire_directionA,fire_directionB};
 
-  }
-  void fire_logicB(const float timestep, const Vector3&in dirA = Vector3(0.0f,0.0f,1.0f),const Vector3&in dirB = Vector3(0.0f,0.0f,-1.0f), const Vector3 hit = Vector3() ){
-    if(firing_<1){//start firing
-      firing_=1;
-      firing_timer_ = timestep;
+    fire_logic(timestep,dirs);
 
-      spawn_projectileB(dirA,dirB,hit);
-
-    }else{//we are firing, we need to shot intermittenly
-      firing_timer_+=timestep;
-      if(firing_timer_> firing_interval_){//we can shoot again if we are past our interval time
-        firing_timer_= 0;
-
-        spawn_projectileB(dirA,dirB,hit);
-
-      }
-    }
-  }
-  void spawn_projectileB(const Vector3&in dirA,const Vector3&in dirB, const Vector3 hit = Vector3()){
-
-    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype_ + ".xml");
-    Node@ projectileA_ = scene.InstantiateXML(xml, node.worldPosition+projectile_offset_+Vector3(0.5f,0.0f,0.0f), Quaternion());
-    Node@ projectileB_ = scene.InstantiateXML(xml, node.worldPosition+projectile_offset_+Vector3(-0.5f,0.0f,0.0f), Quaternion());
-
-    Projectile@ node_scriptA_ = cast<Projectile>(projectileA_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-    node_scriptA_.set_parms(dirA,fire_velocity_,hit);
-
-    Projectile@ node_scriptB_ = cast<Projectile>(projectileB_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-    node_scriptB_.set_parms(dirB,fire_velocity_,hit);
-
-    //return projectile_;
   }
 
 

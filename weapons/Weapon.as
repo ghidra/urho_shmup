@@ -13,7 +13,7 @@ shared class Weapon:Actor{
   String ntype_ = "Projectile";//the node/ mesh to use
   String ctype_ = "Projectile";//the class type of projectile to use
 
-  Array<Vector3> aprojectile_offset_ = {Vector3(0.0f,0.0f,0.5f)};//this needs to be a array if we have multiple bullets
+  Array<Vector3> aprojectile_offset_ = {Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f)};//this needs to be a array if we have multiple bullets
 
   void fire(Vector3 target_position,float timestep = 0.0f){
     //Array<Vector3> dir = {Vector3(0.0f,0.0f,1.0f)};
