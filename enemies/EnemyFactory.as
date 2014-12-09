@@ -39,8 +39,8 @@ class EnemyFactory:ScriptObject{
     body_.friction = 0.75f;
     body_.linearDamping = 0.6f;
     body_.useGravity = false;
-    body_.collisionLayer=2;
-    body_.collisionMask=2;
+    body_.collisionLayer=16;
+    body_.collisionMask=51;
     CollisionShape@ shape = main_node_.CreateComponent("CollisionShape");
     shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
 
