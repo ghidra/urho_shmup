@@ -8,7 +8,7 @@
 #include "Scripts/shmup/pickups/PickupWeapon2.as"
 
 #include "Scripts/shmup/enemies/Factory.as"
-#include "Scripts/shmup/enemies/EnemyFactory.as"
+//#include "Scripts/shmup/enemies/EnemyFactory.as"
 
 //#include "Scripts/shmup/Enemy.as"
 //#include "Scripts/shmup/Perlin.as"
@@ -36,7 +36,7 @@ void CreateScene(){
   //Node@ enemy_ =spaw;
   //enemy.set_target(player_)
 
-  Node@ container_ = scene_.CreateChild("camera_target");
+  Node@ container_ = scene_.CreateChild("container");
   container_.CreateScriptObject(scriptFile, "Container");//make the container
   container_.AddChild(player_);//put the player under the container
 
@@ -51,8 +51,9 @@ void CreateScene(){
   input_player_.set_cameranode(camera_node_);
 
   //enemy
-  Node@ en = container_.CreateChild("enemy_factory");
-  EnemyFactory@ ef = cast<EnemyFactory>(en.CreateScriptObject(scriptFile, "EnemyFactory"));
+  Node@ en = container_.CreateChild("factory");
+  Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
+  ef.generate_factory(Vector3(5.0f,0.0f,5.0f),"Enemy","Basic",1.0f);
   //Node@ enemy = ef.spawn_enemy("Enemy","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups

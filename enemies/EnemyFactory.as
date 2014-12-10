@@ -2,10 +2,16 @@
 
 class EnemyFactory:ScriptObject{
   //float timer_total_;
+  float timer_;
   float spawn_timer_;
   float spawn_interval_ = 1.0f;
   int spawn_amount_=5;
   int spawn_increment_=0;
+  int active_=0;
+  float active_time_=-1.0f;
+
+  String enemy_type_="Enemy";//they type of enemies that we are going to spawn
+  String enemy_behavior_="Basic";//the behavior that we are going to attach
 
   void Start(){
     //spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
@@ -14,18 +20,34 @@ class EnemyFactory:ScriptObject{
 
   void FixedUpdate(float timeStep){
     //timer_total_+=timeStep;
-    //Print();
-    spawn_timer_+=timeStep;
-    if(spawn_timer_>=spawn_interval_){
-      if(spawn_increment_< spawn_amount_){
-        spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
-        spawn_timer_=0;
-        spawn_increment_+=1;
+    timer_+=timeStep;
+    if(timer_>=active_time_ && active_<1 && active_time_>=0.0f){
+      active_=1;
+    }
+    if(active_>0){
+      spawn_timer_+=timeStep;
+      if(spawn_timer_>=spawn_interval_){
+        if(spawn_increment_< spawn_amount_){
+          spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
+          spawn_timer_=0;
+          spawn_increment_+=1;
+        }
+        //do not delete the whole, thing. I need to wait until all the guys have left screen or died before i remove them
+        //else{
+        //  node.Remove();//justremove the factory now, we dont need it
+        //}
       }
     }
   }
 
-  Node@ spawn_enemy(const String&in ntype, const String&in ctype, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
+  void set_parameters(const String&in etype = "Enemy", const String&in ebehavior="Basic", const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
+    enemy_type_ = etype;
+    enemy_behavior_ = ebehavior;
+    active_time_ = active_time;
+    timer_=0.0f;
+  }
+
+  void spawn_enemy(const String&in ntype, const String&in ctype, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
     //enemy type, class type, position, orientation
 
     Node@ main_node_ = node.CreateChild("Enemy");
@@ -58,6 +80,6 @@ class EnemyFactory:ScriptObject{
     //node_script_.set_parms(dir,OBJECT_VELOCITY,hit);
 
     //return enemy_;
-    return main_node_;
+    //return main_node_;
   }
 }

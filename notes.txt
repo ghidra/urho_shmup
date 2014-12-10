@@ -12,9 +12,6 @@ projectile has its own damage variable
 -smarter pickups so that they are more procedural
 so we dont need to manually set them up when we want to test certain shit.
 
--understand collision layers and masks, they make no sense at the moment.
-bullets need not collide with other bullets etc
-
 fix the bar scaling messing up the position----almost
 -reduce health at collision
 
