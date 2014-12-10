@@ -7,6 +7,7 @@
 #include "Scripts/shmup/pickups/PickupWeapon1.as"
 #include "Scripts/shmup/pickups/PickupWeapon2.as"
 
+#include "Scripts/shmup/enemies/Factory.as"
 #include "Scripts/shmup/enemies/EnemyFactory.as"
 
 //#include "Scripts/shmup/Enemy.as"
