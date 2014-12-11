@@ -35,7 +35,7 @@ shared class Actor : ScriptObject{
     lastDamageCreatorID_ = 0;
     creatorID_ = 0;
 
-    speed_ = 20.0f;
+    speed_ = 5.0f;
     sensitivity_ = 0.1f;
   }
 

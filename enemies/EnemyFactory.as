@@ -11,7 +11,9 @@ class EnemyFactory:ScriptObject{
   float active_time_=-1.0f;
 
   String enemy_type_="Enemy";//they type of enemies that we are going to spawn
-  String enemy_behavior_="Basic";//the behavior that we are going to attach
+  String enemy_behavior_="Behavior";//the behavior that we are going to attach
+  String enemy_weapon_="Weapon";
+  int mirror_behavior_=0;//if we want to mirror the behavior
 
   void Start(){
     //spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
@@ -28,7 +30,7 @@ class EnemyFactory:ScriptObject{
       spawn_timer_+=timeStep;
       if(spawn_timer_>=spawn_interval_){
         if(spawn_increment_< spawn_amount_){
-          spawn_enemy("Character","Enemy",Vector3(5.0f,0.0f,5.0f));
+          spawn_enemy("Character","Enemy","Weapon","Behavior",Vector3(5.0f,0.0f,5.0f));
           spawn_timer_=0;
           spawn_increment_+=1;
         }
@@ -40,15 +42,17 @@ class EnemyFactory:ScriptObject{
     }
   }
 
-  void set_parameters(const String&in etype = "Enemy", const String&in ebehavior="Basic", const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
+  void set_parameters(const String&in etype = "Enemy", const String&in eweapon="Weapon", const String&in ebehavior="Behavior", const int mirror= 0,const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
     enemy_type_ = etype;
+    enemy_weapon_ = eweapon;
     enemy_behavior_ = ebehavior;
+    mirror_behavior_ = mirror;
     active_time_ = active_time;
     timer_=0.0f;
   }
 
-  void spawn_enemy(const String&in ntype, const String&in ctype, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
-    //enemy type, class type, position, orientation
+  void spawn_enemy(const String&in etype, const String&in ctype,const String&in wtype,const String&in btype, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
+    //enemy type, class type, weapon type, behavior type, position, orientation
 
     Node@ main_node_ = node.CreateChild("Enemy");
 
@@ -74,12 +78,8 @@ class EnemyFactory:ScriptObject{
     //RigidBody@ rb_ = enemy_.GetComponent("RigidBody");
     //rb_.collisionMask=2;
 
-    //Enemy@ node_script_ = cast<Enemy>(enemy_.CreateScriptObject(scriptFile, ctype, LOCAL));
     Enemy@ node_script_ = cast<Enemy>(main_node_.CreateScriptObject(scriptFile, ctype, LOCAL));
+    node_script_.set_parameters(wtype,btype);//send it the weapon and the behavior
 
-    //node_script_.set_parms(dir,OBJECT_VELOCITY,hit);
-
-    //return enemy_;
-    //return main_node_;
   }
 }

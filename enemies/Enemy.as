@@ -1,47 +1,17 @@
-#include "Scripts/shmup/core/Character.as"
+#include "Scripts/shmup/core/Pawn.as"
+#include "Scripts/shmup/enemies/Behavior.as"
+
 #include "Scripts/shmup/gui/ProgressBar.as"
 
-/*class EnemyBasic{
-
-  Node@ node_;
-
-  EnemyBasic(Scene@ scene){
-
-    node_ = scene.CreateChild("Character");
-
-    StaticModel@ coneObject = node_.CreateComponent("StaticModel");
-    coneObject.model = cache.GetResource("Model", "Models/Cone.mdl");
-    coneObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
-    //---------------------------
-
-    RigidBody@ body_ = node_.CreateComponent("RigidBody");
-    body_.mass = 0.25f;
-    body_.friction = 0.75f;
-    body_.linearDamping = 0.6f;
-    body_.useGravity = false;
-    CollisionShape@ shape = node_.CreateComponent("CollisionShape");
-    shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
-
-    EnemyBasic_Script@ enemybasic_script_ = cast<EnemyBasic_Script>(node_.CreateScriptObject(scriptFile, "EnemyBasic_Script"));
-  }
-
-  //-------from old pawn
-  void set_enemytarget(Node@ target){
-    Pawn_Script@ pawn_ = cast<Pawn_Script>(node_.scriptObject);
-    pawn_.set_enemytarget(target);
-  }
-
-  void set_position(Vector3 pos){
-    node_.position = pos;
-  }
-  //----------------------
-
-}*/
-
-class Enemy:Character{
+class Enemy:Pawn{
   //ProgressBar@ bar_;
   Node@ target_;//this will likely be the main character that I am firing at
+  Behavior@ behavior_;//the behavior object
+
   //float bar_regen_ = 0.001f;
+  Enemy(){
+    speed_=8.0f;
+  }
 
   void Start(){
     //bar_ = ProgressBar(node.scene,node,"cooldown",Vector3(0.0f,1.2f,0.0f));//use defaults
@@ -51,6 +21,9 @@ class Enemy:Character{
     if(target_!=null){
       fire(target_.position,timeStep);
     }
+    if(behavior_!=null){//if we have a behavior object, we should turn over control to it
+      behavior_.update();
+    }
     //RigidBody@ rb_ = node.GetComponent("RigidBody");
     //Print(rb_.collisionMask);
     /*if(bar_.value_ >= 1.0f){//we can fire a shots, then set it to zero
@@ -59,8 +32,18 @@ class Enemy:Character{
     }
     bar_.set_value(bar_.value_+bar_regen_);*/
   }
+  void set_parameters(const String&in wtype,const String&in btype){//this all comes in from the enemy factory
+    //set_weapon(wtype);
+    set_behavior(btype);
+  }
   void set_target(Node@ t){
     target_=t;
+  }
+  void set_behavior(const String&in btype="Behavior"){
+    if(btype=="Behavior"){
+      behavior_ = Behavior(node);
+    }
+
   }
 
   /*void fire(){

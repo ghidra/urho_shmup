@@ -1,18 +1,17 @@
 Notes:
 ---------------------
 -enemy class
-i have a factory now
-i need to give the guy some movement
--need to also look at the damn collisino masks, they seem wanky
+  -behavior
+  -weapon configuration
 
 -weapon/projectile damage
-weapon effects projectile damage
-projectile has its own damage variable
+  -weapon effects projectile damage
+  -projectile has its own damage variable
 
 -smarter pickups so that they are more procedural
-so we dont need to manually set them up when we want to test certain shit.
+  -so we dont need to manually set them up when we want to test certain shit.
 
-fix the bar scaling messing up the position----almost
+fix the bar scaling messing up the position---- almost right
 -reduce health at collision
 
 
@@ -20,17 +19,12 @@ Perlin Noise:
 ---------------------
 simplex works perlin does not
 
-Future:
----------------------
-
 
 Question:
 ---------------------
 
--time manipulation
+-time manipulation (i have found the answer to this once, i forgot however)
   -slow down time, this includes gravity in simulation
--need to figure out a way to disclude certain object from effecting some objects in sim
-  -there appears to be a mask that can be used
 -Can you have a single rig used with multiple meshes, with proper weights, for example, clothes for characters?
 
 COLLISION LAYERS AND MASKS
