@@ -1,8 +1,13 @@
 Notes:
 ---------------------
 -enemy class
-  -weapon configuration
-  -fire rate
+  -make the enemy fire
+  -fix orientation of enemies
+
+-extend factory to make factory1
+  -this new child class will act as a level
+  -so then we can hand build a level in these extended classes
+
 
 -weapon/projectile damage
   -weapon effects projectile damage
@@ -12,7 +17,7 @@ Notes:
   -so we dont need to manually set them up when we want to test certain shit.
 
 fix the bar scaling messing up the position---- almost right
--reduce health at collision
+set pickups as a trigger and not actualy cause velicty changes as it does now
 
 
 Perlin Noise:

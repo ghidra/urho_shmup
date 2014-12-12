@@ -2,6 +2,9 @@
 #include "Scripts/shmup/projectiles/Projectile.as"
 
 shared class Weapon:Actor{
+  String meshtype_ = "Box";//the weaon mesh
+  String mattype_ = "Stone";//the weapons material
+
   int firing_ = 0;
   float fire_velocity_ = 50.0f;
   float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval

@@ -38,7 +38,6 @@ void Start(){
   Node@ en = container_.CreateChild("factory");
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
   ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),"Enemy","Weapon","Behavior",1.0f,0,1.0f);
-  //Node@ enemy = ef.spawn_enemy("Enemy","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
@@ -64,12 +63,6 @@ void Start(){
   StaticModel@ sm4 = pu4.GetComponent("StaticModel");
   sm4.model = cache.GetResource("Model", "Scripts/shmup/models/4.mdl");
   sm4.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
-
-  //my first enemy
-  /*Enemy@ enemy_ = Enemy();
-  enemy_.set_position(Vector3(-10.0f,0.0f,0.0f));
-  enemy_.set_enemytarget(character_.node_);
-  */
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");

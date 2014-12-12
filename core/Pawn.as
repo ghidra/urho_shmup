@@ -3,31 +3,22 @@
 
 shared class Pawn:Actor{
 
-  //Node@ enemytarget_;
-  Weapon@ weapon_;
-  String weapon_type_ = "Weapon";
+  String mesh_ = "Sphere";
+  String material_ = "Stone";
+
   int firing_ = 0;
   float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
   float firing_interval_ = 0.2f;//how often we can fire
 
-  //setters
-  void set_position(Vector3 pos){
-    node.position = pos;
-  }
+  uint collision_layer_=1;
+  uint collision_mask_=60;
 
-  //void set_enemytarget(Node@ target){
-  //  enemytarget_ = target;
-  //}
-  //void set_weapon(Weapon@ weapon){
-  //  weapon_ = weapon;
-  //}
-
-  //-----
+  //---------------------
+  //---------------------
 
   void move(Vector3 direction, float timestep){
     RigidBody@ body_ = node.GetComponent("RigidBody");
     body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
-    //Print("try from pawn");
   }
   //this is called from the inputPLayer class
   void fire(Vector3 target_position,float timestep = 0.0f){
@@ -44,6 +35,44 @@ shared class Pawn:Actor{
     if(weapon !is null){//if we have a weapon, we can fire that bitch
       weapon.release_fire();
     }
+  }
+
+  //-----------------------
+  //--  Build the actual pawn, mesh anf weapons
+  //-----------------------
+
+  void build_geo(const String&in mesh = "Cone",const String&in mat = "Stone"){
+    //mesh and materail, later rigid settings
+    StaticModel@ chsm_ = node.CreateComponent("StaticModel");
+    chsm_.model = cache.GetResource("Model", "Models/"+mesh+".mdl");
+    chsm_.material = cache.GetResource("Material", "Materials/"+mat+".xml");
+
+    RigidBody@ chrb_ = node.CreateComponent("RigidBody");
+    chrb_.mass = 0.25f;
+    chrb_.friction = 0.75f;
+    chrb_.linearDamping = 0.6f;
+    chrb_.linearFactor = Vector3(1.0f,0.0f,1.0f);
+    chrb_.angularFactor = Vector3(0.0f,0.0f,0.0f);
+    chrb_.useGravity = false;
+    chrb_.collisionLayer=collision_layer_;
+    chrb_.collisionMask=collision_mask_;
+    CollisionShape@ chcs = node.CreateComponent("CollisionShape");
+    chcs.SetBox(Vector3(1.0f, 1.0f, 1.0f));
+
+    //place a waiting empty weapon node
+    Node@ weapon_ = node.CreateChild("Weapon");
+    weapon_.position=Vector3(1.0f,0.0f,0.0f);
+  }
+
+  void build_weapon(const String&in wclass = "Weapon"){
+    Node@ weapon_node_ = node.children[0];
+
+    Weapon@ wpso = cast<Weapon>(weapon_node_.CreateScriptObject(scriptFile,wclass));
+
+    StaticModel@ wpsm_ = weapon_node_.CreateComponent("StaticModel");
+    wpsm_.model = cache.GetResource("Model", "Models/"+wpso.meshtype_+".mdl");
+    wpsm_.material = cache.GetResource("Material", "Materials/"+wpso.mattype_+".xml");
+    weapon_node_.CreateScriptObject(scriptFile,wclass);
   }
 
 }

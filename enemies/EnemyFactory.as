@@ -56,33 +56,9 @@ class EnemyFactory:ScriptObject{
   void spawn_enemy(const String&in etype, const String&in ctype,const String&in wtype,const String&in btype, const float&in fire_rate, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
     //enemy type, class type, weapon type, behavior type, position, orientation
 
-    Node@ main_node_ = node.CreateChild("Enemy");
-
-    StaticModel@ object_ = main_node_.CreateComponent("StaticModel");
-    object_.model = cache.GetResource("Model", "Models/Sphere.mdl");
-    object_.material = cache.GetResource("Material", "Materials/Stone.xml");
-
-    RigidBody@ body_ = main_node_.CreateComponent("RigidBody");
-    body_.mass = 0.25f;
-    body_.friction = 0.75f;
-    body_.linearDamping = 0.6f;
-    body_.linearFactor = Vector3(1.0f,0.0f,1.0f);
-    body_.useGravity = false;
-    body_.collisionLayer=16;
-    body_.collisionMask=51;
-    CollisionShape@ shape = main_node_.CreateComponent("CollisionShape");
-    shape.SetBox(Vector3(1.0f, 1.0f, 1.0f));
-
-    //XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype + ".xml");
-    //Node@ enemy_ = scene.InstantiateXML(xml, pos, ori);
-    //Node@ enemy_ = node.LoadXML(xml);
-
-    //i need to set the collision mast to 2 for enmies
-    //RigidBody@ rb_ = enemy_.GetComponent("RigidBody");
-    //rb_.collisionMask=2;
-
-    Enemy@ node_script_ = cast<Enemy>(main_node_.CreateScriptObject(scriptFile, ctype, LOCAL));
-    node_script_.set_parameters(wtype,btype,fire_rate);//send it the weapon and the behavior
+    Node@ enemy_node_ = node.CreateChild("Enemy");
+    Enemy@ node_script_ = cast<Enemy>(enemy_node_.CreateScriptObject(scriptFile, ctype, LOCAL));
+    node_script_.set_parameters(etype,ctype,wtype,btype,fire_rate);//send it the weapon and the behavior
 
   }
 }
