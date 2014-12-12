@@ -75,7 +75,7 @@ shared class Weapon:Actor{
 
     XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype_ + ".xml");
 
-    for(int i=0; i<dir.length;i++){
+    for(uint i=0; i<dir.length;i++){
       Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[i], Quaternion());
 
       Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));

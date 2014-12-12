@@ -1,17 +1,12 @@
 #include "Scripts/shmup/core/SceneManager.as"
 #include "Scripts/shmup/core/InputPlayer.as"
-#include "Scripts/shmup/math/Graph.as"
 #include "Scripts/shmup/core/Character.as"
-//#include "Scripts/shmup/weapons/Weapon.as"//i might not need this here, test later
 #include "Scripts/shmup/core/CameraLogic.as"
+
 #include "Scripts/shmup/pickups/PickupWeapon1.as"
 #include "Scripts/shmup/pickups/PickupWeapon2.as"
 
 #include "Scripts/shmup/enemies/Factory.as"
-//#include "Scripts/shmup/enemies/EnemyFactory.as"
-
-//#include "Scripts/shmup/Enemy.as"
-//#include "Scripts/shmup/Perlin.as"
 
 SceneManager@ scene_manager_;
 Scene@ scene_;
@@ -25,27 +20,16 @@ void Start(){
   scene_manager_.set_camera_parameters(true,42.0f, Vector3(75.0f,0.0f,0.0f));
   input_player_ = InputPlayer();//need some kind of value in here to make it real, no idea why
 
-  //OpenConsoleWindow();
-  CreateScene();
-
-}
-
-void CreateScene(){
-
-  Node@ player_ = spawn_object("Character");
-  //Node@ enemy_ =spaw;
-  //enemy.set_target(player_)
+  //---------------
 
   Node@ container_ = scene_.CreateChild("container");
-  container_.CreateScriptObject(scriptFile, "Container");//make the container
-  container_.AddChild(player_);//put the player under the container
+  Container@ cso = cast<Container>(container_.CreateScriptObject(scriptFile, "Container"));//make the container
 
-  Container@ cso = cast<Container>(container_.scriptObject);
-  Character@ chso = cast<Character>(player_.scriptObject);
+  Node@ player_ = container_.CreateChild("Character");
+  Character@ chso = cast<Character>(player_.CreateScriptObject(scriptFile,"Character"));
   chso.set_bounds(cso.bounds_);
 
   scene_manager_.set_camera_target(container_);
-  //scene_manager_.set_camera_target(player_);
 
   input_player_.set_controlnode(player_);
   input_player_.set_cameranode(camera_node_);
@@ -53,7 +37,7 @@ void CreateScene(){
   //enemy
   Node@ en = container_.CreateChild("factory");
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
-  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),"Enemy","Weapon","Behavior",0,1.0f);
+  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),"Enemy","Weapon","Behavior",1.0f,0,1.0f);
   //Node@ enemy = ef.spawn_enemy("Enemy","Enemy",Vector3(5.0f,0.0f,5.0f));
 
   //pickups

@@ -4,7 +4,35 @@
 //class Character : InputPlayer{
 shared class Character:Pawn{
   Vector2 bounds_ = Vector2(-1.0f,-1.0f);
-  //Character(){}
+  Character(){
+    speed_=20.0f;
+  }
+  void Start(){
+    //Node@ main_node_ = node.CreateChild("Character");
+
+    StaticModel@ chs_ = node.CreateComponent("StaticModel");
+    chs_.model = cache.GetResource("Model", "Models/Cone.mdl");
+    chs_.material = cache.GetResource("Material", "Materials/Stone.xml");
+
+    RigidBody@ chb_ = node.CreateComponent("RigidBody");
+    chb_.mass = 0.25f;
+    chb_.friction = 0.75f;
+    chb_.linearDamping = 0.6f;
+    chb_.linearFactor = Vector3(1.0f,0.0f,1.0f);
+    chb_.angularFactor = Vector3(0.0f,0.0f,0.0f);
+    chb_.useGravity = false;
+    chb_.collisionLayer=1;
+    chb_.collisionMask=60;
+    CollisionShape@ csb = node.CreateComponent("CollisionShape");
+    csb.SetBox(Vector3(1.0f, 1.0f, 1.0f));
+
+    Node@ weapon_ = node.CreateChild("Weapon");
+    weapon_.position=Vector3(1.0f,0.0f,0.0f);
+    StaticModel@ wps_ = weapon_.CreateComponent("StaticModel");
+    wps_.model = cache.GetResource("Model", "Models/Box.mdl");
+    wps_.material = cache.GetResource("Material", "Materials/Stone.xml");
+    weapon_.CreateScriptObject(scriptFile,"Weapon");
+  }
 
   void FixedUpdate(float timeStep){
     RigidBody@ body_ = node.GetComponent("RigidBody");

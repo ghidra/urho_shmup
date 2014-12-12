@@ -1,8 +1,8 @@
 Notes:
 ---------------------
 -enemy class
-  -behavior
   -weapon configuration
+  -fire rate
 
 -weapon/projectile damage
   -weapon effects projectile damage

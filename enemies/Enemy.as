@@ -18,10 +18,10 @@ class Enemy:Pawn{
   }
 
   void FixedUpdate(float timeStep){
-    if(target_!=null){
+    if(target_ !is null){
       fire(target_.position,timeStep);
     }
-    if(behavior_!=null){//if we have a behavior object, we should turn over control to it
+    if(behavior_ !is null){//if we have a behavior object, we should turn over control to it
       behavior_.update();
     }
     //RigidBody@ rb_ = node.GetComponent("RigidBody");
@@ -32,12 +32,18 @@ class Enemy:Pawn{
     }
     bar_.set_value(bar_.value_+bar_regen_);*/
   }
-  void set_parameters(const String&in wtype,const String&in btype){//this all comes in from the enemy factory
-    //set_weapon(wtype);
+  void set_parameters(const String&in wtype,const String&in btype, const float&in fire_rate){//this all comes in from the enemy factory
+    set_weapon(wtype);
     set_behavior(btype);
   }
   void set_target(Node@ t){
     target_=t;
+  }
+  //----------------
+  void set_weapon(const String&in wtype="Weapon"){
+    if(wtype=="Weapon"){
+      //weapon_ = Weapon();
+    }
   }
   void set_behavior(const String&in btype="Behavior"){
     if(btype=="Behavior"){
