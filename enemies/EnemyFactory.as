@@ -4,8 +4,8 @@ class EnemyFactory:ScriptObject{
   //float timer_total_;
   float timer_;
   float spawn_timer_;
-  float spawn_interval_ = 1.0f;
-  int spawn_amount_=5;
+  float spawn_interval_;
+  int spawn_amount_;
   int spawn_increment_=0;
   int active_=0;
   float active_time_=-1.0f;
@@ -43,7 +43,9 @@ class EnemyFactory:ScriptObject{
     }
   }
 
-  void set_parameters(const String&in etype = "Enemy", const String&in eweapon="Weapon", const String&in ebehavior="Behavior", const float&in fire_rate=1.0f, const int mirror= 0,const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
+  void set_parameters(const int&in samount=5, const float&in sinterval = 1.0f, const String&in etype = "Enemy", const String&in eweapon="Weapon", const String&in ebehavior="Behavior", const float&in fire_rate=1.0f, const int mirror= 0,const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
+    spawn_amount_ = samount;
+    spawn_interval_ = sinterval;
     enemy_type_ = etype;
     enemy_weapon_ = eweapon;
     enemy_behavior_ = ebehavior;

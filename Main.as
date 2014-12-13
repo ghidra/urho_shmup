@@ -37,7 +37,7 @@ void Start(){
   //enemy
   Node@ en = container_.CreateChild("factory");
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
-  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),"Enemy","Weapon","Behavior",1.0f,0,1.0f);
+  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,1.0f,"Enemy","Weapon","Behavior",1.0f,0,1.0f);
 
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
