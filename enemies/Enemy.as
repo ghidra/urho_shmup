@@ -17,10 +17,12 @@ class Enemy:Pawn{
   //this is called from the enemy factory as soon as it is made, here we need to put it all together
   void set_parameters(const String&in etype,const String&in ctype,const String&in wtype,const String&in btype, const float&in fire_rate){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
-
     build_geo(mesh_,material_);
     build_weapon(wtype);
     set_behavior(btype);
+
+    Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    weapon.set_firerate(fire_rate);
 
   }
   //--------------------
@@ -31,7 +33,7 @@ class Enemy:Pawn{
       fire(target_.position,timeStep);
     }
     if(behavior_ !is null){//if we have a behavior object, we should turn over control to it
-      behavior_.update();
+      behavior_.update(timeStep);
     }
     //RigidBody@ rb_ = node.GetComponent("RigidBody");
     //Print(rb_.collisionMask);

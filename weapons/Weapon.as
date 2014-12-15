@@ -18,6 +18,10 @@ shared class Weapon:Actor{
 
   Array<Vector3> aprojectile_offset_ = {Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f)};//this needs to be a array if we have multiple bullets
 
+  void set_firerate(const float&in rate){
+    firing_interval_ = rate;
+  }
+
   void fire(Vector3 target_position,float timestep = 0.0f){
     //Array<Vector3> dir = {Vector3(0.0f,0.0f,1.0f)};
     fire_logic(timestep);

@@ -8,9 +8,12 @@ class Behavior{
     Pawn@ p = cast<Pawn>(slave_.scriptObject);//get the script that controls this enemy
     speed_ = p.speed_;//get the speed from it to appy here
   }
-  void update(){
+  void update(float timeStep){
     RigidBody@ body_ = slave_.GetComponent("RigidBody");
+    Pawn@ pawn_ = cast<Pawn>(slave_.scriptObject);//get the script object, so I can call functions on it
+
     //body_.linearVelocity = body_.linearVelocity+Vector3(0.0f,0.0f,-0.1f);
     body_.linearVelocity = Vector3(0.0f,0.0f,-speed_);
+    pawn_.fire(Vector3(0.0f,0.0f,1.0f),timeStep);
   }
 }

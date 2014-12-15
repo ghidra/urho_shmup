@@ -6,10 +6,6 @@ shared class Pawn:Actor{
   String mesh_ = "Sphere";
   String material_ = "Stone";
 
-  int firing_ = 0;
-  float firing_timer_ = 0.0f;//when the firing began, so I can use a timer for interval
-  float firing_interval_ = 0.2f;//how often we can fire
-
   uint collision_layer_=1;
   uint collision_mask_=60;
 
