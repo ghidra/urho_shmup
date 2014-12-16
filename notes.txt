@@ -1,13 +1,14 @@
 Notes:
 ---------------------
 -enemy class
-  -need enemy weapon know to change projectile collision masks
-  -need the weapons to actually use the direction variable
   -fix orientation of enemies
+  -when too far off screen they need to be removed
 
 -weapon/projectile damage
   -weapon effects projectile damage
   -projectile has its own damage variable
+
+-you died state
 
 -extend factory to make factory1
   -this new child class will act as a level

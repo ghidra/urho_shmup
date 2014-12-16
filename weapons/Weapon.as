@@ -18,9 +18,17 @@ shared class Weapon:Actor{
 
   Array<Vector3> aprojectile_offset_ = {Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f),Vector3(0.0f,0.0f,0.5f)};//this needs to be a array if we have multiple bullets
 
+  //------------------
+  //-----   setters
   void set_firerate(const float&in rate){
     firing_interval_ = rate;
   }
+  void set_enemy(){//called if we are from an enemy pawn
+    isenemy_=1;//we are possesed by the enemy
+    //here we can multiply the speed perhapse
+    fire_velocity_*=0.25f;//slower bullets for the enemy
+  }
+  //-----------------
 
   void fire(Vector3 target_position,float timestep = 0.0f){
     //Array<Vector3> dir = {Vector3(0.0f,0.0f,1.0f)};
@@ -79,7 +87,7 @@ shared class Weapon:Actor{
     Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[0], Quaternion());
 
     Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-    node_script_.set_parms(dir,fire_velocity_,hit);
+    node_script_.set_parms(dir,fire_velocity_,isenemy_,hit);
 
     //return projectile_;
   }
@@ -92,7 +100,7 @@ shared class Weapon:Actor{
       Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[i], Quaternion());
 
       Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-      node_script_.set_parms(dir[i],fire_velocity_,hit);
+      node_script_.set_parms(dir[i],fire_velocity_,isenemy_,hit);
     }
 
     //return projectile_;

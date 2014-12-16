@@ -6,9 +6,6 @@ shared class Pawn:Actor{
   String mesh_ = "Sphere";
   String material_ = "Stone";
 
-  uint collision_layer_=1;
-  uint collision_mask_=60;
-
   //---------------------
   //---------------------
 

@@ -23,6 +23,7 @@ class Enemy:Pawn{
 
     Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
     weapon.set_firerate(fire_rate);
+    weapon.set_enemy();
 
   }
   //--------------------

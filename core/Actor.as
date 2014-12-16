@@ -24,6 +24,12 @@ shared class Actor : ScriptObject{
   float speed_;
   float sensitivity_;
 
+  //character collision masks as default
+  uint collision_layer_=1;
+  uint collision_mask_=60;
+  
+  uint isenemy_=0;//if we are an enemy actor
+
   Actor(){
     onGround_ = false;
     isSliding_ = false;

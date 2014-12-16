@@ -9,6 +9,9 @@ shared class Projectile:Actor{
   float damage_=1.0f;//how much damage this projectile can do
 
   void Start(){
+    collision_layer_=2;
+    collision_mask_=56;
+
     pos_born_ = node.position;
     SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
   }
@@ -44,10 +47,17 @@ shared class Projectile:Actor{
   void set_hit(Vector3 hit){//this is a specific location that we are aiming for
     hit_ = hit;
   }
-  void set_parms(const Vector3 dir,const float speed,const Vector3 hit=Vector3(0.0f,0.0f,.0.0f)){
+  void set_parms(const Vector3 dir,const float speed,const uint enemy = 0, const Vector3 hit=Vector3(0.0f,0.0f,.0.0f)){
     RigidBody@ body = node.GetComponent("RigidBody");
     body.linearVelocity = dir * speed;
     hit_=hit;
+    if(enemy>0){
+      collision_layer_=8;
+      collision_mask_=33;
+    }
+    RigidBody@ rb = node.GetComponent("RigidBody");
+    rb.collisionLayer=collision_layer_;
+    rb.collisionMask=collision_mask_;
   }
 
   void spawn_explosion(Vector3 pos, Vector3 mag){//position and magnitude, which we can derive direction and speed from
