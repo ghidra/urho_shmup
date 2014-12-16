@@ -9,11 +9,12 @@ class Behavior{
     speed_ = p.speed_;//get the speed from it to appy here
   }
   void update(float timeStep){
-    RigidBody@ body_ = slave_.GetComponent("RigidBody");
-    Pawn@ pawn_ = cast<Pawn>(slave_.scriptObject);//get the script object, so I can call functions on it
+    RigidBody@ body = slave_.GetComponent("RigidBody");
+    Pawn@ pawn = cast<Pawn>(slave_.scriptObject);//get the script object, so I can call functions on it
+    Node@ target_node = slave_.scene.GetChild("Character",true);//get the main character
 
     //body_.linearVelocity = body_.linearVelocity+Vector3(0.0f,0.0f,-0.1f);
-    body_.linearVelocity = Vector3(0.0f,0.0f,-speed_);
-    pawn_.fire(Vector3(0.0f,0.0f,1.0f),timeStep);
+    body.linearVelocity = Vector3(0.0f,0.0f,-speed_);
+    pawn.fire(target_node.worldPosition,timeStep);
   }
 }

@@ -24,7 +24,13 @@ shared class Weapon:Actor{
 
   void fire(Vector3 target_position,float timestep = 0.0f){
     //Array<Vector3> dir = {Vector3(0.0f,0.0f,1.0f)};
-    fire_logic(timestep);
+    if(target_position.length>0.0f){
+      Vector3 direction = target_position-node.worldPosition;
+      direction.Normalize();
+      fire_logic(timestep,direction);
+    }else{
+      fire_logic(timestep);
+    }
   }
   void release_fire(){
     firing_=0;

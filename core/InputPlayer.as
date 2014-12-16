@@ -114,7 +114,7 @@ class InputPlayer : InputBasics{
 
       Pawn@ pawn = cast<Pawn>(node_.scriptObject);
 
-      Vector3 target_position = Vector3(0.0f,0.0f,1.0f);
+      Vector3 target_position = Vector3(0.0f,0.0f,0.0f);
 
       if(graph_ !is null)
         target_position = graph_.hit_;
