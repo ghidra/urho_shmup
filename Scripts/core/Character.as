@@ -5,13 +5,15 @@
 shared class Character:Pawn{
   Vector2 bounds_ = Vector2(-1.0f,-1.0f);
   Character(){
-    mesh_="Cone";
+    //mesh_="Cone";
+    mesh_="shmup/spaceship_02_shiponly";
     speed_=20.0f;
   }
   void Start(){
     build_geo(mesh_,material_);
     build_weapon("Weapon");
   }
+
 
   //----------------------
   //----------------------

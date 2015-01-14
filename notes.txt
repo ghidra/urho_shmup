@@ -1,5 +1,8 @@
 Notes:
 ---------------------
+-ORIENTATION
+  -LOOK DOWN +Z
+
 -enemy class
   -fix orientation of enemies
   -when too far off screen they need to be removed
