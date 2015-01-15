@@ -1,0 +1,14 @@
+<!--<technique vs="normal" ps="normal" >-->
+<!--<technique vs="LitSolid" ps="LitSolid" psdefines="DIFFMAP">
+    <pass name="base"/>
+    <pass name="litbase" psdefines="AMBIENT" />
+    <pass name="shadow" vs="Shadow" ps="Shadow" />
+    <pass name="refract" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>
+</technique>-->
+<technique vs="LitSolid" ps="LitSolid" psdefines="DIFFMAP" >
+    <!--<pass name="base"/>
+    <pass name="litbase" psdefines="AMBIENT" />
+    <pass name="shadow" vs="Shadow" ps="Shadow" />-->
+    <pass name="base" vs="edge" ps="edge" vsdefines="BASE" psdefines="BASE"/>
+    <pass name="refract" vs="edge" ps="edge" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>
+</technique>

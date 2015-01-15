@@ -3,6 +3,12 @@ Notes:
 -ORIENTATION
   -LOOK DOWN +Z
 
+  -ive manage to break the pick up by adding the node that holds the mesh.
+  -i need a smarter way to determine this anyway, instead of grabbin 0
+  -enemy is not getting my default normal material
+
+  -physics movement, needs to be removed
+
 -enemy class
   -fix orientation of enemies
   -when too far off screen they need to be removed
@@ -46,3 +52,10 @@ layers:                       masks:
 010000 = (16)enemies           100011 (35) 110011 (51)(collide with other enemies)
 100000 = (32)env               111111 (63)
 ---------------------------------
+
+
+from irc
+--------------------
+you would create a folder next to Data/ and CoreData/, eg: Resources/
+and then you can either add that extra folder via angelscript, or via the commandline:
+Urho3DPlayer.exe Scripts/Editor.as -w -s -p ./CoreData;./Data;./Resources

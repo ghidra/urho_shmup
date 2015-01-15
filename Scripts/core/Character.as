@@ -10,7 +10,7 @@ shared class Character:Pawn{
     speed_=20.0f;
   }
   void Start(){
-    build_geo(mesh_,material_);
+    build_geo(mesh_,material_,0.1);
     build_weapon("Weapon");
   }
 

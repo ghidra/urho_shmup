@@ -21,7 +21,8 @@ class Enemy:Pawn{
     build_weapon(wtype);
     set_behavior(btype);
 
-    Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
     weapon.set_firerate(fire_rate);
     weapon.set_enemy();
 

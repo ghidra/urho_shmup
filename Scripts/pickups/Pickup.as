@@ -19,7 +19,8 @@ class Pickup:Actor{
     //this changes the mesh and the script object
     if(ptype=="Weapon"){
       Node@ n = otherObject.get_node();
-      Node@ weapon = n.children[0];
+      //Node@ weapon = n.children[0];
+      Node@ weapon = n.GetChild("Weapon");
 
       StaticModel@ sm = weapon.GetComponent("StaticModel");
       sm.model = cache.GetResource("Model", "Models/"+pmesh+".mdl");//replace the weapon mesh

@@ -4,27 +4,34 @@
 shared class Pawn:Actor{
 
   String mesh_ = "Sphere";
-  String material_ = "Stone";
+  String material_ = "shmup/Normal";
+  bool physical_movement_ = false;
 
   //---------------------
   //---------------------
 
   void move(Vector3 direction, float timestep){
-    RigidBody@ body_ = node.GetComponent("RigidBody");
-    body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
+    if(physical_movement_){
+      RigidBody@ body_ = node.GetComponent("RigidBody");
+      body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
+    }else{
+      node.position = node.position+(direction*speed_*timestep);
+    }
   }
   //this is called from the inputPLayer class
   void fire(Vector3 target_position,float timestep = 0.0f){
     //lets check that we have a weapon class
     //Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject(weapon_type_));
-    Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
     if(weapon !is null){//if we have a weapon, we can fire that bitch
       weapon.fire(target_position,timestep);
     }
   }
   void release_fire(){
     //Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject(weapon_type_));
-    Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
+    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
     if(weapon !is null){//if we have a weapon, we can fire that bitch
       weapon.release_fire();
     }
@@ -34,11 +41,17 @@ shared class Pawn:Actor{
   //--  Build the actual pawn, mesh anf weapons
   //-----------------------
 
-  void build_geo(const String&in mesh = "Cone",const String&in mat = "Stone"){
+  void build_geo(const String&in mesh = "Cone",const String&in mat = "shmup/Normal", const float&in scl = 1.0){
     //mesh and materail, later rigid settings
-    StaticModel@ chsm_ = node.CreateComponent("StaticModel");
+    //make a new node to hold the character mesh
+    Node@ chnode = node.CreateChild("Geometry");
+
+    StaticModel@ chsm_ = chnode.CreateComponent("StaticModel");
     chsm_.model = cache.GetResource("Model", "Models/"+mesh+".mdl");
     chsm_.material = cache.GetResource("Material", "Materials/"+mat+".xml");
+    chsm_.castShadows = true;
+
+    chnode.Scale(scl);
 
     RigidBody@ chrb_ = node.CreateComponent("RigidBody");
     chrb_.mass = 0.25f;
@@ -58,7 +71,8 @@ shared class Pawn:Actor{
   }
 
   void build_weapon(const String&in wclass = "Weapon"){
-    Node@ weapon_node_ = node.children[0];
+    //Node@ weapon_node_ = node.children[0];
+    Node@ weapon_node_ = node.GetChild("Weapon");
 
     Weapon@ wpso = cast<Weapon>(weapon_node_.CreateScriptObject(scriptFile,wclass));
 

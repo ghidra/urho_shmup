@@ -66,7 +66,7 @@ void Start(){
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");
-  lightNode.direction = Vector3(0.6f, -1.0f, 0.8f);
+  lightNode.direction = Vector3(0.6f, -0.5f, 0.8f);
   Light@ light = lightNode.CreateComponent("Light");
   light.lightType = LIGHT_DIRECTIONAL;
   light.castShadows = true;
