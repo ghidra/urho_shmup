@@ -49,6 +49,9 @@ class SceneManager{
 
     //create viewport
     viewport_ = Viewport(scene_, camera_node_.GetComponent("Camera"));
+    XMLFile@ xml = cache.GetResource("XMLFile", "RenderPaths/shmup/ForwardPixelQuad.xml");
+    //XMLFile@ xml = cache.GetResource("XMLFile", "RenderPaths/shmup/ForwardPixel.xml");
+    viewport_.SetRenderPath(xml);
     renderer.viewports[0] = viewport_;
 
   }

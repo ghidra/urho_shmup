@@ -3,22 +3,35 @@
 #include "Transform.glsl"
 #include "ScreenPos.glsl"
 
+#ifdef COMPILEVS
+
+#ifdef EDGEBASE
 uniform vec4 cObjectColor;
 uniform float cObjectBlend;
+#endif
 
-#ifdef BASE
+#endif
+
+#ifdef EDGEBASE
     varying vec4 vColor;
 #endif
+
 #ifdef EDGE
     varying vec4 vScreenPos;
 #endif
 
+
+
 #ifdef COMPILEPS
+
+#ifdef EDGE
+
+uniform float cEdgeThreshold;
 
 float color_difference(in vec4 sc, in vec4 nc){
   float dif = abs(sc.r-nc.r)+abs(sc.g-nc.g)+abs(sc.b-nc.b);
   float adif = 0.0;
-  if (dif>0.01){//threshold or tolerence
+  if (dif>cEdgeThreshold){//threshold or tolerence
     adif=1.0;
   }
   return adif;
@@ -53,7 +66,12 @@ float IsEdge(in sampler2D tex, in vec2 coords, in vec2 size){
 
   return cd[0]+cd[1]+cd[2]+cd[3]+cd[4]+cd[5]+cd[6]+cd[7];
 }
+
 #endif
+
+#endif
+
+
 
 void VS()
 {
@@ -61,15 +79,15 @@ void VS()
     vec3 worldPos = GetWorldPos(modelMatrix);
     gl_Position = GetClipPos(worldPos);
 
-    #ifdef EDGE
-      vScreenPos = GetScreenPos(gl_Position);
-    #endif
-
-    #ifdef BASE
+    #ifdef EDGEBASE
         //vColor = iColor;
         vec3 n = iNormal+vec3(1.0);
         n*=0.5;
         vColor = mix(vec4(n,1.0),cObjectColor,cObjectBlend);
+    #endif
+
+    #ifdef EDGE
+      vScreenPos = GetScreenPos(gl_Position);
     #endif
 }
 
@@ -77,8 +95,7 @@ void PS()
 {
 
 
-    #ifdef BASE
-        //vec4 diffColor = cMatDiffColor;
+    #ifdef EDGEBASE
         vec4 diffColor = vColor;
         gl_FragColor = diffColor;
     #endif
@@ -94,4 +111,5 @@ void PS()
       }
       gl_FragColor = color;
     #endif
+
 }

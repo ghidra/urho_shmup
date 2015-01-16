@@ -4,7 +4,7 @@
 shared class Pawn:Actor{
 
   String mesh_ = "Sphere";
-  String material_ = "shmup/Normal";
+  String material_ = "shmup/Pixel";
   bool physical_movement_ = false;
 
   //---------------------

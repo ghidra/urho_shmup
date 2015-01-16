@@ -3,7 +3,7 @@
 
 shared class Weapon:Actor{
   String meshtype_ = "Box";//the weaon mesh
-  String mattype_ = "Stone";//the weapons material
+  String mattype_ = "shmup/Pixel";//the weapons material
 
   int firing_ = 0;
   float fire_velocity_ = 50.0f;

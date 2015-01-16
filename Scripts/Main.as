@@ -47,22 +47,22 @@ void Start(){
 
   StaticModel@ sm1 = pu1.GetComponent("StaticModel");
   sm1.model = cache.GetResource("Model", "Models/shmup/1.mdl");
-  sm1.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+  sm1.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   PickupWeapon1@ pu1_script_ = cast<PickupWeapon1>(pu1.CreateScriptObject(scriptFile, "PickupWeapon1"));
 
   StaticModel@ sm2 = pu2.GetComponent("StaticModel");
   sm2.model = cache.GetResource("Model", "Models/shmup/2.mdl");
-  sm2.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+  sm2.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
 
   PickupWeapon2@ pu2_script_ = cast<PickupWeapon2>(pu2.CreateScriptObject(scriptFile, "PickupWeapon2"));
 
   StaticModel@ sm3 = pu3.GetComponent("StaticModel");
   sm3.model = cache.GetResource("Model", "Models/shmup/3.mdl");
-  sm3.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+  sm3.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
 
   StaticModel@ sm4 = pu4.GetComponent("StaticModel");
   sm4.model = cache.GetResource("Model", "Models/shmup/4.mdl");
-  sm4.material = Material();//cache.GetResource("Material", "Materials/Stone.xml");
+  sm4.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");

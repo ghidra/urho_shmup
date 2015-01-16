@@ -1,0 +1,35 @@
+<renderpath>
+    <!--<rendertarget name="palette" sizedivisor="2 2" filter="false" format="rgba"/>-->
+    <!--based on dithered_quad-->
+    <rendertarget name="edge" sizedivisor="2 2" filter="false" format="rgba"/>
+
+    <!--first lets get the pass for the edge out of teh way -->
+    <command type="clear" color="fog" depth="1.0" stencil="0" />
+    <command type="scenepass" pass="edgebase" metadata="base" />
+
+    <!--render the first quad to get the edges from the edge shader -->
+    <command type="quad" vs="edge_quad" ps="edge_quad" output="edge">
+      <texture unit="environment" name="viewport" />
+      <parameter name="EdgeThreshold" value="0.1" />
+      <!--<parameter name="Divisor" value="2.0" />-->
+    </command>
+
+    <!--<command type="clear" color="fog" depth="1.0" stencil="0" />
+    <command type="scenepass" pass="base" vertexlights="true" metadata="base" />
+    <command type="forwardlights" pass="light" />
+    <command type="quad" vs="resample_edge_quad" ps="resample_edge_quad" output="edge">
+      <texture unit="environment" name="viewport" />
+    </command>-->
+
+
+
+
+
+
+    <!--process the rendertargets down-->
+    <command type="quad" vs="pixel_comp" ps="pixel_comp">
+      <texture unit="environment" name="viewport" />
+      <texture unit="diffuse" name="edge" />
+    </command>
+
+</renderpath>

@@ -1,0 +1,9 @@
+<renderpath>
+    <!--first lets get the pass for the edge out of teh way -->
+    <command type="clear" color="fog" depth="1.0" stencil="0" />
+    <command type="scenepass" pass="edgebase" metadata="base" />
+    <command type="scenepass" pass="edge" metadata="base">
+      <texture unit="environment" name="viewport" />
+    </command>
+
+</renderpath>

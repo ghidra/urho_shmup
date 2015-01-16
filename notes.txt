@@ -3,7 +3,6 @@ Notes:
 -ORIENTATION
   -LOOK DOWN +Z
 
-  -ive manage to break the pick up by adding the node that holds the mesh.
   -i need a smarter way to determine this anyway, instead of grabbin 0
   -enemy is not getting my default normal material
 
