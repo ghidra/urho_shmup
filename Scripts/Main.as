@@ -42,27 +42,31 @@ void Start(){
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
   Node@ pu2 = spawn_object("Pickup",Vector3(-5.0f,0.0f,-5.0f) );
-  Node@ pu3 = spawn_object("Pickup",Vector3(5.0f,0.0f,-5.0f) );
-  Node@ pu4 = spawn_object("Pickup",Vector3(15.0f,0.0f,-5.0f) );
+  Node@ pu3 = spawn_object("Pickup",Vector3(5.0f,2.0f,-5.0f) );
+  Node@ pu4 = spawn_object("Pickup",Vector3(15.0f,2.0f,-5.0f) );
 
   StaticModel@ sm1 = pu1.GetComponent("StaticModel");
   sm1.model = cache.GetResource("Model", "Models/shmup/1.mdl");
   sm1.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   PickupWeapon1@ pu1_script_ = cast<PickupWeapon1>(pu1.CreateScriptObject(scriptFile, "PickupWeapon1"));
+  sm1.castShadows = true;
 
   StaticModel@ sm2 = pu2.GetComponent("StaticModel");
   sm2.model = cache.GetResource("Model", "Models/shmup/2.mdl");
   sm2.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm2.castShadows = true;
 
   PickupWeapon2@ pu2_script_ = cast<PickupWeapon2>(pu2.CreateScriptObject(scriptFile, "PickupWeapon2"));
 
   StaticModel@ sm3 = pu3.GetComponent("StaticModel");
   sm3.model = cache.GetResource("Model", "Models/shmup/3.mdl");
   sm3.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm3.castShadows = true;
 
   StaticModel@ sm4 = pu4.GetComponent("StaticModel");
   sm4.model = cache.GetResource("Model", "Models/shmup/4.mdl");
   sm4.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm4.castShadows = true;
 
   // Create a directional light to the world. Enable cascaded shadows on it
   Node@ lightNode = scene_.CreateChild("DirectionalLight");
