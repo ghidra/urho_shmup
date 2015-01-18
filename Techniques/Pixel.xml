@@ -1,4 +1,4 @@
-<technique vs="pixel" ps="pixel">
+<technique vs="shmup/pixel" ps="shmup/pixel">
 
   <pass name="edgebase" vsdefines="EDGEBASE" psdefines="EDGEBASE"/>
   <pass name="edge" vsdefines="EDGE" psdefines="EDGE"/>
