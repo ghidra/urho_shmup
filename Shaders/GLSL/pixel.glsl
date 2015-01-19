@@ -45,53 +45,59 @@ varying vec4 vWorldPos;
 #endif
 
 
-
 #ifdef COMPILEPS
 
-#ifdef EDGE
+  #ifdef EDGE
 
-uniform float cEdgeThreshold;
+    uniform float cEdgeThreshold;
 
-float color_difference(in vec4 sc, in vec4 nc){
-  float dif = abs(sc.r-nc.r)+abs(sc.g-nc.g)+abs(sc.b-nc.b);
-  float adif = 0.0;
-  if (dif>cEdgeThreshold){//threshold or tolerence
-    adif=1.0;
-  }
-  return adif;
-}
+    float color_difference(in vec4 sc, in vec4 nc){
+      float dif = abs(sc.r-nc.r)+abs(sc.g-nc.g)+abs(sc.b-nc.b);
+      float adif = 0.0;
+      if (dif>cEdgeThreshold){//threshold or tolerence
+        adif=1.0;
+      }
+      return adif;
+    }
 
-vec4 get_pixel(in sampler2D tex, in vec2 coords, in float dx, in float dy) {
- return texture2D(tex,coords + vec2(dx, dy));
-}
+    vec4 get_pixel(in sampler2D tex, in vec2 coords, in float dx, in float dy) {
+     return texture2D(tex,coords + vec2(dx, dy));
+    }
 
-// returns pixel color
-float IsEdge(in sampler2D tex, in vec2 coords, in vec2 size){
-  float dxtex =  size.x;//1920.0; //image width;
-  float dytex = size.y;//1.0 / 1080.0; //image height;
-  float cd[8];
+    // returns pixel color
+    float IsEdge(in sampler2D tex, in vec2 coords, in vec2 size){
+      float dxtex =  size.x;//1920.0; //image width;
+      float dytex = size.y;//1.0 / 1080.0; //image height;
+      float cd[8];
 
-  vec4 sc = get_pixel(tex,coords,float(0)*dxtex,float(0)*dytex);
-  cd[0] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(-1)*dytex) );//color of itself
-  cd[1] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(0)*dytex) );
-  cd[2] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(1)*dytex) );
-  cd[3] = color_difference( sc, get_pixel(tex,coords,float(0)*dxtex,float(1)*dytex) );
+      vec4 sc = get_pixel(tex,coords,float(0)*dxtex,float(0)*dytex);
+      cd[0] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(-1)*dytex) );//color of itself
+      cd[1] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(0)*dytex) );
+      cd[2] = color_difference( sc, get_pixel(tex,coords,float(-1)*dxtex,float(1)*dytex) );
+      cd[3] = color_difference( sc, get_pixel(tex,coords,float(0)*dxtex,float(1)*dytex) );
 
-  vec4 alt1 = get_pixel(tex,coords,float(1)*dxtex,float(1)*dytex);
-  vec4 alt2 = get_pixel(tex,coords,float(1)*dxtex,float(0)*dytex);
-  vec4 alt3 = get_pixel(tex,coords,float(1)*dxtex,float(-1)*dytex);
-  vec4 alt4 = get_pixel(tex,coords,float(0)*dxtex,float(-1)*dytex);
+      vec4 alt1 = get_pixel(tex,coords,float(1)*dxtex,float(1)*dytex);
+      vec4 alt2 = get_pixel(tex,coords,float(1)*dxtex,float(0)*dytex);
+      vec4 alt3 = get_pixel(tex,coords,float(1)*dxtex,float(-1)*dytex);
+      vec4 alt4 = get_pixel(tex,coords,float(0)*dxtex,float(-1)*dytex);
 
-  //cd[4] = color_difference( sc, alt1 );
-  if( length(alt1.rgb) < 0.1 ){ cd[4] = color_difference( sc, alt1 ); }else{ cd[4]=0.0; }
-  if( length(alt2.rgb) < 0.1 ){ cd[5] = color_difference( sc, alt2 ); }else{ cd[5]=0.0; }
-  if( length(alt3.rgb) < 0.1 ){ cd[6] = color_difference( sc, alt3 ); }else{ cd[6]=0.0; }
-  if( length(alt4.rgb) < 0.1 ){ cd[7] = color_difference( sc, alt4 ); }else{ cd[7]=0.0; }
+      //cd[4] = color_difference( sc, alt1 );
+      if( length(alt1.rgb) < 0.1 ){ cd[4] = color_difference( sc, alt1 ); }else{ cd[4]=0.0; }
+      if( length(alt2.rgb) < 0.1 ){ cd[5] = color_difference( sc, alt2 ); }else{ cd[5]=0.0; }
+      if( length(alt3.rgb) < 0.1 ){ cd[6] = color_difference( sc, alt3 ); }else{ cd[6]=0.0; }
+      if( length(alt4.rgb) < 0.1 ){ cd[7] = color_difference( sc, alt4 ); }else{ cd[7]=0.0; }
 
-  return cd[0]+cd[1]+cd[2]+cd[3]+cd[4]+cd[5]+cd[6]+cd[7];
-}
+      return cd[0]+cd[1]+cd[2]+cd[3]+cd[4]+cd[5]+cd[6]+cd[7];
+    }
 
-#endif
+  #endif
+
+  #ifdef PALETTE
+
+    uniform mat4 cPalette;
+    uniform vec4 cLuma;
+
+  #endif
 
 #endif
 
@@ -104,6 +110,7 @@ void VS()
     gl_Position = GetClipPos(worldPos);
     vNormal = GetWorldNormal(modelMatrix);
     vWorldPos = vec4(worldPos, GetDepth(gl_Position));
+    vec4 projWorldPos = vec4(worldPos, 1.0);
 
     #ifdef NORMALMAP
         vec3 tangent = GetWorldTangent(modelMatrix);
@@ -113,8 +120,6 @@ void VS()
     #else
         vTexCoord = GetTexCoord(iTexCoord);
     #endif
-
-    vec4 projWorldPos = vec4(worldPos, 1.0);
 
     #ifdef SHADOW
         // Shadow projection: transform from world space to shadow space
@@ -181,38 +186,36 @@ void PS()
 
     //-----
     // Per-pixel forward lighting
-        vec3 lightColor;
-        vec3 lightDir;
-        vec3 finalColor;
+    vec3 lightColor;
+    vec3 lightDir;
+    vec3 finalColor;
 
-        float diff = GetDiffuse(normal, vWorldPos.xyz, lightDir);
+    float diff = GetDiffuse(normal, vWorldPos.xyz, lightDir);
 
-        #ifdef SHADOW
-            diff *= GetShadow(vShadowPos, vWorldPos.w);
-        #endif
+    #ifdef SHADOW
+        diff *= GetShadow(vShadowPos, vWorldPos.w);
+    #endif
 
-        #if defined(SPOTLIGHT)
-            lightColor = vSpotPos.w > 0.0 ? texture2DProj(sLightSpotMap, vSpotPos).rgb * cLightColor.rgb : vec3(0.0, 0.0, 0.0);
-        #elif defined(CUBEMASK)
-            lightColor = textureCube(sLightCubeMap, vCubeMaskVec).rgb * cLightColor.rgb;
-        #else
-            lightColor = cLightColor.rgb;
-        #endif
+    #if defined(SPOTLIGHT)
+        lightColor = vSpotPos.w > 0.0 ? texture2DProj(sLightSpotMap, vSpotPos).rgb * cLightColor.rgb : vec3(0.0, 0.0, 0.0);
+    #else
+        lightColor = cLightColor.rgb;
+    #endif
 
-        #ifdef SPECULAR
-            float spec = GetSpecular(normal, cCameraPosPS - vWorldPos.xyz, lightDir, cMatSpecColor.a);
-            finalColor = diff * lightColor * (diffColor.rgb + spec * specColor * cLightColor.a);
-        #else
-            finalColor = diff * lightColor * diffColor.rgb;
-        #endif
+    #ifdef SPECULAR
+        float spec = GetSpecular(normal, cCameraPosPS - vWorldPos.xyz, lightDir, cMatSpecColor.a);
+        finalColor = diff * lightColor * (diffColor.rgb + spec * specColor * cLightColor.a);
+    #else
+        finalColor = diff * lightColor * diffColor.rgb;
+    #endif
 
-        #ifdef AMBIENT
-            finalColor += cAmbientColor * diffColor.rgb;
-            finalColor += cMatEmissiveColor;
-            gl_FragColor = vec4(GetFog(finalColor, fogFactor), diffColor.a);
-        #else
-            gl_FragColor = vec4(GetLitFog(finalColor, fogFactor), diffColor.a);
-        #endif
+    #ifdef AMBIENT
+        finalColor += cAmbientColor * diffColor.rgb;
+        finalColor += cMatEmissiveColor;
+        gl_FragColor = vec4(GetFog(finalColor, fogFactor), diffColor.a);
+    #else
+        gl_FragColor = vec4(GetLitFog(finalColor, fogFactor), diffColor.a);
+    #endif
     //-----
     #ifdef EDGEBASE
         diffColor = vColor;
@@ -228,6 +231,7 @@ void PS()
         //color.g = IsEdge(sEnvMap,vScreenPos.xy / vScreenPos.w);
         //color.a = 1.0;
       }
+      //vec4 color = get_pixel(sEnvMap,vScreenPos.xy / vScreenPos.w,cGBufferInvSize.x,cGBufferInvSize.y);
       gl_FragColor = color;
     #endif
 

@@ -8,7 +8,7 @@
     <command type="scenepass" pass="edgebase" metadata="base" />
 
     <!--render the first quad to get the edges from the edge shader -->
-    <command type="quad" vs="edge_quad" ps="edge_quad" output="edge">
+    <command type="quad" vs="shmup/edge_quad" ps="shmup/edge_quad" output="edge">
       <texture unit="environment" name="viewport" />
       <parameter name="EdgeThreshold" value="0.1" />
       <!--<parameter name="Divisor" value="2.0" />-->
@@ -27,7 +27,7 @@
 
 
     <!--process the rendertargets down-->
-    <command type="quad" vs="pixel_comp" ps="pixel_comp">
+    <command type="quad" vs="shmup/pixel_comp" ps="shmup/pixel_comp">
       <texture unit="environment" name="viewport" />
       <texture unit="diffuse" name="edge" />
     </command>
