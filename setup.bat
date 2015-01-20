@@ -19,9 +19,9 @@ if NOT "%1"=="" (
       if exist "!URHOBUILD!" (
         echo being build process
 
-        SET "URHOBINPATH=!URHOPATH!\Bin\"
-        SET "URHODATAPATH=!URHOPATH!\Bin\Data\"
-        SET "URHOCOREDATAPATH=!URHOPATH!\Bin\CoreData\"
+        SET "URHOBINPATH=!URHOPATH!\bin\"
+        SET "URHODATAPATH=!URHOPATH!\bin\Data\"
+        SET "URHOCOREDATAPATH=!URHOPATH!\bin\CoreData\"
 
         if 1==0 (
           echo valid path "!URHOPATH!"
@@ -30,19 +30,32 @@ if NOT "%1"=="" (
           echo core: "!URHOCOREDATAPATH!"
         )
 
+        if "%3"=="clean" (
+          echo      -clean old links
+          call:removeLinkedFolder "CoreData" "!URHOBUILD!\bin\CoreData"
+          call:removeLinkedFolder "Data" "!URHOBUILD!\bin\Data"
+
+          call:removeLinkedFile "Uniforms" "%~dp0%Shaders\GLSL\Uniforms.glsl"
+          call:removeLinkedFile "Samplers" "%~dp0%Shaders\GLSL\Samplers.glsl"
+          call:removeLinkedFile "Transform" "%~dp0%Shaders\GLSL\Transform.glsl"
+          call:removeLinkedFile "ScreenPos" "%~dp0%Shaders\GLSL\ScreenPos.glsl"
+          call:removeLinkedFile "Lighting" "%~dp0%Shaders\GLSL\Lighting.glsl"
+          call:removeLinkedFile "Fog" "%~dp0%Shaders\GLSL\Fog.glsl"
+        )
+
         echo      -link CoreData and Data folders
-        call:makeAlias "CoreData" "!URHOCOREDATAPATH!" "!URHOBUILD!\Bin\CoreData"
-        call:makeAlias "Data" "!URHODATAPATH!" "!URHOBUILD!\Bin\Data"
+        call:makeAlias "CoreData" "!URHOCOREDATAPATH!" "!URHOBUILD!\bin\CoreData"
+        call:makeAlias "Data" "!URHODATAPATH!" "!URHOBUILD!\bin\Data"
 
         echo      -create Resource folders
-        call:makeFolder "\Resources" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Materials" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Models" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\RenderPaths" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Scripts" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Shaders" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Shaders\GLSL" "!URHOBUILD!\Bin"
-        call:makeFolder "\Resources\Techniques" "!URHOBUILD!\Bin"
+        call:makeFolder "\Resources" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Materials" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Models" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\RenderPaths" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Scripts" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Shaders" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Shaders\GLSL" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Techniques" "!URHOBUILD!\bin"
 
         echo      -create project links
         for /D %%f in (*.*) do (
@@ -50,12 +63,12 @@ if NOT "%1"=="" (
           ::http://stackoverflow.com/questions/17279114/split-path-and-take-last-folder-name-in-batch-script
           set MYDIR=!FOLDER:~0!
           for %%f in (!MYDIR!) do set myfolder=%%~nxf
-          if "!myfolder!"=="Scripts" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\Bin\Resources\!myfolder!\shmup"
-          if "!myfolder!"=="RenderPaths" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\Bin\Resources\!myfolder!\shmup"
-          if "!myfolder!"=="Techniques" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\Bin\Resources\!myfolder!\shmup"
-          if "!myfolder!"=="Shaders" call:makeAlias "!myfolder!" "!FOLDER!\GLSL" "!URHOBUILD!\Bin\Resources\!myfolder!\GLSL\shmup"
-          if "!myfolder!"=="Materials" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\Bin\Resources\!myfolder!\shmup"
-          if "!myfolder!"=="Models" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\Bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="Scripts" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="RenderPaths" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="Techniques" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="Shaders" call:makeAlias "!myfolder!" "!FOLDER!\GLSL" "!URHOBUILD!\bin\Resources\!myfolder!\GLSL\shmup"
+          if "!myfolder!"=="Materials" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="Models" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
 
         )
 
@@ -68,7 +81,7 @@ if NOT "%1"=="" (
         call:makeAliasFile "Fog.glsl" "!URHOCOREDATAPATH!Shaders\GLSL\Fog.glsl" "%~dp0%Shaders\GLSL\Fog.glsl"
 
         echo      -launch.bat
-        SET LAUNCH=!URHOBUILD!\Bin\Urho3DPlayer /Scripts/shmup/Main.as -pp !URHOBUILD!\Bin -p "CoreData;Data;Resources"
+        SET LAUNCH=!URHOBUILD!\bin\Urho3DPlayer_d.exe /Scripts/shmup/Main.as -pp !URHOBUILD!\Bin -p "CoreData;Data;Resources"
         if exist "launch.bat" (
           echo !LAUNCH! > launch.bat
           echo           -launch.bat edited
@@ -124,5 +137,23 @@ if exist %~2%~1 (
 ) else (
   mkdir %~2%~1
   echo           -%~1 created
+)
+GOTO:EOF
+
+:removeLinkedFolder
+if exist %~2 (
+  rmdir %~2
+  echo           -%~2 removed
+) else (
+  echo           -%~1 does not exist
+)
+GOTO:EOF
+
+:removeLinkedFile
+if exist %~2 (
+  del %~2
+  echo           -%~2 removed
+) else (
+  echo           -%~1 does not exist
 )
 GOTO:EOF
