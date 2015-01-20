@@ -1,11 +1,12 @@
 <renderpath>
     <!--<rendertarget name="palette" sizedivisor="2 2" filter="false" format="rgba"/>-->
     <!--based on dithered_quad-->
+    <rendertarget name="postcolor" sizedivisor="2 2" filter="false" format="rgba"/>
     <rendertarget name="edge" sizedivisor="2 2" filter="false" format="rgba"/>
 
     <!--first lets get the pass for the edge out of teh way -->
     <command type="clear" color="fog" depth="1.0" stencil="0" />
-    <command type="scenepass" pass="edgebase" metadata="base" />
+    <command type="scenepass" pass="edgebase" vsdefines="EDGEBASE" metadata="base" />
 
     <!--render the first quad to get the edges from the edge shader -->
     <command type="quad" vs="shmup/edge_quad" ps="shmup/edge_quad" output="edge">
@@ -14,22 +15,25 @@
       <!--<parameter name="Divisor" value="2.0" />-->
     </command>
 
-    <!--<command type="clear" color="fog" depth="1.0" stencil="0" />
+    <!--now we can do a lit pass-->
+    <command type="clear" color="fog" depth="1.0" stencil="0" />
     <command type="scenepass" pass="base" vertexlights="true" metadata="base" />
     <command type="forwardlights" pass="light" />
-    <command type="quad" vs="resample_edge_quad" ps="resample_edge_quad" output="edge">
+
+
+    <command type="quad" vs="shmup/palette_quad" ps="shmup/palette_quad" output="postcolor">
       <texture unit="environment" name="viewport" />
-    </command>-->
-
-
-
-
-
+      <!--<parameter name="Palette" value="0.204 0.251 0.895 0.93 0.075 0.161 0.459 0.6 0.142 0.275 0.381 0.491 1.0 1.0 1.0 1.0" />
+      <parameter name="Luma" value="0.077 0.125 0.382 0.453" />-->
+      <parameter name="Palette" value="0.9 0.6 0.4 0.1 0.9 0.6 0.4 0.1 0.9 0.6 0.4 0.1 1.0 1.0 1.0 1.0" />
+      <parameter name="Luma" value="0.9 0.6 0.4 0.1" />
+    </command>
 
     <!--process the rendertargets down-->
     <command type="quad" vs="shmup/pixel_comp" ps="shmup/pixel_comp">
       <texture unit="environment" name="viewport" />
       <texture unit="diffuse" name="edge" />
+      <texture unit="spec" name="postcolor" />
     </command>
 
 </renderpath>

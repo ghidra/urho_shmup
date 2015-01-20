@@ -6,6 +6,7 @@ shared class Pawn:Actor{
   String mesh_ = "Sphere";
   String material_ = "shmup/Pixel";
   Material@ mesh_material_;
+  //StaticModel@ geo_;
   bool physical_movement_ = false;
 
   //---------------------
@@ -56,7 +57,7 @@ shared class Pawn:Actor{
     mesh_material_.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
     chsm_.material = mesh_material_;
 
-    chsm_.material = cache.GetResource("Material", "Materials/"+mat+".xml");
+    //chsm_.material = cache.GetResource("Material", "Materials/"+mat+".xml");
     chsm_.castShadows = true;
 
     chnode.Scale(scl);

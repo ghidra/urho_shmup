@@ -43,25 +43,28 @@ void PS(){
       //vec2 mult = (uv_rescl*0.5);
 
       //vec2 uv_rescl = uv*cGBufferInvSize.xy;
-      vec2 mult = (2.0*uv-1.0)/(2.0*0.5);
+      //vec2 mult = (2.0*uv-1.0)/(2.0*0.5);
 
       //float w = ((1280.0-cGBufferInvSize.x) / 2.0);//+cGBufferInvSize.x;
       //float h = ((800.0-cGBufferInvSize.y) / 2.0);//+cGBufferInvSize.y;
 
-      float w = (s.x / 2.0);
-      float h = (s.y / 2.0);
-      vec2 screenPos = vec2(float(int(vScreenPos.x * w) / w), float(int(vScreenPos.y * h) / h));
+      //float w = (s.x / 2.0);
+      //float h = (s.y / 2.0);
+      //vec2 screenPos = vec2(float(int(vScreenPos.x * w) / w), float(int(vScreenPos.y * h) / h));
 
       //vec4 edge = texture2D(sDiffMap,vScreenPos.xy / vScreenPos.w);
       vec4 bg = texture2D(sEnvMap,uv);
       vec4 edge = texture2D(sDiffMap,uv);
+      vec4 post = texture2D(sSpecMap,uv);
       //vec4 outline = texture2D(sNormalMap,vScreenPos.xy / vScreenPos.w);
       //vec4 outline = texture2D(sNormalMap,mult);
 
       //if(IsEdge(sEnvMap,vScreenPos.xy / vScreenPos.w, cGBufferInvSize)>1.0){
       //}
       //gl_FragColor = edge;
-      gl_FragColor = bg+edge;
+      //gl_FragColor = bg+edge;
+      gl_FragColor = post+edge;
+      //gl_FragColor = bg;
       //gl_FragColor = dither+outline;
       //gl_FragColor = outline;
 }
