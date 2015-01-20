@@ -105,6 +105,17 @@ else
     fi
     echo "          -alias: sh "$SCRIPTPATH"/launch.sh"
 
+    EDIT=$URHOBUILD"/bin/Urho3DPlayer /Scripts/Editor.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;Resources\" -w -s -renderpath RenderPaths/shmup/ForwardPixelQuad.xml"
+    EFILE=$SCRIPTPATH/editor.sh
+    if [ -f "$EFILE" ];then
+      printf "$EDIT" > $EFILE
+      echo "     -editor.sh edited"
+    else
+      touch $EFILE
+      printf "$EDIT" > $EFILE
+      echo "     -editor.sh created"
+    fi
+
     echo "***********************************"
 
   else

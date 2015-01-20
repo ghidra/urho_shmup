@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<scene id="1">
+	<attribute name="Name" value="" />
+	<attribute name="Time Scale" value="1" />
+	<attribute name="Smoothing Constant" value="50" />
+	<attribute name="Snap Threshold" value="5" />
+	<attribute name="Elapsed Time" value="0" />
+	<attribute name="Next Replicated Node ID" value="1" />
+	<attribute name="Next Replicated Component ID" value="1027" />
+	<attribute name="Next Local Node ID" value="16778242" />
+	<attribute name="Next Local Component ID" value="16777218" />
+	<attribute name="Variables" />
+	<attribute name="Variable Names" value="" />
+	<component type="Octree" id="1" />
+	<component type="DebugRenderer" id="2" />
+	<node id="16777216">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="" />
+		<attribute name="Position" value="0 -3.94427 7.88854" />
+		<attribute name="Rotation" value="1 0 0 0" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Terrain" id="16777216">
+			<attribute name="Height Map" value="Image;Textures/HeightMap.png" />
+			<attribute name="Material" value="Material;Materials/shmup/Pixel.xml" />
+		</component>
+	</node>
+	<node id="16778241">
+		<attribute name="Is Enabled" value="true" />
+		<attribute name="Name" value="" />
+		<attribute name="Position" value="-5.6896 78.2885 -124.466" />
+		<attribute name="Rotation" value="0.974615 0.112366 -0.0879197 0.17254" />
+		<attribute name="Scale" value="1 1 1" />
+		<attribute name="Variables" />
+		<component type="Light" id="16777217">
+			<attribute name="Light Type" value="Directional" />
+		</component>
+	</node>
+</scene>
