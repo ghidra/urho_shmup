@@ -8,18 +8,18 @@ make_alias(){
   if [ ! -e $3 ];then
     #link does not exist, we can make it
     ln -s $2 $3
-    echo "          -"$1" linked"
-  else
-    echo "          -"$1" found"
-  fi
-}
-
-link_folder(){
-  if [ ! -d $3$1 ];then
-    ln -s $2$1 $3$1
     echo "          -"$1" folder linked"
   else
     echo "          -"$1" folder found"
+  fi
+}
+
+make_alias_file(){
+  if [ ! -L $3 ];then
+    ln -s $2 $3
+    echo "          -"$1" file linked"
+  else
+    echo "          -"$1" file found"
   fi
 }
 
@@ -85,12 +85,12 @@ else
     done
 
     echo "     -link required shader includes"
-    make_alias "Uniforms.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Uniforms.glsl" $SCRIPTPATH"/Shaders/GLSL/Uniforms.glsl"
-    make_alias "Samplers.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Samplers.glsl" $SCRIPTPATH"/Shaders/GLSL/Samplers.glsl"
-    make_alias "Transform.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Transform.glsl" $SCRIPTPATH"/Shaders/GLSL/Transform.glsl"
-    make_alias "ScreenPos.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/ScreenPos.glsl" $SCRIPTPATH"/Shaders/GLSL/ScreenPos.glsl"
-    make_alias "Lighting.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Lighting.glsl" $SCRIPTPATH"/Shaders/GLSL/Lighting.glsl"
-    make_alias "Fog.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Fog.glsl" $SCRIPTPATH"/Shaders/GLSL/Fog.glsl"
+    make_alias_file "Uniforms.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Uniforms.glsl" $SCRIPTPATH"/Shaders/GLSL/Uniforms.glsl"
+    make_alias_file "Samplers.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Samplers.glsl" $SCRIPTPATH"/Shaders/GLSL/Samplers.glsl"
+    make_alias_file "Transform.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Transform.glsl" $SCRIPTPATH"/Shaders/GLSL/Transform.glsl"
+    make_alias_file "Lighting.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Lighting.glsl" $SCRIPTPATH"/Shaders/GLSL/Lighting.glsl"
+    make_alias_file "ScreenPos.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/ScreenPos.glsl" $SCRIPTPATH"/Shaders/GLSL/ScreenPos.glsl"
+    make_alias_file "Fog.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Fog.glsl" $SCRIPTPATH"/Shaders/GLSL/Fog.glsl"
 
     #make or edit the launch script
     LAUNCH=$URHOBUILD"/bin/Urho3DPlayer /Scripts/shmup/Main.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;Resources\""
