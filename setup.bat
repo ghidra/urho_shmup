@@ -91,6 +91,17 @@ if NOT "%1"=="" (
           echo           -launch.bat created
         )
 
+        echo      -editor.bat
+        SET EDIT=!URHOBUILD!\bin\Urho3DPlayer_d.exe /Scripts/shmup/Main.as -pp !URHOBUILD!\Bin -p "CoreData;Data;Resources" -w -s -renderpath RenderPaths\shmup\ForwardPixelQuad.xml
+        if exist "editor.bat" (
+          echo !EDIT! > editor.bat
+          echo           -editor.bat edited
+        ) else (
+          echo. 2>editor.bat
+          echo !EDIT! > editor.bat
+          echo           -editor.bat created
+        )
+
 
 
       ) else (
