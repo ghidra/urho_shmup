@@ -93,7 +93,7 @@ def main(kwargs):
   distinct_colors = get_distinct_colors(colors,threshold,min_brightness,max_brightness)
   #ensure there are 16
   count = 0
-  nc = 5 #number of colors
+  nc = 17 #number of colors + 1
   while len(distinct_colors)<nc:
     count+=1
     distinct_colors.extend(get_distinct_colors(colors,threshold-count,min_brightness,max_brightness))
@@ -127,13 +127,41 @@ def main(kwargs):
 
   #output
   #print out.output(distinct_colors,lightest,darkest)
-  s=""
+  dc = distinct_colors
+  pblock(dc[0],dc[1],dc[2],dc[3])
+  pblock(dc[4],dc[5],dc[6],dc[7])
+  pblock(dc[8],dc[9],dc[10],dc[11])
+  pblock(dc[12],dc[13],dc[14],dc[15])
+  '''print "<parameter name=\"Palette\" value=\""+str(dc[0][0])+" "+str(dc[1][0])+" "+str(dc[2][0])+" "+str(dc[3][0])+" "+str(dc[0][1])+" "+str(dc[1][1])+" "+str(dc[2][1])+" "+str(dc[3][1])+" "+str(dc[0][2])+" "+str(dc[1][2])+" "+str(dc[2][2])+" "+str(dc[3][2])+" 1.0 1.0 1.0 1.0\" />"
+  print "<parameter name=\"Luma\" value=\""+str(lum(dc[0]))+" "+str(lum(dc[1]))+" "+str(lum(dc[2]))+" "+str(lum(dc[3]))+"\" />"
+  print "<parameter name=\"Palette\" value=\""+str(dc[4][0])+" "+str(dc[5][0])+" "+str(dc[6][0])+" "+str(dc[7][0])+" "+str(dc[4][1])+" "+str(dc[5][1])+" "+str(dc[6][1])+" "+str(dc[7][1])+" "+str(dc[4][2])+" "+str(dc[5][2])+" "+str(dc[6][2])+" "+str(dc[7][2])+" 1.0 1.0 1.0 1.0\" />"
+  print "<parameter name=\"Luma\" value=\""+str(lum(dc[4]))+" "+str(lum(dc[5]))+" "+str(lum(dc[6]))+" "+str(lum(dc[7]))+"\" />"
+  print "<parameter name=\"Palette\" value=\""+str(dc[8][0])+" "+str(dc[9][0])+" "+str(dc[10][0])+" "+str(dc[11][0])+" "+str(dc[8][1])+" "+str(dc[9][1])+" "+str(dc[10][1])+" "+str(dc[11][1])+" "+str(dc[8][2])+" "+str(dc[9][2])+" "+str(dc[10][2])+" "+str(dc[11][2])+" 1.0 1.0 1.0 1.0\" />"
+  print "<parameter name=\"Luma\" value=\""+str(lum(dc[8]))+" "+str(lum(dc[9]))+" "+str(lum(dc[10]))+" "+str(lum(dc[11]))+"\" />"
+  print "<parameter name=\"Palette\" value=\""+str(dc[12][0])+" "+str(dc[13][0])+" "+str(dc[14][0])+" "+str(dc[15][0])+" "+str(dc[12][1])+" "+str(dc[13][1])+" "+str(dc[14][1])+" "+str(dc[15][1])+" "+str(dc[12][2])+" "+str(dc[13][2])+" "+str(dc[14][2])+" "+str(dc[15][2])+" 1.0 1.0 1.0 1.0\" />"
+  print "<parameter name=\"Luma\" value=\""+str(lum(dc[12]))+" "+str(lum(dc[13]))+" "+str(lum(dc[14]))+" "+str(lum(dc[15]))+"\" />"
+  '''
+  '''s=""
   for c in distinct_colors:
     luma = math.ceil( (math.sqrt(math.pow(c[0]*0.299,2)+math.pow(c[1]*0.587,2)+math.pow(c[2]*0.114,2))/255.0)*1000 )/1000.0
     nc = (math.ceil((c[0]/255.0)*1000)/1000.0, math.ceil((c[1]/255.0)*1000)/1000.0, math.ceil((c[2]/255.0)*1000)/1000.0)
     s+=str(nc)+":"+str(luma)+"\n"
 
-  print s
+  print s'''
+
+def pblock(ca,cb,cc,cd):
+  nca = c(ca)
+  ncb = c(cb)
+  ncc = c(cc)
+  ncd = c(cd)
+  print "<parameter name=\"Palette\" value=\""+str(nca[0])+" "+str(ncb[0])+" "+str(ncc[0])+" "+str(ncd[0])+" "+str(nca[1])+" "+str(ncb[1])+" "+str(ncc[1])+" "+str(ncd[1])+" "+str(nca[2])+" "+str(ncb[2])+" "+str(ncc[2])+" "+str(ncd[2])+" 1.0 1.0 1.0 1.0\" />"
+  print "<parameter name=\"Luma\" value=\""+str(lum(ca))+" "+str(lum(cb))+" "+str(lum(cc))+" "+str(lum(cd))+"\" />"
+
+def c(c):
+  return (math.ceil((c[0]/255.0)*1000)/1000.0, math.ceil((c[1]/255.0)*1000)/1000.0, math.ceil((c[2]/255.0)*1000)/1000.0)
+
+def lum(c):
+  return math.ceil( (math.sqrt(math.pow(c[0]*0.299,2)+math.pow(c[1]*0.587,2)+math.pow(c[2]*0.114,2))/255.0)*1000 )/1000.0
 
 if __name__ == "__main__":
   main(sys.argv)
