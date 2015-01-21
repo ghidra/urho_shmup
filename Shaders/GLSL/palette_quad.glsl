@@ -91,14 +91,14 @@ vec3 get_closest(vec3 color, float luma){
     for(int index=0; index<4; index++){
       vec4 pc = cPalette[index];
 
-      vec4 lum = vec4(0.299, 0.587, 0.114, 1.0);
+      //vec4 lum = vec4(0.299, 0.587, 0.114, 1.0);
+      //float pcl = dot(pc, lum);
 
-      float pcl = dot(pc, lum);
+      float pcl = cLuma[index]; ////ahhhh im not sure im grabbing the xyz component with an index
 
-      //float pcl = cLuma[index]; ////ahhhh im not sure im grabbing the xyz component with an index
-      float penalty = pcl-luma;
+      float penalty = abs(luma-pcl);
       //float penalty = compare(pc.xyz,color.xyz);
-      if(penalty <= least_penalty){
+      if(penalty < least_penalty){
         least_penalty = penalty;
         chosen=index;
       }
