@@ -1,3 +1,11 @@
 *.log
 launch.*
 editor.*
+*.sln
+*.suo
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+Urho Shmup.sdf
+New Text Document.txt
+Debug/

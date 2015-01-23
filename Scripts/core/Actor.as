@@ -24,6 +24,8 @@ shared class Actor : ScriptObject{
   float speed_;
   float sensitivity_;
 
+  float timeIncrement_;
+
   //character collision masks as default
   uint collision_layer_=1;
   uint collision_mask_=60;
@@ -46,6 +48,7 @@ shared class Actor : ScriptObject{
   }
 
   void FixedUpdate(float timeStep){
+	timeIncrement_+=timeStep;
     // Disappear when duration expired
     if (duration_ >= 0){
       duration_ -= timeStep;

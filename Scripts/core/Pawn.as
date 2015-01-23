@@ -39,6 +39,9 @@ shared class Pawn:Actor{
     }
   }
 
+
+
+
   //-----------------------
   //--  Build the actual pawn, mesh anf weapons
   //-----------------------
