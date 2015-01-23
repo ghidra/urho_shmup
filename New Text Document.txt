@@ -1,8 +1,0 @@
-
-D:\Urho\urho_shmup [master]> git config remote.origin.url https://github.com/Elkreyn/urho_shmup.git
-
-D:\Urho\urho_shmup [master]> git add -A
-
-D:\Urho\urho_shmup [master]> git commit -m "whatever"
-
-D:\Urho\urho_shmup [master]> git push origin master
