@@ -31,6 +31,9 @@ class Enemy:Pawn{
   //--------------------
 
   void FixedUpdate(float timeStep){
+
+	 Pawn::FixedUpdate(timeStep);
+
     if(target_ !is null){
       fire(target_.position,timeStep);
     }
