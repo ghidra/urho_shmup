@@ -93,6 +93,6 @@ Node@ spawn_object(const String&in otype, const Vector3&in pos= Vector3(), const
 class Container:ScriptObject{
   Vector2 bounds_ = Vector2(24.0f,16.0f);
   void FixedUpdate(float timeStep){
-    node.position = node.position+Vector3(0.0f,0.0f,0.75f*timeStep);
+    //node.position = node.position+Vector3(0.0f,0.0f,0.75f*timeStep);
   }
 }
