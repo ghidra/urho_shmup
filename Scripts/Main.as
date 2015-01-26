@@ -39,6 +39,40 @@ void Start(){
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
   ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,1.0f,"Enemy","Weapon","Behavior",1.0f,0,1.0f);
 
+  //corners
+  Node@ c1 = scene_.CreateChild("Corner");
+  StaticModel@ c1m = c1.CreateComponent("StaticModel");
+  c1m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
+  c1m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  c1.position=Vector3(-24.0,0.0,20.0);
+
+  Node@ c2 = scene_.CreateChild("Corner");
+  StaticModel@ c2m = c2.CreateComponent("StaticModel");
+  c2m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
+  c2m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  Quaternion q2 = Quaternion();
+  q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0));
+  c2.Rotate( q2 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
+  c2.position=Vector3(24.0,0.0,20.0);
+
+  Node@ c3 = scene_.CreateChild("Corner");
+  StaticModel@ c3m = c3.CreateComponent("StaticModel");
+  c3m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
+  c3m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  Quaternion q3 = Quaternion();
+  q3.FromAngleAxis(-90.0,Vector3(0.0,1.0,0.0));
+  c3.Rotate( q3 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
+  c3.position=Vector3(-24.0,0.0,-16.0);
+
+  Node@ c4 = scene_.CreateChild("Corner");
+  StaticModel@ c4m = c4.CreateComponent("StaticModel");
+  c4m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
+  c4m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  Quaternion q4 = Quaternion();
+  q4.FromAngleAxis(180.0,Vector3(0.0,1.0,0.0));
+  c4.Rotate( q4 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
+  c4.position=Vector3(24.0,0.0,-16.0);
+
   //pickups
   Node@ pu1 = spawn_object("Pickup",Vector3(-15.0f,0.0f,-5.0f) );
   Node@ pu2 = spawn_object("Pickup",Vector3(-5.0f,0.0f,-5.0f) );

@@ -67,6 +67,7 @@ else
     make_folder "/Resources/Shaders" $URHOBUILD"/bin"
     make_folder "/Resources/Shaders/GLSL" $URHOBUILD"/bin"
     make_folder "/Resources/Techniques" $URHOBUILD"/bin"
+    make_folder "/Resources/Textures" $URHOBUILD"/bin"
 
     echo "     -create project links"
     for Dir in $(find $SCRIPTPATH* -mindepth 1 -maxdepth 1 -not -path '*/\.*' -type d );
@@ -79,6 +80,7 @@ else
           "Shaders") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER"/GLSL" $URHOBUILD"/bin/Resources/"$FOLDER"/GLSL/shmup" ;;
           "Materials") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
           "Models") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
+          "Textures") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
           *) echo "          -ignore:" $FOLDER ;;
         esac
 

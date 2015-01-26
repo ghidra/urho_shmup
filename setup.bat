@@ -56,6 +56,7 @@ if NOT "%1"=="" (
         call:makeFolder "\Resources\Shaders" "!URHOBUILD!\bin"
         call:makeFolder "\Resources\Shaders\GLSL" "!URHOBUILD!\bin"
         call:makeFolder "\Resources\Techniques" "!URHOBUILD!\bin"
+        call:makeFolder "\Resources\Textures" "!URHOBUILD!\bin"
 
         echo      -create project links
         for /D %%f in (*.*) do (
@@ -69,6 +70,7 @@ if NOT "%1"=="" (
           if "!myfolder!"=="Shaders" call:makeAlias "!myfolder!" "!FOLDER!\GLSL" "!URHOBUILD!\bin\Resources\!myfolder!\GLSL\shmup"
           if "!myfolder!"=="Materials" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
           if "!myfolder!"=="Models" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
+          if "!myfolder!"=="Textures" call:makeAlias "!myfolder!" "!FOLDER!" "!URHOBUILD!\bin\Resources\!myfolder!\shmup"
 
         )
 
