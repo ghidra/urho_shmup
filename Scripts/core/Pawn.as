@@ -19,6 +19,13 @@ shared class Pawn:Actor{
     }else{
       node.position = node.position+(direction*speed_*timestep);
     }
+    //lets do some rotation on it
+    Quaternion rot = Quaternion();
+    Vector3 dirdamp = direction*Vector3(1.0f,0.1f,1.0f);
+    dirdamp.Normalize();
+    Vector3 rotaxis = dirdamp.CrossProduct(Vector3(0.0f,-1.0f,0.0f));
+    rot.FromAngleAxis(20.0f,rotaxis);
+    node.rotation = rot;
   }
   //this is called from the inputPLayer class
   void fire(Vector3 target_position,float timestep = 0.0f){
