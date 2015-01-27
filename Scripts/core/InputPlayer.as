@@ -61,6 +61,8 @@ class InputPlayer : InputBasics{
 
     if(direction.length>0.5)
       move(direction.Normalized(),timestep);
+    else
+      stop_move();
 
   }
   //------------------------
@@ -86,6 +88,12 @@ class InputPlayer : InputBasics{
       //Print("try from input");
       Pawn@ pawn = cast<Pawn>(node_.scriptObject);
       pawn.move( direction, timeStep);
+    }
+  }
+  void stop_move(){
+    if(node_ !is null){
+      Pawn@ pawn = cast<Pawn>(node_.scriptObject);
+      pawn.stop_move();
     }
   }
   void move_mouse(IntVector2 mousemove){

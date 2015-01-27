@@ -29,7 +29,7 @@ shared class Actor : ScriptObject{
   //character collision masks as default
   uint collision_layer_=1;
   uint collision_mask_=60;
-  
+
   uint isenemy_=0;//if we are an enemy actor
 
   Actor(){
@@ -48,7 +48,7 @@ shared class Actor : ScriptObject{
   }
 
   void FixedUpdate(float timeStep){
-	timeIncrement_+=timeStep;
+	   timeIncrement_+=timeStep;
     // Disappear when duration expired
     if (duration_ >= 0){
       duration_ -= timeStep;
@@ -141,6 +141,10 @@ shared class Actor : ScriptObject{
   //movements
   void move(Vector3 direction, float timeStep){
     node.Translate(direction*speed_*timeStep);
+  }
+  //math
+  float fit(const float v, const float l1, const float h1, const float l2=0.0f,const float h2=1.0f){
+    return Clamp( l2 + (v - l1) * (h2 - l2) / (h1 - l1), l2,h2);
   }
   //------------------------
   //possible helper function

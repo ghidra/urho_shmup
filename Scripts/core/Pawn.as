@@ -8,25 +8,42 @@ shared class Pawn:Actor{
   Material@ mesh_material_;
   //StaticModel@ geo_;
   bool physical_movement_ = false;
+  float damp_time = 0.5f;//the amount of time it takes to go full speed/tilt
+  float damp_increment = 0.0f;//a counter specifically for damping
+  float bank_degrees = 20.f;//how much to bank
 
   //---------------------
   //---------------------
 
   void move(Vector3 direction, float timestep){
+    //use damp time
+    damp_increment+=timestep;
+    float fitdamp = fit(damp_increment,0.0f,damp_time,0.0f,1.0f);
+
     if(physical_movement_){
       RigidBody@ body_ = node.GetComponent("RigidBody");
       body_.linearVelocity = body_.linearVelocity+(direction*speed_*timestep);
     }else{
       node.position = node.position+(direction*speed_*timestep);
     }
+
+
     //lets do some rotation on it
     Quaternion rot = Quaternion();
-    Vector3 dirdamp = direction*Vector3(1.0f,0.1f,1.0f);
-    dirdamp.Normalize();
-    Vector3 rotaxis = dirdamp.CrossProduct(Vector3(0.0f,-1.0f,0.0f));
-    rot.FromAngleAxis(20.0f,rotaxis);
+    Vector3 dirclamp = direction*Vector3(1.0f,0.0f,0.0f);
+    Vector3 rotaxis = dirclamp.CrossProduct(Vector3(0.0f,-1.0f,0.0f));
+    float dirdot = direction.DotProduct(Vector3(1.0f,0.0f,0.0f));
+    //float fitdirdot = fit(Abs(dirdot),0.0f,1.0f,0.1f,1.0f);
+    rot.FromAngleAxis(bank_degrees*fitdamp*Abs(dirdot),rotaxis);
     node.rotation = rot;
   }
+  void stop_move(){
+    damp_increment=0.0f;
+    node.rotation = Quaternion();
+  }
+  /*void FixedUpdate(float timeStep){
+    Pawn::FixedUpdate(timeStep);
+  }*/
   //this is called from the inputPLayer class
   void fire(Vector3 target_position,float timestep = 0.0f){
     //lets check that we have a weapon class
