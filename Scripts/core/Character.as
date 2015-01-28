@@ -8,11 +8,37 @@ shared class Character:Pawn{
     //mesh_="Cone";
     mesh_="shmup/spaceship_02_shiponly";
     speed_=20.0f;
+    //weapon_offsets_.Resize(1);
+
+    weapon_offsets_.Resize(6);
+    weapon_offsets_.Clear();
+    weapon_offsets_.Push( Vector3(1.75f,0.0f,0.0f));
+    weapon_offsets_.Push( Vector3(-1.75f,0.0f,0.0f));
+    weapon_offsets_.Push( Vector3(2.5f,0.0f,-1.0f));
+    weapon_offsets_.Push( Vector3(-2.5f,0.0f,-1.0f));
+    weapon_offsets_.Push( Vector3(3.25f,0.0f,-2.0f));
+    weapon_offsets_.Push( Vector3(-3.25f,0.0f,-2.0f));
+    //weapon_rotations_.Resize(1);
+    weapon_rotations_.Resize(6);
+    weapon_rotations_.Clear();
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
   }
   void Start(){
     build_geo(mesh_,material_,0.2);
     mesh_material_.shaderParameters["ObjectBlend"]=Variant(1.0f);//single quotes didnt work
     build_weapon("Weapon");
+
+    WeaponBank@ wb = get_weaponbank();
+    wb.set_weapon(1);
+    wb.set_weapon(2);
+    wb.set_weapon(3);
+    wb.set_weapon(4);
+    wb.set_weapon(5);
   }
 
 

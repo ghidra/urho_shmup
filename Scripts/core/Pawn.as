@@ -1,4 +1,5 @@
 #include "Scripts/shmup/core/Actor.as"
+#include "Scripts/shmup/core/WeaponBank.as"
 #include "Scripts/shmup/weapons/Weapon.as"
 
 shared class Pawn:Actor{
@@ -8,17 +9,21 @@ shared class Pawn:Actor{
   Material@ mesh_material_;
   //StaticModel@ geo_;
   bool physical_movement_ = false;
-  float damp_time = 0.5f;//the amount of time it takes to go full speed/tilt
-  float damp_increment = 0.0f;//a counter specifically for damping
-  float bank_degrees = 20.f;//how much to bank
+  float damp_time_ = 0.5f;//the amount of time it takes to go full speed/tilt
+  float damp_increment_ = 0.0f;//a counter specifically for damping
+  float bank_degrees_ = 20.f;//how much to bank
+
+  Node@ weapon_bank_;//this will be a node to hold all the weapons
+  Array<Vector3> weapon_offsets_ = {Vector3(0.0f,0.0f,0.0f)};
+  Array<Vector3> weapon_rotations_ = {Vector3(0.0f,0.0f,0.0f)};//use for rotations
 
   //---------------------
   //---------------------
 
   void move(Vector3 direction, float timestep){
     //use damp time
-    damp_increment+=timestep;
-    float fitdamp = fit(damp_increment,0.0f,damp_time,0.0f,1.0f);
+    damp_increment_+=timestep;
+    float fitdamp = fit(damp_increment_,0.0f,damp_time_,0.0f,1.0f);
 
     if(physical_movement_){
       RigidBody@ body_ = node.GetComponent("RigidBody");
@@ -34,11 +39,11 @@ shared class Pawn:Actor{
     Vector3 rotaxis = dirclamp.CrossProduct(Vector3(0.0f,-1.0f,0.0f));
     float dirdot = direction.DotProduct(Vector3(1.0f,0.0f,0.0f));
     //float fitdirdot = fit(Abs(dirdot),0.0f,1.0f,0.1f,1.0f);
-    rot.FromAngleAxis(bank_degrees*fitdamp*Abs(dirdot),rotaxis);
+    rot.FromAngleAxis(bank_degrees_*fitdamp*Abs(dirdot),rotaxis);
     node.rotation = rot;
   }
   void stop_move(){
-    damp_increment=0.0f;
+    damp_increment_=0.0f;
     node.rotation = Quaternion();
   }
   /*void FixedUpdate(float timeStep){
@@ -104,7 +109,22 @@ shared class Pawn:Actor{
     //place a waiting empty weapon node
     Node@ weapon_ = node.CreateChild("Weapon");
     weapon_.position=Vector3(1.0f,0.0f,0.0f);
+    weapon_.Scale(scl);
+
+    //new weapons system
+    weapon_bank_ = node.CreateChild("WeaponBank");
+    WeaponBank@ weaponbank_script_ = cast<WeaponBank>(weapon_bank_.CreateScriptObject(scriptFile, "WeaponBank", LOCAL));
+    //set the first weapon at least
+    weaponbank_script_.set_parameters(weapon_offsets_,weapon_rotations_,scl);
+    weaponbank_script_.set_weapon();
+
   }
+
+  WeaponBank@ get_weaponbank(){
+    return cast<WeaponBank>(node.GetChild("WeaponBank").scriptObject);
+  }
+
+
 
   void build_weapon(const String&in wclass = "Weapon"){
     //Node@ weapon_node_ = node.children[0];

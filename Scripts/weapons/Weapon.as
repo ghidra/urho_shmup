@@ -2,7 +2,8 @@
 #include "Scripts/shmup/projectiles/Projectile.as"
 
 shared class Weapon:Actor{
-  String meshtype_ = "Box";//the weaon mesh
+  //String meshtype_ = "Box";//the weaon mesh
+  String meshtype_ = "shmup/centered_weapon_01";//the weaon mesh
   String mattype_ = "shmup/Pixel";//the weapons material
 
   int firing_ = 0;
