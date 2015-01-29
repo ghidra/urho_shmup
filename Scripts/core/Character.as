@@ -12,21 +12,21 @@ shared class Character:Pawn{
 
     weapon_offsets_.Resize(6);
     weapon_offsets_.Clear();
-    weapon_offsets_.Push( Vector3(1.75f,0.0f,0.0f));
-    weapon_offsets_.Push( Vector3(-1.75f,0.0f,0.0f));
-    weapon_offsets_.Push( Vector3(2.5f,0.0f,-1.0f));
-    weapon_offsets_.Push( Vector3(-2.5f,0.0f,-1.0f));
-    weapon_offsets_.Push( Vector3(3.25f,0.0f,-2.0f));
-    weapon_offsets_.Push( Vector3(-3.25f,0.0f,-2.0f));
+    weapon_offsets_.Push( Vector3(1.5f,0.0f,0.75f));
+    weapon_offsets_.Push( Vector3(-1.5f,0.0f,0.75f));
+    weapon_offsets_.Push( Vector3(2.25f,0.0f,-0.5f));
+    weapon_offsets_.Push( Vector3(-2.25f,0.0f,-0.5f));
+    weapon_offsets_.Push( Vector3(3.0f,0.0f,-2.0f));
+    weapon_offsets_.Push( Vector3(-3.0f,0.0f,-2.0f));
     //weapon_rotations_.Resize(1);
     weapon_rotations_.Resize(6);
     weapon_rotations_.Clear();
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
-    weapon_rotations_.Push( Vector3(-1.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,0.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,10.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,-10.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,30.0f,0.0f));
+    weapon_rotations_.Push( Vector3(0.0f,-30.0f,0.0f));
   }
   void Start(){
     build_geo(mesh_,material_,0.2);

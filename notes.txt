@@ -3,14 +3,13 @@ Notes:
 -ORIENTATION
   -LOOK DOWN +Z
 
-  -i need a smarter way to determine this anyway, instead of grabbin 0
-  -enemy is not getting my default normal material
-
-  -physics movement, needs to be removed
-
 -enemy class
   -fix orientation of enemies
   -when too far off screen they need to be removed
+
+-weapon bank
+  -control weapons from weapon bank
+  -remove old build_weapon method from pawn (enemies also use it)
 
 -weapon/projectile damage
   -weapon effects projectile damage

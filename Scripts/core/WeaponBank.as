@@ -16,12 +16,15 @@ shared class WeaponBank: ScriptObject{
       Node@ weapon_node = node.CreateChild("Weapon"+i);
       weapon_node.Scale(scl);
       weapon_node.position=offset[i];
+      Quaternion q = Quaternion();
+      q.FromEulerAngles( rotation[i].x,rotation[i].y,rotation[i].z );
+      weapon_node.rotation=q;
       //offsets_[i] = offset[i];
       //rotations_[i] = rotation[i];
     }
   }
 
-  void set_weapon(const int&in slot = 0, const String&in wclass = "Weapon"){
+  void set_weapon(const uint&in slot = 0, const String&in wclass = "Weapon"){
     //first we need to make sure that we have a long enough array, otherwise add it to the end
     if(weapons_.length<slot+1){
       Node@ new_weapon = node.CreateChild("Weapon"+weapons_.length);
