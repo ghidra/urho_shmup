@@ -1,5 +1,13 @@
 Notes:
 ---------------------
+-shaders
+  -depth multiply color
+  -more colors in palette
+
+-add light flash on gun firing
+
+-continue gun fixes
+
 -ORIENTATION
   -LOOK DOWN +Z
 
@@ -57,3 +65,19 @@ from irc
 you would create a folder next to Data/ and CoreData/, eg: Resources/
 and then you can either add that extra folder via angelscript, or via the commandline:
 Urho3DPlayer.exe Scripts/Editor.as -w -s -p ./CoreData;./Data;./Resources
+
+--------
+Core/Textures folder there is LUTIdentity.png
+if you apply the color correction filter it uses this as a lookup
+i would posterize and bump the saturation up on this image
+whiter haze towards the sun which i would try with zone fog stuff
+09_MultipleViewports
+search for PostProcess
+
+--------
+-plug in for blender to check if mesh is clean
+http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Modeling/MeshLint
+
+http://www.allegorithmic.com/static/static/pages/PBR_Guide/PBR_Guide_Vol.2.pdf
+
+http://bliker.github.io/cmder/
