@@ -15,6 +15,10 @@ varying vec4 vWorldPos;
     varying vec2 vTexCoord;
 #endif
 
+#ifdef DEPTH
+  varying vec3 vDTexCoord;
+#endif
+
 #ifdef SHADOW
     varying vec4 vShadowPos[NUMCASCADES];
 #endif
@@ -127,6 +131,10 @@ void VS()
             vShadowPos[i] = GetShadowPos(i, projWorldPos);
     #endif
 
+    #ifdef DEPTH
+        vDTexCoord = vec3(GetTexCoord(iTexCoord), GetDepth(gl_Position));
+    #endif
+
     #ifdef SPOTLIGHT
         // Spotlight projection: transform from world space to projector texture coordinates
         vSpotPos = cLightMatrices[0] * projWorldPos;
@@ -233,6 +241,11 @@ void PS()
       }
       //vec4 color = get_pixel(sEnvMap,vScreenPos.xy / vScreenPos.w,cGBufferInvSize.x,cGBufferInvSize.y);
       gl_FragColor = color;
+    #endif
+
+    #ifdef DEPTH
+      //gl_FragColor = vec4(EncodeDepth(vDTexCoord.z), 1.0);
+      gl_FragColor = vec4(1.0,0.0,0.0, 1.0);
     #endif
 
 

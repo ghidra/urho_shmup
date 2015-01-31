@@ -56,6 +56,8 @@ void PS(){
       vec4 bg = texture2D(sEnvMap,uv);
       vec4 edge = texture2D(sDiffMap,uv);
       vec4 post = texture2D(sSpecMap,uv);
+      vec4 deep = texture2D(sNormalMap,uv);
+      vec4 decdepth = vec4(DecodeDepth(deep.xyz));
       //vec4 outline = texture2D(sNormalMap,vScreenPos.xy / vScreenPos.w);
       //vec4 outline = texture2D(sNormalMap,mult);
 
@@ -63,7 +65,8 @@ void PS(){
       //}
       //gl_FragColor = edge;
       //gl_FragColor = bg+edge;
-      gl_FragColor = post+edge;
+      //gl_FragColor = (post+edge)*deep;
+      gl_FragColor = deep;
       //gl_FragColor = bg;
       //gl_FragColor = dither+outline;
       //gl_FragColor = outline;
