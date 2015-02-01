@@ -15,7 +15,7 @@ varying vec4 vWorldPos;
     varying vec2 vTexCoord;
 #endif
 
-#ifdef DEPTH
+#ifdef DEPTHPASS
   varying vec3 vDTexCoord;
 #endif
 
@@ -103,6 +103,19 @@ varying vec4 vWorldPos;
 
   #endif
 
+  #ifdef DEPTHPASS
+
+  float fit(in float v, in float l1, in float h1, in float l2,in float h2){
+    return clamp( l2 + (v - l1) * (h2 - l2) / (h1 - l1), l2,h2);
+  }
+
+  vec3 posturize(in vec3 v, in float bands){//this will clamp to number of bands
+    vec3 nv = floor(v*bands);
+    return nv/bands;
+  }
+
+  #endif
+
 #endif
 
 
@@ -131,7 +144,7 @@ void VS()
             vShadowPos[i] = GetShadowPos(i, projWorldPos);
     #endif
 
-    #ifdef DEPTH
+    #ifdef DEPTHPASS
         vDTexCoord = vec3(GetTexCoord(iTexCoord), GetDepth(gl_Position));
     #endif
 
@@ -243,9 +256,11 @@ void PS()
       gl_FragColor = color;
     #endif
 
-    #ifdef DEPTH
-      //gl_FragColor = vec4(EncodeDepth(vDTexCoord.z), 1.0);
-      gl_FragColor = vec4(1.0,0.0,0.0, 1.0);
+    #ifdef DEPTHPASS
+      vec3 encodeddepth = EncodeDepth(vDTexCoord.z);
+      encodeddepth = posturize(encodeddepth,10.0);
+      gl_FragColor = vec4(DecodeDepth(encodeddepth.xyz));
+      //gl_FragColor = vec4(1.0,0.0,0.0, 1.0);
     #endif
 
 
