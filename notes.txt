@@ -1,8 +1,8 @@
 Notes:
 ---------------------
 -shaders
-  -depth multiply color
   -more colors in palette
+  -merge depth pass and outline multiplier so object dont have to have lines, which leaves another 2 values for other uses
 
 -add light flash on gun firing
 
