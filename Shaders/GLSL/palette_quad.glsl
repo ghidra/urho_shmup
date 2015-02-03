@@ -112,6 +112,14 @@ vec3 get_closest(vec3 color, float luma){
   return result;
 }
 
+vec3 lu(vec3 color, sampler3D lut)
+{
+    float lutSize = 8.0;
+    float scale = (lutSize - 1.0) / lutSize;
+    float offset = 1.0 / (2.0 * lutSize);
+    return texture3D(lut, clamp(color, 0.0, 1.0) * scale + offset).rgb;
+}
+
 #endif
 
 void VS()
@@ -122,6 +130,8 @@ void VS()
 
     vScreenPos = GetScreenPos(gl_Position);
     vTexCoord = GetTexCoord(iTexCoord);
+
+    //vScreenPos = GetScreenPosPreDiv(gl_Position);
 }
 
 void PS(){
@@ -151,4 +161,7 @@ void PS(){
     //float final = find_closest(x, y, grayscale);
     //gl_FragColor = vec4(final,final,final,1.0);
     gl_FragColor = vec4(resulting_color, 1.0);
+
+    vec3 color = texture2D(sDiffMap, vScreenPos).rgb;
+    gl_FragColor = vec4(lu(color, sVolumeMap), 1.0);
 }
