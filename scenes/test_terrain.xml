@@ -22,7 +22,7 @@
 		<attribute name="Variables" />
 		<component type="Terrain" id="16777216">
 			<attribute name="Height Map" value="Image;Textures/HeightMap.png" />
-			<attribute name="Material" value="Material;Materials/shmup/Pixel.xml" />
+			<attribute name="Material" value="Material;Materials/Pixel.xml" />
 		</component>
 	</node>
 	<node id="16778241">

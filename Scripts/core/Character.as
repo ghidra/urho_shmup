@@ -1,12 +1,12 @@
-#include "Scripts/shmup/core/Pawn.as"
-//#include "Scripts/shmup/weapons/Weapon.as"
+#include "Scripts/core/Pawn.as"
+//#include "Scripts/weapons/Weapon.as"
 
 //class Character : InputPlayer{
 shared class Character:Pawn{
   Vector2 bounds_ = Vector2(-1.0f,-1.0f);
   Character(){
     //mesh_="Cone";
-    mesh_="shmup/spaceship_02_shiponly";
+    mesh_="spaceship_02_shiponly";
     speed_=20.0f;
     //weapon_offsets_.Resize(1);
 

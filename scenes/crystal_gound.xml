@@ -28,8 +28,8 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777219">
-				<attribute name="Model" value="Model;Models/shmup/crystal_canyon_01.mdl" />
-				<attribute name="Material" value="Material;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml" />
+				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 			</component>
 		</node>
 		<node id="16777219">
@@ -40,8 +40,8 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777220">
-				<attribute name="Model" value="Model;Models/shmup/crystal_canyon_01.mdl" />
-				<attribute name="Material" value="Material;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml" />
+				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 			</component>
 		</node>
 		<node id="16777220">
@@ -52,8 +52,8 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777221">
-				<attribute name="Model" value="Model;Models/shmup/crystal_canyon_01.mdl" />
-				<attribute name="Material" value="Material;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml;Materials/shmup/Pixel.xml" />
+				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>
 		</node>

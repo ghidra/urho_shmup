@@ -1,4 +1,4 @@
-#include "Scripts/shmup/core/Actor.as"
+#include "Scripts/core/Actor.as"
 class Pickup:Actor{
 
   String ptype = "Weapon";//pickup type (weapon experience etc)
@@ -29,7 +29,7 @@ class Pickup:Actor{
       si.CreateObject(scriptFile,pname);
 
       //ScriptInstance@ nsi = weapon.CreateComponent("ScriptInstance");
-      //ScriptFile@ sf = cache.GetResource("ScriptFile", "Scripts/shmup/weapons/WeaponNoisy.as");
+      //ScriptFile@ sf = cache.GetResource("ScriptFile", "Scripts/weapons/WeaponNoisy.as");
       //si.CreateObject(sf,"WeaponNoisy");
       //si.className="WeaponNoisy";
     }

@@ -1,4 +1,4 @@
-#include "Scripts/shmup/weapons/Weapon.as"
+#include "Scripts/weapons/Weapon.as"
 
 shared class WeaponBank: ScriptObject{
 

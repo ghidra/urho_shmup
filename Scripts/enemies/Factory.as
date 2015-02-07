@@ -1,4 +1,4 @@
-#include "Scripts/shmup/enemies/EnemyFactory.as"
+#include "Scripts/enemies/EnemyFactory.as"
 
 class Factory:ScriptObject{
 

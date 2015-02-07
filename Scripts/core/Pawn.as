@@ -1,11 +1,11 @@
-#include "Scripts/shmup/core/Actor.as"
-#include "Scripts/shmup/core/WeaponBank.as"
-#include "Scripts/shmup/weapons/Weapon.as"
+#include "Scripts/core/Actor.as"
+#include "Scripts/core/WeaponBank.as"
+#include "Scripts/weapons/Weapon.as"
 
 shared class Pawn:Actor{
 
   String mesh_ = "Sphere";
-  String material_ = "shmup/Pixel";
+  String material_ = "Pixel";
   Material@ mesh_material_;
   //StaticModel@ geo_;
   bool physical_movement_ = false;
@@ -75,7 +75,7 @@ shared class Pawn:Actor{
   //--  Build the actual pawn, mesh anf weapons
   //-----------------------
 
-  void build_geo(const String&in mesh = "Cone",const String&in mat = "shmup/Normal", const float&in scl = 1.0){
+  void build_geo(const String&in mesh = "Cone",const String&in mat = "Normal", const float&in scl = 1.0){
     //mesh and materail, later rigid settings
     //make a new node to hold the character mesh
     Node@ chnode = node.CreateChild("Geometry");

@@ -1,5 +1,5 @@
-#include "Scripts/shmup/weapons/Weapon.as"
-#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/weapons/Weapon.as"
+#include "Scripts/projectiles/Projectile.as"
 
 shared class WeaponTripleSide:Weapon{
 

@@ -1,12 +1,12 @@
-#include "Scripts/shmup/core/SceneManager.as"
-#include "Scripts/shmup/core/InputPlayer.as"
-#include "Scripts/shmup/core/Character.as"
-#include "Scripts/shmup/core/CameraLogic.as"
+#include "Scripts/core/SceneManager.as"
+#include "Scripts/core/InputPlayer.as"
+#include "Scripts/core/Character.as"
+#include "Scripts/core/CameraLogic.as"
 
-#include "Scripts/shmup/pickups/PickupWeapon1.as"
-#include "Scripts/shmup/pickups/PickupWeapon2.as"
+#include "Scripts/pickups/PickupWeapon1.as"
+#include "Scripts/pickups/PickupWeapon2.as"
 
-#include "Scripts/shmup/enemies/Factory.as"
+#include "Scripts/enemies/Factory.as"
 
 SceneManager@ scene_manager_;
 Scene@ scene_;
@@ -42,14 +42,14 @@ void Start(){
   //corners
   Node@ c1 = scene_.CreateChild("Corner");
   StaticModel@ c1m = c1.CreateComponent("StaticModel");
-  c1m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
-  c1m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  c1m.model = cache.GetResource("Model", "Models/corner.mdl");
+  c1m.material = cache.GetResource("Material", "Materials/Pixel.xml");
   c1.position=Vector3(-24.0,0.0,20.0);
 
   Node@ c2 = scene_.CreateChild("Corner");
   StaticModel@ c2m = c2.CreateComponent("StaticModel");
-  c2m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
-  c2m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  c2m.model = cache.GetResource("Model", "Models/corner.mdl");
+  c2m.material = cache.GetResource("Material", "Materials/Pixel.xml");
   Quaternion q2 = Quaternion();
   q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0));
   c2.Rotate( q2 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -57,8 +57,8 @@ void Start(){
 
   Node@ c3 = scene_.CreateChild("Corner");
   StaticModel@ c3m = c3.CreateComponent("StaticModel");
-  c3m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
-  c3m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  c3m.model = cache.GetResource("Model", "Models/corner.mdl");
+  c3m.material = cache.GetResource("Material", "Materials/Pixel.xml");
   Quaternion q3 = Quaternion();
   q3.FromAngleAxis(-90.0,Vector3(0.0,1.0,0.0));
   c3.Rotate( q3 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -66,8 +66,8 @@ void Start(){
 
   Node@ c4 = scene_.CreateChild("Corner");
   StaticModel@ c4m = c4.CreateComponent("StaticModel");
-  c4m.model = cache.GetResource("Model", "Models/shmup/corner.mdl");
-  c4m.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");
+  c4m.model = cache.GetResource("Model", "Models/corner.mdl");
+  c4m.material = cache.GetResource("Material", "Materials/Pixel.xml");
   Quaternion q4 = Quaternion();
   q4.FromAngleAxis(180.0,Vector3(0.0,1.0,0.0));
   c4.Rotate( q4 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -80,26 +80,26 @@ void Start(){
   Node@ pu4 = spawn_object("Pickup",Vector3(15.0f,2.0f,-5.0f) );
 
   StaticModel@ sm1 = pu1.GetComponent("StaticModel");
-  sm1.model = cache.GetResource("Model", "Models/shmup/1.mdl");
-  sm1.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm1.model = cache.GetResource("Model", "Models/1.mdl");
+  sm1.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   PickupWeapon1@ pu1_script_ = cast<PickupWeapon1>(pu1.CreateScriptObject(scriptFile, "PickupWeapon1"));
   sm1.castShadows = true;
 
   StaticModel@ sm2 = pu2.GetComponent("StaticModel");
-  sm2.model = cache.GetResource("Model", "Models/shmup/2.mdl");
-  sm2.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm2.model = cache.GetResource("Model", "Models/2.mdl");
+  sm2.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   sm2.castShadows = true;
 
   PickupWeapon2@ pu2_script_ = cast<PickupWeapon2>(pu2.CreateScriptObject(scriptFile, "PickupWeapon2"));
 
   StaticModel@ sm3 = pu3.GetComponent("StaticModel");
-  sm3.model = cache.GetResource("Model", "Models/shmup/3.mdl");
-  sm3.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm3.model = cache.GetResource("Model", "Models/3.mdl");
+  sm3.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   sm3.castShadows = true;
 
   StaticModel@ sm4 = pu4.GetComponent("StaticModel");
-  sm4.model = cache.GetResource("Model", "Models/shmup/4.mdl");
-  sm4.material = cache.GetResource("Material", "Materials/shmup/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  sm4.model = cache.GetResource("Model", "Models/4.mdl");
+  sm4.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
   sm4.castShadows = true;
 
   // Create a directional light to the world. Enable cascaded shadows on it
@@ -117,7 +117,7 @@ void Start(){
 }
 
 Node@ spawn_object(const String&in otype, const Vector3&in pos= Vector3(), const Quaternion&in ori = Quaternion() ){
-  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + otype + ".xml");
+  XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + otype + ".xml");
   return scene_.InstantiateXML(xml, pos, ori);
 }
 

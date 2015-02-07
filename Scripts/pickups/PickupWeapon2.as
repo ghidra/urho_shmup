@@ -1,5 +1,5 @@
-#include "Scripts/shmup/pickups/Pickup.as"
-#include "Scripts/shmup/weapons/WeaponTripleSide.as"
+#include "Scripts/pickups/Pickup.as"
+#include "Scripts/weapons/WeaponTripleSide.as"
 
 class PickupWeapon2:Pickup{
 

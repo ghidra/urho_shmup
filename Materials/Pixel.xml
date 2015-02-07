@@ -1,5 +1,5 @@
 <material>
-    <technique name="Techniques/shmup/Pixel.xml" />
+    <technique name="Techniques/Pixel.xml" />
     <parameter name="ObjectColor" value="1.0 1.0 1.0 1.0" />
     <parameter name="ObjectBlend" value="0.5" />
     <parameter name="EdgeThreshold" value="0.1" />

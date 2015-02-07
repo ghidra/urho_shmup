@@ -1,5 +1,5 @@
-#include "Scripts/shmup/weapons/Weapon.as"
-#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/weapons/Weapon.as"
+#include "Scripts/projectiles/Projectile.as"
 
 shared class WeaponDoubleSin:Weapon{
 
@@ -52,7 +52,7 @@ shared class WeaponDoubleSin:Weapon{
   }
   void spawn_projectileB(const Vector3&in dirA,const Vector3&in dirB, const Vector3 hit = Vector3()){
 
-    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype_ + ".xml");
+    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
     Node@ projectileA_ = scene.InstantiateXML(xml, node.worldPosition+projectile_offset_+Vector3(0.5f,0.0f,0.0f), Quaternion());
     Node@ projectileB_ = scene.InstantiateXML(xml, node.worldPosition+projectile_offset_+Vector3(-0.5f,0.0f,0.0f), Quaternion());
 

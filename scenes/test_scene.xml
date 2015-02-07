@@ -27,7 +27,7 @@
 		</component>
 		<component type="ScriptInstance" id="16777217">
 			<attribute name="Delayed Method Calls" value="0" />
-			<attribute name="Script File" value="ScriptFile;Scripts/shmup/Main.as" />
+			<attribute name="Script File" value="ScriptFile;Scripts/Main.as" />
 			<attribute name="Class Name" value="Character" />
 			<attribute name="onGround_" value="false" />
 			<attribute name="isSliding_" value="false" />
@@ -68,7 +68,7 @@
 			</component>
 			<component type="ScriptInstance" id="16777223">
 				<attribute name="Delayed Method Calls" value="0" />
-				<attribute name="Script File" value="ScriptFile;Scripts/shmup/Main.as" />
+				<attribute name="Script File" value="ScriptFile;Scripts/Main.as" />
 				<attribute name="Class Name" value="Weapon" />
 				<attribute name="onGround_" value="false" />
 				<attribute name="isSliding_" value="false" />

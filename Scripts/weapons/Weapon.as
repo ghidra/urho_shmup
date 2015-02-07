@@ -1,10 +1,10 @@
-#include "Scripts/shmup/core/Actor.as"
-#include "Scripts/shmup/projectiles/Projectile.as"
+#include "Scripts/core/Actor.as"
+#include "Scripts/projectiles/Projectile.as"
 
 shared class Weapon:Actor{
   //String meshtype_ = "Box";//the weaon mesh
-  String meshtype_ = "shmup/centered_weapon_01";//the weaon mesh
-  String mattype_ = "shmup/Pixel";//the weapons material
+  String meshtype_ = "centered_weapon_01";//the weaon mesh
+  String mattype_ = "Pixel";//the weapons material
 
   int firing_ = 0;
   float fire_velocity_ = 50.0f;
@@ -84,7 +84,7 @@ shared class Weapon:Actor{
 
   void spawn_projectile(const Vector3&in dir, const Vector3 hit = Vector3()){
 
-    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype_ + ".xml");
+    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
     Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[0], Quaternion());
 
     Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));
@@ -95,7 +95,7 @@ shared class Weapon:Actor{
 
   void spawn_projectile(const Array<Vector3> dir, const Vector3 hit = Vector3()){
 
-    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/shmup/nodes/" + ntype_ + ".xml");
+    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
 
     for(uint i=0; i<dir.length;i++){
       Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[i], Quaternion());

@@ -1,5 +1,5 @@
-#include "Scripts/shmup/core/Actor.as"
-#include "Scripts/shmup/projectiles/Explosion.as"
+#include "Scripts/core/Actor.as"
+#include "Scripts/projectiles/Explosion.as"
 
 shared class Projectile:Actor{
 

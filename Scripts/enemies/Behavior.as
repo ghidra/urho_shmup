@@ -1,5 +1,5 @@
-#include "Scripts/shmup/core/Pawn.as";
-#include "Scripts/shmup/math/Bezier4.as";
+#include "Scripts/core/Pawn.as";
+#include "Scripts/math/Bezier4.as";
 
 class Behavior{
 	Node@ slave_;

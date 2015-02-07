@@ -1,5 +1,5 @@
-#include "Scripts/shmup/weapons/Weapon.as"
-#include "Scripts/shmup/projectiles/ProjectileNoisy.as"
+#include "Scripts/weapons/Weapon.as"
+#include "Scripts/projectiles/ProjectileNoisy.as"
 
 shared class WeaponNoisy:Weapon{
 

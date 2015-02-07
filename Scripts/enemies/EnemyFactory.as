@@ -1,4 +1,4 @@
-#include "Scripts/shmup/enemies/Enemy.as"
+#include "Scripts/enemies/Enemy.as"
 
 class EnemyFactory:ScriptObject{
   //float timer_total_;

@@ -1,7 +1,7 @@
-#include "Scripts/shmup/core/Pawn.as"
-#include "Scripts/shmup/enemies/Behavior.as"
+#include "Scripts/core/Pawn.as"
+#include "Scripts/enemies/Behavior.as"
 
-#include "Scripts/shmup/gui/ProgressBar.as"
+#include "Scripts/gui/ProgressBar.as"
 
 class Enemy:Pawn{
   //ProgressBar@ bar_;

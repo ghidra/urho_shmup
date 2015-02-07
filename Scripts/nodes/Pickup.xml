@@ -8,7 +8,7 @@
 	<attribute name="Variables" />
 	<component type="StaticModel" id="16777219">
 		<attribute name="Model" value="Model;Models/Box.mdl" />
-		<attribute name="Material" value="Material;Materials/shmup/Pixel.xml" />
+		<attribute name="Material" value="Material;Materials/Pixel.xml" />
 	</component>
 	<component type="CollisionShape" id="16777222" />
 	<component type="RigidBody" id="16777218">

@@ -59,43 +59,44 @@ else
 
     #make the resources folders if they dont exist
     echo "     -create Resources folders"
-    make_folder "/Resources" $URHOBUILD"/bin"
-    make_folder "/Resources/Materials" $URHOBUILD"/bin"
-    make_folder "/Resources/Models" $URHOBUILD"/bin"
-    make_folder "/Resources/RenderPaths" $URHOBUILD"/bin"
-    make_folder "/Resources/Scripts" $URHOBUILD"/bin"
-    make_folder "/Resources/Shaders" $URHOBUILD"/bin"
-    make_folder "/Resources/Shaders/GLSL" $URHOBUILD"/bin"
-    make_folder "/Resources/Techniques" $URHOBUILD"/bin"
-    make_folder "/Resources/Textures" $URHOBUILD"/bin"
+    SUBFOLDER="Shmup"
+    make_folder "/"$SUBFOLDER $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Materials" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Models" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/RenderPaths" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Scripts" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Shaders" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Shaders/GLSL" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Techniques" $URHOBUILD"/bin"
+    #make_folder "/"$SUBFOLDER"/Textures" $URHOBUILD"/bin"
 
     echo "     -create project links"
     for Dir in $(find $SCRIPTPATH* -mindepth 1 -maxdepth 1 -not -path '*/\.*' -type d );
     do
         FOLDER=$(basename $Dir);
         case $FOLDER in
-          "Scripts")make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
-          "RenderPaths") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
-          "Techniques") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
-          "Shaders") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER"/GLSL" $URHOBUILD"/bin/Resources/"$FOLDER"/GLSL/shmup" ;;
-          "Materials") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
-          "Models") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
-          "Textures") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/Resources/"$FOLDER"/shmup" ;;
+          "Scripts")make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "RenderPaths") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "Techniques") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "Shaders") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "Materials") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "Models") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
+          "Textures") make_alias $FOLDER $SCRIPTPATH"/"$FOLDER $URHOBUILD"/bin/"$SUBFOLDER"/"$FOLDER ;;
           *) echo "          -ignore:" $FOLDER ;;
         esac
 
     done
 
-    echo "     -link required shader includes"
-    make_alias_file "Uniforms.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Uniforms.glsl" $SCRIPTPATH"/Shaders/GLSL/Uniforms.glsl"
-    make_alias_file "Samplers.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Samplers.glsl" $SCRIPTPATH"/Shaders/GLSL/Samplers.glsl"
-    make_alias_file "Transform.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Transform.glsl" $SCRIPTPATH"/Shaders/GLSL/Transform.glsl"
-    make_alias_file "Lighting.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Lighting.glsl" $SCRIPTPATH"/Shaders/GLSL/Lighting.glsl"
-    make_alias_file "ScreenPos.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/ScreenPos.glsl" $SCRIPTPATH"/Shaders/GLSL/ScreenPos.glsl"
-    make_alias_file "Fog.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Fog.glsl" $SCRIPTPATH"/Shaders/GLSL/Fog.glsl"
+    #echo "     -link required shader includes"
+    #make_alias_file "Uniforms.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Uniforms.glsl" $SCRIPTPATH"/Shaders/GLSL/Uniforms.glsl"
+    #make_alias_file "Samplers.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Samplers.glsl" $SCRIPTPATH"/Shaders/GLSL/Samplers.glsl"
+    #make_alias_file "Transform.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Transform.glsl" $SCRIPTPATH"/Shaders/GLSL/Transform.glsl"
+    #make_alias_file "Lighting.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Lighting.glsl" $SCRIPTPATH"/Shaders/GLSL/Lighting.glsl"
+    #make_alias_file "ScreenPos.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/ScreenPos.glsl" $SCRIPTPATH"/Shaders/GLSL/ScreenPos.glsl"
+    #make_alias_file "Fog.glsl" $URHOPATH"/bin/CoreData/Shaders/GLSL/Fog.glsl" $SCRIPTPATH"/Shaders/GLSL/Fog.glsl"
 
     #make or edit the launch script
-    LAUNCH=$URHOBUILD"/bin/Urho3DPlayer /Scripts/shmup/Main.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;Resources\""
+    LAUNCH=$URHOBUILD"/bin/Urho3DPlayer /Scripts/Main.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;"$SUBFOLDER"\""
     FILE=$SCRIPTPATH/launch.sh
     if [ -f "$FILE" ];then
       printf "$LAUNCH" > $FILE
@@ -107,7 +108,7 @@ else
     fi
     echo "          -alias: sh "$SCRIPTPATH"/launch.sh"
 
-    EDIT=$URHOBUILD"/bin/Urho3DPlayer /Scripts/Editor.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;Resources\" -w -s -renderpath RenderPaths/shmup/ForwardPixelQuad.xml"
+    EDIT=$URHOBUILD"/bin/Urho3DPlayer /Scripts/Editor.as -pp "$URHOBUILD"/bin -p \"CoreData;Data;"$SUBFOLDER"\" -w -s -renderpath RenderPaths/ForwardPixelQuad.xml"
     EFILE=$SCRIPTPATH/editor.sh
     if [ -f "$EFILE" ];then
       printf "$EDIT" > $EFILE
