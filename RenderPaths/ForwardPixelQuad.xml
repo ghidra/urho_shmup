@@ -31,8 +31,8 @@
       <texture unit="volume" name="Textures/shmup/lut_01.xml" />
       <!--<texture unit="environment" name="viewport" />-->
 
-      <parameter name="Palette" value="0.204 0.251 0.895 0.93 0.075 0.161 0.459 0.6 0.142 0.275 0.381 0.491 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.077 0.125 0.382 0.453" />
+      <!--<parameter name="Palette" value="0.204 0.251 0.895 0.93 0.075 0.161 0.459 0.6 0.142 0.275 0.381 0.491 1.0 1.0 1.0 1.0" />
+      <parameter name="Luma" value="0.077 0.125 0.382 0.453" />-->
 
       <!--<parameter name="Palette" value="0.04 0.314 0.628 0.883 0.04 0.314 0.628 0.883 0.04 0.314 0.628 0.883 1.0 1.0 1.0 1.0" />
       <parameter name="Luma" value="0.027 0.21 0.42 0.59" />-->
