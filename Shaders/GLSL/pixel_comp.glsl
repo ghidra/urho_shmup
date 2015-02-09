@@ -4,7 +4,8 @@
 #include "ScreenPos.glsl"
 
 
-varying vec4 vScreenPos;
+//varying vec4 vScreenPos;
+varying vec2 vScreenPos;
 
 
 #ifdef COMPILEPS
@@ -21,7 +22,8 @@ void VS()
     vec3 worldPos = GetWorldPos(modelMatrix);
     gl_Position = GetClipPos(worldPos);
 
-    vScreenPos = GetScreenPos(gl_Position);
+    //vScreenPos = GetScreenPos(gl_Position);
+    vScreenPos = GetScreenPosPreDiv(gl_Position);
 
 }
 
@@ -29,7 +31,8 @@ void PS(){
 
       vec4 color = vec4(0.0,0.0,0.0,0.0);
 
-      vec2 uv = vScreenPos.xy / vScreenPos.w;
+      //vec2 uv = vScreenPos.xy / vScreenPos.w;
+      vec2 uv = vScreenPos;
       //vec2 s = vec2(1280.0,800.0);//ie 1920
       vec2 s = (1.0/cGBufferInvSize.xy)-cGBufferInvSize.xy;//ie 1920
       vec2 uv_scl = uv*s;

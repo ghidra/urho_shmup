@@ -3,7 +3,8 @@
 #include "Transform.glsl"
 #include "ScreenPos.glsl"
 
-varying vec4 vScreenPos;
+//varying vec4 vScreenPos;
+varying vec2 vScreenPos;
 
 #ifdef COMPILEPS
 uniform float cEdgeThreshold;
@@ -56,24 +57,19 @@ void VS()
     vec3 worldPos = GetWorldPos(modelMatrix);
     gl_Position = GetClipPos(worldPos);
 
-    vScreenPos = GetScreenPos(gl_Position);
+    //vScreenPos = GetScreenPos(gl_Position);
+    vScreenPos = GetScreenPosPreDiv(gl_Position);
 
 }
 
 void PS(){
 
-      vec2 uv = vScreenPos.xy / vScreenPos.w;
-
-      vec2 shalf = 1.0/(cGBufferInvSize.xy);//this is actually the size of the render halfsize for example
-      vec2 s = shalf*2.0;//ie 1920x1080, this is the fullsize
-
-      //vec2 mult = (2.0*(uv*s) + 0.5)/(2.0*s);
-      //vec2 mult = (2.0*uv+1.0)/(2.0*2.0);
-      //vec2 buffsize = 1.0 / ( (2.0*(vec2(1.0,1.0)*shalf) + 0.5) / (2.0*shalf) );
-      //vec2 screensize = 1.0/cGBufferInvSize.xy;
-      vec2 px = uv+cGBufferInvSize.xy;
-      px = px - (cGBufferInvSize.xy/2.0);
-
+      //vec2 uv = vScreenPos.xy / vScreenPos.w;
+      //vec2 shalf = 1.0/(cGBufferInvSize.xy);//this is actually the size of the render halfsize for example
+      //vec2 s = shalf*2.0;//ie 1920x1080, this is the fullsize
+      //vec2 px = uv+cGBufferInvSize.xy;
+      //px = px - (cGBufferInvSize.xy/2.0);
+      vec2 uv = vScreenPos;
 
 
       //vec2 nuv = uv-(cGBufferInvSize.xy*300.0);
