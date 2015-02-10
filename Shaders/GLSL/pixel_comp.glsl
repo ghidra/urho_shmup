@@ -23,7 +23,8 @@ void VS()
     gl_Position = GetClipPos(worldPos);
 
     //vScreenPos = GetScreenPos(gl_Position);
-    vScreenPos = GetScreenPosPreDiv(gl_Position);
+    //vScreenPos = GetScreenPosPreDiv(gl_Position);
+    vScreenPos = GetQuadTexCoord(gl_Position);
 
 }
 

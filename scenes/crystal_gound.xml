@@ -28,7 +28,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777219">
-				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Model" value="Model;Models/canyon_scaled10.mdl" />
 				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 			</component>
 		</node>
@@ -40,7 +40,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777220">
-				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Model" value="Model;Models/canyon_scaled10.mdl" />
 				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 			</component>
 		</node>
@@ -52,7 +52,7 @@
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<component type="StaticModel" id="16777221">
-				<attribute name="Model" value="Model;Models/crystal_canyon_01.mdl" />
+				<attribute name="Model" value="Model;Models/canyon_scaled10.mdl" />
 				<attribute name="Material" value="Material;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml;Materials/Pixel.xml" />
 				<attribute name="Cast Shadows" value="true" />
 			</component>

@@ -24,7 +24,8 @@ void VS()
     vec3 worldPos = GetWorldPos(modelMatrix);
     gl_Position = GetClipPos(worldPos);
 
-    vScreenPos = GetScreenPosPreDiv(gl_Position);
+    //vScreenPos = GetScreenPosPreDiv(gl_Position);
+    vScreenPos = GetQuadTexCoord(gl_Position);
 }
 
 void PS(){
