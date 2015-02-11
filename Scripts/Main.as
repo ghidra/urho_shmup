@@ -8,6 +8,8 @@
 
 #include "Scripts/enemies/Factory.as"
 
+#include "Scripts/stages/CrystalCanyon.as"
+
 SceneManager@ scene_manager_;
 Scene@ scene_;
 Node@ camera_node_;
@@ -28,6 +30,9 @@ void Start(){
   Node@ player_ = container_.CreateChild("Character");
   Character@ chso = cast<Character>(player_.CreateScriptObject(scriptFile,"Character"));
   chso.set_bounds(cso.bounds_);
+
+  Node@ stage_ = scene_.CreateChild("Stage");
+  CrystalCanyon@ ccso = cast<CrystalCanyon>(stage_.CreateScriptObject(scriptFile,"CrystalCanyon"));
 
   scene_manager_.set_camera_target(container_);
 

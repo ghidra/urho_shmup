@@ -1,9 +1,9 @@
 <texture3d>
     <!--<colorlut name="tumblr_m95x1i37Qv1qbluruo1_1280_STRIP.png" />
     <colorlut name="tumblr_m95x1i37Qv1qbluruo1_1280_STRIP_B.png" />
-    <colorlut name="tumblr_m99m46Uh7s1qbluruo1_1280_STRIP.png" />
+    <colorlut name="tumblr_m99m46Uh7s1qbluruo1_1280_STRIP.png" />-->
     <colorlut name="tumblr_m99m46Uh7s1qbluruo1_1280_STRIP_B.png" />
-    <colorlut name="tumblr_n59vp9Y0zJ1qbluruo1_1280_STRIP.png" />
+    <!--<colorlut name="tumblr_n59vp9Y0zJ1qbluruo1_1280_STRIP.png" />
     <colorlut name="tumblr_n59vp9Y0zJ1qbluruo1_1280_STRIP_B.png" />
     <colorlut name="tumblr_ne4k3jnifD1qbluruo1_1280_STRIP.png" />
     <colorlut name="tumblr_ne4k3jnifD1qbluruo1_1280_STRIP_B.png" />
@@ -11,8 +11,8 @@
     <colorlut name="tumblr_neh7leGx8C1qbluruo1_1280_STRIP_B.png" />
     <colorlut name="tumblr_nihsbiKjkB1qbluruo1_1280_STRIP.png" />
     <colorlut name="tumblr_nihsbiKjkB1qbluruo1_1280_STRIP_B.png" />
-    <colorlut name="killianeng_01_lut.png" />-->
     <colorlut name="killianeng_01_lut.png" />
+    <colorlut name="killianeng_01_lut.png" />-->
     <mipmap enable="false" />
     <quality low="0" />
 </texture3d>
