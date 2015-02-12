@@ -44,17 +44,28 @@ void Start(){
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
   ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,1.0f,"Enemy","Weapon","Behavior",1.0f,0,1.0f);
 
+  //my material to use
+  Material@ usemat = cache.GetResource("Material", "Materials/Pixel.xml");
+
   //corners
   Node@ c1 = scene_.CreateChild("Corner");
   StaticModel@ c1m = c1.CreateComponent("StaticModel");
   c1m.model = cache.GetResource("Model", "Models/corner.mdl");
-  c1m.material = cache.GetResource("Material", "Materials/Pixel.xml");
+  Material@ matc1 = usemat.Clone();
+  Color colc1 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matc1.shaderParameters["ObjectColor"]=Variant(colc1);//single quotes didnt work
+  matc1.shaderParameters["ObjectBlend"]=Variant(0.5f);
+  c1m.material = matc1;
   c1.position=Vector3(-24.0,0.0,20.0);
 
   Node@ c2 = scene_.CreateChild("Corner");
   StaticModel@ c2m = c2.CreateComponent("StaticModel");
   c2m.model = cache.GetResource("Model", "Models/corner.mdl");
-  c2m.material = cache.GetResource("Material", "Materials/Pixel.xml");
+  Material@ matc2 = usemat.Clone();
+  Color colc2 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matc2.shaderParameters["ObjectColor"]=Variant(colc2);//single quotes didnt work
+  matc2.shaderParameters["ObjectBlend"]=Variant(0.5f);
+  c2m.material = matc2;
   Quaternion q2 = Quaternion();
   q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0));
   c2.Rotate( q2 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -63,7 +74,11 @@ void Start(){
   Node@ c3 = scene_.CreateChild("Corner");
   StaticModel@ c3m = c3.CreateComponent("StaticModel");
   c3m.model = cache.GetResource("Model", "Models/corner.mdl");
-  c3m.material = cache.GetResource("Material", "Materials/Pixel.xml");
+  Material@ matc3 = usemat.Clone();
+  Color colc3 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matc3.shaderParameters["ObjectColor"]=Variant(colc3);//single quotes didnt work
+  matc3.shaderParameters["ObjectBlend"]=Variant(0.5f);
+  c3m.material = matc3;
   Quaternion q3 = Quaternion();
   q3.FromAngleAxis(-90.0,Vector3(0.0,1.0,0.0));
   c3.Rotate( q3 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -72,7 +87,11 @@ void Start(){
   Node@ c4 = scene_.CreateChild("Corner");
   StaticModel@ c4m = c4.CreateComponent("StaticModel");
   c4m.model = cache.GetResource("Model", "Models/corner.mdl");
-  c4m.material = cache.GetResource("Material", "Materials/Pixel.xml");
+  Material@ matc4 = usemat.Clone();
+  Color colc4 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matc4.shaderParameters["ObjectColor"]=Variant(colc4);//single quotes didnt work
+  matc4.shaderParameters["ObjectBlend"]=Variant(0.5f);
+  c4m.material = matc4;
   Quaternion q4 = Quaternion();
   q4.FromAngleAxis(180.0,Vector3(0.0,1.0,0.0));
   c4.Rotate( q4 );//q2.FromAngleAxis(90.0,Vector3(0.0,1.0,0.0)) );
@@ -86,34 +105,52 @@ void Start(){
 
   StaticModel@ sm1 = pu1.GetComponent("StaticModel");
   sm1.model = cache.GetResource("Model", "Models/1.mdl");
-  sm1.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  Material@ matsm1 = usemat.Clone();
+  Color colsm1 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matsm1.shaderParameters["ObjectColor"]=Variant(colsm1);//single quotes didnt work
+  matsm1.shaderParameters["ObjectBlend"]=Variant(0.8f);
+  sm1.material = matsm1;
   PickupWeapon1@ pu1_script_ = cast<PickupWeapon1>(pu1.CreateScriptObject(scriptFile, "PickupWeapon1"));
   sm1.castShadows = true;
 
   StaticModel@ sm2 = pu2.GetComponent("StaticModel");
   sm2.model = cache.GetResource("Model", "Models/2.mdl");
-  sm2.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  Material@ matsm2 = usemat.Clone();
+  Color colsm2 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matsm2.shaderParameters["ObjectColor"]=Variant(colsm2);//single quotes didnt work
+  matsm2.shaderParameters["ObjectBlend"]=Variant(0.8f);
+  sm2.material = matsm1;
   sm2.castShadows = true;
 
   PickupWeapon2@ pu2_script_ = cast<PickupWeapon2>(pu2.CreateScriptObject(scriptFile, "PickupWeapon2"));
 
   StaticModel@ sm3 = pu3.GetComponent("StaticModel");
   sm3.model = cache.GetResource("Model", "Models/3.mdl");
-  sm3.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  Material@ matsm3 = usemat.Clone();
+  Color colsm3 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matsm3.shaderParameters["ObjectColor"]=Variant(colsm3);//single quotes didnt work
+  matsm3.shaderParameters["ObjectBlend"]=Variant(0.8f);
+  sm3.material = matsm1;
   sm3.castShadows = true;
 
   StaticModel@ sm4 = pu4.GetComponent("StaticModel");
   sm4.model = cache.GetResource("Model", "Models/4.mdl");
-  sm4.material = cache.GetResource("Material", "Materials/Pixel.xml");//cache.GetResource("Material", "Materials/Stone.xml");
+  Material@ matsm4 = usemat.Clone();
+  Color colsm4 = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+  matsm4.shaderParameters["ObjectColor"]=Variant(colsm4);//single quotes didnt work
+  matsm4.shaderParameters["ObjectBlend"]=Variant(0.8f);
+  sm4.material = matsm1;
   sm4.castShadows = true;
 
   // Create a directional light to the world. Enable cascaded shadows on it
-  Node@ lightNode = scene_.CreateChild("DirectionalLight");
-  lightNode.direction = Vector3(0.6f, -0.5f, 0.8f);
+  Node@ lightNode = container_.CreateChild("Light");
+  //lightNode.direction = Vector3(0.6f, -0.5f, 0.8f);
+  lightNode.position = Vector3(0.0f,-60.0f,40.0f);
   Light@ light = lightNode.CreateComponent("Light");
-  light.lightType = LIGHT_DIRECTIONAL;
+  light.lightType = LIGHT_POINT;
   light.castShadows = true;
-  light.shadowBias = BiasParameters(0.00025f, 0.5f);
+  light.range = 50.0f;
+  //light.shadowBias = BiasParameters(0.00025f, 0.5f);
   // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
   light.shadowCascade = CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
 

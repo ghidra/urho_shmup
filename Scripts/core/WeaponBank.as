@@ -57,7 +57,14 @@ shared class WeaponBank: ScriptObject{
 
     StaticModel@ wpsm_ = weapon_node.CreateComponent("StaticModel");
     wpsm_.model = cache.GetResource("Model", "Models/"+weapon.meshtype_+".mdl");
-    wpsm_.material = cache.GetResource("Material", "Materials/"+weapon.mattype_+".xml");
+    //wpsm_.material = cache.GetResource("Material", "Materials/"+weapon.mattype_+".xml");
+
+    Material@ usemat = cache.GetResource("Material", "Materials/"+weapon.mattype_+".xml");
+    Material@ mesh_material_ = usemat.Clone();
+    Color col = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+    mesh_material_.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
+    mesh_material_.shaderParameters["ObjectBlend"]=Variant(1.0f);
+    wpsm_.material = mesh_material_;
     //weapon_node.CreateScriptObject(scriptFile,wclass);
   }
 

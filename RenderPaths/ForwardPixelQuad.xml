@@ -9,15 +9,13 @@
     <command type="scenepass" pass="depth" output="depth"/>
 
 
-    <!--first lets get the pass for the edge out of teh way -->
+    <!--render depth pass -->
     <command type="clear" color="fog" depth="1.0" stencil="0" />
     <command type="scenepass" pass="edgebase" vsdefines="EDGEBASE" metadata="base" />
 
     <!--render the first quad to get the edges from the edge shader -->
     <command type="quad" vs="edge_quad" ps="edge_quad" output="edge">
       <texture unit="environment" name="viewport" />
-      <parameter name="EdgeThreshold" value="0.1" />
-      <!--<parameter name="Divisor" value="2.0" />-->
     </command>
 
     <!--now we can do a lit pass-->
@@ -25,26 +23,10 @@
     <command type="scenepass" pass="base" vertexlights="true" metadata="base" />
     <command type="forwardlights" pass="light" />
 
-
+    <!--now we remap to palette-->
     <command type="quad" vs="palette_quad" ps="palette_quad" output="postcolor">
       <texture unit="diffuse" name="viewport" />
       <texture unit="volume" name="Textures/lut_01.xml" />
-      <!--<texture unit="environment" name="viewport" />-->
-
-      <!--<parameter name="Palette" value="0.204 0.251 0.895 0.93 0.075 0.161 0.459 0.6 0.142 0.275 0.381 0.491 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.077 0.125 0.382 0.453" />-->
-
-      <!--<parameter name="Palette" value="0.04 0.314 0.628 0.883 0.04 0.314 0.628 0.883 0.04 0.314 0.628 0.883 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.027 0.21 0.42 0.59" />-->
-
-      <!--<parameter name="Palette" value="0.53 0.291 0.255 0.157 0.118 0.079 0.31 0.15 0.185 0.13 0.448 0.236 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.174 0.1 0.204 0.103" />
-      <parameter name="Palette" value="0.393 0.416 0.891 0.612 0.616 0.448 0.404 0.204 0.683 0.499 0.122 0.099 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.388 0.296 0.357 0.219" />
-      <parameter name="Palette" value="0.424 0.726 0.828 0.997 0.122 0.365 0.012 0.04 0.012 0.55 0.106 0.138 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.146 0.312 0.248 0.3" />
-      <parameter name="Palette" value="0.636 0.224 0.651 0.267 0.02 0.263 0.35 0.499 0.087 0.31 0.42 0.483 1.0 1.0 1.0 1.0" />
-      <parameter name="Luma" value="0.191 0.172 0.287 0.308" />-->
     </command>
 
 
