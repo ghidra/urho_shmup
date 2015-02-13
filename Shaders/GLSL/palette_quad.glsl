@@ -10,12 +10,12 @@ varying vec2 vScreenPos;
 
 vec3 lu(vec3 color, sampler3D lut)
 {
-    float lutSize = 8.0;
+    float lutSize = 16.0;
     float scale = (lutSize - 1.0) / lutSize;
     float offset = 1.0 / (2.0 * lutSize);
 
     vec3 ncolor = color*(lutSize-1.0);
-    ncolor = floor(ncolor);
+    ncolor = ceil(ncolor);
     ncolor = ncolor*(1/(lutSize-1.0));
 
     //return texture3D(lut, clamp(color, 0.0, 1.0) * scale + offset).rgb;

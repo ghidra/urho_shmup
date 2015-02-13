@@ -9,6 +9,7 @@
 #include "Scripts/enemies/Factory.as"
 
 #include "Scripts/stages/CrystalCanyon.as"
+#include "Scripts/core/AnimatedSprite.as"
 
 SceneManager@ scene_manager_;
 Scene@ scene_;
@@ -30,6 +31,10 @@ void Start(){
   Node@ player_ = container_.CreateChild("Character");
   Character@ chso = cast<Character>(player_.CreateScriptObject(scriptFile,"Character"));
   chso.set_bounds(cso.bounds_);
+
+  Node@ test_ = scene_.CreateChild("test");
+  AnimatedSprite@ asso = cast<AnimatedSprite>(test_.CreateScriptObject(scriptFile,"AnimatedSprite"));
+  asso.set_parameters("AnimatedSprite");
 
   Node@ stage_ = scene_.CreateChild("Stage");
   CrystalCanyon@ ccso = cast<CrystalCanyon>(stage_.CreateScriptObject(scriptFile,"CrystalCanyon"));
@@ -149,8 +154,20 @@ void Start(){
   Light@ light = lightNode.CreateComponent("Light");
   light.lightType = LIGHT_POINT;
   light.castShadows = true;
-  light.range = 50.0f;
+  light.range = 100.0f;
+  light.brightness = 0.9f;
   //light.shadowBias = BiasParameters(0.00025f, 0.5f);
+  // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
+  light.shadowCascade = CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
+
+  // Create a directional light to the world. Enable cascaded shadows on it
+  Node@ lightNode2 = container_.CreateChild("Light Directional");
+  lightNode2.direction = Vector3(0.1f, -0.5f, 0.2f);
+  Light@ light2 = lightNode2.CreateComponent("Light");
+  light2.brightness = 0.5f;
+  light2.lightType = LIGHT_DIRECTIONAL;
+  light2.castShadows = true;
+  light2.shadowBias = BiasParameters(0.00025f, 0.5f);
   // Set cascade splits at 10, 50 and 200 world units, fade shadows out at 80% of maximum shadow distance
   light.shadowCascade = CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f);
 

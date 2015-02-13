@@ -258,7 +258,7 @@ void PS()
 
     #ifdef DEPTHPASS
       vec3 encodeddepth = EncodeDepth(vDTexCoord.z);
-      encodeddepth = posturize(encodeddepth,10.0);
+      encodeddepth = posturize(encodeddepth,32.0);
       gl_FragColor = vec4(DecodeDepth(encodeddepth.xyz));
       //gl_FragColor = vec4(1.0,0.0,0.0, 1.0);
     #endif

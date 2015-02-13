@@ -69,7 +69,8 @@ void PS(){
       //}
       //gl_FragColor = edge;
       //gl_FragColor = bg+edge;
-      gl_FragColor = post+depth+edge;
+      //gl_FragColor = post+depth+edge;
+      gl_FragColor = post+edge-(depth*0.75);
       //gl_FragColor = decdepth;
       //gl_FragColor = bg;
       //gl_FragColor = dither+outline;
