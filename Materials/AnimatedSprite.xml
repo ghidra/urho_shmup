@@ -1,11 +1,11 @@
 <material>
     <technique name="Techniques/AnimatedSprite.xml" />
-    <parameter name="Sheet" value="2.0 2.0" />
+    <parameter name="Sheet" value="14.0 1.0" />
     <parameter name="Time" value="0.0" />
-    <parameter name="Rate" value="0.1" />
+    <parameter name="Rate" value="16.0" />
     <parameter name="ObjectColor" value="1.0 1.0 1.0 1.0" />
     <parameter name="ObjectBlend" value="0.5" />
-    <texture unit="diffuse" name="Textures/sprite_sheet.png" />
+    <texture unit="diffuse" name="Textures/sprites_laserTest01.png" />
     <!--<parameter name="EdgeThreshold" value="0.1" />
     <parameter name="MatDiffColor" value="0.5 0.5 0.5 1.0" />-->
 </material>

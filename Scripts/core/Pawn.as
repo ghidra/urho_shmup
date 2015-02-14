@@ -40,7 +40,8 @@ shared class Pawn:Actor{
     float dirdot = direction.DotProduct(Vector3(1.0f,0.0f,0.0f));
     //float fitdirdot = fit(Abs(dirdot),0.0f,1.0f,0.1f,1.0f);
     rot.FromAngleAxis(bank_degrees_*fitdamp*Abs(dirdot),rotaxis);
-    node.rotation = rot;
+    //turn off rotation for now
+    //node.rotation = rot;
   }
   void stop_move(){
     damp_increment_=0.0f;

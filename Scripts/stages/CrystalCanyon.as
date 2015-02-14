@@ -5,6 +5,7 @@ class CrystalCanyon:ScriptObject{
   Node@ node_c;
   Node@ node_d;
   Node@ node_e;
+  Node@ node_ground;
 
   float speed_ = 5.0f;
 
@@ -16,6 +17,7 @@ class CrystalCanyon:ScriptObject{
     node_c = node.CreateChild("canyon_c");
     node_d = node.CreateChild("canyon_d");
     node_e = node.CreateChild("canyon_e");
+    node_ground = node.CreateChild("canyon_ground");
 
     StaticModel@ sm_a = node_a.CreateComponent("StaticModel");
     sm_a.model = cache.GetResource("Model", "Models/canyon_scaled10.mdl");
@@ -27,6 +29,9 @@ class CrystalCanyon:ScriptObject{
     sm_d.model = cache.GetResource("Model", "Models/canyon_scaled10.mdl");
     StaticModel@ sm_e = node_e.CreateComponent("StaticModel");
     sm_e.model = cache.GetResource("Model", "Models/canyon_scaled10.mdl");
+
+    StaticModel@ sm_g = node_ground.CreateComponent("StaticModel");
+    sm_g.model = cache.GetResource("Model", "Models/Plane.mdl");
 
     Material@ usemat = cache.GetResource("Material", "Materials/Pixel.xml");
     usemat.shaderParameters["ObjectBlend"]=Variant(1.0f);//single quotes didnt work
@@ -43,11 +48,14 @@ class CrystalCanyon:ScriptObject{
     sm_d.castShadows = true;
     sm_e.material = usemat;
     sm_e.castShadows = true;
+    sm_g.material = usemat;
 
     node_b.position=Vector3(0.0f,0.0f,10.0f);
     node_c.position=Vector3(0.0f,0.0f,-10.0f);
     node_d.position=Vector3(0.0f,0.0f,20.0f);
     node_e.position=Vector3(0.0f,0.0f,-20.0f);
+    node_ground.position=Vector3(0.0f,0.0f,5.0f);
+    node_ground.Scale(25.0f);
 
 
     node.Scale(6.0f);

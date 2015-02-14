@@ -6,6 +6,7 @@ shared class AnimatedSprite:Actor{
 
   String material_ = "AnimatedSprite";
   uint offset_ = 0;
+  StaticModel@ sm_;
 
   void set_parameters(const String&in material, const float&in speed = 1.0f, const uint&in offset=0){
     material_=material;
@@ -15,13 +16,12 @@ shared class AnimatedSprite:Actor{
     //i guess I could also set the grid geo and set it to either center or offset
     //also set the scale of the geo, and control it viewing the camera at all times
 
-    StaticModel@ sm_ = node.CreateComponent("StaticModel");
+    sm_ = node.CreateComponent("StaticModel");
     sm_.model = cache.GetResource("Model", "Models/Plane.mdl");
 
     Material@ usemat = cache.GetResource("Material", "Materials/"+material_+".xml");
     //mesh_material_ = usemat.Clone();
     //Color col = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
-    //mesh_material_.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
     sm_.material = usemat;
     node.Scale(4.0f);
 
@@ -29,6 +29,8 @@ shared class AnimatedSprite:Actor{
 
   void FixedUpdate(float timeStep){
     Actor::FixedUpdate(timeStep);//update time increment
+    Material@ mat = sm_.materials[0];
+    mat.shaderParameters["Time"]=Variant(timeIncrement_);
   }
 
 }

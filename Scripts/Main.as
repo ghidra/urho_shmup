@@ -147,8 +147,8 @@ void Start(){
   sm4.material = matsm1;
   sm4.castShadows = true;
 
-  // Create a directional light to the world. Enable cascaded shadows on it
-  Node@ lightNode = container_.CreateChild("Light");
+  // Create a point light to the world. Enable cascaded shadows on it
+  Node@ lightNode = player_.CreateChild("Light");
   //lightNode.direction = Vector3(0.6f, -0.5f, 0.8f);
   lightNode.position = Vector3(0.0f,-60.0f,40.0f);
   Light@ light = lightNode.CreateComponent("Light");
