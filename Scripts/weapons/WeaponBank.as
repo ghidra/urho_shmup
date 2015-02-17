@@ -68,5 +68,24 @@ shared class WeaponBank: ScriptObject{
     //weapon_node.CreateScriptObject(scriptFile,wclass);
   }
 
+  //--------------------
+
+  void fire(Vector3 target_position,float timestep = 0.0f){
+    for(uint i=0;i<weapons_.length;i++){
+      Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon"+i).scriptObject);
+      if(weapon !is null){
+        weapon.fire(target_position,timestep);
+      }
+    }
+  }
+  void release_fire(){
+    for(uint i=0;i<weapons_.length;i++){
+      Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon"+i).scriptObject);
+      if(weapon !is null){
+        weapon.release_fire();
+      }
+    }
+  }
+
 
 }

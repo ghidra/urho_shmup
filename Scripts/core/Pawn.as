@@ -1,11 +1,11 @@
 #include "Scripts/core/Actor.as"
-#include "Scripts/core/WeaponBank.as"
+#include "Scripts/weapons/WeaponBank.as"
 #include "Scripts/weapons/Weapon.as"
 
 shared class Pawn:Actor{
 
-  String mesh_ = "Sphere";
-  String material_ = "Pixel";
+  //String mesh_ = "Sphere";
+  //String material_ = "Pixel";
   Material@ mesh_material_;
   //StaticModel@ geo_;
   bool physical_movement_ = false;
@@ -59,6 +59,10 @@ shared class Pawn:Actor{
     if(weapon !is null){//if we have a weapon, we can fire that bitch
       weapon.fire(target_position,timestep);
     }
+    WeaponBank@ weaponbank = cast<WeaponBank>(node.GetChild("WeaponBank").scriptObject);
+    if(weaponbank !is null){//if we have a weapon, we can fire that bitch
+      weaponbank.fire(target_position,timestep);
+    }
   }
   void release_fire(){
     //Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject(weapon_type_));
@@ -66,6 +70,10 @@ shared class Pawn:Actor{
     Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
     if(weapon !is null){//if we have a weapon, we can fire that bitch
       weapon.release_fire();
+    }
+    WeaponBank@ weaponbank = cast<WeaponBank>(node.GetChild("WeaponBank").scriptObject);
+    if(weaponbank !is null){//if we have a weapon, we can fire that bitch
+      weaponbank.release_fire();
     }
   }
 

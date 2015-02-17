@@ -31,7 +31,7 @@ shared class Character:Pawn{
   void Start(){
     build_geo(mesh_,material_,0.2);
     mesh_material_.shaderParameters["ObjectBlend"]=Variant(1.0f);//single quotes didnt work
-    build_weapon("Weapon");
+    //build_weapon("Weapon");
 
     WeaponBank@ wb = get_weaponbank();
     wb.set_weapon(1);

@@ -4,9 +4,13 @@ shared class AnimatedSprite:Actor{
 //shared class AnimatedSprite:ScriptObject{
   //Vector2 sheet_;
 
-  String material_ = "AnimatedSprite";
+  //String material_ = "AnimatedSprite";
   uint offset_ = 0;
   StaticModel@ sm_;
+
+  AnimatedSprite(){
+    material_ = "AnimatedSprite";
+  }
 
   void set_parameters(const String&in material, const float&in speed = 1.0f, const uint&in offset=0){
     material_=material;

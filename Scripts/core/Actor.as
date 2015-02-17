@@ -11,6 +11,9 @@ const int CTRL_JUMP = 32;
 const int CTRL_ALL = 63;
 
 shared class Actor : ScriptObject{
+  String mesh_ = "Sphere";
+  String material_ = "Pixel";
+  
   bool onGround_;
   bool isSliding_;
   float duration_;

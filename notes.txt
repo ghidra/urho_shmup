@@ -1,17 +1,19 @@
 Notes:
 ---------------------
+-pickups
+  doesnt work now if I turn off the "main" weapons, as i assume its looking for it
+
 -shaders
   make out line a different shade of color it finds
   give a depth a dialable banding
 
-  -animated sprite texture, working, now needs the floor modulo values
 
 - i removed the bootleg rotation on ship movement
--bullets need the texture too, since they are dissapearing
 
 -add light flash on gun firing
 
 -continue gun fixes
+
 
 -ORIENTATION
   -LOOK DOWN +Z

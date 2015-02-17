@@ -47,17 +47,40 @@ shared class Projectile:Actor{
   void set_hit(Vector3 hit){//this is a specific location that we are aiming for
     hit_ = hit;
   }
-  void set_parms(const Vector3 dir,const float speed,const uint enemy = 0, const Vector3 hit=Vector3(0.0f,0.0f,.0.0f)){
-    RigidBody@ body = node.GetComponent("RigidBody");
-    body.linearVelocity = dir * speed;
+  void set_parmameters(const Vector3 dir,const float speed,const uint enemy = 0, const Vector3 hit=Vector3(0.0f,0.0f,.0.0f)){
+    //we set the geometry here
+    node.Scale(0.25f);
+
+    StaticModel@ pnsm = node.CreateComponent("StaticModel");
+    pnsm.model = cache.GetResource("Model", "Models/"+mesh_+".mdl");
+
+    Material@ usemat = cache.GetResource("Material", "Materials/"+material_+".xml");
+    Material@ matclone = usemat.Clone();
+    Color col = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+    matclone.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
+    //usemat.shaderParameters["ObjectColor"]=Variant(Color(0.2,0.1,0.5,1.0));//single quotes didnt work
+    pnsm.material = matclone;
+
+    RigidBody@ pnrb = node.CreateComponent("RigidBody");
+    pnrb.mass = 0.25f;
+    pnrb.useGravity = false;
+
+    pnrb.linearVelocity = dir * speed;
+
+
+
+    //RigidBody@ body = node.GetComponent("RigidBody");
+    //body.linearVelocity = dir * speed;
     hit_=hit;
     if(enemy>0){
       collision_layer_=8;
       collision_mask_=33;
     }
-    RigidBody@ rb = node.GetComponent("RigidBody");
-    rb.collisionLayer=collision_layer_;
-    rb.collisionMask=collision_mask_;
+    pnrb.collisionLayer=collision_layer_;
+    pnrb.collisionMask=collision_mask_;
+    //RigidBody@ rb = node.GetComponent("RigidBody");
+    //rb.collisionLayer=collision_layer_;
+    //rb.collisionMask=collision_mask_;
   }
 
   void spawn_explosion(Vector3 pos, Vector3 mag){//position and magnitude, which we can derive direction and speed from

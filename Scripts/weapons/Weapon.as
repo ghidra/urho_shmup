@@ -47,36 +47,39 @@ shared class Weapon:Actor{
   }
 
   void fire_logic(const float timestep, const Vector3 dir = Vector3(0.0f,0.0f,1.0f), const Vector3 hit = Vector3() ){
+    Vector3 offdir = node.worldDirection;//Vector3(1.0,0.0,0.0)*node.worldRotation;
     if(firing_<1){//start firing
       firing_=1;
       firing_timer_ = timestep;
 
-      spawn_projectile(dir,hit);
+      spawn_projectile(offdir,hit);
+      //spawn_projectile(dir,hit);
 
     }else{//we are firing, we need to shot intermittenly
       firing_timer_+=timestep;
       if(firing_timer_> firing_interval_){//we can shoot again if we are past our interval time
         firing_timer_= 0;
-
-        spawn_projectile(dir,hit);
+        spawn_projectile(offdir,hit);
+        //spawn_projectile(dir,hit);
 
       }
     }
   }
 
   void fire_logic(const float timestep, const Array<Vector3> dir, const Vector3 hit = Vector3() ){
+    Vector3 offdir = node.worldDirection;//Vector3(1.0,0.0,0.0)*node.worldRotation;
     if(firing_<1){//start firing
       firing_=1;
       firing_timer_ = timestep;
-
-      spawn_projectile(dir,hit);
+      spawn_projectile(offdir,hit);
+      //spawn_projectile(dir,hit);
 
     }else{//we are firing, we need to shot intermittenly
       firing_timer_+=timestep;
       if(firing_timer_> firing_interval_){//we can shoot again if we are past our interval time
         firing_timer_= 0;
-
-        spawn_projectile(dir,hit);
+        spawn_projectile(offdir,hit);
+        //spawn_projectile(dir,hit);
 
       }
     }
@@ -84,11 +87,15 @@ shared class Weapon:Actor{
 
   void spawn_projectile(const Vector3&in dir, const Vector3 hit = Vector3()){
 
-    XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
-    Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[0], Quaternion());
+    Node@ projectile_ = scene.CreateChild("Projectile");
+    //StaticModel@ pnsm = pn.CreateComponent("StaticModel");
+    //pnsm.model = cache.GetResource("Model", "Models/"+mesh_+".mdl");
 
+    //XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
+    //Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[0], Quaternion());
+    projectile_.position = node.worldPosition+aprojectile_offset_[0];
     Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-    node_script_.set_parms(dir,fire_velocity_,isenemy_,hit);
+    node_script_.set_parmameters(dir,fire_velocity_,isenemy_,hit);
 
     //return projectile_;
   }
@@ -98,10 +105,12 @@ shared class Weapon:Actor{
     XMLFile@ xml = cache.GetResource("XMLFile", "Scripts/nodes/" + ntype_ + ".xml");
 
     for(uint i=0; i<dir.length;i++){
-      Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[i], Quaternion());
+      Node@ projectile_ = scene.CreateChild("Projectile");
+      projectile_.position = node.worldPosition+aprojectile_offset_[0];
+      //Node@ projectile_ = scene.InstantiateXML(xml, node.worldPosition+aprojectile_offset_[i], Quaternion());
 
       Projectile@ node_script_ = cast<Projectile>(projectile_.CreateScriptObject(scriptFile, ctype_, LOCAL));
-      node_script_.set_parms(dir[i],fire_velocity_,isenemy_,hit);
+      node_script_.set_parmameters(dir[i],fire_velocity_,isenemy_,hit);
     }
 
     //return projectile_;
