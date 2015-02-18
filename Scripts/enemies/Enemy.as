@@ -10,14 +10,16 @@ class Enemy:Pawn{
 
   //float bar_regen_ = 0.001f;
   Enemy(){
-    speed_=8.0f;
+  //void Start(){
+    speed_=0.1f;
     collision_layer_=16;
     collision_mask_=51;
+    mesh_="spaceship_02_shiponly";
   }
   //this is called from the enemy factory as soon as it is made, here we need to put it all together
   void set_parameters(const String&in etype,const String&in ctype,const String&in wtype,const String&in btype, const float&in fire_rate){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
-    build_geo(mesh_,material_);
+    build_geo(mesh_,material_,0.2f);
     build_weapon(wtype);
     set_behavior(btype);
 
