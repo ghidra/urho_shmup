@@ -8,8 +8,10 @@ class Behavior{
 	int mirror_;
 	float speed_=0.005f;
 
+	Vector3 lastPosition;
+
 	Behavior(Node@ slave, const int&in mirror = 0){
-    slave_ = slave;
+    	slave_ = slave;
 		/*Vector3 p0 = Vector3(-84.9794235229, 0.0, -240.153991699);
 		Vector3 p1 = Vector3(-67.889213562, 0.0, -167.996002197);
 		Vector3 p2 = Vector3(-16.3671989441, 0.0, -7.65077877045);
@@ -34,8 +36,8 @@ class Behavior{
 		Vector3 p0 = Vector3(-5.0, 0.0, 20.0);
 		Vector3 p1 = Vector3(-4.0, 0.0, 10.0);
 		Vector3 p2 = Vector3(-3.0, 0.0, 0.0);
-		Vector3 p3 = Vector3(-2.0, 0.0, 10.0);
-		Vector3 p4 = Vector3(-1.0, 0.0, 20.0);
+		Vector3 p3 = Vector3(-2.0, 0.0, -10.0);
+		Vector3 p4 = Vector3(-1.0, 0.0, -20.0);
 		Vector3 p5 = Vector3(0.0, 0.0, -30.0);
 		Vector3 p6 = Vector3(1.0, 0.0, -40.0);
 		Vector3 p7 = Vector3(2.0, 0.0, -50.0);
@@ -45,8 +47,8 @@ class Behavior{
 		//Array<Vector3> bp = {p0, p1, p2, p3};
 		animCurve_ = Bezier4(bp);
 
-	Pawn@ p = cast<Pawn>(slave_.scriptObject);//get the script that controls this enemy
-	speed_ = p.speed_;//get the speed from it to appy here
+		Pawn@ p = cast<Pawn>(slave_.scriptObject);//get the script that controls this enemy
+		speed_ = p.speed_;//get the speed from it to appy here
 	}
 
 	void update(float timeStep){
@@ -56,8 +58,15 @@ class Behavior{
 
 		//body_.linearVelocity = body_.linearVelocity+Vector3(0.0f,0.0f,-0.1f);
 		//body.linearVelocity = Vector3(0.0f,0.0f,-speed_);
-		Vector3 updatePosition =  animCurve_.bezierP(pawn.timeIncrement_ * pawn.speed_);
+		lastPosition = slave_.position;
+		Vector3 updatePosition =  animCurve_.bezierP(pawn.timeIncrement_ * speed_);
 		slave_.position = updatePosition ;
+
+		Vector3 travelDirection = updatePosition-lastPosition;
+		travelDirection.Normalize();
+		Quaternion align = Quaternion();
+		align.FromLookRotation(travelDirection,Vector3(0.0,1.0,0.0));
+		slave_.rotation=align;
 		//+ Vector3(0.0f ,0.0f ,-20.0f + (pawn.timeIncrement_ * -speed_)
 		pawn.fire(target_node.worldPosition,timeStep);
 	}

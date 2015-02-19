@@ -43,7 +43,7 @@ class EnemyFactory:ScriptObject{
     }
   }
 
-  void set_parameters(const int&in samount=5, const float&in sinterval = 1.0f, const String&in etype = "Enemy", const String&in eweapon="Weapon", const String&in ebehavior="Behavior", const float&in fire_rate=1.0f, const int mirror= 0,const float&in active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
+  void set_parameters(int samount=5, float sinterval = 1.0f, String etype = "Enemy", String eweapon="Weapon", String ebehavior="Behavior", float fire_rate=1.0f, int mirror= 0,float active_time=-1.0f){//set the enemy type, behavior, and when this factory is active
     spawn_amount_ = samount;
     spawn_interval_ = sinterval;
     enemy_type_ = etype;
@@ -55,9 +55,9 @@ class EnemyFactory:ScriptObject{
     timer_=0.0f;
   }
 
-  void spawn_enemy(const String&in etype, const String&in ctype,const String&in wtype,const String&in btype, const float&in fire_rate, const Vector3&in pos, const Quaternion&in ori = Quaternion()){
+  void spawn_enemy(String& etype, String& ctype,String& wtype,String& btype, float& fire_rate, Vector3& pos, Quaternion& ori = Quaternion()){
     //enemy type, class type, weapon type, behavior type, position, orientation
-
+    //Print("Spawn enemy");
     Node@ enemy_node_ = node.CreateChild("Enemy");
     Enemy@ node_script_ = cast<Enemy>(enemy_node_.CreateScriptObject(scriptFile, ctype, LOCAL));
     node_script_.set_parameters(etype,ctype,wtype,btype,fire_rate);//send it the weapon and the behavior

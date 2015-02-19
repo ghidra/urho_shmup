@@ -21,8 +21,8 @@ shared class Weapon:Actor{
 
   //------------------
   //-----   setters
-  void set_firerate(const float&in rate){
-    firing_interval_ = rate;
+  void set_firerate(float fire_rate){
+    firing_interval_ = fire_rate;
   }
   void set_enemy(){//called if we are from an enemy pawn
     isenemy_=1;//we are possesed by the enemy
@@ -46,7 +46,7 @@ shared class Weapon:Actor{
     firing_timer_ = 0;
   }
 
-  void fire_logic(const float timestep, const Vector3 dir = Vector3(0.0f,0.0f,1.0f), const Vector3 hit = Vector3() ){
+  void fire_logic(float timestep, Vector3 dir = Vector3(0.0f,0.0f,1.0f), Vector3 hit = Vector3() ){
     Vector3 offdir = node.worldDirection;//Vector3(1.0,0.0,0.0)*node.worldRotation;
     if(firing_<1){//start firing
       firing_=1;
@@ -57,6 +57,9 @@ shared class Weapon:Actor{
 
     }else{//we are firing, we need to shot intermittenly
       firing_timer_+=timestep;
+      //if(isenemy_>0){
+      //  Print(firing_interval_);
+      //}
       if(firing_timer_> firing_interval_){//we can shoot again if we are past our interval time
         firing_timer_= 0;
         spawn_projectile(offdir,hit);

@@ -47,7 +47,7 @@ void Start(){
   //enemy
   Node@ en = container_.CreateChild("factory");
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
-  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,1.0f,"Enemy","Weapon","Behavior",1.0f,0,1.0f);
+  ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,3.0f,"Enemy","Weapon","Behavior",3.0f,0,1.0f);
 
   //my material to use
   Material@ usemat = cache.GetResource("Material", "Materials/Pixel.xml");

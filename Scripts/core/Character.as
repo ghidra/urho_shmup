@@ -34,6 +34,7 @@ shared class Character:Pawn{
     //build_weapon("Weapon");
 
     WeaponBank@ wb = get_weaponbank();
+    wb.set_weapon(0);
     wb.set_weapon(1);
     wb.set_weapon(2);
     wb.set_weapon(3);

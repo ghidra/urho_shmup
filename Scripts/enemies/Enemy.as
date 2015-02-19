@@ -17,16 +17,19 @@ class Enemy:Pawn{
     mesh_="spaceship_02_shiponly";
   }
   //this is called from the enemy factory as soon as it is made, here we need to put it all together
-  void set_parameters(const String&in etype,const String&in ctype,const String&in wtype,const String&in btype, const float&in fire_rate){//this all comes in from the enemy factory
+  void set_parameters(String etype,String ctype,String wtype,String btype, float fire_rate){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
     build_geo(mesh_,material_,0.2f);
-    build_weapon(wtype);
+    //build_weapon(wtype);
     set_behavior(btype);
 
+    WeaponBank@ wb = get_weaponbank();
+    wb.set_weapon(0,"Weapon",fire_rate,1);
+
     //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
-    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
-    weapon.set_firerate(fire_rate);
-    weapon.set_enemy();
+    //Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
+    //weapon.set_firerate(fire_rate);
+    //weapon.set_enemy();
 
   }
   //--------------------

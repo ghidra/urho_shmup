@@ -55,10 +55,10 @@ shared class Pawn:Actor{
     //lets check that we have a weapon class
     //Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject(weapon_type_));
     //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
-    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
-    if(weapon !is null){//if we have a weapon, we can fire that bitch
-      weapon.fire(target_position,timestep);
-    }
+    //Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
+    //if(weapon !is null){//if we have a weapon, we can fire that bitch
+     // weapon.fire(target_position,timestep);
+    //}
     WeaponBank@ weaponbank = cast<WeaponBank>(node.GetChild("WeaponBank").scriptObject);
     if(weaponbank !is null){//if we have a weapon, we can fire that bitch
       weaponbank.fire(target_position,timestep);
@@ -67,10 +67,10 @@ shared class Pawn:Actor{
   void release_fire(){
     //Weapon@ weapon = cast<Weapon>(node.children[0].GetScriptObject(weapon_type_));
     //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
-    Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
-    if(weapon !is null){//if we have a weapon, we can fire that bitch
-      weapon.release_fire();
-    }
+    //Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
+    //if(weapon !is null){//if we have a weapon, we can fire that bitch
+    //  weapon.release_fire();
+    //}
     WeaponBank@ weaponbank = cast<WeaponBank>(node.GetChild("WeaponBank").scriptObject);
     if(weaponbank !is null){//if we have a weapon, we can fire that bitch
       weaponbank.release_fire();
@@ -116,16 +116,16 @@ shared class Pawn:Actor{
     chcs.SetBox(Vector3(1.0f, 1.0f, 1.0f));
 
     //place a waiting empty weapon node
-    Node@ weapon_ = node.CreateChild("Weapon");
-    weapon_.position=Vector3(1.0f,0.0f,0.0f);
-    weapon_.Scale(scl);
+    //Node@ weapon_ = node.CreateChild("Weapon");
+    //weapon_.position=Vector3(1.0f,0.0f,0.0f);
+    //weapon_.Scale(scl);
 
     //new weapons system
     weapon_bank_ = node.CreateChild("WeaponBank");
     WeaponBank@ weaponbank_script_ = cast<WeaponBank>(weapon_bank_.CreateScriptObject(scriptFile, "WeaponBank", LOCAL));
     //set the first weapon at least
     weaponbank_script_.set_parameters(weapon_offsets_,weapon_rotations_,scl);
-    weaponbank_script_.set_weapon();
+    //weaponbank_script_.set_weapon();
 
   }
 
