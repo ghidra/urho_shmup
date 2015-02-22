@@ -1,48 +1,61 @@
-class ProgressBar{
+class BlockBar:ScriptObject{
 
-  String label_;
-  float value_;
-  float min_;
-  float max_;
-  Vector2 bounds_;
   Vector3 offset_;
+  uint numblocks_;
   Vector3 size_;
-  float size_scale_ = 1.0f;
+  float margin_;
+  float value_;
+  float max_;
   int decimal_;
 
-  Scene@ scene_;
-  Node@ node_;
-  Node@ fill_node_;
+  Array<Node@> blocks_;
 
-  ProgressBar(
-    Scene@ scene,
-    Node@ node,
-		String label,
-    Vector3 offset,
+  String material_ = "Pixel";
+
+  void set_parameters(
+    Vector3 offset = Vector3(5.0f,0.0f,0.0f),
+    uint blocks = 8,
+    Vector3 size = Vector3(4.0f,0.5f,0.1f),
+    float margin = 0.2f,
 		float value = 1.0f,
-		float min = 0.0f,
 		float max = 1.0f,
-		Vector3 size = Vector3(1.4f,0.2f,0.01f),
 		int dec=1
 		)
 	{
-    scene_ = scene;
-		label_ = label;
     offset_ = offset;
-		size_ = size;//ComputeTextBoxSize(m_font, m_label) + m_margin;//GetSpriteFrameSize(m_spriteName);
-		//_pos = pos;
-
-    min_ = min;
-    max_ = max;
-		set_bounds(min,max);
+    numblocks_ = blocks;
+		size_ = size;
+		margin_ = margin;
 		value_ = value;
-
+    max_ = max;
 		decimal_ = dec;
 
     //build the bar out
-    node_ = node.CreateChild("bar");//"maybe call it _node.name"
+    Node@ main_node = node.CreateChild("bar");//"maybe call it _node.name"
 
-    fill_node_ = node_.CreateChild("barfill");
+    //i need to loop for each block that I want to make
+
+    //do the math to determine where to place pieces
+    float w = (size_.x-((float(numblocks_)-1.0f)*margin_))/float(numblocks_);//this is the resulting size of a block
+    for(uint i=0;i<numblocks_;i++){
+      Node@ block = main_node.CreateChild("block_"+i);
+
+      block.position = Vector3( (w/2.0f)+(float(i)*(w+margin_)), 0.0f, 0.0f );
+      block.scale = Vector3(w,size_.y,size_.z);
+
+      StaticModel@ sm = block.CreateComponent("StaticModel");
+      sm.model = cache.GetResource("Model", "Models/Box.mdl");
+
+      Material@ usemat = cache.GetResource("Material", "Materials/"+material_+".xml");
+      Material@ mesh_material = usemat.Clone();
+      Color col = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+      mesh_material.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
+      sm.material = mesh_material;
+
+      blocks_.Push(block);
+    }
+
+    /*fill_node_ = node_.CreateChild("barfill");
     StaticModel@ barObject = fill_node_.CreateComponent("StaticModel");
     barObject.model = cache.GetResource("Model", "Models/Box.mdl");
     barObject.material = cache.GetResource("Material", "Materials/StoneTiled.xml");
@@ -50,32 +63,26 @@ class ProgressBar{
     node_.scale = size_;
 
     ProgressBar_Script@ node_script_ = cast<ProgressBar_Script>(node_.CreateScriptObject(scriptFile, "ProgressBar_Script"));
-	  node_script_.set_parameters(this);
+	  node_script_.set_parameters(this);*/
   }
 
   float clamp(float v) {
   		return Min(Max(v, 1.0f), size_.x);
 	}
-	void set_bounds(const float min, const float max){
-		bounds_ = Vector2(min,max);
-	}
+
 	float rescale(const float v, const float l1, const float h1, const float l2, const float h2){
 		return l2 + (v - l1) * (h2 - l2) / (h1 - l1);
 	}
   void set_value(float v = 0.0f){
-		value_ = Min(Max(v,0.0f),bounds_.y);
+		value_ = Min(Max(v,0.0f),max_);
 	}
-
-  void temp(){
-    node_.scale = node_.scale*1.001f;
-  }
 
   //-------------
 
-  BoundingBox bbpoint(const Vector3 p,const Vector3 size = Vector3(0.1f,0.1f,0.1f)){
+  /*BoundingBox bbpoint(const Vector3 p,const Vector3 size = Vector3(0.1f,0.1f,0.1f)){
     Vector3 size_pos = size/2.0f;
     return BoundingBox(p - size_pos, p + size_pos);
-  }
+  }*/
 
 }
 

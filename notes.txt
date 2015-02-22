@@ -88,3 +88,7 @@ http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Modeling/MeshLint
 http://www.allegorithmic.com/static/static/pages/PBR_Guide/PBR_Guide_Vol.2.pdf
 
 http://bliker.github.io/cmder/
+
+--------
+save example
+https://gist.github.com/hdunderscore/04b370746c72ee7895a0

@@ -8,10 +8,15 @@ shared class Projectile:Actor{
   float range_=40.0f;//how far this projectile can travel
   float damage_=1.0f;//how much damage this projectile can do
 
-  void Start(){
+  Projectile(){
+  //void Start(){
     collision_layer_=2;
     collision_mask_=56;
 
+    //pos_born_ = node.position;
+    //SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
+  }
+  void Start(){
     pos_born_ = node.position;
     SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
   }
@@ -39,6 +44,7 @@ shared class Projectile:Actor{
   }
   //collision
   void ObjectCollision(Actor@ otherObject, VariantMap& eventData){
+    //Print("HIT");
     RigidBody@ body = node.GetComponent("RigidBody");
     //spawn_explosion(node.position,body.linearVelocity);
     node.Remove();
@@ -81,6 +87,8 @@ shared class Projectile:Actor{
     //RigidBody@ rb = node.GetComponent("RigidBody");
     //rb.collisionLayer=collision_layer_;
     //rb.collisionMask=collision_mask_;
+    CollisionShape@ chcs = node.CreateComponent("CollisionShape");
+    chcs.SetBox(Vector3(1.0f, 1.0f, 1.0f));
   }
 
   void spawn_explosion(Vector3 pos, Vector3 mag){//position and magnitude, which we can derive direction and speed from

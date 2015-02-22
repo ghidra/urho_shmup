@@ -1,12 +1,13 @@
 #include "Scripts/core/Pawn.as"
 #include "Scripts/enemies/Behavior.as"
 
-#include "Scripts/gui/ProgressBar.as"
+#include "Scripts/gui/BlockBar.as"
 
 class Enemy:Pawn{
   //ProgressBar@ bar_;
   Node@ target_;//this will likely be the main character that I am firing at
   Behavior@ behavior_;//the behavior object
+  Node@ healthbar_;
 
   //float bar_regen_ = 0.001f;
   Enemy(){
@@ -30,7 +31,9 @@ class Enemy:Pawn{
     //Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
     //weapon.set_firerate(fire_rate);
     //weapon.set_enemy();
-
+    healthbar_ = node.CreateChild("healthbar");
+    BlockBar@ bar = cast<BlockBar>(healthbar_.CreateScriptObject(scriptFile, "BlockBar"));
+    bar.set_parameters();
   }
   //--------------------
   //--------------------
