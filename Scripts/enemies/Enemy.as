@@ -17,7 +17,13 @@ class Enemy:Pawn{
     collision_layer_=16;
     collision_mask_=51;
     mesh_="spaceship_02_shiponly";
+    health_=10;
+    maxHealth_=10;
   }
+  void Start(){
+    SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
+  }
+
   //this is called from the enemy factory as soon as it is made, here we need to put it all together
   void set_parameters(String etype,String ctype,String wtype,String btype, float fire_rate){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
@@ -66,6 +72,15 @@ class Enemy:Pawn{
       behavior_ = Behavior(node);
     }
 
+  }
+  //-----
+  void ObjectCollision(Actor@ otherObject, VariantMap& eventData){
+    //Print("HIT");
+    //RigidBody@ body = node.GetComponent("RigidBody");
+    //spawn_explosion(node.position,body.linearVelocity);
+    //node.Remove();
+    Damage(otherObject,1);
+    //Print(health_);
   }
 
 

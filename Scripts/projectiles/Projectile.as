@@ -12,6 +12,7 @@ shared class Projectile:Actor{
   //void Start(){
     collision_layer_=2;
     collision_mask_=56;
+    side_=SIDE_PLAYER;
 
     //pos_born_ = node.position;
     //SubscribeToEvent(node, "NodeCollision", "HandleNodeCollision");
@@ -45,7 +46,7 @@ shared class Projectile:Actor{
   //collision
   void ObjectCollision(Actor@ otherObject, VariantMap& eventData){
     //Print("HIT");
-    RigidBody@ body = node.GetComponent("RigidBody");
+    //RigidBody@ body = node.GetComponent("RigidBody");
     //spawn_explosion(node.position,body.linearVelocity);
     node.Remove();
   }
@@ -81,6 +82,7 @@ shared class Projectile:Actor{
     if(enemy>0){
       collision_layer_=8;
       collision_mask_=33;
+      side_=SIDE_ENEMY;
     }
     pnrb.collisionLayer=collision_layer_;
     pnrb.collisionMask=collision_mask_;
