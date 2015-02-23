@@ -8,6 +8,7 @@ shared class Character:Pawn{
     //mesh_="Cone";
     mesh_="spaceship_02_shiponly";
     speed_=20.0f;
+    side_ = SIDE_PLAYER;
     //weapon_offsets_.Resize(1);
 
     weapon_offsets_.Resize(6);

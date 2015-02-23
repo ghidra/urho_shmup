@@ -12,6 +12,7 @@ class Enemy:Pawn{
   //float bar_regen_ = 0.001f;
   Enemy(){
   //void Start(){
+    side_=SIDE_ENEMY;
     speed_=0.1f;
     collision_layer_=16;
     collision_mask_=51;
