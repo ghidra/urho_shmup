@@ -1,7 +1,7 @@
 #include "Scripts/core/Pawn.as"
 #include "Scripts/enemies/Behavior.as"
 
-#include "Scripts/gui/BlockBar.as"
+#include "Scripts/gui/ProgressBar.as"
 
 class Enemy:Pawn{
   //ProgressBar@ bar_;
@@ -32,7 +32,7 @@ class Enemy:Pawn{
     //weapon.set_firerate(fire_rate);
     //weapon.set_enemy();
     healthbar_ = node.CreateChild("healthbar");
-    BlockBar@ bar = cast<BlockBar>(healthbar_.CreateScriptObject(scriptFile, "BlockBar"));
+    ProgressBar@ bar = cast<ProgressBar>(healthbar_.CreateScriptObject(scriptFile, "ProgressBar"));
     bar.set_parameters();
   }
   //--------------------
