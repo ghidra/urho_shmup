@@ -2,8 +2,13 @@
 
   <!--<pass name="edgebase" vsdefines="EDGEBASE" psdefines="EDGEBASE"/>
   <pass name="edge" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>-->
-  <pass name="litbase" psdefines="AMBIENT" />
-  <pass name="light" blend="add" />
+  <!--<pass name="litbase" psdefines="AMBIENT" blend="alpha"/>-->
+  <!--<pass name="base" psdefines="AMBIENT" blend="alpha"/>-->
+
+  <pass name="alpha" depthwrite="false" blend="alpha" />
+  <!--<pass name="litalpha" depthwrite="false" blend="addalpha" />
+  <pass name="shadow" vs="Shadow" ps="Shadow" />-->
+  <!--<pass name="light" blend="alpha" />-->
   <!--<pass name="depth" vsdefines="DEPTHPASS" psdefines="DEPTHPASS" />
   <pass name="shadow" vs="Shadow" ps="Shadow" />-->
 

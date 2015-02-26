@@ -13,15 +13,19 @@
     <command type="clear" color="fog" depth="1.0" stencil="0" />
     <command type="scenepass" pass="edgebase" vsdefines="EDGEBASE" metadata="base" />
 
-    <!--render the first quad to get the edges from the edge shader -->
+    <!--render the first quad to get the edges from the edge shader-->
     <command type="quad" vs="edge_quad" ps="edge_quad" output="edge">
       <texture unit="environment" name="viewport" />
-    </command>
+    </command> 
+    
 
     <!--now we can do a lit pass-->
     <command type="clear" color="fog" depth="1.0" stencil="0" />
     <command type="scenepass" pass="base" vertexlights="true" metadata="base" />
     <command type="forwardlights" pass="light" />
+    <command type="scenepass" pass="alpha" vertexlights="true" sort="backtofront" metadata="alpha" />
+    <!--<command type="scenepass" pass="postalpha" sort="backtofront" />-->
+    
 
     <!--now we remap to palette-->
     <command type="quad" vs="palette_quad" ps="palette_quad" output="postcolor">
