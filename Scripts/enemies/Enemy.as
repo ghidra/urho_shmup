@@ -40,7 +40,7 @@ class Enemy:Pawn{
     //weapon.set_enemy();
     healthbar_ = node.CreateChild("healthbar");
     ProgressBar@ bar = cast<ProgressBar>(healthbar_.CreateScriptObject(scriptFile, "ProgressBar"));
-    bar.set_parameters();
+    bar.set_parameters(maxHealth_*1.0,maxHealth_*1.0);
   }
   //--------------------
   //--------------------
@@ -80,7 +80,10 @@ class Enemy:Pawn{
     //spawn_explosion(node.position,body.linearVelocity);
     //node.Remove();
     Damage(otherObject,1);
-    //Print(health_);
+
+    ProgressBar@ bar_ = cast<ProgressBar>(healthbar_.scriptObject);
+    bar_.set_value(health_*1.0);
+    //Print(health_*1.1);
   }
 
 

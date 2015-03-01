@@ -6,13 +6,15 @@ class ProgressBar:ScriptObject{
   float max_;
   int decimal_;
 
+  Node@ bar_;
+
   String material_ = "Pixel";
 
   void set_parameters(
+    float value = 1.0f,
+    float max = 1.0f,
     Vector3 offset = Vector3(2.0f,0.0f,0.0f),
     Vector3 size = Vector3(2.4f,0.5f,0.1f),
-		float value = 1.0f,
-		float max = 1.0f,
 		int dec=1
 		)
 	{
@@ -23,9 +25,9 @@ class ProgressBar:ScriptObject{
 		decimal_ = dec;
 
     //build the bar out
-    Node@ main_node = node.CreateChild("bar");//"maybe call it _node.name"
+    bar_ = node.CreateChild("bar");//"maybe call it _node.name"
 
-    StaticModel@ sm = main_node.CreateComponent("StaticModel");
+    StaticModel@ sm = bar_.CreateComponent("StaticModel");
     sm.model = cache.GetResource("Model", "Models/Box.mdl");
 
     Material@ usemat = cache.GetResource("Material", "Materials/"+material_+".xml");
@@ -34,8 +36,8 @@ class ProgressBar:ScriptObject{
     mesh_material.shaderParameters["ObjectColor"]=Variant(col);//single quotes didnt work
     sm.material = mesh_material;
 
-    main_node.scale = size_;
-    main_node.position = offset_+(size_/2.0f);
+    bar_.scale = size_;
+    bar_.position = offset_+(size_/2.0f);
 
     //i need to loop for each block that I want to make
 
@@ -59,6 +61,8 @@ class ProgressBar:ScriptObject{
 	}
   void set_value(float v = 0.0f){
 		value_ = Min(Max(v,0.0f),max_);
+    float mult = rescale(value_,0.0,max_,0.01);
+    bar_.scale = Vector3(size_.x*mult,size_.y,size_.z);
 	}
 
   //-------------
