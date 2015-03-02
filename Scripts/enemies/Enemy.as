@@ -1,5 +1,6 @@
 #include "Scripts/core/Pawn.as"
 #include "Scripts/enemies/Behavior.as"
+#include "Scripts/enemies/EnemyExplosion.as"
 
 #include "Scripts/gui/ProgressBar.as"
 
@@ -79,11 +80,27 @@ class Enemy:Pawn{
     //RigidBody@ body = node.GetComponent("RigidBody");
     //spawn_explosion(node.position,body.linearVelocity);
     //node.Remove();
-    Damage(otherObject,1);
+    Damage(otherObject,2.9);
 
     ProgressBar@ bar_ = cast<ProgressBar>(healthbar_.scriptObject);
-    bar_.set_value(health_*1.0);
-    //Print(health_*1.1);
+    bar_.set_value(health_);
+    //Print(health_);
+
+    if(health_<=0.0){
+      die();
+    }
+  }
+
+  void die(){
+    behavior_=null;
+    spawn_explosion(node.worldPosition);
+    node.Remove();
+  }
+
+  void spawn_explosion(Vector3 pos){//position and magnitude, which we can derive direction and speed from
+    Node@ explosionode = scene.CreateChild("EnemyExplosion");
+    EnemyExplosion@ explosion = cast<EnemyExplosion>(explosionode.CreateScriptObject(scriptFile,"EnemyExplosion"));
+    explosion.set_position(pos);
   }
 
 

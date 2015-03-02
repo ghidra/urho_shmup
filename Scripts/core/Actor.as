@@ -17,8 +17,8 @@ shared class Actor : ScriptObject{
   bool onGround_;
   bool isSliding_;
   float duration_;
-  int health_;
-  int maxHealth_;
+  float health_;
+  float maxHealth_;
   int side_;
   int lastDamageSide_;
   uint lastDamageCreatorID_;
@@ -60,19 +60,19 @@ shared class Actor : ScriptObject{
     }
   }
 
-  bool Damage(Actor@ origin, int amount){
-    if ((origin.side_ == side_) || (health_ == 0))
+  bool Damage(Actor@ origin, float amount){
+    if ((origin.side_ == side_) || (health_ <= 0.0))
         return false;
 
     lastDamageSide_ = origin.side_;
     lastDamageCreatorID_ = origin.creatorID_;
     health_ -= amount;
-    if (health_ < 0)
-        health_ = 0;
+    if (health_ < 0.0)
+        health_ = 0.0;
     return true;
   }
 
-  bool Heal(int amount){
+  bool Heal(float amount){
     // By default do not heal
     return false;
   }

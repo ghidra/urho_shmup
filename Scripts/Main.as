@@ -32,10 +32,10 @@ void Start(){
   Character@ chso = cast<Character>(player_.CreateScriptObject(scriptFile,"Character"));
   chso.set_bounds(cso.bounds_);
 
-  Node@ test_ = scene_.CreateChild("test");
-  AnimatedSprite@ asso = cast<AnimatedSprite>(test_.CreateScriptObject(scriptFile,"AnimatedSprite"));
-  asso.set_parameters("explosion_01");
-  test_.Scale(3.0f);
+  //Node@ test_ = scene_.CreateChild("test");
+  //AnimatedSprite@ asso = cast<AnimatedSprite>(test_.CreateScriptObject(scriptFile,"AnimatedSprite"));
+  //asso.set_parameters("explosion_01");
+  //test_.Scale(3.0f);
 
   Node@ stage_ = scene_.CreateChild("Stage");
   CrystalCanyon@ ccso = cast<CrystalCanyon>(stage_.CreateScriptObject(scriptFile,"CrystalCanyon"));
