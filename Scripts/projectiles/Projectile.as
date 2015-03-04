@@ -71,9 +71,8 @@ shared class Projectile:Actor{
     RigidBody@ pnrb = node.CreateComponent("RigidBody");
     pnrb.mass = 0.25f;
     pnrb.useGravity = false;
-
     pnrb.linearVelocity = dir * speed;
-
+    pnrb.trigger=true;
 
 
     //RigidBody@ body = node.GetComponent("RigidBody");

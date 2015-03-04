@@ -37,7 +37,8 @@ class ProgressBar:ScriptObject{
     sm.material = mesh_material;
 
     bar_.scale = size_;
-    bar_.position = offset_+(size_/2.0f);
+    //bar_.position = offset_+(size_/2.0f);
+    set_value(max_);
 
     //i need to loop for each block that I want to make
 
@@ -52,16 +53,24 @@ class ProgressBar:ScriptObject{
       blocks_.Push(block);
     }*/
   }
+  void FixedUpdate(float timeStep){
+    //position it
+    float xoff = bar_.scale.x/2.0f;
+    node.position = offset_+Vector3(xoff,0.0f,0.0f);
+    Quaternion prot = node.parent.worldRotation;
+    //Print(prot.x+":"+prot.y+":"+prot.z+":"+prot.w);
+    node.rotation = prot.Inverse(); 
+  }
 
   float clamp(float v) {
   		return Min(Max(v, 1.0f), size_.x);
 	}
-	float rescale(const float v, const float l1, const float h1, const float l2=0.0, const float h2=1.0){
+	float rescale(const float v, const float l1, const float h1, const float l2=0.0f, const float h2=1.0f){
 		return l2 + (v - l1) * (h2 - l2) / (h1 - l1);
 	}
   void set_value(float v = 0.0f){
 		value_ = Min(Max(v,0.0f),max_);
-    float mult = rescale(value_,0.0,max_,0.01);
+    float mult = rescale(value_,0.0f,max_,0.01f);
     bar_.scale = Vector3(size_.x*mult,size_.y,size_.z);
 	}
 

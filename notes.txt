@@ -1,5 +1,9 @@
 Notes:
 ---------------------
+-i need to look at bullet speed causing it to miss collision
+  -perhapse scale out the bounding box based on velocity.
+  -so i will need to rotate the projectile to rotate along velocity
+
 -pickups
   doesnt work now if I turn off the "main" weapons, as i assume its looking for it
 

@@ -64,33 +64,41 @@ void VS()
 
 void PS(){
 
-      //vec2 uv = vScreenPos.xy / vScreenPos.w;
-      //vec2 shalf = 1.0/(cGBufferInvSize.xy);//this is actually the size of the render halfsize for example
-      //vec2 s = shalf*2.0;//ie 1920x1080, this is the fullsize
-      //vec2 px = uv+cGBufferInvSize.xy;
-      //px = px - (cGBufferInvSize.xy/2.0);
-      vec2 uv = vScreenPos;
+  //vec2 ncolor = color*(lutSize-1.0);
+  //ncolor = ceil(ncolor);
+  //ncolor = ncolor*(1/(lutSize-1.0));
+
+  vec2 ss = (1.0/(cGBufferInvSize.xy))-1.0;
+  vec2 puv = ceil(vScreenPos*ss)-0.5;
+  puv = puv*(1.0/ss);
+
+  //vec2 uv = vScreenPos.xy / vScreenPos.w;
+  //vec2 shalf = 1.0/(cGBufferInvSize.xy);//this is actually the size of the render halfsize for example
+  //vec2 s = shalf*2.0;//ie 1920x1080, this is the fullsize
+  //vec2 px = uv+cGBufferInvSize.xy;
+  //px = px - (cGBufferInvSize.xy/2.0);
+  vec2 uv = vScreenPos;
 
 
-      //vec2 nuv = uv-(cGBufferInvSize.xy*300.0);
+  //vec2 nuv = uv-(cGBufferInvSize.xy*300.0);
 
 
-      //vec4 color = texture2D(sEnvMap,vScreenPos.xy / vScreenPos.w);
-      //vec4 color = texture2D(sEnvMap,mult);
+  //vec4 color = texture2D(sEnvMap,vScreenPos.xy / vScreenPos.w);
+  //vec4 color = texture2D(sEnvMap,mult);
 
-      //gl_FragColor = color;
+  //gl_FragColor = color;
 
-      //-------------------
+  //-------------------
 
-      vec4 color = vec4(0.0,0.0,0.0,0.0);
-      if(IsEdge(sEnvMap,uv, cGBufferInvSize.xy*0.5)>1.0){
-        color.rgba = vec4(1.0);
-        //color = get_pixel(sEnvMap,vScreenPos.xy / vScreenPos.w,float(0)*(cGBufferInvSize.x),float(0)*(cGBufferInvSize.y));
-        //color.rgba = diffColor;
-        //color.g = IsEdge(sEnvMap,vScreenPos.xy / vScreenPos.w);
-        //color.a = 1.0;
-      }
-      //vec4 color = get_pixel(sEnvMap,uv,cGBufferInvSize.x*0.25,cGBufferInvSize.y*0.25);
-      gl_FragColor = color;
+  vec4 color = vec4(0.0,0.0,0.0,0.0);
+  if(IsEdge(sEnvMap,uv, cGBufferInvSize.xy*0.5)>1.0){
+    color.rgba = vec4(1.0);
+    //color = get_pixel(sEnvMap,vScreenPos.xy / vScreenPos.w,float(0)*(cGBufferInvSize.x),float(0)*(cGBufferInvSize.y));
+    //color.rgba = diffColor;
+    //color.g = IsEdge(sEnvMap,vScreenPos.xy / vScreenPos.w);
+    //color.a = 1.0;
+  }
+  //vec4 color = get_pixel(sEnvMap,uv,cGBufferInvSize.x*0.25,cGBufferInvSize.y*0.25);
+  gl_FragColor = color;
 
 }
