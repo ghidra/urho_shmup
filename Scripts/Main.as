@@ -7,6 +7,7 @@
 #include "Scripts/pickups/PickupWeapon2.as"
 
 #include "Scripts/enemies/Factory.as"
+#include "Scripts/enemies/HexHive.as"
 
 #include "Scripts/stages/CrystalCanyon.as"
 #include "Scripts/core/AnimatedSprite.as"
@@ -49,6 +50,11 @@ void Start(){
   Node@ en = container_.CreateChild("factory");
   Factory@ ef = cast<Factory>(en.CreateScriptObject(scriptFile, "Factory"));
   ef.generate_enemy_factory(Vector3(5.0f,0.0f,26.0f),5,3.0f,"Enemy","Weapon","Behavior",3.0f,0,1.0f);
+
+  //TES ENEMY
+  Node@ hhn = container_.CreateChild("hexhive");
+  HexHive@ hh = cast<HexHive>(hhn.CreateScriptObject(scriptFile, "HexHive"));
+  hh.set_parameters("","","","",1.0);
 
   //my material to use
   Material@ usemat = cache.GetResource("Material", "Materials/Pixel.xml");

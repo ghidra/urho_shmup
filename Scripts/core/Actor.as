@@ -12,6 +12,7 @@ const int CTRL_ALL = 63;
 
 shared class Actor : ScriptObject{
   String mesh_ = "Sphere";
+  String mesh_convex_;
   String material_ = "Pixel";
   
   bool onGround_;
