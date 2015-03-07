@@ -66,4 +66,9 @@ class SceneManager{
     camera_logic_.set_parameters(fixed,fdistance,frotation);
   }
 
+  //----
+  void scene_time(float scale){
+    scene_.timeScale=scale;
+  }
+
 }

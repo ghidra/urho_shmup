@@ -1,16 +1,22 @@
 #include "Scripts/core/InputBasics.as"
+#include "Scripts/core/SceneManager.as"
 #include "Scripts/core/Pawn.as"
 #include "Scripts/math/Graph.as"
 
 class InputPlayer : InputBasics{
 
   Node@ node_;
+  SceneManager@ scene_manager_;
   Graph@ graph_;
   Node@ camera_node_;
 
   int fire_pressed_ = 0;
 
   float mouse_sensitivity_ = 0.1f;
+
+  float time_scale_ = 1.0f;
+  float time_scale_speed_ = 0.75f;
+  bool slow_time_=false;
 
   InputPlayer(uint i = 0){
     super(i);
@@ -56,6 +62,13 @@ class InputPlayer : InputBasics{
       fire_pressed_ = 0;//we can set this back to false
       release_fire();
     }
+
+    //time controll
+    if(input.keyPress['P']){
+      slow_time_=(slow_time_)?false:true;
+    }
+    control_time(timestep);
+
     //if (input.keyUp[KEYSPACE])
       //left_mouse(timestep);
 
@@ -66,6 +79,9 @@ class InputPlayer : InputBasics{
 
   }
   //------------------------
+  void set_scene_manager(SceneManager@ scene_manager){
+    scene_manager_ = scene_manager;
+  }
   void set_controlnode(Node@ control_node){
     Pawn@ pawn = cast<Pawn>(control_node.scriptObject);
     //Character@ pawn = cast<Character>(control_node.scriptObject);
@@ -136,4 +152,18 @@ class InputPlayer : InputBasics{
       pawn.release_fire();
     }
   }
+
+  //-----
+  void control_time(float timestep){
+    if(slow_time_ && time_scale_>0.0f){
+      time_scale_ = Clamp(time_scale_-(time_scale_speed_*timestep),0.0,1.0);
+      scene_manager_.scene_time(time_scale_);
+    }else{
+      if(not slow_time_ && time_scale_<1.0f){
+        time_scale_ = Clamp(time_scale_+(time_scale_speed_*timestep),0.0,1.0);
+        scene_manager_.scene_time(time_scale_);
+      }
+    }
+  }
+  //-----
 }

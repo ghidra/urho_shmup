@@ -43,6 +43,7 @@ void Start(){
 
   scene_manager_.set_camera_target(container_);
 
+  input_player_.set_scene_manager(scene_manager_);
   input_player_.set_controlnode(player_);
   input_player_.set_cameranode(camera_node_);
 
