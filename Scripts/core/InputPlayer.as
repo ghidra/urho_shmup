@@ -156,12 +156,16 @@ class InputPlayer : InputBasics{
   //-----
   void control_time(float timestep){
     if(slow_time_ && time_scale_>0.0f){
-      time_scale_ = Clamp(time_scale_-(time_scale_speed_*timestep),0.0,1.0);
+      time_scale_ = Clamp(time_scale_-(time_scale_speed_*timestep),0.01,1.0);
       scene_manager_.scene_time(time_scale_);
+      if(scene_.updateEnabled && time_scale_==0.01)
+        scene_.updateEnabled = false;
     }else{
       if(not slow_time_ && time_scale_<1.0f){
-        time_scale_ = Clamp(time_scale_+(time_scale_speed_*timestep),0.0,1.0);
+        time_scale_ = Clamp(time_scale_+(time_scale_speed_*timestep),0.01,1.0);
         scene_manager_.scene_time(time_scale_);
+        if(not scene_.updateEnabled)
+          scene_.updateEnabled = true;
       }
     }
   }
