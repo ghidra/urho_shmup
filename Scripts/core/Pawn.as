@@ -14,8 +14,10 @@ shared class Pawn:Actor{
   float bank_degrees_ = 20.f;//how much to bank
 
   Node@ weapon_bank_;//this will be a node to hold all the weapons
-  Array<Vector3> weapon_offsets_ = {Vector3(0.0f,0.0f,0.0f)};
-  Array<Vector3> weapon_rotations_ = {Vector3(0.0f,0.0f,0.0f)};//use for rotations
+  //Array<Vector3> weapon_offsets_ = {Vector3(0.0f,0.0f,0.0f)};
+  //Array<Vector3> weapon_rotations_ = {Vector3(0.0f,0.0f,0.0f)};//use for rotations
+  Array<Vector3> weapon_offsets_;
+  Array<Vector3> weapon_rotations_;//use for rotations
 
   //---------------------
   //---------------------
@@ -113,7 +115,11 @@ shared class Pawn:Actor{
     chrb_.collisionLayer=collision_layer_;
     chrb_.collisionMask=collision_mask_;
     CollisionShape@ chcs = node.CreateComponent("CollisionShape");
-    chcs.SetBox(Vector3(1.0f, 1.0f, 1.0f));
+    if(mesh_convex_ != ""){
+      chcs.SetConvexHull( cache.GetResource("Model", "Models/"+mesh_convex_+".mdl") );
+    }else{
+      chcs.SetBox(Vector3(1.0f, 1.0f, 1.0f));
+    }
 
     //place a waiting empty weapon node
     //Node@ weapon_ = node.CreateChild("Weapon");

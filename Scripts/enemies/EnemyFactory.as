@@ -31,7 +31,7 @@ class EnemyFactory:ScriptObject{
       spawn_timer_+=timeStep;
       if(spawn_timer_>=spawn_interval_){
         if(spawn_increment_< spawn_amount_){
-          spawn_enemy("Character","Enemy","Weapon","Behavior",fire_rate_,Vector3(5.0f,0.0f,5.0f));
+          spawn_enemy("Enemy","Weapon","Behavior",fire_rate_,Vector3(5.0f,0.0f,5.0f));
           spawn_timer_=0;
           spawn_increment_+=1;
         }
@@ -55,12 +55,12 @@ class EnemyFactory:ScriptObject{
     timer_=0.0f;
   }
 
-  void spawn_enemy(String& etype, String& ctype,String& wtype,String& btype, float& fire_rate, Vector3& pos, Quaternion& ori = Quaternion()){
+  void spawn_enemy(String& etype,String& wtype,String& btype, float& fire_rate, Vector3& pos, Quaternion& ori = Quaternion()){
     //enemy type, class type, weapon type, behavior type, position, orientation
     //Print("Spawn enemy");
     Node@ enemy_node_ = node.CreateChild("Enemy");
-    Enemy@ node_script_ = cast<Enemy>(enemy_node_.CreateScriptObject(scriptFile, ctype, LOCAL));
-    node_script_.set_parameters(etype,ctype,wtype,btype,fire_rate);//send it the weapon and the behavior
+    Enemy@ node_script_ = cast<Enemy>(enemy_node_.CreateScriptObject(scriptFile, etype, LOCAL));
+    node_script_.set_parameters(wtype,btype,fire_rate);//send it the weapon and the behavior
 
   }
 }

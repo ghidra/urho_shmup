@@ -55,7 +55,7 @@ void Start(){
   //TES ENEMY
   Node@ hhn = container_.CreateChild("hexhive");
   HexHive@ hh = cast<HexHive>(hhn.CreateScriptObject(scriptFile, "HexHive"));
-  hh.set_parameters("","","","",1.0);
+  hh.set_parameters("","",1.0,Vector3(8.0,0.0,8.0));
 
   //my material to use
   Material@ usemat = cache.GetResource("Material", "Materials/Pixel.xml");

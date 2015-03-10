@@ -26,14 +26,14 @@ class Enemy:Pawn{
   }
 
   //this is called from the enemy factory as soon as it is made, here we need to put it all together
-  void set_parameters(String etype,String ctype,String wtype,String btype, float fire_rate){//this all comes in from the enemy factory
+  void set_parameters(String wtype,String btype, float fire_rate, Vector3 pos=Vector3(), Quaternion rot=Quaternion(), float scl=1.0){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
     build_geo(mesh_,material_,0.2f);
     //build_weapon(wtype);
     set_behavior(btype);
 
     WeaponBank@ wb = get_weaponbank();
-    wb.set_weapon(0,"Weapon",fire_rate,1);
+    wb.set_weapon(0,wtype,fire_rate,1);
 
     //Weapon@ weapon = cast<Weapon>(node.children[0].scriptObject);
     //Weapon@ weapon = cast<Weapon>(node.GetChild("Weapon").scriptObject);
