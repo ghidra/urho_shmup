@@ -13,7 +13,7 @@ class HexSpawn:Enemy{
 	    //node.position=Vector3(8.0,0.0,8.0);
 	    node.position=pos;
 	    node.rotation=rot;
-	    //set_behavior(btype);
+	    set_behavior(btype);
 
 	    //WeaponBank@ wb = get_weaponbank();
 	    //wb.set_weapon(0,"Weapon",fire_rate,1);

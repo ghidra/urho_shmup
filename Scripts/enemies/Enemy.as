@@ -1,5 +1,6 @@
 #include "Scripts/core/Pawn.as"
 #include "Scripts/enemies/Behavior.as"
+#include "Scripts/enemies/BehaviorNoise.as"
 #include "Scripts/enemies/EnemyExplosion.as"
 
 #include "Scripts/gui/ProgressBar.as"
@@ -68,11 +69,13 @@ class Enemy:Pawn{
     target_=t;
   }
   //----------------
-  void set_behavior(const String&in btype="Behavior"){
+  void set_behavior(String btype="Behavior"){
     if(btype=="Behavior"){
       behavior_ = Behavior(node);
     }
-
+    if(btype=="BehaviorNoise"){
+      behavior_ = BehaviorNoise(node);
+    }
   }
   //-----
   void ObjectCollision(Actor@ otherObject, VariantMap& eventData){

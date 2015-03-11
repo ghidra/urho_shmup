@@ -150,6 +150,12 @@ shared class Actor : ScriptObject{
   float fit(const float v, const float l1, const float h1, const float l2=0.0f,const float h2=1.0f){
     return Clamp( l2 + (v - l1) * (h2 - l2) / (h1 - l1), l2,h2);
   }
+
+  BoundingBox bbox(Vector3 pos,Vector3 size = Vector3(0.1f,0.1f,0.1f)){
+    Vector3 size_pos = size/2.0f;
+    return BoundingBox(pos - size_pos, pos + size_pos);
+  }
+
   //------------------------
   //possible helper function
   Node@ get_node() { return node; }//this guy lets me call get at this from other scripts

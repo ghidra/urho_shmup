@@ -57,9 +57,11 @@ class ProgressBar:ScriptObject{
     //position it
     float xoff = bar_.scale.x/2.0f;
     node.position = offset_+Vector3(xoff,0.0f,0.0f);
-    Quaternion prot = node.parent.worldRotation;
-    //Print(prot.x+":"+prot.y+":"+prot.z+":"+prot.w);
-    node.rotation = prot.Inverse(); 
+    if(node.parent !is null){
+      Quaternion prot = node.parent.worldRotation;
+      node.rotation = prot.Inverse();
+    }
+    //Print(prot.x+":"+prot.y+":"+prot.z+":"+prot.w); 
   }
 
   float clamp(float v) {

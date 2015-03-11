@@ -111,14 +111,17 @@ class HexHive:Enemy{
 	void spawn_spawns(Vector3 pos, Quaternion rot){
 		for (uint i=0; i<6; i++){
 			//i need a better place to spawn this, and not straight into the scene
-			Node@ hhn = scene.CreateChild("hexspawn");
+			Node@ hhn = node.parent.CreateChild("hexspawn");
   			HexSpawn@ hh = cast<HexSpawn>(hhn.CreateScriptObject(scriptFile, "HexSpawn"));
   			
   			Quaternion hrot = Quaternion();
   			hrot.FromAngleAxis(i*60.0f,Vector3(0.0,1.0,0.0));
-  			hrot = hrot*rot;
+  			hrot = rot*hrot;
 
-  			hh.set_parameters("","",1.0,pos,hrot);
+  			Vector3 rpos = hrot*Vector3(0.0,0.0,-0.85);
+  			rpos+=pos;
+
+  			hh.set_parameters("","BehaviorNoise",1.0,rpos,hrot);
 		}
 	}
 }

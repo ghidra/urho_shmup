@@ -1,5 +1,9 @@
 Notes:
 ---------------------
+-behavior assignment in Enemny.as
+  -right now it requiers a block of if, and that will get ugly and messy as fuck
+  -is there a fix
+
 -i need to look at bullet speed causing it to miss collision
   -perhapse scale out the bounding box based on velocity.
   -so i will need to rotate the projectile to rotate along velocity

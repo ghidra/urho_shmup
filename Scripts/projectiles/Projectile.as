@@ -25,6 +25,10 @@ shared class Projectile:Actor{
   void FixedUpdate(float timeStep){
     //Actor::FixedUpdate(timeStep);
     if(node !is null){
+      //DebugRenderer@ debug = scene.debugRenderer;
+      //debug.AddBoundingBox( bbox(node.worldPosition,Vector3(1.0,1.0,1.0)) ,Color(1.0f, 0.0f, 0.0f) );
+
+
       RigidBody@ body = node.GetComponent("RigidBody");
       Vector3 v_dist = node.position-pos_born_;
       float dist = v_dist.length;
