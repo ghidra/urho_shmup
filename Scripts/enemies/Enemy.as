@@ -1,5 +1,6 @@
 #include "Scripts/core/Pawn.as"
 #include "Scripts/enemies/Behavior.as"
+#include "Scripts/enemies/BehaviorManager.as"
 #include "Scripts/enemies/BehaviorNoise.as"
 #include "Scripts/enemies/EnemyExplosion.as"
 
@@ -8,6 +9,7 @@
 class Enemy:Pawn{
   //ProgressBar@ bar_;
   Node@ target_;//this will likely be the main character that I am firing at
+  BehaviorManager@ behaviorManager_;//the behavior object
   Behavior@ behavior_;//the behavior object
   Node@ healthbar_;
 
@@ -70,12 +72,16 @@ class Enemy:Pawn{
   }
   //----------------
   void set_behavior(String btype="Behavior"){
+    behaviorManager_=BehaviorManager(node,btype);
+    //behaviorManager_.get_behavior(node,btype);
+    behavior_ = behaviorManager_.behavior_;
+    /*
     if(btype=="Behavior"){
       behavior_ = Behavior(node);
     }
     if(btype=="BehaviorNoise"){
       behavior_ = BehaviorNoise(node);
-    }
+    }*/
   }
   //-----
   void ObjectCollision(Actor@ otherObject, VariantMap& eventData){

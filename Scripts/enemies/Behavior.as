@@ -7,6 +7,7 @@ class Behavior{
 
 	int mirror_;
 	float speed_=0.005f;
+	float inc_=0.0f;
 
 	Vector3 lastPosition;
 

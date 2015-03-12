@@ -5,6 +5,7 @@ class HexSpawn:Enemy{
 	HexSpawn(){
 		mesh_="hex_hive_ship_01";
 		mesh_convex_="hex_hive_ship_shape_01";
+		speed_=10.0f;
 	}
 
 	void set_parameters(String wtype,String btype, float fire_rate, Vector3 pos=Vector3(), Quaternion rot=Quaternion(), float scl=1.0){//this all comes in from the enemy factory
