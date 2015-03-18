@@ -43,7 +43,8 @@ if [ $# -eq 0 ];then
   echo "     -urho build path"
   echo "***********************************"
 else
-  if [[ ( -d $URHOPATH ) && ( -d $URHOBUILD ) ]];then
+  if [ -d $URHOPATH ] && [ -d $URHOBUILD ];then
+  #if [[ ( -d $URHOPATH ) && ( -d $URHOBUILD ) ]];then
 
     echo "***********************************"
     echo "begun setup process"
