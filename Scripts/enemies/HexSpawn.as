@@ -14,6 +14,7 @@ class HexSpawn:Enemy{
 	    //node.position=Vector3(8.0,0.0,8.0);
 	    node.position=pos;
 	    node.rotation=rot;
+	    //get some random numbers foe noise offset
 	    set_behavior(btype);
 
 	    //WeaponBank@ wb = get_weaponbank();

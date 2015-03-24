@@ -9,7 +9,8 @@ class Behavior{
 	float speed_=0.005f;
 	float inc_=0.0f;
 
-	Vector3 lastPosition;
+	Vector3 lastPosition_;
+	Vector3 travelDirection_;
 
 	Behavior(Node@ slave, const int&in mirror = 0){
     	slave_ = slave;
@@ -52,6 +53,8 @@ class Behavior{
 		speed_ = p.speed_;//get the speed from it to appy here
 	}
 
+	//void set_parameters(Vector2 offx, Vector2 offy){}
+
 	void update(float timeStep){
 		RigidBody@ body = slave_.GetComponent("RigidBody");
 		Pawn@ pawn = cast<Pawn>(slave_.scriptObject);//get the script object, so I can call functions on it
@@ -59,16 +62,25 @@ class Behavior{
 
 		//body_.linearVelocity = body_.linearVelocity+Vector3(0.0f,0.0f,-0.1f);
 		//body.linearVelocity = Vector3(0.0f,0.0f,-speed_);
-		lastPosition = slave_.position;
+		lastPosition_ = slave_.position;
 		Vector3 updatePosition =  animCurve_.bezierP(pawn.timeIncrement_ * speed_);
 		slave_.position = updatePosition ;
+		orient();
 
-		Vector3 travelDirection = updatePosition-lastPosition;
+		/*Vector3 travelDirection = updatePosition-lastPosition_;
 		travelDirection.Normalize();
 		Quaternion align = Quaternion();
 		align.FromLookRotation(travelDirection,Vector3(0.0,1.0,0.0));
-		slave_.rotation=align;
+		slave_.rotation=align;*/
 		//+ Vector3(0.0f ,0.0f ,-20.0f + (pawn.timeIncrement_ * -speed_)
 		pawn.fire(target_node.worldPosition,timeStep);
+	}
+
+	void orient(int reverse=0){
+		travelDirection_ = slave_.position-lastPosition_;
+		travelDirection_.Normalize();
+		Quaternion align = Quaternion();
+		align.FromLookRotation(travelDirection_,Vector3(0.0,1.0,0.0));
+		slave_.rotation=align;
 	}
 }
