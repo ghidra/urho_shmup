@@ -18,6 +18,15 @@ Node@ camera_node_;
 InputPlayer@ input_player_;
 
 void Start(){
+  //background load resources
+  cache.BackgroundLoadResource("Material", "Materials/Pixel.xml");
+  cache.BackgroundLoadResource("Material", "Materials/explosion_01.xml");
+
+  cache.BackgroundLoadResource("Model", "Models/hex_hive_ship_01.mdl");
+  cache.BackgroundLoadResource("Model", "Models/hex_hive_ship_shape_01.mdl");
+  cache.BackgroundLoadResource("Model", "Models/hex_hive_shell_01.mdl");
+  cache.BackgroundLoadResource("Model", "Models/hex_hive_shell_shape_01.mdl");
+  //-----------------------
   scene_manager_ = SceneManager(1);
   scene_ = scene_manager_.scene_;
   camera_node_ = scene_manager_.camera_node_;
