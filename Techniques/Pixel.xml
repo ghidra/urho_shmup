@@ -1,8 +1,10 @@
 <technique vs="pixel" ps="pixel">
 
+  <!--<pass name="base" />-->
   <pass name="edgebase" vsdefines="EDGEBASE" psdefines="EDGEBASE"/>
   <pass name="edge" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>
 
+  <pass name="base" />
   <pass name="litbase" psdefines="AMBIENT" />
   <!--<pass name="base" psdefines="AMBIENT" blend="alpha"/>-->
   <pass name="light" depthtest="equal" depthwrite="false" blend="add" />
