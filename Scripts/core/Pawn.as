@@ -140,7 +140,7 @@ shared class Pawn:Actor{
   void build_animated_geo(const String&in mesh = "Cone",const String&in mat = "Pixel", const float&in scl = 1.0){
     Node@ chnode = node.CreateChild("Geometry");
 
-    StaticModel@ chsm_ = chnode.CreateComponent("AnimatedModel");
+    AnimatedModel@ chsm_ = chnode.CreateComponent("AnimatedModel");
     chsm_.model = cache.GetResource("Model", "Models/"+mesh+".mdl");
 
     Material@ usemat = cache.GetResource("Material", "Materials/"+mat+".xml");

@@ -27,6 +27,24 @@ class Boss:Pawn{
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
     //build_geo(mesh_,material_,0.2f);
     build_animated_geo(mesh_,material_);
+
+    attach_static_mesh("l_thumb_3","geo_handbase_l_thumbshell_3");
+    attach_static_mesh("l_thumb_2","geo_handbase_l_thumbshell_2");
+
+    attach_static_mesh("l_index_3","geo_handbase_l_indexshell_3");
+    attach_static_mesh("l_index_2","geo_handbase_l_indexshell_2");
+    attach_static_mesh("l_index_1","geo_handbase_l_indexshell_1");
+
+    attach_static_mesh("middle_3","geo_handbase_middle_shell_3");
+    attach_static_mesh("middle_2","geo_handbase_middle_shell_2");
+    attach_static_mesh("middle_1","geo_handbase_middle_shell_1");
+
+    attach_static_mesh("r_index_3","geo_handbase_r_indexshell_3");
+    attach_static_mesh("r_index_2","geo_handbase_r_indexshell_2");
+    attach_static_mesh("r_index_1","geo_handbase_r_indexshell_1");
+
+    attach_static_mesh("r_thumb_3","geo_handbase_r_thumbshell_3");
+    attach_static_mesh("r_thumb_2","geo_handbase_r_thumbshell_2");
     //build_weapon(wtype);
 
     //WeaponBank@ wb = get_weaponbank();
@@ -79,6 +97,19 @@ class Boss:Pawn{
     Node@ explosionode = scene.CreateChild("EnemyExplosion");
     EnemyExplosion@ explosion = cast<EnemyExplosion>(explosionode.CreateScriptObject(scriptFile,"EnemyExplosion"));
     explosion.set_position(pos);
+  }
+
+  void attach_static_mesh(String bonename, String meshname, String materialname="Pixel"){
+    //Node@ root = node.GetChild("Geometry");
+    //Skeleton@ skel = root.skeleton;
+    Node@ bone = node.GetChild(bonename,true);
+
+    Node@ gnode = bone.CreateChild("Geometry");
+    StaticModel@ sm = gnode.CreateComponent("StaticModel");
+    sm.model = cache.GetResource("Model", "Models/"+meshname+".mdl");
+    sm.material = mesh_material_;
+
+    //gnode.parent = bone;
   }
 
 
