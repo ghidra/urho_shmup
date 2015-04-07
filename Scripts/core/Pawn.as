@@ -7,6 +7,7 @@ shared class Pawn:Actor{
   //String mesh_ = "Sphere";
   //String material_ = "Pixel";
   Material@ mesh_material_;
+  Color color_;//store the color
   //StaticModel@ geo_;
   bool physical_movement_ = false;
   float damp_time_ = 0.5f;//the amount of time it takes to go full speed/tilt
@@ -86,7 +87,7 @@ shared class Pawn:Actor{
   //--  Build the actual pawn, mesh anf weapons
   //-----------------------
 
-  void build_geo(const String&in mesh = "Cone",const String&in mat = "Normal", const float&in scl = 1.0){
+  void build_geo(const String&in mesh = "Cone",const String&in mat = "Pixel", const float&in scl = 1.0){
     //mesh and materail, later rigid settings
     //make a new node to hold the character mesh
     Node@ chnode = node.CreateChild("Geometry");
@@ -133,6 +134,25 @@ shared class Pawn:Actor{
     weaponbank_script_.set_parameters(weapon_offsets_,weapon_rotations_,scl);
     //weaponbank_script_.set_weapon();
 
+  }
+
+  //build animated geo
+  void build_animated_geo(const String&in mesh = "Cone",const String&in mat = "Pixel", const float&in scl = 1.0){
+    Node@ chnode = node.CreateChild("Geometry");
+
+    StaticModel@ chsm_ = chnode.CreateComponent("AnimatedModel");
+    chsm_.model = cache.GetResource("Model", "Models/"+mesh+".mdl");
+
+    Material@ usemat = cache.GetResource("Material", "Materials/"+mat+".xml");
+    mesh_material_ = usemat.Clone();
+    color_ = Color(Random(1.0f),Random(1.0f),Random(1.0f),1.0f);
+    mesh_material_.shaderParameters["ObjectColor"]=Variant(color_);//single quotes didnt work
+    chsm_.material = mesh_material_;
+
+    //chsm_.material = cache.GetResource("Material", "Materials/"+mat+".xml");
+    chsm_.castShadows = true;
+
+    chnode.Scale(scl);
   }
 
   WeaponBank@ get_weaponbank(){

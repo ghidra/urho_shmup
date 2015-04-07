@@ -9,6 +9,8 @@
 #include "Scripts/enemies/Factory.as"
 #include "Scripts/enemies/HexHive.as"
 
+#include "Scripts/enemies/Boss.as";
+
 #include "Scripts/stages/CrystalCanyon.as"
 #include "Scripts/core/AnimatedSprite.as"
 
@@ -41,6 +43,10 @@ void Start(){
   Node@ player_ = container_.CreateChild("Character");
   Character@ chso = cast<Character>(player_.CreateScriptObject(scriptFile,"Character"));
   chso.set_bounds(cso.bounds_);
+
+  Node@ boss_ = container_.CreateChild("Boss");
+  Boss@ bso = cast<Boss>(boss_.CreateScriptObject(scriptFile,"Boss"));
+  bso.set_parameters();
 
   //Node@ test_ = scene_.CreateChild("test");
   //AnimatedSprite@ asso = cast<AnimatedSprite>(test_.CreateScriptObject(scriptFile,"AnimatedSprite"));
