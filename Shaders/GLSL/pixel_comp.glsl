@@ -61,7 +61,11 @@ void PS(){
       vec4 edge = texture2D(sDiffMap,uv);
       vec4 post = texture2D(sSpecMap,uv);
       vec4 depth = texture2D(sDepthBuffer,uv);
-      //vec4 decdepth = vec4(DecodeDepth(depth.xyz));
+      vec4 decdepth = vec4(DecodeDepth(depth.xyz));
+
+      //do I want to band depth
+      float bands = 10.0;
+      float banded_depth = ceil(decdepth*bands)/bands;
       //vec4 outline = texture2D(sNormalMap,vScreenPos.xy / vScreenPos.w);
       //vec4 outline = texture2D(sNormalMap,mult);
 
@@ -70,8 +74,10 @@ void PS(){
       //gl_FragColor = edge;
       //gl_FragColor = bg+edge;
       //gl_FragColor = post+depth+edge;
-      gl_FragColor = post+edge-(depth*0.75);
+      //gl_FragColor = post+edge-(decdepth.x*0.75);
+      gl_FragColor = (post-( clamp(banded_depth-0.25,0.0,1.0) ))+edge;
       //gl_FragColor = decdepth;
+      //gl_FragColor=vec4(banded_depth,banded_depth,banded_depth,1.0);
       //gl_FragColor = bg;
       //gl_FragColor = dither+outline;
       //gl_FragColor = outline;

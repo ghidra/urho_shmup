@@ -1,15 +1,20 @@
-<technique vs="pixel" ps="pixel">
+<technique vs="pixel" ps="pixel" psdefines="DIFFMAP">
 
   <!--<pass name="base" />-->
   <pass name="edgebase" vsdefines="EDGEBASE" psdefines="EDGEBASE"/>
   <pass name="edge" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>
 
-  <pass name="base" />
-  <pass name="litbase" psdefines="AMBIENT" />
+  <pass name="base" psdefines="EMISSIVEMAP"/>
+  <!--<pass name="litbase" psdefines="AMBIENT" />-->
 
-  <!--<pass name="base" psdefines="AMBIENT" blend="alpha"/>-->
+  <pass name="light" depthtest="equal" depthwrite="false" blend="add" />
+  <!--<pass name="prepass" psdefines="PREPASS" />-->
+  <pass name="material" psdefines="MATERIAL EMISSIVEMAP" depthtest="equal" depthwrite="false" />
+
+  <!--<pass name="base" psdefines="AMBIENT" blend="alpha"/>
   <pass name="light" depthtest="equal" depthwrite="false" blend="add" />
   <pass name="material" psdefines="MATERIAL" depthtest="equal" depthwrite="false" />
+  -->
   <pass name="depth" vs="Depth" ps="Depth" />
   <pass name="shadow" vs="Shadow" ps="Shadow" />
 

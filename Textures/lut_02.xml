@@ -14,6 +14,7 @@
     <colorlut name="killianeng_01_lut.png" />
     <colorlut name="killianeng_01_lut.png" />-->
     <colorlut name="lut_02.png" />
-    <mipmap enable="false" />
-    <quality low="0" />
+    <!--<mipmap enable="false" />-->
+    <filter mode="nearest" />
+    <!--<quality low="0" />-->
 </texture3d>
