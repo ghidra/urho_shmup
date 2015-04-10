@@ -5,7 +5,7 @@
     <parameter name="EdgeThreshold" value="0.1" />
     <parameter name="MatDiffColor" value="0.5 0.5 0.5 1.0" />
     <parameter name="MatEmissiveColor" value="0.1 0.1 0.1" />
-    <texture unit="diffuse" name="Textures/hand_diffuse_02.png" />
+    <texture unit="diffuse" name="Textures/hand_diffuse_03.png" />
     <texture unit="emissive" name="Textures/hand_emissive_02.png" />
     <!--<parameter name="Palette" value="0.204 0.251 0.895 0.93 0.075 0.161 0.459 0.6 0.142 0.275 0.381 0.491 1.0 1.0 1.0 1.0" />--> <!--column major-->
     <!--<parameter name="Luma" value="0.077 0.125 0.382 0.453" />-->

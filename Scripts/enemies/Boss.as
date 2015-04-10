@@ -13,7 +13,7 @@ class Boss:Pawn{
     speed_=0.1f;
     collision_layer_=16;
     collision_mask_=51;
-    mesh_="geo_handbase_06";
+    mesh_="geo_handbase_07";
     material_="HandBoss_01";
     health_=100;
     maxHealth_=100;
