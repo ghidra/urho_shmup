@@ -5,7 +5,7 @@
   <pass name="edge" vsdefines="EDGE" psdefines="EDGE" blend="alpha"/>
 
   <pass name="base" psdefines="EMISSIVEMAP"/>
-  <!--<pass name="litbase" psdefines="AMBIENT" />-->
+  <pass name="litbase" psdefines="AMBIENT" />
 
   <pass name="light" depthtest="equal" depthwrite="false" blend="add" />
   <!--<pass name="prepass" psdefines="PREPASS" />-->
