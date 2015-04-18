@@ -13,7 +13,7 @@ class Boss:Pawn{
     speed_=0.1f;
     collision_layer_=16;
     collision_mask_=51;
-    mesh_="geo_handbase_07";
+    mesh_="boss_hand/geo_handbase_08";
     material_="HandBoss_01";
     health_=100;
     maxHealth_=100;
@@ -28,23 +28,23 @@ class Boss:Pawn{
     //build_geo(mesh_,material_,0.2f);
     build_animated_geo(mesh_,material_);
 
-    attach_static_mesh("l_thumb_3","geo_handbase_l_thumbshell_3");
-    attach_static_mesh("l_thumb_2","geo_handbase_l_thumbshell_2");
+    attach_static_mesh("l_thumb_3","boss_hand/geo_handbase_l_thumbshell_3");
+    attach_static_mesh("l_thumb_2","boss_hand/geo_handbase_l_thumbshell_2");
 
-    attach_static_mesh("l_index_3","geo_handbase_l_indexshell_3");
-    attach_static_mesh("l_index_2","geo_handbase_l_indexshell_2");
-    attach_static_mesh("l_index_1","geo_handbase_l_indexshell_1");
+    attach_static_mesh("l_index_3","boss_hand/geo_handbase_l_indexshell_3");
+    attach_static_mesh("l_index_2","boss_hand/geo_handbase_l_indexshell_2");
+    attach_static_mesh("l_index_1","boss_hand/geo_handbase_l_indexshell_1");
 
-    attach_static_mesh("middle_3","geo_handbase_middle_shell_3");
-    attach_static_mesh("middle_2","geo_handbase_middle_shell_2");
-    attach_static_mesh("middle_1","geo_handbase_middle_shell_1");
+    attach_static_mesh("middle_3","boss_hand/geo_handbase_middle_shell_3");
+    attach_static_mesh("middle_2","boss_hand/geo_handbase_middle_shell_2");
+    attach_static_mesh("middle_1","boss_hand/geo_handbase_middle_shell_1");
 
-    attach_static_mesh("r_index_3","geo_handbase_r_indexshell_3");
-    attach_static_mesh("r_index_2","geo_handbase_r_indexshell_2");
-    attach_static_mesh("r_index_1","geo_handbase_r_indexshell_1");
+    attach_static_mesh("r_index_3","boss_hand/geo_handbase_r_indexshell_3");
+    attach_static_mesh("r_index_2","boss_hand/geo_handbase_r_indexshell_2");
+    attach_static_mesh("r_index_1","boss_hand/geo_handbase_r_indexshell_1");
 
-    attach_static_mesh("r_thumb_3","geo_handbase_r_thumbshell_3");
-    attach_static_mesh("r_thumb_2","geo_handbase_r_thumbshell_2");
+    attach_static_mesh("r_thumb_3","boss_hand/geo_handbase_r_thumbshell_3");
+    attach_static_mesh("r_thumb_2","boss_hand/geo_handbase_r_thumbshell_2");
     //build_weapon(wtype);
 
     //WeaponBank@ wb = get_weaponbank();

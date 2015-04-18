@@ -21,7 +21,7 @@
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="AnimatedModel" id="16777216">
-			<attribute name="Model" value="Model;Models/geo_handbase_06.mdl" />
+			<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_08.mdl" />
 			<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 			<attribute name="Cast Shadows" value="true" />
 			<attribute name="Bone Animation Enabled">
@@ -72,17 +72,17 @@
 			</attribute>
 			<attribute name="Animation States">
 				<variant type="Int" value="2" />
-				<variant type="ResourceRef" value="Animation;Models/geo_handbase_03_centerlazer.ani" />
+				<variant type="ResourceRef" value="Animation;Models/boss_hand/geo_handbase_03_centerlazer.ani" />
 				<variant type="String" value="robotHand_root" />
 				<variant type="Bool" value="true" />
 				<variant type="Float" value="1" />
-				<variant type="Float" value="0.42" />
+				<variant type="Float" value="0.123019" />
 				<variant type="Int" value="0" />
-				<variant type="ResourceRef" value="Animation;Models/geo_handbase_03_side_and_center_bullets.ani" />
+				<variant type="ResourceRef" value="Animation;Models/boss_hand/geo_handbase_03_close.ani" />
 				<variant type="String" value="robotHand_root" />
 				<variant type="Bool" value="true" />
 				<variant type="Float" value="0" />
-				<variant type="Float" value="0" />
+				<variant type="Float" value="0.690114" />
 				<variant type="Int" value="0" />
 			</attribute>
 		</component>
@@ -90,34 +90,34 @@
 			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="robotHand_root" />
 			<attribute name="Position" value="6.28635 -1.54583 0.000228718" />
-			<attribute name="Rotation" value="0.699057 -0.00677493 -0.714971 -0.00941839" />
+			<attribute name="Rotation" value="0.726613 0.00337054 -0.687024 0.00451251" />
 			<attribute name="Scale" value="1 1 1" />
 			<attribute name="Variables" />
 			<node id="16777220">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="middle_1" />
-				<attribute name="Position" value="-0.000228994 0.816494 6.95897" />
-				<attribute name="Rotation" value="0.525452 0.473182 -0.525451 -0.473182" />
+				<attribute name="Position" value="-0.000228991 0.816484 6.9589" />
+				<attribute name="Rotation" value="0.518319 0.480984 -0.518319 -0.480984" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<node id="16777219">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="middle_2" />
-					<attribute name="Position" value="7.36676e-09 5.10504 -2.21771e-09" />
-					<attribute name="Rotation" value="0.959519 2.0442e-07 2.47435e-07 -0.281643" />
+					<attribute name="Position" value="5.52611e-08 5.10504 2.37688e-08" />
+					<attribute name="Rotation" value="0.991925 2.46711e-07 2.09824e-07 -0.126828" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777218">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="middle_3" />
-						<attribute name="Position" value="-4.24044e-07 4.29204 -6.4075e-09" />
-						<attribute name="Rotation" value="0.975803 -1.354e-07 -6.33542e-07 -0.218652" />
+						<attribute name="Position" value="7.649e-09 4.29204 1.34686e-08" />
+						<attribute name="Rotation" value="0.996105 -2.12223e-07 -6.118e-07 -0.0881749" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777217">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="middle_tip" />
-							<attribute name="Position" value="2.73483e-07 3.04871 1.88872e-08" />
+							<attribute name="Position" value="-1.5301e-07 3.04871 -1.23523e-08" />
 							<attribute name="Rotation" value="0.34692 -0.616154 0.346921 0.616155" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
@@ -130,7 +130,7 @@
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<component type="StaticModel" id="16777222">
-								<attribute name="Model" value="Model;Models/geo_handbase_middle_shell_3.mdl" />
+								<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_middle_shell_3.mdl" />
 								<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 							</component>
 						</node>
@@ -143,7 +143,7 @@
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<component type="StaticModel" id="16777221">
-							<attribute name="Model" value="Model;Models/geo_handbase_middle_shell_2.mdl" />
+							<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_middle_shell_2.mdl" />
 							<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 						</component>
 					</node>
@@ -156,7 +156,7 @@
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="16777220">
-						<attribute name="Model" value="Model;Models/geo_handbase_middle_shell_1.mdl" />
+						<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_middle_shell_1.mdl" />
 						<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 					</component>
 				</node>
@@ -164,35 +164,35 @@
 			<node id="16777225">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="r_thumb_root" />
-				<attribute name="Position" value="3.73001 -0.6301 0.795167" />
-				<attribute name="Rotation" value="0.701812 0.154344 -0.0809039 -0.690719" />
+				<attribute name="Position" value="3.73004 -0.630105 0.795171" />
+				<attribute name="Rotation" value="0.685649 0.203097 -0.15363 -0.681935" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<node id="16777224">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="r_thumb_1" />
-					<attribute name="Position" value="-3.86238e-07 1.66317 5.36442e-08" />
+					<attribute name="Position" value="2.74292e-07 1.66317 -1.50454e-07" />
 					<attribute name="Rotation" value="0.992455 0.113814 -0.0352609 -0.0289324" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777223">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="r_thumb_2" />
-						<attribute name="Position" value="3.98755e-07 3.33531 -1.12858e-07" />
-						<attribute name="Rotation" value="0.994073 -0.101374 0.0197212 0.0339718" />
+						<attribute name="Position" value="-1.31656e-07 3.33531 -5.98564e-07" />
+						<attribute name="Rotation" value="0.979099 0.192555 0.0196549 -0.0624566" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777222">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="r_thumb_3" />
-							<attribute name="Position" value="2.60174e-07 4.44384 -5.3823e-07" />
-							<attribute name="Rotation" value="0.939437 0.326001 0.0277527 -0.102035" />
+							<attribute name="Position" value="-1.80939e-07 4.44384 6.18499e-07" />
+							<attribute name="Rotation" value="0.989256 0.135516 0.0307467 -0.0454183" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<node id="16777221">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="r_thumb_tip" />
-								<attribute name="Position" value="1.49608e-07 2.8548 2.5332e-08" />
+								<attribute name="Position" value="4.65503e-07 2.8548 4.90271e-07" />
 								<attribute name="Rotation" value="0.470686 -0.390855 0.527688 0.589265" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
@@ -205,7 +205,7 @@
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
 								<component type="StaticModel" id="16777223">
-									<attribute name="Model" value="Model;Models/geo_handbase_r_thumbshell_3.mdl" />
+									<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_r_thumbshell_3.mdl" />
 									<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 								</component>
 							</node>
@@ -218,7 +218,7 @@
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<component type="StaticModel" id="16777224">
-								<attribute name="Model" value="Model;Models/geo_handbase_r_thumbshell_2.mdl" />
+								<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_r_thumbshell_2.mdl" />
 								<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 							</component>
 						</node>
@@ -235,7 +235,7 @@
 				<node id="16777226">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="r_webbing_root_tip" />
-					<attribute name="Position" value="-0.260182 -0.131942 4.57681" />
+					<attribute name="Position" value="-0.260183 -0.131942 4.57681" />
 					<attribute name="Rotation" value="0.986423 0.103816 -0.106981 0.0688992" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
@@ -243,14 +243,14 @@
 				<node id="16777234">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="r_webbing_1" />
-					<attribute name="Position" value="-1.06108e-05 -2.51174e-06 -1.0407e-06" />
-					<attribute name="Rotation" value="0.997152 0.0130057 0.073186 0.0127716" />
+					<attribute name="Position" value="7.47892e-07 -6.57068e-07 -2.01583e-07" />
+					<attribute name="Rotation" value="0.998543 0.0180895 0.0494071 0.0119982" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777227">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="r_webbing_1_tip" />
-						<attribute name="Position" value="-0.0356009 -0.0599705 4.04577" />
+						<attribute name="Position" value="-0.0356011 -0.0599706 4.04577" />
 						<attribute name="Rotation" value="0.982414 0.0810915 -0.155519 0.0640319" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
@@ -258,14 +258,14 @@
 					<node id="16777233">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="r_webbing_2" />
-						<attribute name="Position" value="-8.74758e-06 -1.87278e-06 -3.3474e-06" />
-						<attribute name="Rotation" value="0.993017 0.0143216 0.116039 0.0157293" />
+						<attribute name="Position" value="1.0232e-06 -7.80729e-08 -7.15256e-07" />
+						<attribute name="Rotation" value="0.995427 0.0194496 0.0923607 0.0147177" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777228">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="r_webbing_2_tip" />
-							<attribute name="Position" value="0.0322632 -0.00691144 3.77382" />
+							<attribute name="Position" value="0.0322634 -0.00691135 3.77382" />
 							<attribute name="Rotation" value="0.972095 0.0548938 -0.220468 0.0584077" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
@@ -273,14 +273,14 @@
 						<node id="16777232">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="r_webbing_3" />
-							<attribute name="Position" value="-7.76887e-06 -2.18153e-06 -3.4076e-06" />
-							<attribute name="Rotation" value="0.990789 0.0155967 0.133265 0.0182892" />
+							<attribute name="Position" value="5.79045e-07 -6.08848e-07 -6.03864e-07" />
+							<attribute name="Rotation" value="0.993605 0.0207715 0.109646 0.0171634" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<node id="16777229">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="r_webbing_3_tip" />
-								<attribute name="Position" value="-0.035333 0.0300562 3.85985" />
+								<attribute name="Position" value="-0.0353327 0.0300564 3.85985" />
 								<attribute name="Rotation" value="0.951882 0.025349 -0.300871 0.0524806" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
@@ -288,14 +288,14 @@
 							<node id="16777231">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="r_webbing_4" />
-								<attribute name="Position" value="-6.35505e-06 -1.50323e-06 -5.59408e-06" />
-								<attribute name="Rotation" value="0.693822 0.712093 0.105371 -0.0207922" />
+								<attribute name="Position" value="1.52774e-06 8.09064e-08 -7.34341e-07" />
+								<attribute name="Rotation" value="0.69239 0.716155 0.0877379 -0.0045335" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
 								<node id="16777230">
 									<attribute name="Is Enabled" value="true" />
 									<attribute name="Name" value="r_webbing_4_tip" />
-									<attribute name="Position" value="3.05325e-07 4.36299 -3.49432e-07" />
+									<attribute name="Position" value="2.54825e-07 4.36299 -1.2136e-07" />
 									<attribute name="Rotation" value="0.650577 -0.667421 -0.254098 0.258329" />
 									<attribute name="Scale" value="1 1 1" />
 									<attribute name="Variables" />
@@ -308,28 +308,28 @@
 			<node id="16777239">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="l_index_1" />
-				<attribute name="Position" value="-3.08059 0.246963 6.25075" />
-				<attribute name="Rotation" value="0.380435 0.596761 -0.595912 -0.379519" />
+				<attribute name="Position" value="-3.08057 0.246963 6.25075" />
+				<attribute name="Rotation" value="0.477714 0.521334 -0.521334 -0.477714" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<node id="16777238">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="l_index_2" />
-					<attribute name="Position" value="2.83122e-08 4.27788 2.86642e-07" />
-					<attribute name="Rotation" value="0.976368 -0.204943 0.0248572 -0.0639144" />
+					<attribute name="Position" value="-5.7391e-08 4.27788 -1.4742e-07" />
+					<attribute name="Rotation" value="0.996917 6.98258e-08 -1.66598e-08 -0.0784589" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777237">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="l_index_3" />
-						<attribute name="Position" value="-5.96046e-08 3.34392 7.15259e-09" />
-						<attribute name="Rotation" value="0.999705 -0.014543 0.000526107 -0.0194414" />
+						<attribute name="Position" value="7.7703e-08 3.34392 -4.69853e-09" />
+						<attribute name="Rotation" value="0.999048 -1.80728e-08 1.14648e-08 -0.0436195" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777236">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="l_index_tip" />
-							<attribute name="Position" value="2.84389e-07 2.83458 3.37213e-07" />
+							<attribute name="Position" value="-5.20911e-07 2.83458 -5.56482e-08" />
 							<attribute name="Rotation" value="0.5 -0.5 0.5 0.5" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
@@ -342,7 +342,7 @@
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<component type="StaticModel" id="16777227">
-								<attribute name="Model" value="Model;Models/geo_handbase_l_indexshell_3.mdl" />
+								<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_l_indexshell_3.mdl" />
 								<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 							</component>
 						</node>
@@ -355,7 +355,7 @@
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<component type="StaticModel" id="16777226">
-							<attribute name="Model" value="Model;Models/geo_handbase_l_indexshell_2.mdl" />
+							<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_l_indexshell_2.mdl" />
 							<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 						</component>
 					</node>
@@ -368,7 +368,7 @@
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="16777225">
-						<attribute name="Model" value="Model;Models/geo_handbase_l_indexshell_1.mdl" />
+						<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_l_indexshell_1.mdl" />
 						<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 					</component>
 				</node>
@@ -377,7 +377,7 @@
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="group43" />
 				<attribute name="Position" value="-7.21247 1.54583 6.28635" />
-				<attribute name="Rotation" value="-2.95331e-10 -1 -5.7189e-11 -7.54181e-08" />
+				<attribute name="Rotation" value="-2.66779e-11 -1 -8.64722e-13 -7.36431e-08" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<node id="16777249">
@@ -390,7 +390,7 @@
 					<node id="16777240">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="l_webbing_root_tip" />
-						<attribute name="Position" value="0.260196 0.131943 -4.57681" />
+						<attribute name="Position" value="0.260195 0.131943 -4.57681" />
 						<attribute name="Rotation" value="0.986423 0.103815 -0.106983 0.0688995" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
@@ -398,14 +398,14 @@
 					<node id="16777248">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="l_webbing_1" />
-						<attribute name="Position" value="0.000255877 2.21503e-05 0.00016398" />
-						<attribute name="Rotation" value="0.996276 0.0143246 0.0840281 0.013012" />
+						<attribute name="Position" value="1.84481e-07 9.53674e-07 2.79505e-07" />
+						<attribute name="Rotation" value="0.998541 0.0181743 0.0494111 0.0119942" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777241">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="l_webbing_1_tip" />
-							<attribute name="Position" value="0.0355957 0.0599734 -4.04577" />
+							<attribute name="Position" value="0.035596 0.0599734 -4.04577" />
 							<attribute name="Rotation" value="0.982418 0.0810906 -0.155499 0.0640334" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
@@ -413,14 +413,14 @@
 						<node id="16777247">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="l_webbing_2" />
-							<attribute name="Position" value="0.000257239 1.87659e-05 0.000193926" />
-							<attribute name="Rotation" value="0.991673 0.0155883 0.126837 0.0159164" />
+							<attribute name="Position" value="2.98023e-08 2.5552e-08 4.65503e-07" />
+							<attribute name="Rotation" value="0.995425 0.0195347 0.0923663 0.0147096" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<node id="16777242">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="l_webbing_2_tip" />
-								<attribute name="Position" value="-0.0322765 0.00691022 -3.77382" />
+								<attribute name="Position" value="-0.0322764 0.00691028 -3.77382" />
 								<attribute name="Rotation" value="0.971915 0.0549416 -0.221261 0.0583627" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
@@ -428,14 +428,14 @@
 							<node id="16777246">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="l_webbing_3" />
-								<attribute name="Position" value="0.000236672 1.26076e-05 0.000243124" />
-								<attribute name="Rotation" value="0.989257 0.0168094 0.144043 0.0184562" />
+								<attribute name="Position" value="-5.59211e-07 1.41928e-07 5.5066e-07" />
+								<attribute name="Rotation" value="0.993603 0.0208564 0.109658 0.0171542" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
 								<node id="16777243">
 									<attribute name="Is Enabled" value="true" />
 									<attribute name="Name" value="l_webbing_3_tip" />
-									<attribute name="Position" value="0.0353585 -0.0300603 -3.85986" />
+									<attribute name="Position" value="0.0353583 -0.0300603 -3.85986" />
 									<attribute name="Rotation" value="0.951759 0.0253704 -0.301262 0.0524702" />
 									<attribute name="Scale" value="1 1 1" />
 									<attribute name="Variables" />
@@ -443,14 +443,14 @@
 								<node id="16777245">
 									<attribute name="Is Enabled" value="true" />
 									<attribute name="Name" value="l_webbing_4" />
-									<attribute name="Position" value="0.00019469 4.44293e-06 0.000292845" />
-									<attribute name="Rotation" value="0.367282 -0.233139 -0.611517 0.660907" />
+									<attribute name="Position" value="-4.24341e-07 -4.96722e-07 -1.07188e-07" />
+									<attribute name="Rotation" value="0.348138 -0.255742 -0.625926 0.649318" />
 									<attribute name="Scale" value="1 1 1" />
 									<attribute name="Variables" />
 									<node id="16777244">
 										<attribute name="Is Enabled" value="true" />
 										<attribute name="Name" value="l_webbing_4_tip" />
-										<attribute name="Position" value="4.1008e-07 4.363 4.95911e-07" />
+										<attribute name="Position" value="9.65411e-08 4.363 -8.28798e-07" />
 										<attribute name="Rotation" value="0.547489 0.0894395 0.460912 -0.692688" />
 										<attribute name="Scale" value="1 1 1" />
 										<attribute name="Variables" />
@@ -463,36 +463,36 @@
 				<node id="16777254">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="l_thumb_root" />
-					<attribute name="Position" value="3.60731 2.17578 5.5335" />
-					<attribute name="Rotation" value="0.159361 0.618104 -0.696644 0.327472" />
+					<attribute name="Position" value="3.60612 2.17593 5.53336" />
+					<attribute name="Rotation" value="0.0826487 0.569072 -0.706965 0.411736" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777253">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="l_thumb_1" />
-						<attribute name="Position" value="-1.52588e-07 1.66317 6.38962e-07" />
+						<attribute name="Position" value="3.46294e-07 1.66317 3.3496e-07" />
 						<attribute name="Rotation" value="0.809012 0.107832 -0.575942 0.0465074" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777252">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="l_thumb_2" />
-							<attribute name="Position" value="-1.81198e-07 3.33531 3.38554e-07" />
-							<attribute name="Rotation" value="0.907351 -0.0995421 -0.403825 0.0610745" />
+							<attribute name="Position" value="-2.84359e-08 3.33531 -2.27084e-07" />
+							<attribute name="Rotation" value="0.894497 0.169167 -0.398619 -0.111179" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<node id="16777251">
 								<attribute name="Is Enabled" value="true" />
 								<attribute name="Name" value="l_thumb_3" />
-								<attribute name="Position" value="-2.0504e-07 4.44384 1.00136e-07" />
-								<attribute name="Rotation" value="0.87997 0.121851 -0.270044 -0.371324" />
+								<attribute name="Position" value="-1.95916e-07 4.44384 3.1682e-07" />
+								<attribute name="Rotation" value="0.945915 0.0466317 -0.291233 -0.135103" />
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
 								<node id="16777250">
 									<attribute name="Is Enabled" value="true" />
 									<attribute name="Name" value="l_thumb_tip" />
-									<attribute name="Position" value="6.93798e-07 2.8548 7.59959e-08" />
-									<attribute name="Rotation" value="0.705355 0.70526 -0.0497513 -0.0510695" />
+									<attribute name="Position" value="5.39351e-07 2.8548 1.19209e-07" />
+									<attribute name="Rotation" value="0.705355 0.70526 -0.0497512 -0.0510695" />
 									<attribute name="Scale" value="1 1 1" />
 									<attribute name="Variables" />
 								</node>
@@ -504,7 +504,7 @@
 									<attribute name="Scale" value="1 1 1" />
 									<attribute name="Variables" />
 									<component type="StaticModel" id="16777229">
-										<attribute name="Model" value="Model;Models/geo_handbase_l_thumbshell_3.mdl" />
+										<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_l_thumbshell_3.mdl" />
 										<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 									</component>
 								</node>
@@ -517,7 +517,7 @@
 								<attribute name="Scale" value="1 1 1" />
 								<attribute name="Variables" />
 								<component type="StaticModel" id="16777228">
-									<attribute name="Model" value="Model;Models/geo_handbase_l_thumbshell_2.mdl" />
+									<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_l_thumbshell_2.mdl" />
 									<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 								</component>
 							</node>
@@ -528,28 +528,28 @@
 			<node id="16777259">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="r_index_1" />
-				<attribute name="Position" value="3.08845 0.246963 6.25019" />
-				<attribute name="Rotation" value="0.59686 0.378011 -0.378941 -0.597721" />
+				<attribute name="Position" value="3.08844 0.246963 6.25019" />
+				<attribute name="Rotation" value="0.548663 0.445723 -0.446037 -0.548954" />
 				<attribute name="Scale" value="1 1 1" />
 				<attribute name="Variables" />
 				<node id="16777258">
 					<attribute name="Is Enabled" value="true" />
 					<attribute name="Name" value="r_index_2" />
-					<attribute name="Position" value="-4.54484e-09 4.27788 2.04444e-07" />
-					<attribute name="Rotation" value="0.974455 0.21995 -0.0130215 -0.0434656" />
+					<attribute name="Position" value="-1.59218e-08 4.27788 2.30915e-07" />
+					<attribute name="Rotation" value="0.996906 0.00467442 -0.000376226 -0.0784581" />
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<node id="16777257">
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Name" value="r_index_3" />
-						<attribute name="Position" value="8.46386e-08 3.34392 2.13087e-08" />
-						<attribute name="Rotation" value="0.999596 0.0104446 -0.0166086 0.0205678" />
+						<attribute name="Position" value="-1.62521e-07 3.34392 3.98298e-07" />
+						<attribute name="Rotation" value="0.998968 0.0126739 -0.000576895 -0.0436155" />
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<node id="16777256">
 							<attribute name="Is Enabled" value="true" />
 							<attribute name="Name" value="r_index_tip" />
-							<attribute name="Position" value="-2.38419e-08 2.83458 1.35005e-07" />
+							<attribute name="Position" value="-1.34844e-08 2.83458 -1.21565e-07" />
 							<attribute name="Rotation" value="0.5 -0.5 0.5 0.5" />
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
@@ -562,7 +562,7 @@
 							<attribute name="Scale" value="1 1 1" />
 							<attribute name="Variables" />
 							<component type="StaticModel" id="16777232">
-								<attribute name="Model" value="Model;Models/geo_handbase_l_indexshell_3.mdl" />
+								<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_r_indexshell_3.mdl" />
 								<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 							</component>
 						</node>
@@ -575,7 +575,7 @@
 						<attribute name="Scale" value="1 1 1" />
 						<attribute name="Variables" />
 						<component type="StaticModel" id="16777231">
-							<attribute name="Model" value="Model;Models/geo_handbase_r_indexshell_2.mdl" />
+							<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_r_indexshell_2.mdl" />
 							<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 						</component>
 					</node>
@@ -588,7 +588,7 @@
 					<attribute name="Scale" value="1 1 1" />
 					<attribute name="Variables" />
 					<component type="StaticModel" id="16777230">
-						<attribute name="Model" value="Model;Models/geo_handbase_r_indexshell_1.mdl" />
+						<attribute name="Model" value="Model;Models/boss_hand/geo_handbase_r_indexshell_1.mdl" />
 						<attribute name="Material" value="Material;Materials/HandBoss_01.xml" />
 					</component>
 				</node>
@@ -599,7 +599,7 @@
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="" />
 		<attribute name="Position" value="-12.5639 16.4507 7.97635" />
-		<attribute name="Rotation" value="0.404202 0.13399 -0.284701 0.858844" />
+		<attribute name="Rotation" value="0.301108 0.301108 -0.639792 0.639792" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Light" id="16777217">
