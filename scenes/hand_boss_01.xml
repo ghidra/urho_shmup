@@ -599,23 +599,24 @@
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="" />
 		<attribute name="Position" value="-12.5639 16.4507 7.97635" />
-		<attribute name="Rotation" value="0.301108 0.301108 -0.639792 0.639792" />
+		<attribute name="Rotation" value="0.976561 0.207663 -0.055368 0.0117738" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Light" id="16777217">
 			<attribute name="Light Type" value="Directional" />
+			<attribute name="Brightness Multiplier" value="0.5" />
 			<attribute name="Cast Shadows" value="true" />
 		</component>
 	</node>
 	<node id="16777263">
 		<attribute name="Is Enabled" value="true" />
 		<attribute name="Name" value="" />
-		<attribute name="Position" value="-0.9558 7.08838 8.18341" />
+		<attribute name="Position" value="0 0 0" />
 		<attribute name="Rotation" value="1 0 0 0" />
 		<attribute name="Scale" value="1 1 1" />
 		<attribute name="Variables" />
 		<component type="Light" id="16777219">
-			<attribute name="Brightness Multiplier" value="0" />
+			<attribute name="Brightness Multiplier" value="0.1" />
 			<attribute name="Range" value="200" />
 			<attribute name="Light Shape Texture" value="TextureCube;" />
 			<attribute name="Cast Shadows" value="true" />
