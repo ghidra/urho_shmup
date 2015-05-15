@@ -149,6 +149,11 @@ varying vec4 vWorldPos;
 
   #endif
 
+  #ifdef EMISSIVEMAP
+    uniform float cEmissiveThreshold;
+    uniform float cEmissiveAnimTime;
+  #endif
+
 #endif
 
 //--------------
@@ -390,18 +395,23 @@ void PS()
             //finalColor += cMatEmissiveColor * texture2D(sEmissiveMap, vTexCoord.xy).rgb;
 
             //These are my modifications foe lights basically
-            float duration = 1.8f;
             vec3 emissiveColor = texture2D(sEmissiveMap, vTexCoord.xy).rgb;
-            float modtime = mod(cElapsedTimePS-(emissiveColor.r*duration),duration);
+            float modtime = mod(cElapsedTimePS-((mod(emissiveColor.r+emissiveColor.b,1.0f))*cEmissiveAnimTime),cEmissiveAnimTime);
+            
             
             vec3 emissiveLight = vec3(0.0f,0.0f,0.0f);
             
-            if( emissiveColor.r > 0.0f && modtime < 0.2f){
-                emissiveLight = vec3(1.0f,1.0f,1.0f);
+            if( emissiveColor.r > 0.0f && modtime < cEmissiveThreshold){
+                //if I want to have a falloff, I can do this:
+                modtime = clamp(cEmissiveThreshold-modtime,0.0f,1.0f);
+                emissiveLight = vec3(1.0f,1.0f,1.0f)*modtime;//turn off the modtime mult if I want either on or off
                 //emissiveLight = vec3(1.0f,1.0f,1.0f) * (cElapsedTimePS*0.01);
+                finalColor = cMatEmissiveColor * emissiveLight * texture2D(sDiffMap, vTexCoord.xy).rgb *2.0f;
+                finalColor = clamp(finalColor,0.0f,1.0f);
             }
 
-            finalColor += cMatEmissiveColor * emissiveLight;
+            //finalColor += cMatEmissiveColor * emissiveLight;
+            //finalColor = clamp(finalColor,0.0f,1.0f);
             //finalColor.clamp(0.0f,1.0f);
 
             //finalColor = cMatEmissiveColor * texture2D(sEmissiveMap, vTexCoord.xy).rgb * texture2D(sDiffMap, vTexCoord.xy).rgb *2.0;
