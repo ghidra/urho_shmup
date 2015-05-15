@@ -390,14 +390,19 @@ void PS()
             //finalColor += cMatEmissiveColor * texture2D(sEmissiveMap, vTexCoord.xy).rgb;
 
             //These are my modifications foe lights basically
-            float modtime = mod(cElapsedTimePS,2.0f)/2.0f;
+            float duration = 1.8f;
             vec3 emissiveColor = texture2D(sEmissiveMap, vTexCoord.xy).rgb;
+            float modtime = mod(cElapsedTimePS-(emissiveColor.r*duration),duration);
+            
             vec3 emissiveLight = vec3(0.0f,0.0f,0.0f);
-            if( emissiveColor.r > modtime-0.01 && emissiveColor.r < modtime+0.01){
+            
+            if( emissiveColor.r > 0.0f && modtime < 0.2f){
                 emissiveLight = vec3(1.0f,1.0f,1.0f);
+                //emissiveLight = vec3(1.0f,1.0f,1.0f) * (cElapsedTimePS*0.01);
             }
 
-            finalColor = cMatEmissiveColor * emissiveLight;
+            finalColor += cMatEmissiveColor * emissiveLight;
+            //finalColor.clamp(0.0f,1.0f);
 
             //finalColor = cMatEmissiveColor * texture2D(sEmissiveMap, vTexCoord.xy).rgb * texture2D(sDiffMap, vTexCoord.xy).rgb *2.0;
         
