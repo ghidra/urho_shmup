@@ -1,5 +1,7 @@
 class InputBasics{
 
+  bool drawDebug_ = false;
+
   InputBasics(uint i = 0){
     SubscribeToEvent("KeyDown", "HandleKeyDown");
   }
@@ -19,6 +21,9 @@ class InputBasics{
     }else if (key == KEY_F2){// Toggle debug HUD with F2
       debugHud.ToggleAll();
     }
+
+    if (key == KEY_F3)
+        drawDebug_ = !drawDebug_;
 
     // Common rendering quality controls, only when UI has no focused element
     if (ui.focusElement is null){// Texture quality

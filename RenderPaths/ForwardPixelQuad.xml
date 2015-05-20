@@ -2,9 +2,9 @@
     <!--<rendertarget name="palette" sizedivisor="2 2" filter="false" format="rgba"/>-->
     <!--based on dithered_quad-->
     
-    <rendertarget name="postcolor" sizedivisor="2 2" filter="false" format="rgba"/>
-    <rendertarget name="edge" sizedivisor="2 2" filter="false" format="rgba"/>
-    <rendertarget name="depth" sizedivisor="2 2" filter="false" format="lineardepth" />
+    <rendertarget name="postcolor" sizedivisor="1 1" filter="false" format="rgba"/>
+    <rendertarget name="edge" sizedivisor="1 1" filter="false" format="rgba"/>
+    <rendertarget name="depth" sizedivisor="1 1" filter="false" format="lineardepth" />
     
     <!--
     <rendertarget name="postcolor" sizedivisor="1 1" filter="false" format="rgba"/>

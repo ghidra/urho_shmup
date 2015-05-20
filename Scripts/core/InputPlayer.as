@@ -77,6 +77,10 @@ class InputPlayer : InputBasics{
     else
       stop_move();
 
+    if(drawDebug_){
+      scene_manager_.scene_.physicsWorld.DrawDebugGeometry(true);
+    }
+
   }
   //------------------------
   void set_scene_manager(SceneManager@ scene_manager){
