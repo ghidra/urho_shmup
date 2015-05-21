@@ -32,6 +32,7 @@ class Enemy:Pawn{
   void set_parameters(String wtype,String btype, float fire_rate, Vector3 pos=Vector3(), Quaternion rot=Quaternion(), float scl=1.0){//this all comes in from the enemy factory
     //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
     build_geo(mesh_,material_,0.2f);
+    mesh_material_.shaderParameters["ObjectBlend"]=Variant(1.0f);
     //build_weapon(wtype);
     set_behavior(btype);
 

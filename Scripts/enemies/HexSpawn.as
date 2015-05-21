@@ -11,6 +11,7 @@ class HexSpawn:Enemy{
 	void set_parameters(String wtype,String btype, float fire_rate, Vector3 pos=Vector3(), Quaternion rot=Quaternion(), float scl=1.0){//this all comes in from the enemy factory
 	    //etype, ctype, wtype, btype, firerate (enemy type, class type, weapon type, behavior type, fire rate)
 	    build_geo(mesh_,material_,3.0f);
+	    mesh_material_.shaderParameters["ObjectBlend"]=Variant(1.0f);
 	    //node.position=Vector3(8.0,0.0,8.0);
 	    node.position=pos;
 	    node.rotation=rot;

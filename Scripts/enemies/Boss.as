@@ -119,7 +119,7 @@ class Boss:Pawn{
   //make the ragdoll geo
   void make_ragdoll(){
     // Create RigidBody & CollisionShape components to bones
-    CreateRagdollBone("robotHand_root", SHAPE_CAPSULE, Vector3(5.0f, 3.0f, 1.25f), Vector3(0.0f, 1.5f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
+    CreateRagdollBone("robotHand_root", SHAPE_BOX, Vector3(7.0f, 2.1f, 5.25f), Vector3(0.0f, 0.0f, 3.0f),Quaternion(0.0f, 0.0f, 0.0f));
 
     CreateRagdollBone("l_thumb_1", SHAPE_CAPSULE, Vector3(2.3f, 3.0f, 1.25f), Vector3(0.0f, 1.5f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
     CreateRagdollBone("l_thumb_2", SHAPE_CAPSULE, Vector3(2.3f, 4.0f, 1.25f), Vector3(0.0f, 2.0f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
@@ -140,28 +140,28 @@ class Boss:Pawn{
     CreateRagdollBone("r_thumb_1", SHAPE_CAPSULE, Vector3(2.3f, 3.0f, 1.25f), Vector3(0.0f, 1.5f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
     CreateRagdollBone("r_thumb_2", SHAPE_CAPSULE, Vector3(2.3f, 4.0f, 1.25f), Vector3(0.0f, 2.0f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
     CreateRagdollBone("r_thumb_3", SHAPE_CAPSULE, Vector3(2.3f, 3.0f, 1.25f), Vector3(0.0f, 1.5f, 0.0f),Quaternion(0.0f, 0.0f, 0.0f));
-    
+
     //constraints
-    CreateRagdollConstraint("l_thumb_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
+    CreateRagdollConstraint("l_thumb_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 1.0f, 0.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(15.0f, 15.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("l_thumb_2", "l_thumb_1", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("l_thumb_3", "l_thumb_2", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     
-    CreateRagdollConstraint("l_index_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
+    CreateRagdollConstraint("l_index_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 1.0f, 0.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("l_index_2", "l_index_1", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("l_index_3", "l_index_2", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     
-    CreateRagdollConstraint("middle_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
+    CreateRagdollConstraint("middle_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 1.0f, 0.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("middle_2", "middle_1", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("middle_3", "middle_2", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
    
-    CreateRagdollConstraint("r_index_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
+    CreateRagdollConstraint("r_index_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 1.0f, 0.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("r_index_2", "r_index_1", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("r_index_3", "r_index_2", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
 
-    CreateRagdollConstraint("r_thumb_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(45.0f, 45.0f), Vector2(0.0f, 0.0f));
+    CreateRagdollConstraint("r_thumb_1", "robotHand_root", CONSTRAINT_CONETWIST, Vector3(0.0f, 1.0f, 0.0f),Vector3(0.0f, 0.0f, 1.0f), Vector2(15.0f, 15.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("r_thumb_2", "r_thumb_1", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
     CreateRagdollConstraint("r_thumb_3", "r_thumb_2", CONSTRAINT_HINGE, Vector3(0.0f, 0.0f, -1.0f),Vector3(0.0f, 0.0f, -1.0f), Vector2(90.0f, 0.0f), Vector2(0.0f, 0.0f));
-
+    
   }
 
   //ragdoll functions from the sample file
